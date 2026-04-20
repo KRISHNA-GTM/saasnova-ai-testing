@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" type="image/png" sizes="32x32" href="images/logo-favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/logo-favicon-16x16.png">
+<link rel="apple-touch-icon" href="images/logo-favicon-apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<title>Contact SaaSNova, Book a Discovery Call</title>
+<meta name="description" content="Book a discovery call with Jen Dawson. Get a GTM readiness assessment across AWS, Azure, and GCP. No sales team. Jen reviews every submission personally."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@700;900&display=swap" rel="stylesheet"/>
+<style>
+  /* Intent Toggle Styles */
+  input[type="radio"]:checked + .intent-box {
+    border-color: var(--blue, #008BF8) !important;
+    background: rgba(0,139,248,0.05) !important;
+    color: var(--blue, #008BF8) !important;
+    font-weight: 700 !important;
+  }
+</style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<section class="s-gradient" style="margin-top:64px;padding:var(--sp-12) 0;text-align:center;position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;opacity:.1;background:radial-gradient(ellipse 60% 50% at 20% 30%,#fff 0%,transparent 55%);pointer-events:none"></div>
+  <div class="container-sm" style="position:relative">
+    <span class="eyebrow reveal" style="color:rgba(255,255,255,.5)">Get Started</span>
+    <h1 class="reveal delay-1" style="margin-top:var(--sp-1)">Book a Discovery Call</h1>
+    <p class="reveal delay-2 mt-3" style="font-size:18px;max-width:520px;margin:var(--sp-2) auto 0">Founder Jen Dawson reviews every submission personally and responds within 24 hours. A direct conversation about your cloud marketplace situation.</p>
+  </div>
+</section>
+<div style="background:linear-gradient(135deg,var(--blue) 0%,#6344CC 50%,var(--pink) 100%);line-height:0"><svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:48px;display:block;width:100%"><path d="M0,0 C360,48 1080,48 1440,0 L1440,48 L0,48 Z" fill="#fff"/></svg></div>
+
+<section style="background:linear-gradient(160deg,#F8F9FF 0%,#FFF8F2 100%);padding:var(--sp-8) 0">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-10);align-items:start">
+
+      <div class="reveal">
+        <h2 style="margin-bottom:var(--sp-2)">Schedule Your Call</h2>
+        <p class="text-sm" style="margin-bottom:var(--sp-4)">Select a time that works for you. Jen will come prepared with a cloud GTM readiness assessment based on your submission.</p>
+
+        <div style="border-radius:var(--r-2xl);border:1px solid var(--border-light);overflow:hidden;margin-bottom:var(--sp-4)">
+          <div style="background:var(--light-100);padding:var(--sp-3) var(--sp-4);border-bottom:1px solid var(--border-light);display:flex;align-items:center;gap:10px">
+            <div style="width:10px;height:10px;border-radius:50%;background:var(--pink)"></div>
+            <span style="font-weight:600;font-size:14px">Book via Calendly, Founder Strategy Session</span>
+          </div>
+          <div style="padding:var(--sp-4)">
+            <p class="text-sm" style="margin-bottom:var(--sp-3)">Use the link below to select a time directly in Jen's calendar. The 30-minute session covers cloud GTM readiness, gap analysis, and program fit.</p>
+            <a href="https://calendly.com/jen-saasnova/founder-strategy-session-scale-your-gtm-via-aws?month=2026-03" target="_blank" rel="noopener" class="btn btn-primary w-full" style="justify-content:center">Open Calendly, Book Now</a>
+            <p style="font-size:12px;color:var(--text-muted);text-align:center;margin-top:10px">Opens in a new tab. Select a time that works for you.</p>
+          </div>
+        </div>
+
+        <div style="border-radius:var(--r-2xl);border:1px solid var(--border-light);overflow:hidden">
+          <div style="background:var(--light-100);padding:var(--sp-3) var(--sp-4);border-bottom:1px solid var(--border-light)">
+            <span style="font-weight:600;font-size:14px">Or send a message directly</span>
+          </div>
+          <div style="padding:var(--sp-4)">
+            <!-- Custom UI connected to HubSpot via JavaScript -->
+            <form id="saasnova-contact-form" onsubmit="handleContactSubmit(event)">
+              
+              <div style="margin-bottom: 20px;">
+                <label style="display:block;font-size:13px;font-weight:600;margin-bottom:8px;color:var(--text-primary)">Nature of Inquiry</label>
+                <div style="display:flex;gap:12px;flex-wrap:wrap">
+                  
+                  <label style="flex:1;cursor:pointer;position:relative">
+                    <input type="radio" id="intent-service" name="inquiry_type" value="Service Inquiry" checked style="position:absolute;opacity:0;width:0;height:0;">
+                    <div class="intent-box" style="padding:12px;border:1px solid var(--border-light);border-radius:8px;text-align:center;font-size:14px;font-weight:500;transition:all 0.2s;background:#fff;color:var(--text-secondary)">
+                      Service Inquiry
+                    </div>
+                  </label>
+
+                  <label style="flex:1;cursor:pointer;position:relative">
+                    <input type="radio" id="intent-partnership" name="inquiry_type" value="Partnership Inquiry" style="position:absolute;opacity:0;width:0;height:0;">
+                    <div class="intent-box" style="padding:12px;border:1px solid var(--border-light);border-radius:8px;text-align:center;font-size:14px;font-weight:500;transition:all 0.2s;background:#fff;color:var(--text-secondary)">
+                      Partnership Inquiry
+                    </div>
+                  </label>
+
+                </div>
+              </div>
+
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-2)">
+                <div class="form-field"><label class="form-label">First Name</label><input type="text" class="form-input" name="first_name" required placeholder="Jane"/></div>
+                <div class="form-field"><label class="form-label">Last Name</label><input type="text" class="form-input" name="last_name" required placeholder="Smith"/></div>
+              </div>
+              <div class="form-field"><label class="form-label">Work Email</label><input type="email" class="form-input" name="email" required placeholder="jane@company.com"/></div>
+              <div class="form-field"><label class="form-label">Company</label><input type="text" class="form-input" name="company" placeholder="Acme Corp"/></div>
+              
+              <div id="form-isv-fields">
+                <div class="form-field">
+                  <label class="form-label">Target cloud marketplace(s)</label>
+                  <div style="position:relative">
+                    <select class="form-select" name="target_cloud">
+                      <option value="">Select...</option>
+                      <option value="AWS Marketplace">AWS Marketplace</option>
+                      <option value="Azure Marketplace">Azure Marketplace</option>
+                      <option value="GCP Marketplace">GCP Marketplace</option>
+                      <option value="Multi-cloud (two or more)">Multi-cloud (two or more)</option>
+                      <option value="Not yet decided">Not yet decided</option>
+                    </select>
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="position:absolute;right:14px;top:50%;transform:translateY(-50%);pointer-events:none"><path d="M3 4.5l3 3 3-3" stroke="var(--text-muted)" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  </div>
+                </div>
+                <div class="form-field">
+                  <label class="form-label">Current marketplace status</label>
+                  <div style="position:relative">
+                    <select class="form-select" name="marketplace_status">
+                      <option value="">Select...</option>
+                      <option value="Listed on multiple clouds">Listed on multiple clouds</option>
+                      <option value="Listing in progress">Listing in progress</option>
+                      <option value="Not yet listed">Not yet listed</option>
+                    </select>
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="position:absolute;right:14px;top:50%;transform:translateY(-50%);pointer-events:none"><path d="M3 4.5l3 3 3-3" stroke="var(--text-muted)" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-field"><label class="form-label" id="message-label">What is your biggest cloud GTM challenge?</label><textarea name="message" required class="form-textarea" id="message-area" placeholder="e.g. Listed on AWS and Azure but no co-sell traction and nothing board-ready to show..."></textarea></div>
+              <button type="submit" class="btn btn-primary w-full">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="reveal delay-2">
+        <div style="position:sticky;top:88px;display:flex;flex-direction:column;gap:var(--sp-3)">
+          <div style="padding:var(--sp-4);border-radius:var(--r-2xl);background:var(--light-100);border:1px solid var(--border-light)">
+            <h3 style="margin-bottom:var(--sp-3)">What happens on your discovery call</h3>
+            <div style="display:flex;flex-direction:column;gap:var(--sp-2)">
+              <div style="display:flex;gap:12px;align-items:flex-start">
+                <div style="width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:900;font-size:11px;flex-shrink:0;margin-top:1px">01</div>
+                <div><strong style="display:block;margin-bottom:3px">Cloud GTM Readiness Score</strong><span class="text-sm text-muted">Jen assesses your marketplace position across AWS, Azure, and GCP.</span></div>
+              </div>
+              <div style="display:flex;gap:12px;align-items:flex-start">
+                <div style="width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:900;font-size:11px;flex-shrink:0;margin-top:1px">02</div>
+                <div><strong style="display:block;margin-bottom:3px">Execution Gap Analysis</strong><span class="text-sm text-muted">Exactly where your co-sell motion is stalling, and on which cloud(s).</span></div>
+              </div>
+              <div style="display:flex;gap:12px;align-items:flex-start">
+                <div style="width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:900;font-size:11px;flex-shrink:0;margin-top:1px">03</div>
+                <div><strong style="display:block;margin-bottom:3px">Program Recommendation</strong><span class="text-sm text-muted">Jen recommends the right SaaSNova program for your cloud mix, timeline, and stage.</span></div>
+              </div>
+              <div style="display:flex;gap:12px;align-items:flex-start">
+                <div style="width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:900;font-size:11px;flex-shrink:0;margin-top:1px">04</div>
+                <div><strong style="display:block;margin-bottom:3px">Clear Next Steps</strong><span class="text-sm text-muted">Specific next steps, whether that is an engagement or not. No pressure.</span></div>
+              </div>
+            </div>
+          </div>
+          <div style="padding:var(--sp-4);border-radius:var(--r-2xl);background:#fff;border:1px solid var(--border-light)">
+            <h3 style="margin-bottom:var(--sp-3);font-size:16px">Prefer to reach out directly?</h3>
+            <div style="display:flex;flex-direction:column;gap:12px">
+              <a href="mailto:jen@saasnova.ai" style="display:flex;align-items:center;gap:10px;color:var(--text-secondary);font-size:15px;font-weight:500;text-decoration:none">
+                <div class="icon-wrap-sm icon-blue"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="3" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M1 4.5l6 4 6-4" stroke="currentColor" stroke-width="1.3"/></svg></div>
+                jen@saasnova.ai
+              </a>
+              <a href="tel:+12017555369" style="display:flex;align-items:center;gap:10px;color:var(--text-secondary);font-size:15px;font-weight:500;text-decoration:none">
+                <div class="icon-wrap-sm icon-blue"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 2h2.5l1 3-1.5 1a7.5 7.5 0 003 3l1-1.5 3 1V11a1 1 0 01-1 1C5.5 12 2 8.5 2 4a1 1 0 011-1z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg></div>
+                +1 (201) 755-5369
+              </a>
+              <a href="mailto:operations@saasnova.ai" style="display:flex;align-items:center;gap:10px;color:var(--text-secondary);font-size:15px;font-weight:500;text-decoration:none">
+                <div class="icon-wrap-sm icon-blue"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="3" width="12" height="8" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M1 4.5l6 4 6-4" stroke="currentColor" stroke-width="1.3"/></svg></div>
+                operations@saasnova.ai
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="shared.js"></script>
+
+<script>
+// Dynamic Form Logic based on Intent Selection
+document.addEventListener('DOMContentLoaded', () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const intentParam = urlParams.get('intent');
+  
+  const serviceRadio = document.getElementById('intent-service');
+  const partnerRadio = document.getElementById('intent-partnership');
+  const msgLabel = document.getElementById('message-label');
+  const msgArea = document.getElementById('message-area');
+  const isvFields = document.getElementById('form-isv-fields');
+
+  function updateFormContent() {
+    if (partnerRadio.checked) {
+      msgLabel.textContent = "Tell us what you’re looking to explore together.";
+      msgArea.placeholder = "e.g. We provide cloud listing infrastructure and want to explore aligning our platforms with SaaSNova's execution motion...";
+      isvFields.style.display = 'none';
+    } else {
+      msgLabel.textContent = "What is your biggest cloud GTM challenge?";
+      msgArea.placeholder = "e.g. Listed on AWS and Azure but no co-sell traction and nothing board-ready to show...";
+      isvFields.style.display = 'block';
+    }
+  }
+
+  if (intentParam === 'partnership' && partnerRadio) {
+    partnerRadio.checked = true;
+  }
+
+  if (serviceRadio && partnerRadio) {
+    serviceRadio.addEventListener('change', updateFormContent);
+    partnerRadio.addEventListener('change', updateFormContent);
+    updateFormContent(); 
+  }
+});
+
+// BULLETPROOF HubSpot API Submission Script
+function handleContactSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('[type="submit"]');
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+
+  const formData = new FormData(form);
+  const inquiryType = formData.get('inquiry_type') || '';
+  
+  // Map fields precisely to HubSpot's API requirements
+  const fields = [
+    { name: 'firstname', value: formData.get('first_name') || '' },
+    { name: 'lastname', value: formData.get('last_name') || '' },
+    { name: 'email', value: formData.get('email') || '' },
+    { name: 'company', value: formData.get('company') || '' },
+    // HubSpot's API requires the "0-2/" prefix for Company Object properties!
+    { name: '0-2/name', value: formData.get('company') || 'Not Provided' },
+    { name: 'message', value: formData.get('message') || '' }
+  ];
+
+  // Specific required fields demanded by the HubSpot errors with 0-2/ prefix
+  if (inquiryType === 'Service Inquiry') {
+    fields.push({ name: '0-2/target_cloud_marketplaces', value: formData.get('target_cloud') || 'Not yet decided' });
+    fields.push({ name: '0-2/current_marketplace_status', value: formData.get('marketplace_status') || 'Not yet listed' });
+  }
+
+  // SMART ROUTING
+  const portalId = '245317385';
+  let formId = '';
+
+  if (inquiryType === 'Partnership Inquiry') {
+    formId = '3427559f-e65d-4cfd-b29b-26ba43a79822'; // Partnership Form ID
+  } else {
+    formId = 'aa170816-bdf0-44f2-a14c-97dd671d1762'; // Service Inquiry Form ID
+  }
+
+  const url = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`;
+
+  fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      fields: fields,
+      context: { pageUri: window.location.href, pageName: document.title }
+    })
+  })
+  .then(async (response) => {
+    if (!response.ok) {
+       // Capture real error from HubSpot
+       const errTxt = await response.text();
+       throw new Error(errTxt);
+    }
+    
+    // Success UI
+    form.innerHTML = '<div style="padding:var(--sp-4);text-align:center;background:rgba(52,168,83,.06);border-radius:var(--r-xl);border:1px solid rgba(52,168,83,.2)"><div style="font-size:32px;margin-bottom:8px;color:#34a853;">✓</div><div style="font-weight:700;font-size:18px;color:var(--text-primary);margin-bottom:6px">Message sent.</div><p style="color:var(--text-muted)">Founder Jen Dawson reviews every submission personally and responds within 24 hours.</p></div>';
+  })
+  .catch((err) => {
+    btn.textContent = 'Send Message';
+    btn.disabled = false;
+    
+    // Alert the real reason to the user/developer
+    alert("HubSpot blocked the submission. Error Details:\n\n" + err.message);
+    console.error('HubSpot Error:', err);
+  });
+}
+</script>
+</body>
+</html>

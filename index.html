@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<title>SaaSNova, Cloud Marketplace GTM Execution | AWS, Azure, GCP</title>
+<meta name="description" content="SaaSNova executes your cloud marketplace go-to-market across AWS, Azure, and GCP. Co-sell submissions, field enablement, deal validation, and board-ready pipeline, delivered."/>
+<link rel="icon" type="image/png" sizes="32x32" href="images/logo-favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/logo-favicon-16x16.png">
+<link rel="apple-touch-icon" href="images/logo-favicon-apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@700;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+
+<style>
+/* Global Fallbacks & Overflows Setup */
+:root {
+  --blue: #008BF8;
+  --pink: #FA0F9C;
+  --orange: #F19953;
+  --green: #10B981;
+  --light-50: #F8FAFC;
+  --light-100: #F1F5F9;
+  --dark-900: #0A1628;
+  --text-primary: #0F1923;
+  --text-secondary: #4A5568;
+  --text-muted: #64748B;
+  --border-light: rgba(0,0,0,0.08);
+  --r-lg: 12px;
+  --r-xl: 16px;
+  --r-2xl: 20px;
+  --r-full: 9999px;
+  --sp-3: 24px;
+  --sp-4: 32px;
+  --sp-5: 48px;
+}
+
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+.container { width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 24px; }
+.container-sm { width: 100%; max-width: 800px; margin: 0 auto; padding: 0 24px; }
+
+h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+@keyframes snFadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes ring-pulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 139, 248, 0.4); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(0, 139, 248, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 139, 248, 0); }
+}
+.prog-label {
+  display:inline-block;
+  padding:6px 10px;
+  border-radius:6px;
+  background:rgba(0,0,0,0.03);
+}
+
+/* Nav Placeholder Fix */
+#nav-placeholder {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* ══════════════════════════════════════════
+   HERO SECTION
+══════════════════════════════════════════ */
+.sn-hero-static {
+  background-color: #F7F9FC;
+  background-image:
+    radial-gradient(circle at 15% 40%, rgba(0,139,248,.05) 0%, transparent 45%),
+    radial-gradient(circle at 85% 60%, rgba(250,15,156,.04) 0%, transparent 45%),
+    linear-gradient(rgba(0,0,0,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,.025) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 32px 32px, 32px 32px;
+  background-position: 0 0, 0 0, -1px -1px, -1px -1px;
+  padding: 100px 24px 60px; 
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(0,0,0,.04);
+}
+.sn-hero-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+.sn-hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  max-width: 100%;
+}
+.sn-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(0,139,248,.08);
+  border: 1px solid rgba(0,139,248,.15);
+  font-size: 12px;
+  font-weight: 700;
+  color: #008BF8;
+  margin-bottom: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: normal; /* Fixed Galaxy Fold Overflow Bug */
+  text-align: center;
+}
+.sn-eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #008BF8;
+  animation: ring-pulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+.sn-hero-text h1 {
+  font-size: clamp(32px, 4.5vw, 56px);
+  font-weight: 800;
+  line-height: 1.06;
+  letter-spacing: -0.035em;
+  color: #0F1923;
+  margin-bottom: 20px;
+}
+.sn-hl-grad {
+  background: linear-gradient(90deg, #008BF8, #FA0F9C);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+.sn-hero-sub {
+  font-size: clamp(16px, 1.6vw, 19px);
+  color: #4A5568;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  max-width: 600px;
+}
+.sn-cloud-pills {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  justify-content: flex-start;
+}
+.sn-hero-ctas {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  width: 100%;
+}
+.cta-primary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  padding: 15px 28px; border-radius: 14px; background: linear-gradient(135deg, #FA0F9C 0%, #C8008A 100%);
+  color: #fff; font-weight: 800; font-size: clamp(13px, 3.5vw, 15px); text-decoration: none; transition: all 0.25s cubic-bezier(.4,0,.2,1);
+  box-shadow: 0 4px 16px rgba(250,15,156,.30), inset 0 1px 0 rgba(255,255,255,.15);
+  position: relative; overflow: hidden; letter-spacing: -.01em; text-align: center;
+  white-space: normal; line-height: 1.3;
+}
+.cta-primary:hover {
+  transform: translateY(-2px) scale(1.01); box-shadow: 0 10px 28px rgba(250,15,156,.38); color:#fff;
+}
+.cta-secondary {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  padding: 14px 26px; border-radius: 14px; background: rgba(0,139,248,.08); color: #008BF8; font-weight: 700; font-size: clamp(13px, 3.5vw, 15px);
+  text-decoration: none; border: 1.5px solid rgba(0,139,248,.25); transition: all 0.25s cubic-bezier(.4,0,.2,1); text-align: center;
+  white-space: normal; line-height: 1.3;
+}
+.cta-secondary:hover {
+  background: rgba(0,139,248,.12); border-color: rgba(0,139,248,.5); transform: translateY(-2px); color:#008BF8;
+}
+
+.video-col-wrap {
+  display: flex; 
+  justify-content: flex-end; 
+  width: 100%;
+}
+.hero-video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #111;
+  box-shadow: 0 30px 60px -12px rgba(0,0,0,0.25), 0 0 0 1px rgba(0,139,248,0.15);
+  border: 1px solid rgba(255,255,255,0.4);
+  z-index: 1;
+}
+.hero-video-frame video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Tablet & Mobile Alignment Fixes */
+@media (max-width: 1024px) {
+  .sn-hero-inner { grid-template-columns: 1fr; gap: 48px; text-align: center; }
+  .sn-hero-text { align-items: center; text-align: center; margin: 0 auto; }
+  .sn-cloud-pills { justify-content: center; }
+  .sn-hero-ctas { justify-content: center; }
+  .video-col-wrap { justify-content: center; margin-top: 10px; }
+  .sn-hero-static { padding: 80px 20px 48px; }
+}
+
+/* ══════════════════════════════════════════
+   PIPELINE SECTION & BEFORE/AFTER CARDS
+══════════════════════════════════════════ */
+.pipeline-section {
+  padding: 56px 0;
+  background: #ffffff;
+}
+.pipeline-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 64px;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .pipeline-grid { grid-template-columns: 1fr; gap: 48px; }
+}
+
+.sn-hero-visual-box {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 30px 60px rgba(0,0,0,.06), 0 8px 20px rgba(0,0,0,.03), inset 0 0 0 1px rgba(0,139,248,.08);
+  position: relative;
+  overflow: hidden;
+}
+.sn-hero-visual-box::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(0,139,248,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0,139,248,0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: center center;
+  mask-image: radial-gradient(circle at center, black 20%, transparent 75%);
+  -webkit-mask-image: radial-gradient(circle at center, black 20%, transparent 75%);
+  z-index: 0;
+  pointer-events: none;
+}
+.sn-hero-visual-box > * { position: relative; z-index: 1; }
+
+/* ── BULLETPROOF GRID LAYOUT FOR CONNECTOR (2-LINE COMPACT DESIGN) ── */
+.sn-before-after { 
+  display: grid; 
+  grid-template-columns: 1fr auto 1fr; 
+  align-items: stretch; 
+  gap: 0; 
+  position: relative; 
+  z-index: 1; 
+}
+.sn-ba-card { 
+  background: #fff; 
+  border-radius: 14px; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between; 
+  position: relative; 
+  z-index: 1; 
+}
+.sn-ba-card.before { 
+  border: 1px solid rgba(225,29,72,.2); 
+  box-shadow: 0 4px 16px rgba(225,29,72,.06); 
+  padding: 24px 44px 24px 20px; 
+}
+.sn-ba-card.after { 
+  border: 1px solid rgba(16,185,129,.2); 
+  box-shadow: 0 4px 16px rgba(16,185,129,.08); 
+  padding: 24px 20px 24px 44px; 
+}
+
+.sn-ba-connector {
+  width: max-content; 
+  height: auto; 
+  padding: 12px 18px; 
+  border-radius: 16px; 
+  background: #fff; 
+  box-shadow: 0 6px 20px rgba(0, 139, 248, 0.15); 
+  border: 1px solid rgba(0, 139, 248, 0.2); 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  gap: 12px; 
+  z-index: 2; 
+  position: relative; 
+  align-self: center; 
+  margin: 0 -36px; /* High negative margin merges cards elegantly behind the pill */
+  font-size: 11px; 
+  font-weight: 800; 
+}
+.sn-ba-connector-txt {
+  background: linear-gradient(90deg, var(--blue), var(--pink));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.sn-ba-connector svg.sn-ba-arrow { stroke: var(--pink); transition: transform 0.3s; width: 16px; height: 16px; }
+
+/* Responsive Proof Strip */
+.sn-proof-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin-top: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 992px) {
+  /* Stack Before/After vertically on all Tablets and Mobile */
+  .sn-before-after { 
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto auto auto; 
+  }
+  .sn-ba-card.before { padding: 24px 20px 48px 20px; }
+  .sn-ba-card.after { padding: 48px 20px 24px 20px; }
+  .sn-ba-connector { 
+    margin: -28px auto; 
+    z-index: 3; 
+    flex-direction: column; /* Stack vertically for mobile */
+    gap: 8px;
+    padding: 12px 24px;
+    border-radius: 16px;
+  }
+  .sn-ba-connector .sn-ba-connector-txt { text-align: center !important; line-height: 1.4 !important; }
+  .sn-ba-connector svg.sn-ba-arrow { transform: rotate(90deg); margin: 0 auto; }
+  .sn-proof-strip { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .sn-hero-static { padding: 80px 16px 40px; }
+  .sn-hero-eyebrow { font-size: 10px; padding: 6px 12px; }
+  .sn-hero-ctas { flex-direction: column; width: 100%; }
+  .cta-primary, .cta-secondary { width: 100%; justify-content: center; }
+  .sn-hero-visual-box { padding: 20px; }
+}
+
+@media (max-width: 480px) {
+  .sn-proof-strip { grid-template-columns: 1fr; }
+  .sn-trust-divider { display: none; }
+}
+
+/* ── COMPARE TABLE ── */
+.compare-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 16px;
+    -webkit-overflow-scrolling: touch;
+    border-radius: var(--r-xl);
+}
+.sn-compare-table{background:#fff;border:1px solid var(--border-light);border-radius:var(--r-xl);overflow:hidden;width:100%; min-width: 760px; box-shadow:0 4px 24px rgba(0,0,0,.04);}
+.sn-compare-row{display:grid;grid-template-columns:2.5fr 1fr 1.2fr;border-bottom:1px solid var(--border-light)}
+.sn-compare-row:last-child{border-bottom:none}
+.sn-compare-cell{padding:16px 24px;display:flex;align-items:center;justify-content:flex-start;font-size:14px;color:var(--text-secondary);text-align:left;gap:10px}
+.sn-compare-cell.center{justify-content:center;text-align:center;color:var(--text-secondary)}
+.sn-compare-cell.saasnova-col{background:rgba(0,139,248,.06);border-left:1px solid rgba(0,139,248,.15);border-right:1px solid rgba(0,139,248,.15);position:relative;justify-content:center}
+.sn-compare-row:first-child .saasnova-col{background:rgba(0,139,248,.10)}
+.sn-compare-row:first-child .sn-compare-cell{padding:20px 24px;font-weight:700;color:var(--text-primary)}
+.sn-compare-cell.saasnova-col img{max-width:100%;height:36px;object-fit:contain}
+
+/* Mobile Sticky CTA - Disabled entirely per user request */
+.mobile-sticky-cta {
+  display: none;
+}
+
+.sn-compare-mobile{display:none}
+
+@media(max-width:768px){
+  .sn-compare-table{display:none}
+  .sn-compare-mobile{display:flex;flex-direction:column;gap:10px;width: 100%;}
+  .sn-cmp-card{background:#fff;border:1px solid var(--border-light);border-radius:14px;padding:18px 20px;}
+  .sn-cmp-capability{font-size:13px;font-weight:700;color:var(--text-primary);margin-bottom:12px;line-height:1.4;display:flex;align-items:flex-start;gap:8px}
+  .sn-cmp-capability::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0;margin-top:5px}
+  .sn-cmp-cols{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .sn-cmp-col{padding:8px 10px;border-radius:9px;font-size:12px;font-weight:600;line-height:1.4;text-align:center}
+  .sn-cmp-col.sn{background:rgba(0,139,248,.1);border:1px solid rgba(0,139,248,.2);color:#0055A0;display:flex;align-items:center;justify-content:center;gap:6px}
+  .sn-cmp-col.other{background:#F8FAFC;border:1px solid var(--border-light);color:var(--text-secondary)}
+}
+
+/* RESPONSIVE CSS GRIDS FOR ALL SECTIONS */
+.sn-exec-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 22px; width: 100%; }
+.sn-prog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; width: 100%; align-items: stretch; }
+.sn-proof-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; width: 100%; }
+.sn-show-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 48px; align-items: center; width: 100%; }
+.sn-blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; width: 100%; }
+.sn-event-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; width: 100%; }
+.sn-price-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; max-width: 560px; margin: 0 auto 48px; width: 100%; }
+
+@media (max-width: 1024px) {
+  .sn-exec-grid { grid-template-columns: repeat(2, 1fr); }
+  .sn-prog-grid { grid-template-columns: repeat(2, 1fr); }
+  .sn-show-grid { grid-template-columns: 1fr; gap: 32px; }
+  .sn-blog-grid { grid-template-columns: repeat(2, 1fr); }
+  .sn-event-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .sn-prog-grid { grid-template-columns: 1fr; }
+  .sn-proof-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 640px) {
+  .sn-exec-grid { grid-template-columns: 1fr; }
+  .sn-blog-grid { grid-template-columns: 1fr; }
+  .sn-event-grid { grid-template-columns: 1fr; }
+  .sn-price-grid { grid-template-columns: 1fr; }
+}
+
+/* VARIOUS SECTIONS */
+.sn-trust{background:#0A1628;padding:18px 0;margin-top:0}
+.sn-trust-inner{max-width:1200px;margin:0 auto;padding:0 24px}
+.sn-trust-num{font-family:'JetBrains Mono',monospace;font-weight:900;font-size:15px;background:linear-gradient(90deg,#60C3FF,var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+.sn-exec{background:linear-gradient(145deg,#0A1628,#0F1923);padding:64px 0}
+.sn-ec{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:22px;position:relative;overflow:hidden;transition:all .22s; display:flex; flex-direction:column;}
+.sn-ec::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;opacity:.6}
+.sn-ec-01::after{background:linear-gradient(90deg,var(--blue),#60C3FF)}
+.sn-ec-02::after{background:linear-gradient(90deg,var(--orange),#FFB87A)}
+.sn-ec-03::after{background:linear-gradient(90deg,var(--pink),#FF6CC8)}
+.sn-ec-04::after{background:linear-gradient(90deg,var(--green),#6FD48A)}
+.sn-ec:hover{background:rgba(255,255,255,.08);transform:translateY(-2px)}
+.sn-ec-num{font-family:'JetBrains Mono',monospace;font-weight:900;font-size:10px;letter-spacing:.12em;margin-bottom:10px}
+
+.sn-programs{background:#FAFBFF;padding:64px 0}
+.sn-prog-card{background:#fff;border:1px solid var(--border-light);border-radius:18px;padding:32px;display:flex;flex-direction:column;transition:all .25s;position:relative; overflow:hidden;}
+.sn-prog-card:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,139,248,.09);border-color:rgba(0,139,248,.2)}
+.sn-prog-topbar{height:4px;border-radius:4px 4px 0 0;position:absolute;top:0;left:0;right:0}
+
+/* Services Structured Content CSS */
+.prog-section { margin-bottom: 20px; }
+.prog-section h4 { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; }
+.prog-section ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.prog-section li { font-size: 13px; color: #1E293B; font-weight: 500; line-height: 1.5; display: flex; align-items: flex-start; gap: 8px; }
+.prog-section li::before { font-weight: 800; font-size: 12px; margin-top: 1px; flex-shrink: 0; }
+
+.card-ignite .prog-section h4 { color: var(--blue); }
+.card-ignite .prog-section li::before { content: '✓'; color: var(--blue); }
+
+.card-supernova .prog-section h4 { color: var(--orange); }
+.card-supernova .prog-section li::before { content: '✓'; color: var(--orange); }
+
+.card-novax .prog-section h4 { color: var(--pink); }
+.card-novax .prog-section li::before { content: '✓'; color: var(--pink); }
+
+.section-tag { padding: 4px 10px; border-radius: 99px; font-size: 11px; font-weight: 700; display: inline-block; text-transform: uppercase; letter-spacing: 0.05em; }
+.st-blue { background: rgba(0,139,248,0.1); color: var(--blue); }
+.st-orange { background: rgba(241,153,83,0.1); color: var(--orange); }
+.st-pink { background: rgba(250,15,156,0.1); color: var(--pink); }
+.st-dark { background: rgba(255,255,255,0.1); color: #fff; }
+
+.sn-proof{background:#fff;padding:64px 0}
+.card-p { background: #fff; border: 1px solid var(--border-light); border-radius: 16px; padding: 24px; box-shadow: 0 8px 24px rgba(0,0,0,0.03); display: flex; flex-direction: column; }
+.stat-num { font-family: 'JetBrains Mono', monospace; font-weight: 900; color: #0F1923; }
+.border-l-pink { border-left: 3px solid var(--pink); padding-left: 16px; margin-top: auto; }
+
+.sn-show{background:var(--dark-900);padding:64px 0}
+.sn-compare{background:linear-gradient(160deg,#F8F9FF 0%,#EFF4FF 100%);padding:64px 0;border-top:1px solid var(--border-light)}
+.sn-cta{background:linear-gradient(270deg,#008BF8,#5B35CC,#FA0F9C,#F19953,#008BF8);background-size:400% 400%;animation:gradShift 12s ease infinite;padding:80px 0;text-align:center;position:relative;overflow:hidden}
+.sn-cta::before{content:'';position:absolute;inset:0;opacity:.12;pointer-events:none;background:radial-gradient(ellipse 60% 50% at 25% 30%,#fff 0%,transparent 55%)}
+@keyframes gradShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+
+.btn { display: inline-flex; align-items: center; gap: 8px; font-weight: 700; text-decoration: none; transition: all 0.2s; border-radius: 12px; }
+.btn-primary { background: var(--blue); color: #fff; padding: 12px 24px; }
+.btn-primary:hover { background: #0070c9; transform: translateY(-2px); }
+.btn-secondary { background: rgba(0,139,248,0.1); color: var(--blue); padding: 12px 24px; }
+.btn-secondary:hover { background: rgba(0,139,248,0.15); transform: translateY(-2px); }
+.btn-outline-white { background: transparent; border: 1.5px solid rgba(255,255,255,0.4); color: #fff; padding: 12px 24px; }
+.btn-outline-white:hover { background: rgba(255,255,255,0.1); }
+.btn-sm { padding: 10px 16px; font-size: 13px; }
+
+/* ── INTERACTIVE TESTIMONIAL UI ── */
+.test-logo-bar {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+.test-logo-bubble {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  padding: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+}
+.test-logo-bubble img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+.test-logo-bubble.active {
+  border-color: var(--blue);
+  box-shadow: 0 8px 24px rgba(0,139,248,0.2);
+  transform: translateY(-4px);
+}
+.test-logo-bubble.active img {
+  opacity: 1;
+}
+
+.sn-test-quote-wrap {
+  position: relative;
+  background: linear-gradient(115deg, var(--pink) 0%, var(--blue) 100%);
+  border-radius: 24px;
+  padding: 60px 80px;
+  box-shadow: 0 24px 48px rgba(0,0,0,0.15);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 380px;
+}
+.test-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.test-tab-btn {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.3);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.test-tab-btn:hover {
+  background: rgba(255,255,255,0.25);
+}
+.test-tab-btn.active {
+  background: #fff;
+  color: var(--blue);
+  border-color: #fff;
+}
+.sn-test-quote {
+  font-size: clamp(18px, 2.2vw, 24px);
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.6;
+  margin-bottom: 32px;
+  animation: testFade 0.4s ease forwards;
+}
+.sn-test-author {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: auto;
+  animation: testFade 0.4s ease forwards;
+}
+.sn-test-name { font-size: 16px; font-weight: 700; color: #fff; }
+.sn-test-role { font-size: 14px; color: rgba(255,255,255,0.8); }
+
+@keyframes testFade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .sn-test-quote-wrap { padding: 40px 24px; min-height: 420px; }
+  .test-logo-bubble { width: 56px; height: 56px; }
+}
+
+/* Fallback for Reveal Elements */
+.reveal { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* Blog & Events */
+.sn-blog-card { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--border-light); border-radius: 16px; overflow: hidden; text-decoration: none; color: inherit; transition: all 0.3s ease; height: 100%; }
+.sn-blog-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(0,0,0,0.06); }
+.sn-blog-card-img { width: 100%; aspect-ratio: 1671 / 940; background: #0A1628; overflow: hidden; }
+.sn-blog-card-img img { width: 100%; height: 100%; object-fit: contain; transition: transform 0.3s ease; display: block; }
+.sn-blog-card:hover .sn-blog-card-img img { transform: scale(1.05); }
+.sn-blog-card-content { padding: 24px; display: flex; flex-direction: column; flex: 1; }
+.sn-blog-card-tag { display: inline-block; padding: 4px 10px; border-radius: 6px; background: rgba(0,139,248,0.1); color: var(--blue); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 12px; }
+.sn-blog-card-title { font-size: 17px; font-weight: 700; color: #0F1923; margin-bottom: 10px; line-height: 1.4; }
+.sn-blog-card-desc { font-size: 14px; color: #64748B; line-height: 1.6; margin-bottom: 20px; flex: 1; }
+.sn-blog-card-cta { font-size: 13px; font-weight: 700; color: var(--blue); display: flex; align-items: center; gap: 6px; }
+
+.event-card-dark { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 16px; padding: 20px; display: flex; flex-direction: column; }
+.event-img-box { width: 100%; aspect-ratio: 16/9; border-radius: 12px; overflow: hidden; margin-bottom: 16px; background: #111; }
+
+.marquee-wrap { display: flex; width: 100%; overflow: hidden; white-space: nowrap; }
+.marquee-track { display: flex; animation: scroll-left 30s linear infinite; gap: 3rem; align-items: center; }
+.marquee-logo-item img { height: 32px; width: auto; opacity: 0.9; transition: all 0.3s ease; }
+.marquee-logo-item img:hover { opacity: 1; transform: scale(1.05); }
+@keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+/* Reusable icon circles */
+.icon-wrap-sm { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; }
+.icon-blue { background: rgba(0,139,248,0.1); color: var(--blue); }
+.icon-orange { background: rgba(241,153,83,0.1); color: var(--orange); }
+
+</style>
+</head>
+
+<body>
+<div id="nav-placeholder"></div>
+<main>
+
+<!-- 1. HERO SECTION (2-Column Aligned) -->
+<section class="sn-hero-static" id="sn-hero">
+  
+  <div style="position: absolute; top: -150px; left: 50%; transform: translateX(-50%); width: 80vw; height: 400px; background: radial-gradient(ellipse at center, rgba(0, 139, 248, 0.15) 0%, transparent 70%); pointer-events: none; z-index: 0;"></div>
+
+  <div class="sn-hero-inner" style="position: relative;">
+    
+    <div class="sn-hero-text reveal">
+      <div class="sn-hero-eyebrow">
+        <span class="sn-eyebrow-dot"></span>
+        GTM EXECUTION FOR CLOUD MARKETPLACE ISVS
+      </div>
+
+      <h1>
+        The world’s first <br/>
+        <span class="sn-hl-grad">operator-led GTM <br/>execution engine.</span>
+      </h1>
+
+      <p class="sn-hero-sub">
+        We operate the co-sell and marketplace motions that generate pipeline and revenue across cloud ecosystems.
+      </p>
+
+      <div class="sn-cloud-pills">
+        <div style="display:flex;align-items:center;gap:8px;padding:8px 16px;border-radius:10px;background:#FFF;border:1px solid #F19953;font-size:12px;font-weight:800;color:#7A4A00">
+          <img src="images/aws-logo.png" alt="AWS" style="height:14px;width:auto"/><span>AWS</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;padding:8px 16px;border-radius:10px;background:#FFF;border:1px solid #008BF8;font-size:12px;font-weight:800;color:#0055A0">
+          <img src="images/azure-logo.png" alt="Azure" style="height:13px;width:auto"/><span>Azure</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;padding:8px 16px;border-radius:10px;background:#FFF;border:1px solid #10b981;font-size:12px;font-weight:800;color:#064e3b">
+          <img src="images/gcp-logo.png" alt="GCP" style="height:13px;width:auto"/><span>GCP</span>
+        </div>
+      </div>
+
+      <div class="sn-hero-ctas">
+        <a href="https://calendly.com/jen-saasnova/founder-strategy-session-scale-your-gtm-via-aws" target="_blank" class="cta-primary">
+          <svg width="18" height="18" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="11" rx="2" stroke="white" stroke-width="1.8"/><path d="M5 2v2M11 2v2M2 7h12" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg>
+          Book a 30-min Execution Strategy Session
+        </a>
+        <a href="services.html" class="cta-secondary">
+          Explore GTM Services <svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M8 4l3 3-3 3"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Centered video wrapping structure for Tablet/Mobile -->
+    <div class="reveal delay-1 video-col-wrap">
+      <div class="hero-video-wrapper" style="width: 100%; max-width: 540px; position: relative;">
+        <!-- Premium Video Glow Background -->
+        <div style="position: absolute; inset: -20px; background: linear-gradient(135deg, rgba(0,139,248,0.5) 0%, rgba(250,15,156,0.3) 50%, rgba(241,153,83,0.4) 100%); filter: blur(50px); z-index: 0; border-radius: 30px; opacity: 0.85;"></div>
+        
+        <!-- Premium Grid Dots overlay for depth -->
+        <div style="position: absolute; inset: -30px; background-image: radial-gradient(rgba(255,255,255,0.4) 2px, transparent 2px); background-size: 16px 16px; z-index: 0; opacity: 0.5; border-radius: 40px; pointer-events: none;"></div>
+
+        <div class="hero-video-frame">
+          <video src="images/SaaSNova-Jen-why.mp4" controls playsinline preload="metadata" poster="images/Jen-videoframe_thumb.png">
+          </video>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 2. TRUST STRIP & MARQUEE -->
+<div class="sn-trust">
+  <div class="sn-trust-inner">
+    <div style="font-size:11px;font-weight:600;text-align:center;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px">Trusted by 100+ SaaS ISVs scaling with Hyperscalers</div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:28px;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:rgba(255,255,255,.55)">
+        <span class="sn-trust-num">100+</span> <span>ISVs Activated</span>
+      </div>
+      
+      <div style="width:1px;height:16px;background:rgba(255,255,255,.12)" class="sn-trust-divider"></div>
+      <div style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:rgba(255,255,255,.55)">
+        <span class="sn-trust-num">25+</span> <span>Years Cloud GTM</span>
+      </div>
+    </div>
+  </div>
+</div>
+<div style="background:var(--light-50);border-bottom:1px solid var(--border-light);overflow:hidden;padding:12px 0 14px">
+  <div class="marquee-wrap">
+    <div class="marquee-track" style="animation-direction:reverse">
+      <span class="marquee-logo-item"><img src="images/newrelic.svg" alt="New Relic"/></span>
+      <span class="marquee-logo-item"><img src="images/Druva_Logo_tagline_Color.svg" alt="Druva"/></span>
+      <span class="marquee-logo-item"><img src="images/freshworks-logo-png.png" alt="Freshworks"/></span>
+      <span class="marquee-logo-item"><img src="images/Postman--Streamline-Svg-Logos.svg" alt="Postman"/></span>
+      <span class="marquee-logo-item"><img src="images/hashicorp-ar21.svg" alt="HashiCorp"/></span>
+      <span class="marquee-logo-item"><img src="images/arcticwolf.png" alt="Arctic Wolf"/></span>
+      <span class="marquee-logo-item"><img src="images/kore-ai-logo-png_seeklogo-504534.png" alt="Kore.ai"/></span>
+      <span class="marquee-logo-item"><img src="images/Fastly--Streamline-Svg-Logos.svg" alt="Fastly"/></span>
+      <span class="marquee-logo-item"><img src="images/beyondtrust.svg" alt="BeyondTrust"/></span>
+      <span class="marquee-logo-item"><img src="images/Jamf color dark.png" alt="Jamf"/></span>
+      <span class="marquee-logo-item"><img src="images/clickhouse-1.svg" alt="ClickHouse"/></span>
+      <span class="marquee-logo-item"><img src="images/ZI logo_light.svg" alt="ZoomInfo"/></span>
+      <span class="marquee-logo-item"><img src="images/denodo.svg" alt="Denodo"/></span>
+      <span class="marquee-logo-item"><img src="images/Safe one Light-logo.svg" alt="safe.security"/></span>
+      <span class="marquee-logo-item"><img src="images/pharmocoevidence-logo.png" alt="Pharmacoevidence"/></span>
+      <!-- Duplicate items to ensure smooth infinite scroll -->
+      <span class="marquee-logo-item"><img src="images/newrelic.svg" alt="New Relic"/></span>
+      <span class="marquee-logo-item"><img src="images/Druva_Logo_tagline_Color.svg" alt="Druva"/></span>
+      <span class="marquee-logo-item"><img src="images/freshworks-logo-png.png" alt="Freshworks"/></span>
+      <span class="marquee-logo-item"><img src="images/Postman--Streamline-Svg-Logos.svg" alt="Postman"/></span>
+      <span class="marquee-logo-item"><img src="images/hashicorp-ar21.svg" alt="HashiCorp"/></span>
+      <span class="marquee-logo-item"><img src="images/arcticwolf.png" alt="Arctic Wolf"/></span>
+      <span class="marquee-logo-item"><img src="images/Fastly--Streamline-Svg-Logos.svg" alt="Fastly"/></span>
+      <span class="marquee-logo-item"><img src="images/beyondtrust.svg" alt="BeyondTrust"/></span>
+      <span class="marquee-logo-item"><img src="images/clickhouse-1.svg" alt="ClickHouse"/></span>
+      <span class="marquee-logo-item"><img src="images/denodo.svg" alt="Denodo"/></span>
+      <span class="marquee-logo-item"><img src="images/Safe one Light-logo.svg" alt="safe.security"/></span>
+      <span class="marquee-logo-item"><img src="images/pharmocoevidence-logo.png" alt="Pharmacoevidence"/></span>
+    </div>
+  </div>
+</div>
+
+<!-- 3. INTERACTIVE TESTIMONIALS SECTION -->
+<section style="background: #fff; padding:56px 0; border-bottom:1px solid var(--border-light);">
+  <div class="container">
+    <div style="font-size:11px;font-weight:800;text-align:center;color:var(--blue);text-transform:uppercase;letter-spacing:.1em;margin-bottom:32px">What ISV Leaders and Field Teams Say</div>
+
+    <!-- Logos (Top) -->
+    <div class="test-logo-bar reveal" id="test-logo-container">
+      <!-- Injected by JS -->
+    </div>
+
+    <!-- Quote Box (Bottom) -->
+    <div class="sn-test-quote-wrap reveal" id="test-quote-wrap">
+      <div class="test-tabs" id="test-tabs-container">
+        <!-- Injected by JS -->
+      </div>
+      <div class="sn-test-quote" id="test-quote-text"></div>
+      <div class="sn-test-author">
+        <div class="sn-test-name" id="test-quote-name"></div>
+        <div class="sn-test-role" id="test-quote-role"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. PIPELINE TRANSFORMATION SECTION -->
+<section class="pipeline-section">
+  <div class="container pipeline-grid">
+    
+    <!-- LEFT: Text Content -->
+    <div class="reveal">
+      <div class="sn-hero-eyebrow" style="margin-bottom:20px;">
+        <span class="sn-eyebrow-dot"></span>
+        THE EXECUTION GAP
+      </div>
+      <h2 style="font-size:clamp(32px, 4vw, 44px); font-weight:800; line-height:1.15; color:var(--text-primary); margin-bottom:16px; letter-spacing:-0.02em;">
+        So, your marketplace listing is live.<br/><span class="sn-hl-grad">But, no pipeline means no revenue.</span>
+      </h2>
+      <p style="font-size:18px; color:var(--text-secondary); line-height:1.6; max-width:480px; margin-bottom:32px;">
+        We step in as your dedicated cloud GTM operators, activating field relationships, unblocking co-sell motions, and converting your listing into measurable revenue.
+      </p>
+
+      <div class="sn-cloud-pills" style="justify-content: flex-start; margin-bottom:36px;">
+        <div style="display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:8px;background:#FFF8ED;border:1px solid #FFD89A;font-size:12px;font-weight:700;color:#7A4A00">
+          <img src="images/aws-logo.png" alt="AWS" style="height:14px;width:auto"/><span>AWS</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:8px;background:#EEF6FF;border:1px solid #B0CFF5;font-size:12px;font-weight:700;color:#0055A0">
+          <img src="images/azure-logo.png" alt="Azure" style="height:13px;width:auto"/><span>Azure</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;padding:6px 12px;border-radius:8px;background:#EDFFF4;border:1px solid #A8DFB8;font-size:12px;font-weight:700;color:#1A6635">
+          <img src="images/gcp-logo.png" alt="GCP" style="height:13px;width:auto"/><span>GCP</span>
+        </div>
+      </div>
+
+      <div class="sn-hero-ctas" style="justify-content: flex-start;">
+        <a href="https://calendly.com/jen-saasnova/founder-strategy-session-scale-your-gtm-via-aws" target="_blank" rel="noopener" class="cta-primary">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><rect x="2" y="3" width="12" height="11" rx="2" stroke="white" stroke-width="1.4"/><path d="M5 2v2M11 2v2M2 7h12" stroke="white" stroke-width="1.4" stroke-linecap="round"/></svg>
+          Book a 30-min Execution Strategy Session
+        </a>
+        <a href="services.html" class="cta-secondary">
+          Explore GTM Services <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M8 4l3 3-3 3"/></svg>
+        </a>
+      </div>
+    </div>
+    
+    <!-- RIGHT: Visual Box -->
+    <div class="reveal delay-2">
+      <div class="sn-hero-visual-box">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#94A3B8;margin-bottom:20px;text-align:center;position:relative;z-index:1;">Pipeline Transformation</div>
+        
+        <!-- NATIVE GRID CONNECTOR: Fixes Tablet/Laptop overlap -->
+        <div class="sn-before-after">
+          <!-- Before -->
+          <div class="sn-ba-card before">
+            <div>
+              <div style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#E11D48;margin-bottom:12px;">Before</div>
+              <div style="display:flex;flex-direction:column;gap:10px;">
+                <div style="display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:#64748B;"><div style="width:8px;height:8px;border-radius:50%;background:#E11D48;flex-shrink:0;"></div>Listing live, zero co-sell</div>
+                <div style="display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:#64748B;"><div style="width:8px;height:8px;border-radius:50%;background:#E11D48;flex-shrink:0;"></div>No field relationships</div>
+                <div style="display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:#64748B;"><div style="width:8px;height:8px;border-radius:50%;background:#E11D48;flex-shrink:0;"></div>MDF sitting unclaimed</div>
+              </div>
+            </div>
+            <div style="margin-top:16px;padding:8px 12px;background:#FFF1F2;border-radius:8px;border:1px solid rgba(225,29,72,.15);font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:800;color:#E11D48;">Status: Dormant</div>
+          </div>
+          <!-- Grid Connector Element (2-Line Design) -->
+          <div class="sn-ba-connector">
+            <div class="sn-ba-connector-txt" style="text-align: right; line-height: 1.3;">SaaSNova<br/>Execution</div>
+            <svg class="sn-ba-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </div>
+          <!-- After -->
+          <div class="sn-ba-card after">
+            <div>
+              <div style="font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#10B981;margin-bottom:12px;">After</div>
+              <div style="display:flex;flex-direction:column;gap:10px;">
+                <div style="display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:#64748B;"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#10B981" stroke-width="1.8" stroke-linecap="round"/></svg>Active pipeline</div>
+                <div style="display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:#64748B;"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#10B981" stroke-width="1.8" stroke-linecap="round"/></svg>Field relationships active</div>
+                <div style="display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:#64748B;"><svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6l3 3 5-5" stroke="#10B981" stroke-width="1.8" stroke-linecap="round"/></svg>MDF unlocked &amp; utilized</div>
+              </div>
+            </div>
+            <div style="margin-top:16px;padding:8px 12px;background:#ECFDF5;border-radius:8px;border:1px solid rgba(16,185,129,.2);font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:800;color:#10B981;">Status: Operational</div>
+          </div>
+        </div>
+
+        <div class="sn-proof-strip">
+          <div style="text-align:center;padding:10px 6px;background:#F8FAFC;border-radius:10px;border:1px solid rgba(0,0,0,.05)">
+            <div style="font-family:'JetBrains Mono',monospace;font-weight:900;font-size:18px;background:linear-gradient(90deg,var(--blue),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1">2K+</div>
+            <div style="font-size:10px;font-weight:600;color:#64748B;margin-top:3px">PSQLs · Arctic Wolf</div>
+          </div>
+          <div style="text-align:center;padding:10px 6px;background:#F8FAFC;border-radius:10px;border:1px solid rgba(0,0,0,.05)">
+            <div style="font-family:'JetBrains Mono',monospace;font-weight:900;font-size:18px;background:linear-gradient(90deg,var(--blue),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1">$300K</div>
+            <div style="font-size:10px;font-weight:600;color:#64748B;margin-top:3px">MDF Secured · Dataminr</div>
+          </div>
+          <div style="text-align:center;padding:10px 6px;background:#F8FAFC;border-radius:10px;border:1px solid rgba(0,0,0,.05)">
+            <div style="font-family:'JetBrains Mono',monospace;font-weight:900;font-size:18px;background:linear-gradient(90deg,var(--blue),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1">9X</div>
+            <div style="font-size:10px;font-weight:600;color:#64748B;margin-top:3px">ROI · Arctic Wolf</div>
+          </div>
+          <div style="text-align:center;padding:10px 6px;background:#F8FAFC;border-radius:10px;border:1px solid rgba(0,0,0,.05)">
+            <div style="font-family:'JetBrains Mono',monospace;font-weight:900;font-size:18px;background:linear-gradient(90deg,var(--blue),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1">100+</div>
+            <div style="font-size:10px;font-weight:600;color:#64748B;margin-top:3px">ISVs</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- 5. EXECUTION MODEL -->
+<div class="wave-w2d"><svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:48px;display:block;width:100%;background:#ffffff"><path d="M0,0 C360,48 1080,48 1440,0 L1440,48 L0,48 Z" fill="#0A1628"/></svg></div>
+<section class="sn-exec">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="section-tag st-dark" style="margin-bottom:12px">What Execution Means at SaaSNova</div>
+      <h2 style="color:#fff;margin-bottom:10px">We don't just give you a playbook,<br/>We execute it.</h2>
+      <p style="color:rgba(255,255,255,.55);max-width:540px;margin:0 auto;font-size:17px">Every ISV engagement is different. We customise the execution approach to your GTM stage, your cloud mix, and your revenue goals and then we go execute it.</p>
+    </div>
+    <div class="reveal sn-exec-grid">
+      <div class="sn-ec sn-ec-01">
+        <div class="sn-ec-num" style="color:rgba(0,139,248,.7)">ACTIVATE</div>
+        <h4 style="color:#fff;margin-bottom:7px;font-size:16px">Cloud Field Relationships</h4>
+        <p style="font-size:14px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:12px">We identify and build the AE, PDM, and partner manager relationships at AWS, Azure, and GCP that make co-sell work: human trust, not just portal registrations.</p>
+        <div style="font-size:12px;font-weight:700;color:var(--blue);margin-top:auto">Outcome: Named field contacts who respond</div>
+      </div>
+      <div class="sn-ec sn-ec-02">
+        <div class="sn-ec-num" style="color:rgba(241,153,83,.7)">DRIVE</div>
+        <h4 style="color:#fff;margin-bottom:7px;font-size:16px">Co-Sell to Actual Deals</h4>
+        <p style="font-size:14px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:12px">We run the co-sell motion end-to-end: from opportunity identification through field engagement, deal validation, and revenue attribution. Not just filed. Followed through.</p>
+        <div style="font-size:12px;font-weight:700;color:var(--orange);margin-top:auto">Outcome: Attributable cloud-sourced deals</div>
+      </div>
+      <div class="sn-ec sn-ec-03">
+        <div class="sn-ec-num" style="color:rgba(250,15,156,.7)">CONVERT</div>
+        <h4 style="color:#fff;margin-bottom:7px;font-size:16px">Marketplace Presence to Revenue</h4>
+        <p style="font-size:14px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:12px">We close the gap between your listing and your revenue. Co-marketing alignment, MDF strategy, field enablement sessions, all coordinated to turn marketplace activity into closed-won motion.</p>
+        <div style="font-size:12px;font-weight:700;color:var(--pink);margin-top:auto">Outcome: Repeatable deal flow</div>
+      </div>
+      <div class="sn-ec sn-ec-04">
+        <div class="sn-ec-num" style="color:rgba(52,168,83,.7)">PROVE</div>
+        <h4 style="color:#fff;margin-bottom:7px;font-size:16px">Revenue Evidence for Your Board</h4>
+        <p style="font-size:14px;color:rgba(255,255,255,.55);line-height:1.7;margin-bottom:12px">We produce the verified, attributable GTM evidence your board and investors can present directly: co-sell logs, field-validated deal evidence, revenue attribution, and field relationship maps.</p>
+        <div style="font-size:12px;font-weight:700;color:var(--green);margin-top:auto">Outcome: Holistic GTM ROI story</div>
+      </div>
+    </div>
+    <div class="reveal" style="padding:18px 22px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:var(--r-xl);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px">
+      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+        <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.4)">Hyperscaler coverage:</span>
+        <div style="display:flex;align-items:center;gap:7px">
+          <img src="images/aws-logo.png" alt="AWS" style="height:16px;width:auto;filter:brightness(0) invert(1);opacity:.8"/>
+          <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.65)">AWS </span>
+        </div>
+        <div style="width:1px;height:14px;background:rgba(255,255,255,.1)"></div>
+        <div style="display:flex;align-items:center;gap:7px">
+          <img src="images/azure-logo.png" alt="Azure" style="height:16px;width:auto;opacity:.75"/>
+          <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.65)">Azure</span>
+        </div>
+        <div style="width:1px;height:14px;background:rgba(255,255,255,.1)"></div>
+        <div style="display:flex;align-items:center;gap:7px">
+          <img src="images/gcp-logo.png" alt="GCP" style="height:16px;width:auto;opacity:.75"/>
+          <span style="font-size:13px;font-weight:600;color:rgba(255,255,255,.65)">GCP</span>
+        </div>
+        <div style="width:1px;height:14px;background:rgba(255,255,255,.1)"></div>
+        <span style="font-size:12px;color:rgba(255,255,255,.4);font-style:italic">Each engagement is customized to your ISV's GTM stage</span>
+      </div>
+      <a href="services.html" style="font-size:13px;font-weight:600;color:var(--blue);white-space:nowrap">See How We Work &rarr;</a>
+    </div>
+  </div>
+</section>
+<div class="wave-d2w"><svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:48px;display:block;width:100%;background:#0A1628"><path d="M0,0 C360,48 1080,48 1440,0 L1440,48 L0,48 Z" fill="#ffffff"/></svg></div>
+
+<!-- 6. SERVICES OVERVIEW (Links to deep-dives) -->
+<section class="sn-programs" style="background:#ffffff; padding: 64px 0;">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:60px">
+      <div class="section-tag st-blue" style="margin-bottom:12px">Services</div>
+      <h2 class="reveal" style="margin-bottom:10px">Pick your stage,<br/>We customize the execution.</h2>
+      <p class="reveal" style="max-width:580px;margin:0 auto;font-size:17px;color:var(--text-secondary)">Start at the stage that matches your GTM maturity. Execution is customized to your cloud mix and revenue targets.</p>
+    </div>
+
+    <div class="reveal sn-prog-grid">
+
+      <!-- Ignite Card -->
+      <div class="sn-prog-card card-ignite" style="background:linear-gradient(180deg,#F0F7FF 0%,#fff 100%);">
+        <div class="sn-prog-topbar" style="background:var(--blue);"></div>
+        <div style="position:absolute; top:24px; right:16px; background:#004a99; color:#ffffff; padding:4px 12px; border-radius:20px; font-size:10px; font-weight:800; letter-spacing:0.05em; text-transform:uppercase; white-space:nowrap; box-shadow: 0 4px 12px rgba(0,74,153,0.2);">Cloud GTM Activation</div>
+        <div style="margin-bottom:12px;"><span class="section-tag st-blue" style="font-size:10px; font-weight:800;">3 MONTHS</span></div>
+        <h3 style="font-size:28px; margin:0 0 24px; color:var(--text-primary)">Ignite</h3>
+        
+        <div style="flex-grow:1; display:flex; flex-direction:column;">
+          <div class="prog-section" style="margin-bottom:24px">
+            <h4 style="font-size:14px; color:var(--text-primary); margin-bottom:12px; font-weight:700;">What You Get</h4>
+            <ul style="font-size:13px; color:var(--text-secondary); line-height:1.6; padding-left:18px; margin:0;">
+              <li>Cloud‑ready ICP + persona definition</li>
+              <li>“Better Together” messaging</li>
+              <li>PRM implemented with baseline tagging</li>
+              <li>Cloud GTM gap assessment + 90‑day plan</li>
+              <li>Cloud‑readiness evidence for investors</li>
+              <li>ISV Accelerate readiness proof</li>
+            </ul>
+          </div>
+
+          <div class="prog-section" style="margin-bottom:24px">
+            <h4 style="font-size:14px; color:var(--text-primary); margin-bottom:12px; font-weight:700;">Impact</h4>
+            <ul style="font-size:13px; color:var(--text-secondary); line-height:1.6; padding-left:18px; margin:0;">
+              <li>Stronger cloud‑readiness foundation</li>
+              <li>Hygiene established for ACE/PRM/tagging</li>
+              <li>Early pipeline visibility</li>
+              <li>Stronger investor confidence</li>
+            </ul>
+          </div>
+
+          <!-- margin-top: auto guarantees identical bottom alignment -->
+          <div style="margin-top:auto; padding-top:20px; border-top: 1px solid var(--border-light); margin-bottom:24px;">
+            <span style="display:block; font-size:10px; font-weight:800; color:#004a99; text-transform:uppercase; margin-bottom:4px;">Ideal Stage</span>
+            <p style="font-size:13px; font-weight:500; color:var(--text-primary); margin:0; line-height:1.4;">
+              <strong>Pre‑Series A &rarr; Series A.</strong> For ISVs launching or proving first attributable revenue.
+            </p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:12px;">
+          <a href="ignite.html" class="btn btn-secondary btn-sm" style="flex:1;justify-content:center">Details</a>
+          <a href="https://calendly.com/jen-saasnova/founder-strategy-session-scale-your-gtm-via-aws?month=2026-03" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="flex:1;justify-content:center">Book a Call</a>
+        </div>
+      </div>
+
+      <!-- SuperNova Card -->
+      <div class="sn-prog-card card-supernova" style="background:linear-gradient(180deg,#fff 0%,#FFFBF5 100%); box-shadow:0 12px 48px rgba(241,153,83,.08);">
+        <div class="sn-prog-topbar" style="background:var(--orange);"></div>
+        <div style="position:absolute; top:24px; right:16px; background:#994d00; color:#ffffff; padding:4px 12px; border-radius:20px; font-size:10px; font-weight:800; letter-spacing:0.05em; text-transform:uppercase; white-space:nowrap; box-shadow: 0 4px 12px rgba(153,77,0,0.2);">US Market Entry</div>
+        <div style="margin-bottom:12px;"><span class="section-tag st-orange" style="font-size:10px; font-weight:800;">4 MONTHS</span></div>
+        <h3 style="font-size:28px; margin:0 0 24px; color:var(--text-primary)">SuperNova</h3>
+        
+        <div style="flex-grow:1; display:flex; flex-direction:column;">
+          <div class="prog-section" style="margin-bottom:24px">
+            <h4 style="font-size:14px; color:var(--text-primary); margin-bottom:12px; font-weight:700;">What You Get</h4>
+            <ul style="font-size:13px; color:var(--text-secondary); line-height:1.6; padding-left:18px; margin:0;">
+              <li>Verified US co‑sell opportunities</li>
+              <li>First US cloud‑attributable signal</li>
+              <li>PRM Implemented & consumption data</li>
+              <li>Executive US GTM evidence package</li>
+              <li>US partner + Channel map (CPPO)</li>
+              <li>ISV Accelerate progression proof</li>
+            </ul>
+          </div>
+
+          <div class="prog-section" style="margin-bottom:24px">
+            <h4 style="font-size:14px; color:var(--text-primary); margin-bottom:12px; font-weight:700;">Impact</h4>
+            <ul style="font-size:13px; color:var(--text-secondary); line-height:1.6; padding-left:18px; margin:0;">
+              <li>2-4X stronger US field engagement</li>
+              <li>40-60% fewer US co‑sell rejections</li>
+              <li>1-2 quarters earlier US visibility</li>
+              <li>Validated US GTM traction</li>
+            </ul>
+          </div>
+
+          <!-- margin-top: auto guarantees identical bottom alignment -->
+          <div style="margin-top:auto; padding-top:20px; border-top: 1px solid var(--border-light); margin-bottom:24px;">
+            <span style="display:block; font-size:10px; font-weight:800; color:#994d00; text-transform:uppercase; margin-bottom:4px;">Ideal Stage</span>
+            <p style="font-size:13px; font-weight:500; color:var(--text-primary); margin:0; line-height:1.4;">
+              <strong>Series A &rarr; Series B.</strong> Global ISVs expanding in the US with cloud traction.
+            </p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:12px;">
+          <a href="supernova.html" class="btn btn-secondary btn-sm" style="flex:1;justify-content:center; color:var(--orange); background:rgba(241,153,83,0.1);">Details</a>
+          <a href="https://calendly.com/jen-saasnova/founder-strategy-session-scale-your-gtm-via-aws?month=2026-03" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="flex:1;justify-content:center; background:var(--orange);">Book a Call</a>
+        </div>
+      </div>
+
+      <!-- NovaX Card -->
+      <div class="sn-prog-card card-novax" style="background:linear-gradient(180deg,#FFF5FB 0%,#fff 100%);">
+        <div class="sn-prog-topbar" style="background:var(--pink);"></div>
+        <div style="position:absolute; top:24px; right:16px; background:#b0126a; color:#ffffff; padding:4px 12px; border-radius:20px; font-size:10px; font-weight:800; letter-spacing:0.05em; text-transform:uppercase; white-space:nowrap; box-shadow: 0 4px 12px rgba(176,18,106,0.2);">Global Multi-Cloud Scale</div>
+        <div style="margin-bottom:12px;"><span class="section-tag st-pink" style="font-size:10px; font-weight:800;">6 MONTHS</span></div>
+        <h3 style="font-size:28px; margin:0 0 24px; color:var(--text-primary)">NovaX</h3>
+        
+        <div style="flex-grow:1; display:flex; flex-direction:column;">
+          <div class="prog-section" style="margin-bottom:24px">
+            <h4 style="font-size:14px; color:var(--text-primary); margin-bottom:12px; font-weight:700;">What You Get</h4>
+            <ul style="font-size:13px; color:var(--text-secondary); line-height:1.6; padding-left:18px; margin:0;">
+              <li>Multi-cloud co‑sell (AWS, Azure, GCP)</li>
+              <li>Scalable attribution model</li>
+              <li>3-Hyperscaler Marketplace hygiene</li>
+              <li>PRM partner lifecycle automation</li>
+              <li>GTM report with multi-cloud evidence</li>
+              <li>SI/GSI engagement & motion map</li>
+            </ul>
+          </div>
+
+          <div class="prog-section" style="margin-bottom:24px">
+            <h4 style="font-size:14px; color:var(--text-primary); margin-bottom:12px; font-weight:700;">Impact</h4>
+            <ul style="font-size:13px; color:var(--text-secondary); line-height:1.6; padding-left:18px; margin:0;">
+              <li>3–5X attributable cloud revenue</li>
+              <li>2–3X stronger SI/GSI alignment</li>
+              <li>40–60% higher co‑sell acceptance</li>
+              <li>25–40% Marketplace lift</li>
+              <li>Series B &rarr; C scale engine</li>
+            </ul>
+          </div>
+
+          <!-- margin-top: auto guarantees identical bottom alignment -->
+          <div style="margin-top:auto; padding-top:20px; border-top: 1px solid var(--border-light); margin-bottom:24px;">
+            <span style="display:block; font-size:10px; font-weight:800; color:#b0126a; text-transform:uppercase; margin-bottom:4px;">Ideal Stage</span>
+            <p style="font-size:13px; font-weight:500; color:var(--text-primary); margin:0; line-height:1.4;">
+              <strong>Series A &rarr; Series C.</strong> Multi-cloud ISVs expanding into repeatable global revenue.
+            </p>
+          </div>
+        </div>
+
+        <div style="display:flex;gap:12px;">
+          <a href="novax.html" class="btn btn-secondary btn-sm" style="flex:1;justify-content:center; color:var(--pink); background:rgba(250,15,156,0.1);">Details</a>
+          <a href="https://calendly.com/jen-saasnova/founder-strategy-session-scale-your-gtm-via-aws?month=2026-03" target="_blank" rel="noopener" class="btn btn-primary btn-sm" style="flex:1;justify-content:center; background:var(--pink);">Book a Call</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- 7. WHY SAASNOVA (Unified light section) -->
+<section style="background:linear-gradient(160deg,#F8F9FF 0%,#EFF4FF 100%); padding:64px 0; border-top:1px solid var(--border-light); border-bottom:1px solid var(--border-light);">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="section-tag st-blue" style="margin-bottom:12px">Why SaaSNova</div>
+      <h2 style="color:var(--text-primary);margin-bottom:10px; font-size:clamp(32px, 4vw, 48px); font-weight:800; letter-spacing:-0.02em;">Not Advice, Not Theory, Execution.</h2>
+      <p style="color:var(--text-secondary);max-width:520px;margin:0 auto;font-size:17px;text-align:center">Other vendors give you frameworks and dashboards. We embed as your cloud GTM operator and go execute.</p>
+    </div>
+    
+    <!-- Compare Table (Scrollable Native Table wrapper protects all viewports) -->
+    <div class="compare-table-wrapper">
+      <div class="sn-compare-table">
+        <div class="sn-compare-row" style="border-bottom:1px solid var(--border-light);background:var(--light-100);">
+          <div class="sn-compare-cell" style="font-size:12px;font-weight:700;color:var(--text-muted);text-transform:uppercase;letter-spacing:.08em">Capability</div>
+          <!-- Centered SaaSNova Logo Cell -->
+          <div class="sn-compare-cell center saasnova-col" style="padding: 16px 0;">
+            <img src="images/logo-color.png" alt="SaaSNova Logo" style="height:40px; width:auto; object-fit:contain;"/>
+          </div>
+          <div class="sn-compare-cell" style="font-size:15px;font-weight:800;color:var(--text-secondary);text-align:left">Advisory / Platform</div>
+        </div>
+        
+        <div class="sn-compare-row">
+          <div class="sn-compare-cell" style="color:var(--text-primary);gap:10px;font-weight:500"><span style="width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0"></span>Executes GTM alongside your team</div>
+          <div class="sn-compare-cell center saasnova-col"><div style="width:26px;height:26px;border-radius:50%;background:rgba(52,168,83,.12);border:1.5px solid var(--green);display:flex;align-items:center;justify-content:center"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5l3 3L10 1" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round"/></svg></div></div>
+          <div class="sn-compare-cell"><span style="font-size:13px;font-weight:500;color:var(--text-muted)">Tooling or guidance only</span></div>
+        </div>
+        
+        <div class="sn-compare-row">
+          <div class="sn-compare-cell" style="color:var(--text-primary);gap:10px;font-weight:500"><span style="width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0"></span>Activates hyperscaler field relationships</div>
+          <div class="sn-compare-cell center saasnova-col"><div style="width:26px;height:26px;border-radius:50%;background:rgba(52,168,83,.12);border:1.5px solid var(--green);display:flex;align-items:center;justify-content:center"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5l3 3L10 1" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round"/></svg></div></div>
+          <div class="sn-compare-cell"><span style="font-size:13px;font-weight:500;color:var(--text-muted)">Limited to portal workflows</span></div>
+        </div>
+        
+        <div class="sn-compare-row">
+          <div class="sn-compare-cell" style="color:var(--text-primary);gap:10px;font-weight:500"><span style="width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0"></span>Identifies and advances real co-sell opportunities</div>
+          <div class="sn-compare-cell center saasnova-col"><div style="width:26px;height:26px;border-radius:50%;background:rgba(52,168,83,.12);border:1.5px solid var(--green);display:flex;align-items:center;justify-content:center"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5l3 3L10 1" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round"/></svg></div></div>
+          <div class="sn-compare-cell"><span style="font-size:13px;font-weight:500;color:var(--text-muted)">Requires your team to drive motion</span></div>
+        </div>
+        
+        <div class="sn-compare-row">
+          <div class="sn-compare-cell" style="color:var(--text-primary);gap:10px;font-weight:500"><span style="width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0"></span>Produces field-validated deal evidence</div>
+          <div class="sn-compare-cell center saasnova-col"><div style="width:26px;height:26px;border-radius:50%;background:rgba(52,168,83,.12);border:1.5px solid var(--green);display:flex;align-items:center;justify-content:center"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5l3 3L10 1" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round"/></svg></div></div>
+          <div class="sn-compare-cell"><span style="font-size:13px;font-weight:500;color:var(--text-muted)">Relies on your team for proof</span></div>
+        </div>
+        
+        <div class="sn-compare-row">
+          <div class="sn-compare-cell" style="color:var(--text-primary);gap:10px;font-weight:500"><span style="width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0"></span>Delivers field enablement sessions with cloud teams</div>
+          <div class="sn-compare-cell center saasnova-col"><div style="width:26px;height:26px;border-radius:50%;background:rgba(52,168,83,.12);border:1.5px solid var(--green);display:flex;align-items:center;justify-content:center"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5l3 3L10 1" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round"/></svg></div></div>
+          <div class="sn-compare-cell"><span style="font-size:13px;font-weight:500;color:var(--text-muted)">Provides decks, not delivery</span></div>
+        </div>
+        
+        <div class="sn-compare-row">
+          <div class="sn-compare-cell" style="color:var(--text-primary);gap:10px;font-weight:500"><span style="width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0"></span>Provides a board-ready, attributable pipeline report</div>
+          <div class="sn-compare-cell center saasnova-col"><div style="width:26px;height:26px;border-radius:50%;background:rgba(52,168,83,.12);border:1.5px solid var(--green);display:flex;align-items:center;justify-content:center"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5l3 3L10 1" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round"/></svg></div></div>
+          <div class="sn-compare-cell"><span style="font-size:13px;font-weight:500;color:var(--text-muted)">Dashboards only, no verification</span></div>
+        </div>
+        
+        <div class="sn-compare-row" style="border-bottom:none">
+          <div class="sn-compare-cell" style="color:var(--text-primary);gap:10px;font-weight:500"><span style="width:6px;height:6px;border-radius:50%;background:var(--blue);flex-shrink:0"></span>Aligns MDF, co-marketing, and cloud GTM into measurable ROI</div>
+          <div class="sn-compare-cell center saasnova-col"><div style="width:26px;height:26px;border-radius:50%;background:rgba(52,168,83,.12);border:1.5px solid var(--green);display:flex;align-items:center;justify-content:center"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5l3 3L10 1" stroke="var(--green)" stroke-width="1.8" stroke-linecap="round"/></svg></div></div>
+          <div class="sn-compare-cell"><span style="font-size:13px;font-weight:500;color:var(--text-muted)">Recommendations only, no execution</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sn-compare-mobile">
+      <div class="sn-cmp-card">
+        <div class="sn-cmp-capability">Executes GTM alongside your team</div>
+        <div class="sn-cmp-cols">
+          <div class="sn-cmp-col sn"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5l3 3L10 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> SaaSNova</div>
+          <div class="sn-cmp-col other">Tooling / guidance only</div>
+        </div>
+      </div>
+      <div class="sn-cmp-card">
+        <div class="sn-cmp-capability">Activates hyperscaler field relationships</div>
+        <div class="sn-cmp-cols">
+          <div class="sn-cmp-col sn"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5l3 3L10 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> SaaSNova</div>
+          <div class="sn-cmp-col other">Portal workflows only</div>
+        </div>
+      </div>
+      <div class="sn-cmp-card">
+        <div class="sn-cmp-capability">Identifies and advances real co-sell opportunities</div>
+        <div class="sn-cmp-cols">
+          <div class="sn-cmp-col sn"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5l3 3L10 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> SaaSNova</div>
+          <div class="sn-cmp-col other">Your team drives</div>
+        </div>
+      </div>
+      <div class="sn-cmp-card">
+        <div class="sn-cmp-capability">Produces field-validated deal evidence</div>
+        <div class="sn-cmp-cols">
+          <div class="sn-cmp-col sn"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5l3 3L10 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> SaaSNova</div>
+          <div class="sn-cmp-col other">Relies on your proof</div>
+        </div>
+      </div>
+      <div class="sn-cmp-card">
+        <div class="sn-cmp-capability">Delivers field enablement sessions</div>
+        <div class="sn-cmp-cols">
+          <div class="sn-cmp-col sn"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5l3 3L10 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> SaaSNova</div>
+          <div class="sn-cmp-col other">Provides decks only</div>
+        </div>
+      </div>
+      <div class="sn-cmp-card">
+        <div class="sn-cmp-capability">Provides board-ready, attributable pipeline report</div>
+        <div class="sn-cmp-cols">
+          <div class="sn-cmp-col sn"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5l3 3L10 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> SaaSNova</div>
+          <div class="sn-cmp-col other">Dashboards only</div>
+        </div>
+      </div>
+      <div class="sn-cmp-card">
+        <div class="sn-cmp-capability">Aligns MDF, co-marketing, and cloud GTM</div>
+        <div class="sn-cmp-cols">
+          <div class="sn-cmp-col sn"><svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4.5l3 3L10 1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg> SaaSNova</div>
+          <div class="sn-cmp-col other">Recommendations only</div>
+        </div>
+      </div>
+    </div>
+
+    <p style="text-align:center;font-size:13px;color:var(--text-muted);margin-top:18px">
+      Every SaaSNova program includes listing setup, co-sell execution, and a board-ready pipeline report. <a href="services.html" style="color:var(--blue);font-weight:600">See how it works &rarr;</a>
+    </p>
+  </div>
+</section>
+
+<!-- 8. JEN GTM SHOW -->
+<section class="sn-show" style="background:var(--dark-900);">
+  <div class="container">
+    <div class="sn-show-grid">
+      <div class="reveal">
+        <span class="section-tag st-dark" style="margin-bottom:12px">The Jen GTM Show</span>
+        <h2 style="color:#fff;margin-top:6px;margin-bottom:14px">Why execution produces pipeline that advice never will.</h2>
+        <p style="color:rgba(255,255,255,.62);font-size:17px;line-height:1.8;margin-bottom:22px">Jen Dawson on the exact execution gap that keeps ISVs from generating co-sell pipeline on AWS, Azure, and GCP. No frameworks. No theory. Just what actually works.</p>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a href="show.html" class="btn btn-primary">Watch All Episodes</a>
+          <a href="https://www.youtube.com/@SaaSNovaGTM" target="_blank" rel="noopener" class="btn btn-outline-white">Subscribe on YouTube</a>
+        </div>
+      </div>
+      <div class="reveal delay-1">
+        <div class="hero-video-frame">
+          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/EN63uxhcn08" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute;inset:0;"></iframe>
+        </div>
+        <div style="margin-top:10px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:12px;padding:10px 14px">
+          <img src="images/jen-dp.jpg" alt="Jen Dawson" style="width:44px;height:44px;border-radius:50%;object-fit:cover;object-position:top;flex-shrink:0"/>
+          <div>
+            <div style="font-weight:600;font-size:14px;color:#fff">Jen Dawson, Founder &amp; CEO</div>
+            <div style="font-size:12px;color:rgba(255,255,255,.4)">Cloud GTM practitioner · 100+ ISVs activated</div>
+          </div>
+          <a href="show.html" style="margin-left:auto;font-size:13px;font-weight:600;color:var(--blue);white-space:nowrap;flex-shrink:0">All Episodes </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. BLOG -->
+<div class="wave-d2w"><svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:48px;display:block;width:100%;background:#0A1628"><path d="M0,0 C360,48 1080,48 1440,0 L1440,48 L0,48 Z" fill="#F8F9FF"/></svg></div>
+<section style="background:linear-gradient(160deg,#F8F9FF 0%,#FFF8F2 100%);padding:56px 0">
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--sp-4);flex-wrap:wrap;gap:12px">
+      <div>
+        <div class="section-tag st-blue" style="margin-bottom:10px">From the Blog</div>
+        <h2 style="margin:0">Practitioner-grade GTM intelligence.</h2>
+      </div>
+      <a href="blog.html" class="btn btn-secondary">View All Posts</a>
+    </div>
+    
+    <div class="sn-blog-grid">
+      
+      <!-- Card 1: PRM Deadline -->
+      <a href="blog-aws-prm-deadline.html" class="sn-blog-card reveal delay-1">
+        <div class="sn-blog-card-img">
+          <img src="images/blogs/Blog 4 PRM.png" alt="AWS PRM Deadline" onerror="this.src='https://placehold.co/1671x940/0A1628/ffffff?text=Blog+Cover'"/>
+        </div>
+        <div class="sn-blog-card-content">
+          <div><span class="sn-blog-card-tag" style="background:rgba(255,153,0,.1); color:#FF9900;">AWS APN Compliance</span></div>
+          <h4 class="sn-blog-card-title">The July 31 AWS PRM Deadline: How to Measure Attribution and Keep Funding</h4>
+          <p class="sn-blog-card-desc">Visibility is the new currency inside AWS. By July 31, 2026, AWS will measure partner impact through PRM. Learn the execution fixes to maintain eligibility.</p>
+          <div class="sn-blog-card-cta">Read More <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+      </a>
+
+      <!-- Card 2: Silent Listing -->
+      <a href="blog-cloud-marketplace-listing-silent-fix.html" class="sn-blog-card reveal delay-2">
+        <div class="sn-blog-card-img">
+          <img src="images/blogs/cloud-marketplace-listing.png" alt="Why Your Cloud Marketplace Listing Is Silent" onerror="this.src='https://placehold.co/1671x940/0A1628/ffffff?text=Blog+Cover'"/>
+        </div>
+        <div class="sn-blog-card-content">
+          <div><span class="sn-blog-card-tag" style="background:rgba(0,139,248,.1); color:var(--blue);">ISV Marketplace Activation</span></div>
+          <h4 class="sn-blog-card-title">Why Your Cloud Marketplace Listing Is Silent And What Actually Fixes It</h4>
+          <p class="sn-blog-card-desc">Listed on AWS, Azure, or GCP with zero co-sell pipeline? Learn the 3 execution gaps keeping ISVs silent.</p>
+          <div class="sn-blog-card-cta">Read More <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+      </a>
+
+      <!-- Card 3: AWS Alignment -->
+      <a href="blog-aws-alignment.html" class="sn-blog-card reveal delay-3">
+        <div class="sn-blog-card-img">
+          <img src="images/blogs/Blog kr.png" alt="Why AWS Marketplace GTM Fails for Most SaaS Companies" onerror="this.src='https://placehold.co/1671x940/0A1628/ffffff?text=Blog+Cover'"/>
+        </div>
+        <div class="sn-blog-card-content">
+          <div><span class="sn-blog-card-tag" style="background:rgba(241,153,83,.1); color:var(--orange);">AWS Execution Strategy</span></div>
+          <h4 class="sn-blog-card-title">Why AWS Marketplace GTM Fails for Most SaaS Companies</h4>
+          <p class="sn-blog-card-desc">Six months after launch, most SaaS companies have the same AWS Marketplace result: zero pipeline. Here's why.</p>
+          <div class="sn-blog-card-cta">Read More <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- 10. EVENTS -->
+<div class="wave-w2d"><svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:48px;display:block;width:100%;background:#EEF5FF"><path d="M0,0 C360,48 1080,48 1440,0 L1440,48 L0,48 Z" fill="#0A1628"/></svg></div>
+<section style="background:linear-gradient(145deg,#0A1628,#0F1923);padding:64px 0">
+  <div class="container">
+    <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:14px;margin-bottom:32px">
+      <div>
+        <div class="section-tag st-dark" style="margin-bottom:10px">On the Ground</div>
+        <h2 style="color:#fff;margin-top:0">Where SaaSNova is showing up.</h2>
+        <p style="color:rgba(255,255,255,.55);margin-top:7px;font-size:16px;max-width:480px">Cloud marketplace GTM happens at events as much as it does in portals. Field relationships start with presence.</p>
+      </div>
+      <a href="partners.html" class="btn btn-outline-white">Partner With Us</a>
+    </div>
+    <div class="reveal sn-event-grid">
+      <div class="event-card-dark">
+        <div class="event-img-box"><img src="images/rsac-ss.jpeg" alt="RSA Conference 2026" style="width:100%;height:100%;object-fit:cover"/></div>
+        <div style="background:rgba(52,168,83,.15);color:rgba(52,168,83,.9);padding:3px 9px;border-radius:999px;font-size:10px;font-weight:700;display:inline-block;margin-bottom:7px;align-self:flex-start;">RECENT &middot; March 2026</div>
+        <h4 style="color:#fff;font-size:16px;margin-bottom:5px">RSA Conference 2026</h4>
+        <p style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:10px;">San Francisco. Jen Dawson meeting ISV security leaders and cloud field teams connecting on the co-sell motions that generate real deal flow in the security category.</p>
+        <a href="https://saasify.ai/accelerate-your-cloud-gtm-with-saasnova-saasify/" target="_blank" rel="noopener" style="display:inline-block;margin-top:auto;font-size:13px;font-weight:600;color:var(--blue)">See the SaaSNova × SaaSify story &rarr;</a>
+      </div>
+      <div class="event-card-dark">
+        <div class="event-img-box"><img src="images/jen-dawson.jpg" alt="AWS re:Invent" style="width:100%;height:100%;object-fit:cover;object-position:top" onerror="this.style.background='linear-gradient(135deg,#1A2640,#0A1628)';this.style.display='none'"/></div>
+        <div style="background:rgba(255,153,0,.12);color:rgba(255,153,0,.8);padding:3px 9px;border-radius:999px;font-size:10px;font-weight:700;display:inline-block;margin-bottom:7px;align-self:flex-start;">AWS &middot; Las Vegas</div>
+        <h4 style="color:#fff;font-size:16px;margin-bottom:5px">AWS re:Invent</h4>
+        <p style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:0;">The annual AWS ecosystem gathering. SaaSNova attends every year to meet ISV leaders, AWS field teams, and PDMs, building the relationships that matter year-round.</p>
+      </div>
+      <div class="event-card-dark">
+        <div class="event-img-box" style="background:linear-gradient(135deg,#0A1628,#1A0A2E);display:flex;align-items:center;justify-content:center">
+          <img src="images/jen-stage.png" alt="Jen Dawson speaking" style="width:100%;height:100%;object-fit:cover;object-position:top" onerror="this.src='images/jen-headshot.png'"/>
+        </div>
+        <div style="background:rgba(52,168,83,.12);color:rgba(52,168,83,.8);padding:3px 9px;border-radius:999px;font-size:10px;font-weight:700;display:inline-block;margin-bottom:7px;align-self:flex-start;">Keynote &middot; GTM School</div>
+        <h4 style="color:#fff;font-size:16px;margin-bottom:5px">GTM School of Thoughts</h4>
+        <p style="font-size:13px;color:rgba(255,255,255,.5);margin-bottom:0;">Jen Dawson keynotes on cloud co-sell execution, the field team dynamics and execution gaps that determine whether co-sell submissions get answered.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11. PRICING -->
+<section style="background:linear-gradient(160deg,#EEF5FF 0%,#FFF0F7 100%);padding:56px 0">
+  <div class="container-sm text-center">
+    <div class="section-tag st-blue reveal" style="margin-bottom:14px">Pricing</div>
+    <h2 class="reveal" style="margin-bottom:14px">Custom pricing for your ISV.</h2>
+    <p class="reveal" style="font-size:17px;color:var(--text-secondary);max-width:520px;margin:0 auto 32px;line-height:1.8">Pricing is based on your specific requirements and eligibility. Every engagement is scoped to your cloud mix, listing status, and GTM stage.</p>
+    <div class="reveal delay-3 sn-price-grid">
+      <div style="padding:var(--sp-4);border-radius:var(--r-2xl);background:#fff;border:1px solid var(--border-light);text-align:left">
+        <div class="icon-wrap-sm icon-blue" style="margin-bottom:12px"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="1" y="3" width="12" height="9" rx="1.5" stroke="currentColor" stroke-width="1.3"/><path d="M1 6.5l6 3.5 6-3.5" stroke="currentColor" stroke-width="1.3"/></svg></div>
+        <div style="font-weight:700;font-size:15px;margin-bottom:6px">Book a discovery call</div>
+        <p class="text-sm" style="color:var(--text-muted);margin-bottom:14px">Get a custom quote from Jen Dawson based on your cloud marketplace situation.</p>
+        <a href="https://calendly.com/jen-saasnova/founder-strategy-session-scale-your-gtm-via-aws?month=2026-03" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;justify-content:center;display:flex">Book with Jen</a>
+      </div>
+      <div style="padding:var(--sp-4);border-radius:var(--r-2xl);background:#fff;border:1px solid var(--border-light);text-align:left">
+        <div class="icon-wrap-sm icon-orange" style="margin-bottom:12px"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2l5 5-5 5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div style="font-weight:700;font-size:15px;margin-bottom:6px">AWS Private Offer</div>
+        <p class="text-sm" style="color:var(--text-muted);margin-bottom:14px">SaaSNova services can be procured via AWS Marketplace.</p>
+        <a href="https://aws.amazon.com/marketplace/pp/prodview-tf2hvg57dyfca?sr=0-1&ref_=beagle&applicationId=AWSMPContessa" target="_blank" rel="noopener" class="btn btn-secondary" style="width:100%;justify-content:center;display:flex">Request Private Offer</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. FINAL CTA -->
+<section class="sn-cta">
+  <div class="container-sm" style="position:relative">
+    <h2 class="reveal" style="color:#fff;margin-bottom:10px;font-size:clamp(26px,4vw,44px)">
+      Ready to turn your listing<br/>into pipeline?
+    </h2>
+    <p class="reveal" style="font-size:18px;color:rgba(255,255,255,.82);max-width:460px;margin:0 auto 32px">
+      Book a 30-minute discovery call. Jen reviews every submission personally and responds within 24 hours.
+    </p>
+    <div class="reveal" style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center">
+      <a href="https://calendly.com/jen-saasnova/founder-strategy-session-scale-your-gtm-via-aws?month=2026-03"
+         target="_blank" rel="noopener"
+         style="padding:16px 36px;border-radius:999px;background:#fff;color:var(--blue);font-weight:800;font-size:16px;text-decoration:none;box-shadow:0 4px 20px rgba(0,0,0,.15);transition:all .2s;text-align:center;"
+         onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 28px rgba(0,0,0,.2)'"
+         onmouseout="this.style.transform='';this.style.boxShadow='0 4px 20px rgba(0,0,0,.15)'">
+        Book a 30-min Execution Strategy Session
+      </a>
+      <a href="contact.html"
+         style="padding:15px 27px;border-radius:999px;background:transparent;color:#fff;font-weight:700;font-size:15px;border:1.5px solid rgba(255,255,255,.4);text-decoration:none;display:inline-flex;align-items:center;justify-content:center;transition:background .2s"
+         onmouseover="this.style.background='rgba(255,255,255,.1)'" onmouseout="this.style.background='transparent'">
+        Send a Message
+      </a>
+    </div>
+    <p class="reveal" style="font-size:13px;color:rgba(255,255,255,.4);margin-top:16px">jen@saasnova.ai &middot; +1 (201) 755-5369</p>
+  </div>
+</section>
+
+</main>
+<div id="footer-placeholder"></div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script src="shared.js"></script>
+
+<!-- Embedded Script to guarantee Testimonials, and Scroll Reveals all function flawlessly -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // 1. Reveal Animations (Safely Wrapped)
+  try {
+    const revs = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window) {
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+      }, { threshold: 0.05 });
+      revs.forEach(r => obs.observe(r));
+    } else {
+      revs.forEach(r => r.classList.add('visible'));
+    }
+  } catch(e) {
+    document.querySelectorAll('.reveal').forEach(r => r.classList.add('visible'));
+  }
+
+  // 2. Interactive Testimonial Logic & Auto-Rotator
+  try {
+    const testData = [
+      {
+        id: 'safe', logo: 'images/Safe one Light-logo.svg', name: 'Safe Security',
+        quotes: [
+          { tab: 'Nicola Sanna', text: '"SaaSNova was instrumental in accelerating SAFE’s AWS Marketplace strategy. They helped us compress months of internal effort into weeks, sharpen our enterprise positioning, and launch TPRM with a procurement-ready workflow."', author: 'Nicola Sanna', role: 'President' },
+          { tab: 'Michael Nagao', text: '"SaaSNova helped us move through AWS programs, Marketplace requirements, and internal alignment in a fraction of the time it normally takes, compressing months of work into weeks."', author: 'Michael Nagao', role: 'SVP Worldwide Channel' },
+          { tab: 'Jagdish Upadhyay', text: '"The joint AWS partnership page is a critical proof point for SAFE, and Jen’s wireframe was thorough, thoughtfully structured, and partner‑ready from day one."', author: 'Jagdish Upadhyay', role: 'VP of Marketing' },
+          { tab: 'Gary Cronk', text: '"SaaSNova isn\'t a platform, they\'re the operator behind our AWS Marketplace success. They bring the GTM clarity, commercial alignment, and end-to-end ownership that no tool can provide."', author: 'Gary Cronk', role: 'Director, Strategic Partners' }
+        ]
+      },
+      {
+        id: 'saasify', logo: 'images/saasify-logo.png', name: 'SaaSify',
+        quotes: [
+          { tab: 'Manesh Raveendran', text: '"A listing creates visibility. Automation and GTM precision create momentum. SaaSNova brings the GTM activation layer to turn cloud visibility into real cloud momentum."', author: 'Manesh Raveendran', role: 'CEO and Founder' },
+          { tab: 'Kevin Flitcroft', text: '"Automation is the essential foundation but real acceleration happens when GTM activation aligns an ISV’s story with seller priorities inside AWS, Azure, and Google Cloud."', author: 'Kevin Flitcroft', role: 'Head of Sales' }
+        ]
+      },
+      {
+        id: 'arctic', logo: 'images/arcticwolf.png', name: 'Arctic Wolf Networks',
+        quotes: [
+          { tab: 'Megan Flanagan', text: '"The structure of the pilot program exceeded all expectations. The data-driven full funnel planning model challenged us to think in ways we haven\'t thought of before."', author: 'Megan Flanagan', role: 'VP Marketing' },
+          { tab: 'Odin Olson', text: '"It was great to hear what has been done well with an AWS best ISV. The co-sell scoring discussion was eye-opening to us."', author: 'Odin Olson', role: 'VP Partnerships & Alliances' }
+        ]
+      },
+      {
+        id: 'aws', logo: 'images/aws-logo.png', name: 'AWS',
+        quotes: [
+          { tab: 'Gunjan Ramketa', text: '"Jen’s GTM architecture elevated Dataminr’s entire AWS motion. The structure and discipline she brought created the kind of alignment and seller confidence we rarely see from ISVs."', author: 'Gunjan Ramketa', role: 'Partner Development Manager' },
+          { tab: 'John McElhone', text: '"Jen\'s GTM architecture fundamentally changed how Arctic Wolf engaged with AWS. The structure, clarity, and discipline she brought created a level of alignment we rarely see with security partners."', author: 'John McElhone', role: 'Partner Development Manager' }
+        ]
+      },
+      {
+        id: 'freshworks', logo: 'images/freshworks-logo-png.png', name: 'Freshworks',
+        quotes: [
+          { tab: 'Abhishek GP', text: '"Jen is one of the most dynamic and driven leaders I’ve worked with Freshwork. She built the alignment and relationships needed to secure a three‑year strategic collaboration with AWS and set the foundation for a scalable co‑sell motion. She consistently turns challenges into opportunities."', author: 'Abhishek GP', role: 'VP of Growth at Atlan (and former Head of Growth at Freshworks)' }
+        ]
+      },
+      {
+        id: 'pharmacoevidence', logo: 'images/pharmocoevidence-logo.png', name: 'Pharmacoevidence',
+        quotes: [
+          { tab: 'Rajdeep Kaur', text: '“SaaSNova brought a level of clarity and execution we had never experienced before. Jen helped us navigate AWS Marketplace listings, modernize our architecture, and build a precise, end‑to‑end path toward the AWS GenAI Competency. What sets SaaSNova apart is the operator‑led partnership, fast, structured, and relentlessly outcome‑driven. They accelerated end‑to‑end cloud GTM and Marketplace execution that would have taken us months into just a few weeks, elevating Pharmacoevidence’s global credibility.”', author: 'Rajdeep Kaur', role: 'Associate Director & Lead, AI Sciences' }
+        ]
+      },
+      {
+        id: 'dataminr', logo: 'images/dataminr-logo.png', name: 'Dataminr',
+        quotes: [
+          { tab: 'Fraser Charles', text: '"The architecture gave Dataminr the credibility sellers and AWS senior leaders needed to lean in."', author: 'Fraser Charles', role: 'Senior Director, Partner Ecosystems' }
+        ]
+      },
+          {
+        id: 'workspan', logo: 'images/workspan-logo.jpeg', name: 'WorkSpan',
+        quotes: [
+          { tab: 'Amit Sinha', text: '"Jen is one of the most effective GTM operators I’ve worked with. Across Freshworks, Postman, and Workspan, she brought a level of clarity, structure, and execution discipline that consistently moved our AWS partner motions forward. She has a rare ability to turn complex, ambiguous GTM challenges into aligned, high‑velocity execution. Her impact is immediate, repeatable, and deeply felt across every team she works with."', author: 'Amit Sinha', role: 'President' }
+        ]
+      },
+      {
+        id: 'nexla', logo: 'images/nexla-logo.png', name: 'Nexla',
+        quotes: [
+          { tab: 'Jayashree Rajan', text: '"SaaSNova didn\'t just clarify our AWS GTM motion, they exposed issues we didn\'t even know were blocking us. Their operator-level mastery of Marketplace, ACE, co-sell, and partner programs is unmatched."', author: 'Jayashree Rajan', role: 'CMO' }
+        ]
+      },
+  
+    ];
+
+    const logoContainer = document.getElementById('test-logo-container');
+    const tabsContainer = document.getElementById('test-tabs-container');
+    const quoteText = document.getElementById('test-quote-text');
+    const quoteName = document.getElementById('test-quote-name');
+    const quoteRole = document.getElementById('test-quote-role');
+    const quoteWrap = document.getElementById('test-quote-wrap');
+
+    let currentCompanyIndex = 0;
+    let currentQuoteIndex = 0;
+    let autoRotateTimer = null;
+    let isHovered = false;
+
+    // Pause timer when reading
+    if(quoteWrap) {
+      quoteWrap.addEventListener('mouseenter', () => isHovered = true);
+      quoteWrap.addEventListener('mouseleave', () => isHovered = false);
+    }
+
+    function renderTabs(companyData) {
+      tabsContainer.innerHTML = '';
+      if(companyData.quotes.length <= 1) return;
+      
+      companyData.quotes.forEach((q, idx) => {
+        const btn = document.createElement('button');
+        btn.className = `test-tab-btn ${idx === currentQuoteIndex ? 'active' : ''}`;
+        btn.textContent = q.tab;
+        btn.onclick = () => {
+          currentQuoteIndex = idx;
+          updateTabActiveState();
+          renderQuote(companyData.quotes[idx]);
+        };
+        tabsContainer.appendChild(btn);
+      });
+    }
+
+    function updateTabActiveState() {
+      document.querySelectorAll('.test-tab-btn').forEach((b, idx) => {
+        b.classList.toggle('active', idx === currentQuoteIndex);
+      });
+    }
+
+    function renderQuote(quoteData) {
+      // Trigger animation re-flow
+      quoteText.style.animation = 'none';
+      quoteName.parentElement.style.animation = 'none';
+      void quoteText.offsetWidth; 
+      
+      quoteText.textContent = quoteData.text;
+      quoteName.textContent = quoteData.author;
+      quoteRole.textContent = quoteData.role;
+
+      quoteText.style.animation = 'testFade 0.4s ease forwards';
+      quoteName.parentElement.style.animation = 'testFade 0.4s ease forwards';
+
+      // Schedule next rotation
+      scheduleNextRotation(quoteData.text.length);
+    }
+
+    function scheduleNextRotation(textLength) {
+      clearTimeout(autoRotateTimer);
+      
+      // Snappier rotation: 8s short, 11s medium, 14s long
+      let duration = 8000; 
+      if (textLength > 150) duration = 11000;
+      if (textLength > 300) duration = 14000;
+      
+      autoRotateTimer = setTimeout(advanceRotation, duration);
+    }
+
+    function advanceRotation() {
+      if (isHovered) {
+         // User is reading, check again shortly
+         autoRotateTimer = setTimeout(advanceRotation, 2000);
+         return;
+      }
+      
+      const company = testData[currentCompanyIndex];
+      // If there are more quotes in the current company tab, go to next quote
+      if (currentQuoteIndex < company.quotes.length - 1) {
+         currentQuoteIndex++;
+         updateTabActiveState();
+         renderQuote(company.quotes[currentQuoteIndex]);
+      } else {
+         // Move to next company entirely
+         let nextCompIndex = (currentCompanyIndex + 1) % testData.length;
+         selectCompany(nextCompIndex);
+      }
+    }
+
+    function selectCompany(index) {
+      currentCompanyIndex = index;
+      currentQuoteIndex = 0;
+      
+      document.querySelectorAll('.test-logo-bubble').forEach((el, idx) => {
+        el.classList.toggle('active', idx === index);
+      });
+      
+      const data = testData[index];
+      renderTabs(data);
+      renderQuote(data.quotes[0]);
+    }
+
+    // Initialize Logos UI
+    if(logoContainer) {
+        testData.forEach((company, idx) => {
+          const bubble = document.createElement('div');
+          bubble.className = `test-logo-bubble ${idx === 0 ? 'active' : ''}`;
+          bubble.onclick = () => selectCompany(idx);
+          
+          const img = document.createElement('img');
+          img.src = company.logo;
+          img.alt = company.name;
+          img.onerror = () => { img.src = 'images/logo-color.png'; };
+          
+          bubble.appendChild(img);
+          logoContainer.appendChild(bubble);
+        });
+
+        // Trigger the initial layout
+        if(testData.length > 0) selectCompany(0);
+    }
+
+  } catch(e) {
+    console.error("Testimonial rendering failed", e);
+  }
+});
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="images/logo-favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/logo-favicon-16x16.png">
+<link rel="apple-touch-icon" href="images/logo-favicon-apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@700;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+
+<title>SaaSNova Blog - Cloud Marketplace Insights</title>
+<meta name="description" content="Actionable insights on co-sell execution, marketplace listing, and field team motions across AWS, Azure, and GCP."/>
+
+<style>
+/* ── MOBILE OVERFLOW & RESPONSIVE FIXES ── */
+body {
+  max-width: 100%;
+  overflow-x: clip; 
+  margin: 0;
+  padding: 0;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.blog-hero h1, .blog-hero p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* BLOG HERO */
+.blog-hero {
+  margin-top:64px;
+  position:relative;overflow:hidden;
+  padding:68px 0 56px;
+  background:linear-gradient(135deg,#0A1628 0%,#0D1F45 40%,#1A0A2E 100%);
+}
+.blog-hero::before {
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 55% 70% at 85% 20%,rgba(0,139,248,.22) 0%,transparent 55%),
+    radial-gradient(ellipse 45% 55% at 10% 75%,rgba(250,15,156,.15) 0%,transparent 50%),
+    radial-gradient(ellipse 35% 40% at 55% 10%,rgba(241,153,83,.1) 0%,transparent 45%);
+}
+.blog-hero-inner {
+  max-width:800px;margin:0 auto;padding:0 24px;
+  position:relative;z-index:2;text-align:center;
+}
+.blog-hero-tag {
+  display:inline-flex;align-items:center;gap:8px;
+  padding:5px 14px;border-radius:999px;
+  background:rgba(0,139,248,.15);border:1px solid rgba(0,139,248,.25);
+  font-size:11px;font-weight:700;color:rgba(100,195,255,.95);
+  margin-bottom:16px;text-transform:uppercase;letter-spacing:.1em;
+}
+.blog-hero h1 {
+  font-size:clamp(32px,4.5vw,52px);font-weight:800;
+  line-height:1.08;letter-spacing:-.025em;color:#fff;margin-bottom:14px;
+}
+.blog-hero p {
+  font-size:17px;color:rgba(255,255,255,.62);line-height:1.8;max-width:540px;
+}
+
+/* CATEGORY FILTER */
+.blog-filters {
+  background:#fff;border-bottom:1px solid var(--border-light);
+  padding:16px 0;position:sticky;top:64px;z-index:50;
+}
+.blog-filters-inner {
+  max-width:1200px;margin:0 auto;padding:0 24px;
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+}
+.blog-filter-btn {
+  padding:7px 16px;border-radius:999px;font-size:13px;font-weight:600;
+  border:1.5px solid var(--border-light);background:#fff;color:var(--text-muted);
+  cursor:pointer;transition:all .15s;font-family:inherit;
+}
+.blog-filter-btn:hover,.blog-filter-btn.active {
+  border-color:var(--blue);background:rgba(0,139,248,.06);color:var(--blue);
+}
+.blog-filter-btn.active { background:var(--blue);color:#fff;border-color:var(--blue); }
+
+/* FEATURED POST */
+.blog-featured {
+  background:linear-gradient(135deg,#EBF5FF 0%,#F5EEFF 100%);
+  padding:56px 0;
+}
+.blog-featured-card {
+  max-width:900px;margin:0 auto;
+  display:flex; flex-direction: row; gap:0;
+  background:#fff;border:1px solid var(--border-light);border-radius:var(--r-2xl);
+  overflow:hidden;box-shadow:0 8px 40px rgba(0,139,248,.1);
+}
+
+/* Flawless Scaling with Contain to prevent cutting */
+.blog-feat-visual {
+  width: 50%;
+  position:relative;overflow:hidden;
+  display:flex;align-items:center;justify-content:center;
+  background:#0a1628; 
+}
+.blog-feat-visual img {
+  width: 100%; height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.blog-feat-content {
+  width: 50%;
+  padding:36px 32px;display:flex;flex-direction:column;justify-content:center;
+}
+
+/* POST GRID */
+.blog-grid-section {
+  background:#FAFBFF;padding:56px 0;
+}
+.blog-grid {
+  display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-3);
+}
+.blog-card {
+  background:#fff;border:1px solid var(--border-light);border-radius:var(--r-xl);
+  overflow:hidden;transition:all .22s;display:flex;flex-direction:column;
+  text-decoration:none;color:inherit;
+}
+.blog-card:hover {transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,139,248,.1);border-color:rgba(0,139,248,.2);}
+
+.blog-card-visual {
+  width:100%; height: auto;
+  aspect-ratio: 1671 / 940;
+  position:relative;overflow:hidden;
+  background: #0A1628; display: block;
+}
+.blog-card-visual img {
+  width: 100%; height: 100%;
+  object-fit: contain; 
+  display: block;
+}
+.blog-card-body {padding:20px;flex:1;display:flex;flex-direction:column;}
+.blog-card-cat {font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;margin-bottom:8px;}
+.blog-card-h {font-size:15px;font-weight:700;line-height:1.45;margin-bottom:8px;flex:1;}
+.blog-card-meta {display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:12px;border-top:1px solid var(--border-light);}
+
+/* CTA STRIP */
+.blog-cta {
+  background:linear-gradient(135deg,#0A1628,#1A0A2E);
+  padding:56px 0;text-align:center;position:relative;overflow:hidden;
+}
+.blog-cta::before {
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(0,139,248,.12) 0%,transparent 60%);
+}
+
+@media(max-width:900px){
+  .blog-featured-card{flex-direction: column;}
+  .blog-feat-visual { width: 100%; aspect-ratio: 1671 / 940; }
+  .blog-feat-content { width: 100%; }
+  .blog-grid{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:600px){.blog-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<section class="blog-hero">
+  <div class="blog-hero-inner">
+    <div class="blog-hero-tag reveal">
+      <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3h6M2 5.5h5M2 8h3" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg>
+      SaaSNova Blog
+    </div>
+    <h1 class="reveal delay-1" style="color:#ffffff">
+      Cloud GTM intelligence,<br/>Written by a practitioner.
+    </h1>
+    <p class="reveal delay-2" style="max-width:580px;margin:0 auto">
+      Actionable insights on co-sell execution, marketplace listing, field team motions, and board-ready proof, across AWS, Azure, and GCP.
+    </p>
+  </div>
+</section>
+
+<div class="blog-filters">
+  <div class="blog-filters-inner">
+    <button class="blog-filter-btn active" onclick="filterPost(this,'all')">All Posts</button>
+    <button class="blog-filter-btn" onclick="filterPost(this,'aws')">AWS Strategy</button>
+    <button class="blog-filter-btn" onclick="filterPost(this,'isv')">ISV Programs</button>
+  </div>
+</div>
+
+<section class="blog-featured">
+  <div class="container">
+    <div style="margin-bottom:24px">
+      <span class="eyebrow" style="color:var(--blue)">Featured Post</span>
+    </div>
+    <a href="blog-aws-prm-deadline.html" class="blog-featured-card reveal" data-cat="aws" style="text-decoration:none;color:inherit;">
+      <div class="blog-feat-visual">
+        <img src="images/blogs/Blog 4 PRM.png" alt="AWS PRM Deadline" />
+      </div>
+      <div class="blog-feat-content">
+        <span style="display:inline-block;padding:3px 10px;border-radius:var(--r-full);background:rgba(255,153,0,.1);color:#FF9900;font-size:11px;font-weight:700;margin-bottom:14px">AWS APN Compliance</span>
+        <h2 style="font-size:clamp(20px,2.4vw,27px);margin-bottom:12px;line-height:1.3">The July 31 AWS PRM Deadline: How to Measure Attribution and Keep Funding</h2>
+        <p style="font-size:15px;color:var(--text-secondary);line-height:1.75;margin-bottom:20px">Visibility is the new currency inside AWS. By July 31, 2026, AWS will measure partner impact through PRM. Learn the execution fixes to maintain eligibility.</p>
+        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap">
+          <div style="display:flex;align-items:center;gap:8px">
+            <img src="images/jen-dp.jpg" alt="Jen Dawson" style="width:32px;height:32px;border-radius:50%;object-fit:cover;object-position:top"/>
+            <span style="font-size:13px;font-weight:600;color:var(--text-secondary)">Jen Dawson</span>
+          </div>
+          <span style="font-size:12px;color:var(--text-muted)">April 2026 &middot; 5 min read</span>
+          <span style="margin-left:auto;font-size:14px;font-weight:600;color:var(--blue)">Read </span>
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="blog-grid-section">
+  <div class="container">
+    <h2 style="margin-bottom:var(--sp-4)" class="reveal">All Posts</h2>
+    <div class="blog-grid">
+
+      <!-- POST 1: SILENT LISTING -->
+      <a href="blog-cloud-marketplace-listing-silent-fix.html" class="blog-card reveal delay-1" data-cat="isv">
+        <div class="blog-card-visual">
+          <img src="images/blogs/cloud-marketplace-listing.png" alt="Cloud Marketplace Listing" />
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-cat" style="color:var(--blue)">ISV Marketplace Activation</div>
+          <div class="blog-card-h">Why Your Cloud Marketplace Listing Is Silent And What Actually Fixes It</div>
+          <p class="text-sm" style="color:var(--text-muted);line-height:1.65;margin-bottom:12px">Listed on AWS, Azure, or GCP with zero co-sell pipeline? Learn the 3 execution gaps keeping ISVs silent.</p>
+          <div class="blog-card-meta">
+            <span style="font-size:12px;color:var(--text-muted)">April 2026 &middot; 6 min</span>
+            <span style="font-size:13px;font-weight:600;color:var(--blue)">Read </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- POST 2: AWS ALIGNMENT -->
+      <a href="blog-aws-alignment.html" class="blog-card reveal delay-2" data-cat="aws">
+        <div class="blog-card-visual">
+          <img src="images/blogs/Blog kr.png" alt="Why AWS Marketplace GTM Fails for Most SaaS Companies" />
+        </div>
+        <div class="blog-card-body">
+          <div class="blog-card-cat" style="color:var(--orange)">AWS Execution Strategy</div>
+          <div class="blog-card-h">Why AWS Marketplace GTM Fails for Most SaaS Companies</div>
+          <p class="text-sm" style="color:var(--text-muted);line-height:1.65;margin-bottom:12px">Six months after launch, most SaaS companies have the same AWS Marketplace result: zero pipeline. Here's why.</p>
+          <div class="blog-card-meta">
+            <span style="font-size:12px;color:var(--text-muted)">Jan 2026 &middot; 5 min</span>
+            <span style="font-size:13px;font-weight:600;color:var(--blue)">Read </span>
+          </div>
+        </div>
+      </a>
+
+      <!-- CTA CARD -->
+      <div class="blog-card reveal delay-3" style="border:2px dashed var(--border-light);background:linear-gradient(135deg,#F0F7FF,#FFF5FB);cursor:default">
+        <div style="padding:32px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;height:100%;min-height:300px">
+          <div class="icon-wrap icon-orange" style="margin-bottom:16px">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="1.5" y="4" width="17" height="12" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M1.5 7l8.5 5 8.5-5" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3 style="font-size:18px;margin-bottom:8px">Get the Weekly Brief</h3>
+          <p class="text-sm" style="color:var(--text-muted);margin-bottom:18px;max-width:220px;line-height:1.65">Co-sell tactics, marketplace updates, and GTM intelligence, every week from Jen Dawson.</p>
+          <a href="newsletter" class="btn btn-primary btn-sm">Subscribe Free </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="blog-cta">
+  <div class="container-sm" style="position:relative">
+    <span class="eyebrow" style="color:rgba(0,139,248,.7);margin-bottom:12px;display:block">From the Practitioner</span>
+    <h2 style="color:#fff;margin-bottom:12px; font-size: clamp(28px, 4vw, 40px);">Reading about execution<br/>isn't the same as doing it.</h2>
+    <p style="color:rgba(255,255,255,.62);font-size:17px;max-width:440px;margin:0 auto 28px">Book a Execution strategy call and get a written GTM readiness assessment for your ISV, on your target clouds.</p>
+    <a href="https://calendly.com/jen-saasnova/founder-strategy-session-scale-your-gtm-via-aws?month=2026-03"
+       target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+      Book a 30-min Execution Strategy Session
+    </a>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="shared.js"></script>
+<script>
+// Filter Posts logic
+function filterPost(btn, cat) {
+  document.querySelectorAll('.blog-filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  
+  // Filter Grid items
+  document.querySelectorAll('.blog-card[data-cat]').forEach(card => {
+    const cats = card.dataset.cat ? card.dataset.cat.split(' ') : [];
+    card.style.display = (cat === 'all' || cats.includes(cat)) ? '' : 'none';
+  });
+
+  // Filter Featured post dynamically
+  const featured = document.querySelector('.blog-featured-card');
+  if (featured && featured.dataset.cat) {
+    const featCats = featured.dataset.cat.split(' ');
+    const section = featured.closest('.blog-featured');
+    if (section) {
+      section.style.display = (cat === 'all' || featCats.includes(cat)) ? '' : 'none';
+    }
+  }
+}
+
+// Check URL parameters for active tags from blog posts
+document.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  const tag = params.get('tag');
+  if (tag) {
+    const btn = document.querySelector(`.blog-filter-btn[onclick*="'${tag}'"]`);
+    if (btn) btn.click();
+  }
+});
+</script>
+</body>
+</html>

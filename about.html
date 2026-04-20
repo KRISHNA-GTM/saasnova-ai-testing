@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="images/logo-favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/logo-favicon-16x16.png">
+<link rel="apple-touch-icon" href="images/logo-favicon-apple-touch-icon.png">
+<title>About SaaSNova, Jen Dawson &amp; The Team</title>
+<meta name="description" content="SaaSNova is led by Jen Dawson, cloud GTM practitioner, and a specialized team of cloud marketplace operations, digital marketing, and content experts."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@700;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+
+<style>
+  /* ── RESPONSIVE & OVERFLOW FIXES ── */
+  html, body {
+    overflow-x: hidden; /* Prevents horizontal scrolling and the white gap glitch */
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  .btn {
+    max-width: 100%;
+    white-space: normal; /* Allows long button text to wrap on small screens */
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 1.4;
+  }
+
+  /* ── RESPONSIVE HERO FIX ── */
+  .about-hero-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: var(--sp-10);
+    align-items: start;
+  }
+  @media (max-width: 900px) {
+    .about-hero-grid {
+      grid-template-columns: 1fr;
+      gap: var(--sp-6);
+    }
+  }
+
+  /* ── TEAM SECTION STYLES ── */
+  .team-section {
+    padding: var(--sp-12) 0;
+    background: linear-gradient(160deg, #F4F8FF 0%, #FAF5FF 100%);
+  }
+
+  .role-pill {
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 6px 14px;
+    border-radius: 99px;
+    white-space: nowrap;
+  }
+
+  .pill-blue { background: #E6F3FF; color: #0077D9; }
+  .pill-orange { background: #FFF0E5; color: #D96A00; }
+  .pill-pink { background: #FFE5F5; color: #D90082; }
+  .pill-purple { background: #F0E5FF; color: #7A00D9; }
+  .pill-green { background: #E5FFF0; color: #00A650; }
+  .pill-dark { background: #EAEFF5; color: #1A2640; }
+
+  /* ── UNIVERSAL CAROUSEL STYLES ── */
+  .carousel-container {
+    position: relative;
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  .team-grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .team-grid::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+
+  .team-card {
+    background: #fff;
+    border-radius: 28px;
+    padding: 40px 32px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box; /* Prevent padding from blowing out width */
+  }
+
+  .team-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 139, 248, 0.08);
+  }
+
+  .tc-avatar-wrap {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    font-weight: 900;
+    color: #fff;
+    flex-shrink: 0;
+    overflow: hidden;
+    border: 3px solid #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  
+  .tc-avatar-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .tc-name {
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+  }
+
+  .tc-bio {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-top: 16px;
+  }
+
+  /* Desktop Styles (Exactly 3 Cards) */
+  @media (min-width: 901px) {
+    .team-grid {
+      gap: 24px;
+      padding: 16px 0 48px 0;
+      margin: 0;
+    }
+    .team-card {
+      flex: 0 0 calc((100% - 48px) / 3); 
+      scroll-snap-align: start;
+    }
+  }
+
+  /* Mobile Adjustments (Single Card Full View) */
+  @media (max-width: 900px) {
+    .team-grid {
+      gap: 16px;
+      padding: 16px 0 48px 0;
+      margin: 0;
+    }
+    .team-card {
+      flex: 0 0 100%;
+      scroll-snap-align: center;
+      padding: 32px 24px; /* Better fit for smaller screens */
+    }
+    .carousel-btn { 
+      display: none;
+    }
+  }
+
+  .carousel-btn {
+    position: absolute;
+    top: calc(50% - 24px);
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid rgba(0, 139, 248, 0.15);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0077D9;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.2s ease;
+  }
+
+  .carousel-btn:hover { 
+    background: #0077D9; 
+    color: #fff; 
+    transform: translateY(-50%) scale(1.05);
+    box-shadow: 0 12px 32px rgba(0, 139, 248, 0.2);
+  }
+  
+  .carousel-btn.prev { left: -24px; }
+  .carousel-btn.next { right: -24px; }
+</style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<section style="margin-top:64px;padding:var(--sp-12) 0;position:relative;overflow:hidden;background:linear-gradient(135deg,#0A1628 0%,#0D1F45 50%,#0A1628 100%);color:#fff">
+  <div style="position:absolute;inset:0;opacity:.07;background:radial-gradient(ellipse 60% 60% at 80% 40%,var(--blue) 0%,transparent 60%);pointer-events:none"></div>
+  <div class="container-sm text-center" style="position:relative">
+    <span class="eyebrow eyebrow-dark reveal">About SaaSNova</span>
+    <h1 class="reveal delay-1" style="margin-top:8px;color:#fff">Built by practitioners,<br/>Operator-led execution.</h1>
+    <p class="reveal delay-2" style="font-size:18px;color:rgba(255,255,255,.62);max-width:540px;margin:16px auto 0;line-height:1.8">SaaSNova is the GTM execution engine between ISVs and the cloud revenue their hyperscaler investment demands. We activate field relationships, drive marketplace momentum, and deliver board-ready pipeline evidence, across AWS, Azure, and GCP.</p>
+  </div>
+</section>
+<div class="wave-d2w"><svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:48px;display:block;width:100%"><path d="M0,0 C360,48 1080,48 1440,0 L1440,48 L0,48 Z" fill="#fff"/></svg></div>
+
+<section class="s-white">
+  <div class="container">
+    <div class="about-hero-grid">
+      <div class="reveal">
+        <div style="border-radius:var(--r-2xl);overflow:hidden;aspect-ratio:3/4;position:relative;background:var(--light-200)">
+          <img src="images/jen-headshot.png"  alt="Jen Dawson, Founder and CEO of SaaSNova" style="width:100%;height:100%;object-fit:cover;object-position:top center"/>
+          <div style="position:absolute;bottom:0;right:0;padding:14px 18px;background:rgba(255,255,255,.92);backdrop-filter:blur(8px);border-top:1px solid var(--border-light);border-left:1px solid var(--border-light)">
+            <div class="stat-num" style="font-size:28px">25+</div>
+            <div class="stat-label">Years Cloud GTM</div>
+          </div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px;margin-top:var(--sp-3)">
+          <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:var(--r-lg);background:var(--light-100);border:1px solid var(--border-light)">
+            <div style="display:flex;gap:4px;flex-shrink:0">
+              <img src="images/aws-logo.png" alt="AWS" style="width:16px;height:16px;object-fit:contain;"/>
+              <img src="images/azure-logo.png" alt="Azure" style="width:16px;height:16px;object-fit:contain"/>
+              <img src="images/gcp-logo.png" alt="GCP" style="width:16px;height:16px;object-fit:contain"/>
+            </div>
+            <div><div style="font-weight:700;font-size:14px">AWS · Azure · GCP</div><div style="font-size:12px;color:var(--text-muted)">multi-cloud execution</div></div>
+          </div>
+          <div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:var(--r-lg);background:var(--light-100);border:1px solid var(--border-light)">
+            <div class="icon-wrap-sm icon-orange"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5l1.1 3.1 3.3.3-2.4 2.1.7 3.3L7 8.7l-2.7 1.6.7-3.3L2.6 5l3.3-.3z" stroke="currentColor" stroke-width="1.3" stroke-linejoin="round"/></svg></div>
+            <div><div style="font-weight:700;font-size:14px">100+ ISVs Activated</div><div style="font-size:12px;color:var(--text-muted)">New Relic, Druva, Freshworks &amp; more</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal delay-2">
+        <div class="section-tag st-blue" style="margin-bottom:14px">The SaaSNova Story</div>
+        <h2 style="margin-bottom:20px">Why execution, not advice, is the only thing that produces pipeline.</h2>
+        <div style="border-left:3px solid var(--pink);padding:16px 20px;background:#FFF8FB;border-radius:0 var(--r-md) var(--r-md) 0;margin-bottom:24px">
+          <p style="font-size:18px;font-style:italic;color:var(--text-primary);line-height:1.75">"Every ISV I worked with faced the same pattern: listed on AWS, Azure, or GCP; submissions filed; cloud field teams unresponsive; and nothing attributable showing up at the board level. I fell in love with this problem because it was universal and absolutely solvable. SaaSNova exists because this isn’t a marketplace problem. It’s an execution problem across the entire cloud GTM motion."</p>
+          <p style="font-size:13px;color:var(--text-muted);margin-top:8px;font-weight:600">Jen Dawson, Founder &amp; CEO, SaaSNova</p>
+        </div>
+        <p style="margin-bottom:var(--sp-3);font-size:17px;color:var(--text-secondary);line-height:1.85">After years embedded in cloud ecosystems, building marketplace programs on AWS, managing ISV Accelerate motions, and developing the field relationships that drive momentum on Azure and GCP, Jen founded SaaSNova to fill a gap no platform or consultancy was filling: operator-led execution.</p>
+        <p style="margin-bottom:var(--sp-4);font-size:17px;color:var(--text-secondary);line-height:1.85">Platforms give ISVs listing infrastructure. Consultancies give ISVs frameworks. Neither drives field enablement, activates partner programs, or unlocks marketplace momentum. SaaSNova does all of it, directly, as an embedded operator with clear deliverables in every program period.</p>
+        <ul class="check-list mb-4" style="margin-bottom:var(--sp-4)">
+          <li class="check-item"><span class="check-dot"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span><div><strong>Execution, not advisory.</strong> Every program has named, documented deliverables, not recommendations.</div></li>
+          <li class="check-item"><span class="check-dot"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span><div><strong>True multi-cloud depth.</strong> AWS, Azure, and GCP are equally supported, not afterthoughts.</div></li>
+          <li class="check-item"><span class="check-dot"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span><div><strong>Board-visible output.</strong> Every program produces a clear pipeline report boards and investors can present directly.</div></li>
+        </ul>
+        <a href="https://calendly.com/jen-saasnova/founder-strategy-session-scale-your-gtm-via-aws?month=2026-03" target="_blank" rel="noopener" class="btn btn-primary">Book a 30-min Execution Strategy Session</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider-gradient"/>
+
+<section class="team-section">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:var(--sp-5)">
+      <div class="section-tag st-blue reveal" style="margin-bottom:14px">MEET THE STARS</div>
+      <h2 class="reveal delay-1" style="margin-top:0">Operator-led. Execution-native.</h2>
+      <p class="reveal delay-2" style="max-width:600px;margin:12px auto 0;font-size:17px;color:var(--text-secondary)">
+        No advisors. No theorists. Just practitioners with deep hyperscaler roots, executing the GTM motions that drive attributable cloud revenue.
+      </p>
+    </div>
+    
+    <div class="reveal delay-3">
+      <div class="carousel-container">
+        <!-- Left Arrow -->
+        <button class="carousel-btn prev" aria-label="Scroll left">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+
+        <!-- The Scrollable Grid -->
+        <div class="team-grid" id="teamGrid">
+
+          <!-- 1. JEN DAWSON -->
+          <div class="team-card">
+            <div class="tc-avatar-wrap">
+              <img src="images/jen-dp.jpg" alt="Jen Dawson">
+            </div>
+            <h4 class="tc-name">Jen Dawson</h4>
+            <span class="role-pill pill-blue">CEO & Founder</span>
+            <p class="tc-bio">25+ years in cloud GTM. Led 100+ ISV marketplace activations across AWS, Azure, and GCP. Directly oversees execution across all programs.</p>
+          </div>
+
+          <!-- 2. SILAS -->
+          <div class="team-card">
+            <div class="tc-avatar-wrap" style="background:#2851FF;">S</div>
+            <h4 class="tc-name">Silas</h4>
+            <span class="role-pill pill-orange">Chief Growth Officer</span>
+            <p class="tc-bio">Designs and runs co-sell and marketplace pipeline systems. Converts listings into qualified pipeline and revenue.</p>
+          </div>
+
+          <!-- 3. JOCELYN -->
+          <div class="team-card">
+            <div class="tc-avatar-wrap" style="background:#FF3BAF;">J</div>
+            <h4 class="tc-name">Jocelyn</h4>
+            <span class="role-pill pill-pink">Business Development Manager</span>
+            <p class="tc-bio">Activates ISVs hyperscaler field relationships. Drives partner engagement and meeting flow into pipeline.</p>
+          </div>
+
+          <!-- 4. JENI -->
+          <div class="team-card">
+            <div class="tc-avatar-wrap" style="background:#FFA64A;">J</div>
+            <h4 class="tc-name">Jeni</h4>
+            <span class="role-pill pill-orange">Cloud Marketplace Operations</span>
+            <p class="tc-bio">Owns listing execution, submissions, and field coordination. Ensures marketplace readiness and operational throughput.</p>
+          </div>
+
+          <!-- 5. KRISHNA -->
+          <div class="team-card">
+            <div class="tc-avatar-wrap" style="background:#8A3BFF;">K</div>
+            <h4 class="tc-name">Krishna</h4>
+            <span class="role-pill pill-purple">Digital Marketing Manager</span>
+            <p class="tc-bio">Builds positioning and demand systems for marketplace GTM. Converts technical capability into pipeline-driving narratives.</p>
+          </div>
+
+          <!-- 6. MAHA -->
+          <div class="team-card">
+            <div class="tc-avatar-wrap" style="background:#10B981;">M</div>
+            <h4 class="tc-name">Maha</h4>
+            <span class="role-pill pill-green">Content Manager</span>
+            <p class="tc-bio">Produces content tied to marketplace motions. Turns execution insights into demand and sales enablement assets.</p>
+          </div>
+
+          <!-- 7. ROHITH -->
+          <div class="team-card">
+            <div class="tc-avatar-wrap" style="background:#1A2640;">R</div>
+            <h4 class="tc-name">Rohith</h4>
+            <span class="role-pill pill-dark">Video Editor & Videographer</span>
+            <p class="tc-bio">Captures and produces GTM content from field activity. Converts execution into visual proof and distribution assets.</p>
+          </div>
+
+        </div>
+
+        <!-- Right Arrow -->
+        <button class="carousel-btn next" aria-label="Scroll right">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wave-l2d"><svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:48px;display:block;width:100%;background:var(--light-100)"><path d="M0,0 C360,48 1080,48 1440,0 L1440,48 L0,48 Z" fill="#0A1628"/></svg></div>
+<section class="s-dark" style="background:linear-gradient(145deg,#0A1628,#0F1923);padding:var(--sp-10) 0">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:var(--sp-6)">
+      <h2 style="color:#fff">Not AWS-only. Not cloud-agnostic.<br/>Cloud-execution-native.</h2>
+      <p style="max-width:560px;margin:12px auto 0;font-size:17px;color:rgba(255,255,255,.7)">GTM motions across AWS, Azure, and GCP are fundamentally different. SaaSNova operates with execution depth across all three, not a primary cloud with two afterthoughts.</p>
+    </div>
+    <!-- Updated minmax to include min(100%, 300px) which prevents grid blowout on < 350px screens -->
+    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(min(100%, 300px), 1fr));gap:var(--sp-3)">
+      <div class="card-dark reveal delay-1" style="padding:var(--sp-4);border-radius:var(--r-xl);border-top:3px solid var(--aws)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+          <img src="images/aws-logo.png" alt="AWS" style="width:28px;height:28px;object-fit:contain;filter:brightness(0) invert(1);opacity:.8"/>
+          <div><div style="font-weight:700;font-size:15px;color:#fff">AWS Marketplace</div><div style="font-size:12px;color:rgba(255,255,255,.4)">Amazon Web Services</div></div>
+        </div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
+          <li class="check-item" style="color:rgba(255,255,255,.65)"><span class="check-dot check-dot-aws"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span>Marketplace Listing Activation</li>
+          <li class="check-item" style="color:rgba(255,255,255,.65)"><span class="check-dot check-dot-aws"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span>ISV Accelerate Activation</li>
+          <li class="check-item" style="color:rgba(255,255,255,.65)"><span class="check-dot check-dot-aws"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span>Field Relationship Building</li>
+        </ul>
+      </div>
+      <div class="card-dark reveal delay-2" style="padding:var(--sp-4);border-radius:var(--r-xl);border-top:3px solid var(--azure)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+          <img src="images/azure-logo.png" alt="Azure" style="width:28px;height:28px;object-fit:contain;opacity:.85"/>
+          <div><div style="font-weight:700;font-size:15px;color:#fff">Azure Marketplace</div><div style="font-size:12px;color:rgba(255,255,255,.4)">Microsoft Azure</div></div>
+        </div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
+          <li class="check-item" style="color:rgba(255,255,255,.65)"><span class="check-dot check-dot-azure"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span>Marketplace Listing Activation</li>
+          <li class="check-item" style="color:rgba(255,255,255,.65)"><span class="check-dot check-dot-azure"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span>Partner Program Navigation</li>
+          <li class="check-item" style="color:rgba(255,255,255,.65)"><span class="check-dot check-dot-azure"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span>Microsoft Field Engagement</li>
+        </ul>
+      </div>
+      <div class="card-dark reveal delay-3" style="padding:var(--sp-4);border-radius:var(--r-xl);border-top:3px solid var(--gcp)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+          <img src="images/gcp-logo.png" alt="GCP" style="width:28px;height:28px;object-fit:contain;opacity:.85"/>
+          <div><div style="font-weight:700;font-size:15px;color:#fff">GCP Marketplace</div><div style="font-size:12px;color:rgba(255,255,255,.4)">Google Cloud</div></div>
+        </div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:8px">
+          <li class="check-item" style="color:rgba(255,255,255,.65)"><span class="check-dot check-dot-gcp"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span>Partner Advantage Activation</li>
+          <li class="check-item" style="color:rgba(255,255,255,.65)"><span class="check-dot check-dot-gcp"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span>Google Cloud Field Enablement</li>
+          <li class="check-item" style="color:rgba(255,255,255,.65)"><span class="check-dot check-dot-gcp"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span>Pipeline Visibility</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="wave-d2w"><svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:48px;display:block;width:100%"><path d="M0,0 C360,48 1080,48 1440,0 L1440,48 L0,48 Z" fill="var(--light-100)"/></svg></div>
+
+<section style="background:linear-gradient(160deg,#F0F9FF 0%,#FFF8F2 100%);padding:var(--sp-8) 0">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:var(--sp-5)">
+      <span class="eyebrow reveal">Client Roster</span>
+      <h2 class="reveal delay-1" style="margin-top:8px">100+ ISVs activated.</h2>
+      <p class="reveal delay-2" style="max-width:480px;margin:10px auto 0;color:var(--text-muted)">Security, infrastructure, data, and SaaS categories, across AWS, Azure, and GCP.</p>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:9px;justify-content:center" class="reveal">
+      <span style="padding:6px 14px;border-radius:999px;background:#fff;border:1px solid var(--border-light);font-size:13px;font-weight:600;color:var(--text-secondary)">New Relic</span><span style="padding:6px 14px;border-radius:999px;background:#fff;border:1px solid var(--border-light);font-size:13px;font-weight:600;color:var(--text-secondary)">Druva</span><span style="padding:6px 14px;border-radius:999px;background:#fff;border:1px solid var(--border-light);font-size:13px;font-weight:600;color:var(--text-secondary)">Freshworks</span><span style="padding:6px 14px;border-radius:999px;background:#fff;border:1px solid var(--border-light);font-size:13px;font-weight:600;color:var(--text-secondary)">Postman</span><span style="padding:6px 14px;border-radius:999px;background:#fff;border:1px solid var(--border-light);font-size:13px;font-weight:600;color:var(--text-secondary)">HashiCorp</span><span style="padding:6px 14px;border-radius:999px;background:#fff;border:1px solid var(--border-light);font-size:13px;font-weight:600;color:var(--text-secondary)">Arctic Wolf</span><span style="padding:6px 14px;border-radius:999px;background:#fff;border:1px solid var(--border-light);font-size:13px;font-weight:600;color:var(--text-secondary)">Veracode</span><span style="padding:6px 14px;border-radius:999px;background:#fff;border:1px solid var(--border-light);font-size:13px;font-weight:600;color:var(--text-secondary)">Kore.ai</span><span style="padding:6px 14px;border-radius:999px;background:#fff;border:1px solid var(--border-light);font-size:13px;font-weight:600;color:var(--text-secondary)">Fastly</span><span style="padding:6px 14px;border-radius:999px;background:#fff;border:1px solid var(--border-light);font-size:13px;font-weight:600;color:var(--text-secondary)">BeyondTrust</span><span style="padding:6px 14px;border-radius:999px;background:#fff;border:1px solid var(--border-light);font-size:13px;font-weight:600;color:var(--text-secondary)">JamF</span><span style="padding:6px 14px;border-radius:999px;background:#fff;border:1px solid var(--border-light);font-size:13px;font-weight:600;color:var(--text-secondary)">ZoomInfo</span><span style="padding:6px 14px;border-radius:999px;background:#fff;border:1px solid var(--border-light);font-size:13px;font-weight:600;color:var(--text-secondary)">LiveRamp</span><span style="padding:6px 14px;border-radius:999px;background:#fff;border:1px solid var(--border-light);font-size:13px;font-weight:600;color:var(--text-secondary)">ClickHouse</span><span style="padding:6px 14px;border-radius:999px;background:#fff;border:1px solid var(--border-light);font-size:13px;font-weight:600;color:var(--text-secondary)">Denodo</span><span style="padding:6px 14px;border-radius:999px;background:#fff;border:1px solid var(--border-light);font-size:13px;font-weight:600;color:var(--text-secondary)">Dataminr</span><span style="padding:6px 14px;border-radius:999px;background:#fff;border:1px solid var(--border-light);font-size:13px;font-weight:600;color:var(--text-secondary)">Contrast Security</span><span style="padding:6px 14px;border-radius:999px;background:#fff;border:1px solid var(--border-light);font-size:13px;font-weight:600;color:var(--text-secondary)">AppViewX</span><span style="padding:6px 14px;border-radius:999px;background:#fff;border:1px solid var(--border-light);font-size:13px;font-weight:600;color:var(--text-secondary)">Flywheel.io</span><span style="padding:6px 14px;border-radius:999px;background:var(--light-200);border:1px solid var(--border-light);font-size:13px;font-weight:600;color:var(--text-muted)">+ 80 more</span>
+    </div>
+  </div>
+</section>
+
+<section class="animated-grad-bg" style="padding:72px 0;text-align:center">
+  <div class="container-sm">
+    <h2 class="reveal" style="color:#fff;margin-bottom:12px">Ready to work with the team that executes?</h2>
+    <!-- Updated CTA to wrap gracefully on mobile and use max-width -->
+    <a href="https://calendly.com/jen-saasnova/founder-strategy-session-scale-your-gtm-via-aws?month=2026-03" target="_blank" rel="noopener" style="padding:16px 24px;border-radius:999px;background:#fff;color:var(--blue);font-weight:800;font-size:16px;text-decoration:none;display:inline-block;max-width:100%;white-space:normal;line-height:1.4;box-sizing:border-box" class="reveal delay-1">Book a 30-min Execution Strategy Session</a>
+        <a href="contact.html"
+         style="padding:15px 27px;border-radius:999px;background:transparent;color:#fff;font-weight:700;font-size:15px;border:1.5px solid rgba(255,255,255,.4);text-decoration:none;display:inline-flex;align-items:center;justify-content:center;transition:background .2s"
+         onmouseover="this.style.background='rgba(255,255,255,.1)'" onmouseout="this.style.background='transparent'">
+        Send a Message
+      </a>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="shared.js"></script>
+<script>
+  // Team Carousel Auto-Scroll & Navigation Logic
+  document.addEventListener('DOMContentLoaded', () => {
+    const grid = document.getElementById('teamGrid');
+    const prevBtn = document.querySelector('.carousel-btn.prev');
+    const nextBtn = document.querySelector('.carousel-btn.next');
+    let autoScrollTimer;
+
+    if (grid) {
+      function getScrollAmount() {
+        if (window.innerWidth > 900) {
+          return grid.clientWidth;
+        }
+        const card = grid.querySelector('.team-card');
+        return card ? card.offsetWidth + 16 : 300; 
+      }
+
+      function scrollNext() {
+        const maxScrollLeft = grid.scrollWidth - grid.clientWidth;
+        if (grid.scrollLeft >= maxScrollLeft - 10) {
+          grid.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          grid.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+        }
+        resetTimer();
+      }
+
+      function scrollPrev() {
+        if (grid.scrollLeft <= 10) {
+          grid.scrollTo({ left: grid.scrollWidth, behavior: 'smooth' });
+        } else {
+          grid.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+        }
+        resetTimer();
+      }
+
+      function startTimer() {
+        autoScrollTimer = setInterval(scrollNext, 10000); // 10 seconds
+      }
+
+      function resetTimer() {
+        clearInterval(autoScrollTimer);
+        startTimer();
+      }
+
+      if (nextBtn) nextBtn.addEventListener('click', scrollNext);
+      if (prevBtn) prevBtn.addEventListener('click', scrollPrev);
+
+      grid.addEventListener('mouseenter', () => clearInterval(autoScrollTimer));
+      grid.addEventListener('mouseleave', startTimer);
+      grid.addEventListener('touchstart', () => clearInterval(autoScrollTimer), { passive: true });
+      grid.addEventListener('touchend', startTimer, { passive: true });
+
+      startTimer();
+    }
+  });
+</script>
+</body>
+</html>

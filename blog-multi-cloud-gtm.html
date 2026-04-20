@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" type="image/png" sizes="32x32" href="images/logo-favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/logo-favicon-16x16.png">
+<link rel="apple-touch-icon" href="images/logo-favicon-apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+<title>The Multi-Cloud GTM Playbook: AWS, Azure, and GCP in One Motion, SaaSNova Blog</title>
+<meta name="description" content="A structured framework for ISVs running co-sell across AWS, Azure, and GCP, without three separate programs, three separate pipelines, or three separate board reports."/>
+<meta property="og:title" content="The Multi-Cloud GTM Playbook: AWS, Azure, and GCP in One Coordinated Motion"/>
+<meta property="og:description" content="A structured framework for ISVs running co-sell across AWS, Azure, and GCP without three separate programs or three separate board reports."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://saasnova.ai/blog-multi-cloud-gtm"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="The Multi-Cloud GTM Playbook: AWS, Azure, and GCP in One Motion"/>
+<meta name="twitter:description" content="How to coordinate AWS, Azure, and GCP co-sell into a single board-ready narrative, from Jen Dawson at SaaSNova."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@700;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<section style="margin-top:64px;padding:var(--sp-12) 0;background:linear-gradient(135deg,#0A1000 0%,#0A1628 40%,#0D1F45 100%);position:relative;overflow:hidden;color:#fff">
+  <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 55% 65% at 75% 25%,rgba(0,139,248,.18) 0%,transparent 55%),radial-gradient(ellipse 40% 50% at 15% 75%,rgba(250,15,156,.1) 0%,transparent 50%)"></div>
+  <div class="container-sm" style="position:relative;z-index:2">
+    <a href="resources.html#blog" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:rgba(255,255,255,.5);margin-bottom:var(--sp-4);text-decoration:none">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 11L5 7l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      Back to Blog
+    </a>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:var(--sp-3)">
+      <span style="padding:4px 10px;border-radius:var(--r-full);background:rgba(241,153,83,.15);color:var(--orange);font-size:11px;font-weight:700">Multi-Cloud Strategy</span>
+      <span style="padding:4px 10px;border-radius:var(--r-full);background:rgba(241,153,83,.15);color:var(--orange);font-size:11px;font-weight:700">GTM Execution</span>
+    </div>
+    <h1 style="margin-bottom:var(--sp-3);color:#fff">The Multi-Cloud GTM Playbook: AWS, Azure, and GCP in One Coordinated Motion</h1>
+    <div style="display:flex;align-items:center;gap:var(--sp-2);flex-wrap:wrap">
+      <span style="font-size:14px;color:rgba(255,255,255,.5)">By Jen Dawson</span>
+      <span style="width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.25)"></span>
+      <span style="width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.25)"></span>
+      <span style="font-size:14px;color:rgba(255,255,255,.5)">March 2026</span>
+      <span style="width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.25)"></span>
+      <span style="font-size:14px;color:rgba(255,255,255,.5)">11 min read</span>
+      <span style="width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.25)"></span>
+      <span style="font-size:14px;color:rgba(255,255,255,.5)">AWS · Azure · GCP</span>
+    </div>
+  </div>
+</section>
+<div class="wave-d2w"><svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:48px;display:block;width:100%"><path d="M0,0 C360,48 1080,48 1440,0 L1440,48 L0,48 Z" fill="#fff"/></svg></div>
+
+<section style="background:linear-gradient(180deg,#FAFBFF 0%,#fff 20%);padding:var(--sp-8) 0">
+  <div class="container-xs">
+    <div class="blog-body">
+
+      <div class="callout">
+        <p>Most multi-cloud GTM approaches fail because ISVs treat each cloud as a separate program with separate teams, separate KPIs, and separate board reporting. This creates three times the operational overhead with none of the compounding benefit. There is a more effective structure, and it starts with treating the hyperscaler ecosystem as a single motion with three execution points.</p>
+      </div>
+
+      <h2>Why Multi-Cloud GTM Stalls</h2>
+      <p>The challenge ISVs face when expanding from one cloud to two or three is not technical, it is organizational. Each cloud marketplace has its own co-sell program mechanics, field team structure, and partner portal. Most ISVs assume this means three separate GTM programs, three separate alliance managers, and three separate reporting streams to the board.</p>
+      <p>That assumption produces a predictable result: the first cloud gets the majority of resource and attention, the second gets intermittent effort, and the third either gets dropped entirely or receives only a listing with no co-sell execution. Boards see fragmented, inconsistent activity across clouds and draw the logical conclusion that marketplace is not a reliable revenue channel.</p>
+      <p>The underlying error is treating multi-cloud as a scaling challenge when it is actually a coordination challenge. The three cloud programs, AWS ACE, Azure co-sell, and GCP Partner Advantage, run on different mechanics but share identical underlying logic: field teams respond to ISVs who are credible, relevant, and specific in their asks. That logic does not change per cloud. The execution layer that responds to it does.</p>
+
+      <h2>The Unified Multi-Cloud Framework</h2>
+      <p>A coordinated multi-cloud GTM motion operates from a single activation plan with three execution tracks, one per cloud, coordinated by shared customer intelligence, a unified field relationship strategy, and a single board reporting format.</p>
+
+      <div class="diagram">
+        <div style="font-weight:700;font-size:14px;margin-bottom:var(--sp-3);color:var(--text-primary)">Multi-Cloud GTM Architecture</div>
+        <div style="display:flex;flex-direction:column;gap:12px;max-width:560px;margin:0 auto">
+          <div style="padding:14px 18px;background:#fff;border-radius:10px;border:1px solid var(--border-light);text-align:left">
+            <div style="font-weight:700;font-size:13px;margin-bottom:4px;color:var(--text-primary)">Layer 1, Customer Intelligence</div>
+            <div style="font-size:12px;color:var(--text-muted)">Shared ICP, joint account map, buying signals, applies across all three clouds</div>
+          </div>
+          <div style="display:flex;justify-content:center;gap:var(--sp-2)">
+            <svg width="1" height="24" viewBox="0 0 1 24"><line x1=".5" y1="0" x2=".5" y2="24" stroke="var(--border)" stroke-dasharray="3 3"/></svg>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
+            <div style="padding:14px;background:#FFF8ED;border-radius:10px;border-top:2px solid var(--aws);text-align:center">
+              <div style="font-weight:700;font-size:12px;color:var(--aws);margin-bottom:4px">AWS Track</div>
+              <div style="font-size:11px;color:var(--text-muted)">ACE submissions, WinWires, PDM enablement</div>
+            </div>
+            <div style="padding:14px;background:#EEF6FF;border-radius:10px;border-top:2px solid var(--azure);text-align:center">
+              <div style="font-weight:700;font-size:12px;color:var(--azure);margin-bottom:4px">Azure Track</div>
+              <div style="font-size:11px;color:var(--text-muted)">Co-sell submissions, IP co-sell, Microsoft field</div>
+            </div>
+            <div style="padding:14px;background:#EDFFF4;border-radius:10px;border-top:2px solid var(--gcp);text-align:center">
+              <div style="font-weight:700;font-size:12px;color:var(--gcp);margin-bottom:4px">GCP Track</div>
+              <div style="font-size:11px;color:var(--text-muted)">Partner Advantage, Google field enablement</div>
+            </div>
+          </div>
+          <div style="display:flex;justify-content:center;gap:var(--sp-2)">
+            <svg width="1" height="24" viewBox="0 0 1 24"><line x1=".5" y1="0" x2=".5" y2="24" stroke="var(--border)" stroke-dasharray="3 3"/></svg>
+          </div>
+          <div style="padding:14px 18px;background:linear-gradient(135deg,rgba(0,139,248,.06),rgba(250,15,156,.06));border-radius:10px;border:1px solid var(--border-light);text-align:left">
+            <div style="font-weight:700;font-size:13px;margin-bottom:4px;color:var(--text-primary)">Layer 3, Board Output</div>
+            <div style="font-size:12px;color:var(--text-muted)">Single pipeline report across all clouds, named submissions, WinWires, revenue attribution</div>
+          </div>
+        </div>
+      </div>
+
+      <h2>Building the Shared Customer Intelligence Layer</h2>
+      <p>The first step in a coordinated multi-cloud GTM motion is building an ideal customer profile that applies across all three cloud programs. This is not three separate ICPs, it is one ICP with cloud-specific consumption indicators appended.</p>
+      <p>For example: a security ISV targeting mid-market financial services firms would identify the general buyer characteristics and then note which cloud services their target customers are most likely to be running on each cloud. AWS workloads in financial services skew toward data and analytics. Azure workloads often center on identity and compliance. GCP workloads increasingly appear in AI and data science functions. The same company may have footprints across all three, which means a single co-sell motion across all three can produce concurrent field engagement with the same prospect from three separate cloud partner directions.</p>
+      <p>That convergence, where multiple cloud field teams are simultaneously engaged on the same account, is one of the most powerful advantages of a coordinated multi-cloud approach. It is not possible when each cloud is run as a separate program with no shared customer intelligence.</p>
+
+      <h2>The Per-Cloud Execution Mechanics</h2>
+      <p>While the customer intelligence layer is shared, the execution mechanics on each cloud differ and must be respected. Applying an AWS ACE submission format directly to Azure co-sell or GCP Partner Advantage will produce poor results because the field team expectations and program requirements are different.</p>
+      <p>On AWS, the ACE program rewards specificity about AWS service involvement, cloud consumption impact, and the specific PDM relationship. WinWires are a primary trust signal and should be filed for every closed win that involved AWS services, regardless of how small the deal was.</p>
+      <p>On Azure, the co-sell program prioritizes IP co-sell status and deal registration. Microsoft field reps respond to ISVs who have achieved co-sell ready or Azure IP co-sell status, who register deals formally in the co-sell portal, and who engage in joint account planning with Microsoft sellers. The relationship dynamic is more structured than AWS and more responsive to formal program enrollment.</p>
+      <p>On GCP, the Partner Advantage program rewards ISVs who engage with Google Cloud field teams through formal enablement, who position their product as extending GCP-native services, and who participate in the Google Cloud Marketplace go-to-market programs. GCP field teams respond well to ISVs who can articulate specific data and AI consumption scenarios where their product extends what GCP already provides.</p>
+
+      <h2>Unified Field Enablement Across Clouds</h2>
+      <p>The most time-efficient component of a multi-cloud GTM motion is field enablement. A well-structured field enablement session, adapted for each cloud's field team context but built from the same core product and customer narrative, can run once per quarter per cloud with significant pipeline impact.</p>
+      <p>The session should cover three things: what the ISV's product does in plain business language, which customer profiles and use cases the field team should look for when co-selling, and what the specific co-sell ask is. That last element, the specific ask, is often missing from ISV-led enablement sessions and is the primary reason field teams leave without follow-through.</p>
+
+      <h2>Producing a Single Board Report Across All Clouds</h2>
+      <p>The defining output of a coordinated multi-cloud GTM motion is a single board pipeline report that consolidates co-sell activity, submissions, WinWires, and attributed revenue across AWS, Azure, and GCP into one document. This is the board-visible proof that cloud marketplace investment is producing a return, not on one cloud, but on the full hyperscaler ecosystem the ISV has invested in.</p>
+      <p>The format matters. A credible board pipeline report includes: the number of co-sell opportunities submitted per cloud and their current stage, the number of WinWires filed and their documented cloud involvement, field team relationship counts per cloud with named contacts, and a revenue attribution summary showing deals where cloud co-sell activity influenced the outcome. These elements can be produced from structured tracking of co-sell submissions across all three portals and do not require custom tooling.</p>
+
+      <h2>The Execution Takeaway</h2>
+      <p>Multi-cloud GTM does not require three times the effort if it is architected as a coordinated motion. Shared customer intelligence, per-cloud execution mechanics, unified field enablement, and a single board report format, these four components produce a multi-cloud GTM output that is more powerful than any single-cloud approach and more efficient than three separate programs.</p>
+      <p>The critical constraint is execution discipline: the co-sell submissions must actually be filed, the WinWires must actually be written, and the field enablement sessions must actually run. Frameworks without execution produce nothing. In cloud marketplace GTM, execution is the only variable that determines whether the investment produces board-visible pipeline.</p>
+
+    </div>
+
+    <div style="margin-top:var(--sp-8);padding:var(--sp-5);background:var(--light-100);border-radius:var(--r-2xl);border:1px solid var(--border-light);text-align:center">
+      <h3 style="margin-bottom:var(--sp-2)">SaaSNova runs multi-cloud GTM execution.</h3>
+      <p style="margin-bottom:var(--sp-3);max-width:480px;margin-left:auto;margin-right:auto">Every SaaSNova program covers listing setup, co-sell execution, and board reporting across your target cloud mix, AWS, Azure, GCP, or all three, in a single coordinated engagement.</p>
+      <a href="https://calendly.com/jen-saasnova/founder-strategy-session-scale-your-gtm-via-aws?month=2026-03" target="_blank" rel="noopener" class="btn btn-primary">Book a Discovery Call</a>
+    </div>
+
+    <div style="margin-top:var(--sp-6)">
+      <h3 style="margin-bottom:var(--sp-3)">Related Reading</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-2)">
+        <a href="blog-ace-submissions.html" class="card card-p-sm" style="text-decoration:none;color:inherit">
+          <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);display:block;margin-bottom:6px">AWS Co-Sell</span>
+          <div style="font-weight:600;font-size:14px">Why Your ACE Submissions Go Unanswered</div>
+        </a>
+        <a href="blog-board-proof.html" class="card card-p-sm" style="text-decoration:none;color:inherit">
+          <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--pink);display:block;margin-bottom:6px">Board Proof</span>
+          <div style="font-weight:600;font-size:14px">What Board-Ready Cloud GTM Proof Actually Looks Like</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="shared.js"></script>
+</body>
+</html>

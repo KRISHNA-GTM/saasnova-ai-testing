@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" type="image/png" sizes="32x32" href="images/logo-favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/logo-favicon-16x16.png">
+<link rel="apple-touch-icon" href="images/logo-favicon-apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+<title>ISV Accelerate: What It Actually Takes to Qualify, and Why Most ISVs Miss It, SaaSNova Blog</title>
+<meta name="description" content="A practitioner's breakdown of AWS ISV Accelerate eligibility, the real qualification criteria, the common disqualifiers, and the execution path that gets ISVs accepted and active."/>
+<meta property="og:title" content="ISV Accelerate: What It Actually Takes to Qualify, and Why Most ISVs Miss It"/>
+<meta property="og:description" content="A practitioner's breakdown of the real qualification criteria, common disqualifiers, and the execution path to ISV Accelerate acceptance."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://saasnova.ai/blog-isv-accelerate"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="ISV Accelerate: What It Actually Takes to Qualify"/>
+<meta name="twitter:description" content="From Jen Dawson at SaaSNova, the practitioner guide to qualifying for AWS ISV Accelerate."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@700;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<!-- BLOG HERO -->
+<section style="margin-top:64px;padding:var(--sp-12) 0;background:linear-gradient(135deg,#1A0800 0%,#0A1628 50%,#0D2B10 100%);position:relative;overflow:hidden;color:#fff">
+  <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 55% 65% at 75% 25%,rgba(0,139,248,.18) 0%,transparent 55%),radial-gradient(ellipse 40% 50% at 15% 75%,rgba(250,15,156,.1) 0%,transparent 50%)"></div>
+  <div class="container-sm" style="position:relative;z-index:2">
+    <a href="resources.html#blog" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:rgba(255,255,255,.5);margin-bottom:var(--sp-4);text-decoration:none">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 11L5 7l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      Back to Blog
+    </a>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:var(--sp-3)">
+      <span style="padding:4px 10px;border-radius:var(--r-full);background:rgba(255,153,0,.15);color:rgba(255,153,0,.9);font-size:11px;font-weight:700">AWS Marketplace</span>
+      <span style="padding:4px 10px;border-radius:var(--r-full);background:rgba(255,153,0,.15);color:rgba(255,153,0,.9);font-size:11px;font-weight:700">ISV Programs</span>
+    </div>
+    <h1 style="margin-bottom:var(--sp-3);color:#fff">ISV Accelerate: What It Actually Takes to Qualify, and Why Most ISVs Miss It</h1>
+    <div style="display:flex;align-items:center;gap:var(--sp-2);flex-wrap:wrap">
+      <span style="font-size:14px;color:rgba(255,255,255,.5)">By Jen Dawson</span>
+      <span style="width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.25)"></span>
+      <span style="width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.25)"></span>
+      <span style="font-size:14px;color:rgba(255,255,255,.5)">March 2026</span>
+      <span style="width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.25)"></span>
+      <span style="font-size:14px;color:rgba(255,255,255,.5)">10 min read</span>
+      <span style="width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.25)"></span>
+      <span style="font-size:14px;color:rgba(255,255,255,.5)">AWS</span>
+    </div>
+  </div>
+</section>
+<div class="wave-d2w"><svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:48px;display:block;width:100%"><path d="M0,0 C360,48 1080,48 1440,0 L1440,48 L0,48 Z" fill="#fff"/></svg></div>
+
+<!-- BLOG BODY -->
+<section style="background:linear-gradient(180deg,#FAFBFF 0%,#fff 20%);padding:var(--sp-8) 0">
+  <div class="container-xs">
+    <div class="blog-body">
+
+      <div class="callout">
+        <p>ISV Accelerate (formerly AWS ISV Accelerate Program) is one of the most strategically valuable programs AWS offers, and one of the most consistently misunderstood. Most ISVs either do not know they qualify, believe they qualify when they do not, or qualify on paper but fail to activate the benefits. This post covers all three scenarios with specifics.</p>
+      </div>
+
+      <h2>What ISV Accelerate Actually Is</h2>
+      <p>ISV Accelerate is a co-sell program for AWS Partners who have built software that runs on, integrates with, or is sold through AWS. Accepted ISVs receive direct support from AWS Partner Development Representatives (PDRs), co-selling motion support from AWS field teams, access to the AWS Marketplace co-sell program (ACE), and in certain cases co-marketing funding through the Market Development Funds (MDF) program.</p>
+      <p>The program is not open enrollment. AWS reviews applications and qualifies ISVs against a defined set of criteria. Not every listed ISV qualifies, and several of the criteria are routinely misread by ISV alliance teams.</p>
+
+      <h2>The Four Qualification Criteria AWS Evaluates</h2>
+      <p>AWS does not publish a single exhaustive checklist, but the criteria that consistently determine qualification outcomes are the following four. Each one carries disqualifying weight on its own.</p>
+
+      <h3>Criterion 1: A Software Product on the AWS Marketplace Listing</h3>
+      <p>This is the baseline requirement and the one most ISVs believe they have covered once they are listed. The nuance is in how AWS defines "a software product." A services listing, a consulting offer, or a professional services engagement does not qualify. The listing must be a self-contained software product that a buyer could evaluate, purchase, or trial without requiring custom implementation from the ISV.</p>
+      <p>ISVs who listed on AWS Marketplace to meet a procurement requirement, rather than to offer a genuine software product, frequently fail this criterion even with an active listing. AWS PDMs reviewing applications can distinguish between a substantive product listing and a placeholder listing within minutes.</p>
+
+      <h3>Criterion 2: An AWS-Native or AWS-Integrated Architecture</h3>
+      <p>The product must demonstrably run on AWS, integrate with AWS services, or deliver measurable AWS consumption. This is not a documentation requirement, AWS validates it. ISVs who have listed a product that runs entirely on their own infrastructure and merely sells through the AWS Marketplace without generating AWS workloads are routinely declined.</p>
+      <p>The specific AWS services involved matter. Products that extend Amazon S3, EC2, EKS, Lambda, or AWS security services (like GuardDuty, Security Hub, or IAM) are reviewed more favorably than products with thin or incidental AWS integration. The stronger the documented technical alignment between the product and AWS services, the stronger the qualification signal.</p>
+
+      <h3>Criterion 3: Active Co-Sell Engagement History or Readiness</h3>
+      <p>AWS evaluates whether the ISV has demonstrated genuine intent to run a co-sell motion, not just a listing. This means ISVs who have never filed an ACE opportunity, who have no PDM relationship, and who have made no contact with the AWS partner ecosystem are treated as higher-risk applicants regardless of product quality.</p>
+      <p>This criterion catches a large number of ISVs who assume that listing quality is the primary signal. AWS is evaluating whether the ISV is likely to be an active co-sell participant who will submit opportunities, file WinWires, engage with field teams, and generate attributed AWS revenue. ISVs who have never demonstrated any of these behaviors are harder to approve, because the program's value to AWS depends on the ISV becoming an active co-sell partner, not just a listed entity.</p>
+
+      <h3>Criterion 4: AWS Partner Network Tier Compliance</h3>
+      <p>ISV Accelerate requires active AWS Partner Network (APN) membership at the Select tier or above. ISVs who are registered APN partners but have not achieved Select tier, which requires a minimum number of certified AWS professionals on staff, cannot access ISV Accelerate regardless of listing quality or co-sell history.</p>
+      <p>This is the criterion most often overlooked because APN tier requirements involve internal HR and training decisions, not just marketing activities. ISVs who want ISV Accelerate access but are at the Registered tier need to plan for the certification investment required to advance to Select.</p>
+
+      <h2>The Three Most Common Disqualifiers in Practice</h2>
+      <p>After reviewing the ISV Accelerate status of 100+ ISV engagements, the disqualifiers that appear most often are not the obvious ones. They cluster around three patterns.</p>
+
+      <div class="diagram">
+        <div style="font-weight:700;font-size:14px;margin-bottom:var(--sp-3);color:var(--text-primary);text-align:left">Common ISV Accelerate Disqualifiers</div>
+        <div style="display:flex;flex-direction:column;gap:10px;max-width:580px;margin:0 auto;text-align:left">
+          <div style="padding:16px;background:#fff;border-radius:10px;border:1px solid var(--border-light);border-left:3px solid var(--pink)">
+            <div style="font-weight:700;font-size:13px;margin-bottom:4px;color:var(--text-primary)">Disqualifier 1: Services-heavy listing content</div>
+            <div style="font-size:12px;color:var(--text-muted)">Listing description reads as a professional services engagement rather than a software product. AWS reviewers identify this immediately. Fix: rewrite listing copy to emphasize product features, not deliverables.</div>
+          </div>
+          <div style="padding:16px;background:#fff;border-radius:10px;border:1px solid var(--border-light);border-left:3px solid var(--orange)">
+            <div style="font-weight:700;font-size:13px;margin-bottom:4px;color:var(--text-primary)">Disqualifier 2: No ACE history at application time</div>
+            <div style="font-size:12px;color:var(--text-muted)">Zero co-sell opportunity submissions signals that the ISV has not yet engaged with the co-sell program. Fix: file at least 2–3 ACE opportunities before submitting the ISV Accelerate application.</div>
+          </div>
+          <div style="padding:16px;background:#fff;border-radius:10px;border:1px solid var(--border-light);border-left:3px solid var(--blue)">
+            <div style="font-weight:700;font-size:13px;margin-bottom:4px;color:var(--text-primary)">Disqualifier 3: APN tier below Select</div>
+            <div style="font-size:12px;color:var(--text-muted)">Registered-tier APN partners cannot qualify regardless of other factors. Fix: plan the certification investment to advance to Select before applying.</div>
+          </div>
+        </div>
+      </div>
+
+      <h2>What Qualifying ISVs Actually Do Differently</h2>
+      <p>ISVs who consistently qualify for ISV Accelerate on first application share four behaviors that disqualified ISVs typically do not have in place before applying.</p>
+      <p>First, they have submitted ACE opportunities before applying. Even two or three submissions demonstrate program participation and signal intent to co-sell. The ISV Accelerate application is stronger when it follows a pattern of ACE activity rather than preceding it.</p>
+      <p>Second, they have a named AWS field contact. This does not need to be a PDM relationship, an introductory exchange with a field rep at an AWS event is sufficient. AWS looks for evidence that the ISV exists in the field team's awareness, not just in the marketplace portal.</p>
+      <p>Third, their listing describes a product, not a service. The listing content, title, description, feature bullets, use cases, must read as a software product with defined capabilities, not as a consulting engagement with scoped deliverables.</p>
+      <p>Fourth, they have AWS certifications on file that meet the Select tier threshold. This is a structural requirement that cannot be worked around. ISVs who have achieved Select tier before applying are straightforwardly eligible; those who have not are not.</p>
+
+      <h2>How to Close the Gap if You Are Not Currently Eligible</h2>
+      <p>ISVs who identify gaps across one or more of these criteria have a structured path to eligibility. The order of operations matters, attempting to apply before the gaps are closed wastes the application and creates a record of denial that can slow future applications.</p>
+      <p>Start with APN tier. If the ISV is at Registered tier, map the certification requirements for Select and build a 60–90 day plan to achieve it. AWS certification is a dependency; everything else can run concurrently.</p>
+      <p>In parallel, run three ACE submissions. These do not need to be large deals or highly developed co-sell opportunities. They need to demonstrate that the ISV understands the ACE format, has qualified deals to submit, and is engaging with the program. This creates a co-sell record that strengthens the application.</p>
+      <p>Rewrite the listing before applying. The listing content that reads as a services offering needs to be restructured around product features, use cases, and buyer outcomes. This typically requires a full listing content audit, not just copy adjustments.</p>
+      <p>Once all three are in order, Select tier achieved, ACE history established, listing product-focused, the ISV Accelerate application is substantially stronger and the review outcome is substantially more predictable.</p>
+
+      <h2>What Happens After You Are Accepted</h2>
+      <p>Acceptance into ISV Accelerate does not automatically produce co-sell pipeline. This is the error that accepted ISVs make most often: they treat acceptance as an outcome rather than as an access grant.</p>
+      <p>ISV Accelerate provides access to a PDR, to co-sell motion support, and to MDF consideration. None of these benefits activate themselves. The ISV must proactively engage the PDR, submit ACE opportunities consistently, file WinWires for closed wins, and run field enablement sessions to build the relationships that produce co-sell engagement from AWS field teams.</p>
+      <p>ISVs who accept the program benefits and then continue their pre-acceptance behavior, no submissions, no field engagement, no WinWires, see no measurable outcome from ISV Accelerate. The program is a co-sell amplifier, not a lead generation service. ISVs who are already running a co-sell motion get more out of it. ISVs who are not running a co-sell motion gain no measurable benefit from acceptance alone.</p>
+
+      <h2>ISV Accelerate on Azure and GCP</h2>
+      <p>Azure and GCP have equivalent co-sell program structures under different names. Microsoft's Azure co-sell program has its own co-sell readiness tiers, and GCP operates through Partner Advantage with dedicated co-sell status tiers. The underlying logic, qualify the product, demonstrate co-sell intent, earn access to field team support, applies identically across all three clouds.</p>
+      <p>ISVs who want co-sell program access on Azure should pursue co-sell ready status and IP co-sell status through Microsoft Partner Center. ISVs targeting GCP should work toward Partner Advantage co-sell status through the Google Cloud Partner program. The qualification requirements differ in their mechanics but not in their logic: AWS, Azure, and GCP all require ISVs to demonstrate product legitimacy and co-sell intent before granting access to their field teams.</p>
+
+      <h2>The Execution Takeaway</h2>
+      <p>ISV Accelerate is worth pursuing. The co-sell motion support, PDR access, and field team engagement it enables are genuine and measurable when an ISV enters the program already running co-sell activities.</p>
+      <p>The path to eligibility is straightforward for ISVs who understand the actual criteria: achieve Select APN tier, establish an ACE submission history, clean up the listing content, and apply. The path to outcomes after acceptance is equally straightforward: submit consistently, file WinWires, run field enablement, build PDM trust.</p>
+      <p>Neither the qualification nor the activation is complicated. Both require execution rather than documentation, and that is precisely where most ISVs stall.</p>
+
+    </div>
+
+    <!-- CTA -->
+    <div style="margin-top:var(--sp-8);padding:var(--sp-5);background:var(--light-100);border-radius:var(--r-2xl);border:1px solid var(--border-light);text-align:center">
+      <h3 style="margin-bottom:var(--sp-2)">SaaSNova handles ISV Accelerate activation for you.</h3>
+      <p style="margin-bottom:var(--sp-3);max-width:480px;margin-left:auto;margin-right:auto">From listing optimization to ACE submission history to field enablement, every SaaSNova program includes the activities that qualify ISVs for, and activate them within, ISV Accelerate and its Azure and GCP equivalents.</p>
+      <a href="https://calendly.com/jen-saasnova/founder-strategy-session-scale-your-gtm-via-aws?month=2026-03" target="_blank" rel="noopener" class="btn btn-primary">Book a Discovery Call</a>
+    </div>
+
+    <!-- Related -->
+    <div style="margin-top:var(--sp-6)">
+      <h3 style="margin-bottom:var(--sp-3)">Related Reading</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-2)">
+        <a href="blog-ace-submissions.html" class="card card-p-sm" style="text-decoration:none;color:inherit">
+          <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);display:block;margin-bottom:6px">AWS Co-Sell</span>
+          <div style="font-weight:600;font-size:14px">Why Your ACE Submissions Go Unanswered</div>
+        </a>
+        <a href="blog-board-proof.html" class="card card-p-sm" style="text-decoration:none;color:inherit">
+          <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--pink);display:block;margin-bottom:6px">Board Proof</span>
+          <div style="font-weight:600;font-size:14px">What Board-Ready Cloud GTM Proof Actually Looks Like</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="shared.js"></script>
+</body>
+</html>

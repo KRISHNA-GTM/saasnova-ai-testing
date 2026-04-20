@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="images/logo-favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/logo-favicon-16x16.png">
+<link rel="apple-touch-icon" href="images/logo-favicon-apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@700;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+<title>Webinars, SaaSNova | Cloud Marketplace GTM Sessions</title>
+<meta name="description" content="Live and recorded cloud marketplace GTM webinars from SaaSNova. Co-sell strategy, AWS, Azure, and GCP field motions, hosted by Jen Dawson."/>
+<style>
+/* ── WEBINARS HERO, warm orange-to-dark gradient ── */
+.web-hero {
+  margin-top:64px;padding:68px 0 52px;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#1A0800 0%,#0A1628 50%,#0D1F45 100%);
+}
+.web-hero::before {
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:
+    radial-gradient(ellipse 60% 70% at 90% 15%,rgba(241,153,83,.2) 0%,transparent 55%),
+    radial-gradient(ellipse 45% 55% at 5% 80%,rgba(0,139,248,.15) 0%,transparent 50%);
+}
+.web-hero-inner {
+  max-width:1200px;margin:0 auto;padding:0 24px;
+  display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;position:relative;z-index:2;
+}
+
+/* ── FILTER BAR ── */
+.web-filters {
+  background:linear-gradient(135deg,#FFF8F0,#FFF5FB);
+  border-bottom:1px solid var(--border-light);padding:14px 0;position:sticky;top:64px;z-index:50;
+}
+.web-filters-inner {
+  max-width:1200px;margin:0 auto;padding:0 24px;
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+}
+.web-filter-btn {
+  padding:7px 16px;border-radius:999px;font-size:13px;font-weight:600;
+  border:1.5px solid var(--border-light);background:rgba(255,255,255,.8);color:var(--text-muted);
+  cursor:pointer;transition:all .15s;font-family:inherit;
+}
+.web-filter-btn:hover{border-color:var(--orange);color:var(--orange);}
+.web-filter-btn.active{background:var(--orange);color:#fff;border-color:var(--orange);}
+
+/* ── FEATURED / LATEST ── */
+.web-featured {
+  background:#fff;padding:56px 0;border-bottom:1px solid var(--border-light);
+}
+.web-feat-card {
+  display:grid;grid-template-columns:1fr 1fr;gap:0;
+  background:var(--light-100);border:1px solid var(--border-light);border-radius:var(--r-2xl);
+  overflow:hidden;box-shadow:var(--shadow-md);
+}
+.web-feat-video {aspect-ratio:16/9;position:relative;background:var(--dark-900);overflow:hidden;}
+.web-feat-video iframe {position:absolute;inset:0;width:100%;height:100%;border:none;}
+.web-feat-body {padding:36px 32px;display:flex;flex-direction:column;justify-content:center;}
+
+/* ── EPISODE GRID ── */
+.web-grid-section {
+  background:linear-gradient(160deg,#FFF8F2 0%,#F5F0FF 100%);
+  padding:56px 0;
+}
+.web-grid {display:grid;grid-template-columns:repeat(3,1fr);gap:var(--sp-3);}
+.web-card {
+  background:#fff;border:1px solid var(--border-light);border-radius:var(--r-xl);
+  overflow:hidden;transition:all .22s;
+}
+.web-card:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(241,153,83,.12);border-color:rgba(241,153,83,.25);}
+.web-card-video {aspect-ratio:16/9;position:relative;background:var(--dark-900);overflow:hidden;}
+.web-card-video iframe {position:absolute;inset:0;width:100%;height:100%;border:none;}
+.web-card-body {padding:18px 20px;}
+.web-card-cat {font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.09em;margin-bottom:8px;}
+
+/* ── SUBSCRIBE SECTION ── */
+.web-sub {
+  background:linear-gradient(135deg,#0A1628,#1A0800);
+  padding:56px 0;text-align:center;position:relative;overflow:hidden;
+}
+.web-sub::before {
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 60% 60% at 50% 50%,rgba(241,153,83,.1) 0%,transparent 60%);
+}
+
+@media(max-width:1024px){.web-hero-inner{grid-template-columns:1fr;}.web-feat-card{grid-template-columns:1fr;}}
+@media(max-width:768px){.web-grid{grid-template-columns:1fr 1fr;}}
+@media(max-width:600px){.web-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<!-- HERO -->
+<section class="web-hero">
+  <div class="web-hero-inner">
+    <div>
+      <div class="eyebrow eyebrow-dark reveal" style="margin-bottom:14px">Live &amp; Recorded Sessions</div>
+      <h1 style="color:#fff;margin-bottom:14px" class="reveal delay-1">
+        Cloud GTM webinars.<br/>From the field.<br/><span style="background:linear-gradient(90deg,var(--orange),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">Not the slide deck.</span>
+      </h1>
+      <p style="font-size:17px;color:rgba(255,255,255,.62);line-height:1.8;max-width:440px;margin-bottom:24px" class="reveal delay-2">
+        Every session covers a specific, executable cloud GTM motion. No sponsorship. No filler. Hosted by Jen Dawson, the practitioner behind 100+ ISV activations across AWS, Azure, and GCP.
+      </p>
+      <div class="reveal delay-3" style="display:flex;gap:10px;flex-wrap:wrap">
+        <a href="https://www.youtube.com/@SaaSNova-jen" target="_blank" rel="noopener" class="btn btn-primary">Subscribe on YouTube</a>
+        <a href="newsletter" class="btn btn-outline-white">Get the Nova Brief</a>
+      </div>
+    </div>
+    <div class="reveal delay-2">
+      <div style="padding:24px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:var(--r-2xl)">
+        <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.35);margin-bottom:16px">What you'll learn</div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;gap:10px;align-items:flex-start">
+            <div style="width:28px;height:28px;border-radius:50%;background:rgba(241,153,83,.15);border:1px solid rgba(241,153,83,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">
+              <svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3 3L11 1" stroke="var(--orange)" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <span style="font-size:14px;color:rgba(255,255,255,.65)">Co-sell submission frameworks that cloud field teams actually respond to</span>
+          </div>
+          <div style="display:flex;gap:10px;align-items:flex-start">
+            <div style="width:28px;height:28px;border-radius:50%;background:rgba(241,153,83,.15);border:1px solid rgba(241,153,83,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">
+              <svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3 3L11 1" stroke="var(--orange)" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <span style="font-size:14px;color:rgba(255,255,255,.65)">How to run multi-cloud GTM without tripling headcount</span>
+          </div>
+          <div style="display:flex;gap:10px;align-items:flex-start">
+            <div style="width:28px;height:28px;border-radius:50%;background:rgba(241,153,83,.15);border:1px solid rgba(241,153,83,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">
+              <svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3 3L11 1" stroke="var(--orange)" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <span style="font-size:14px;color:rgba(255,255,255,.65)">What boards and investors actually want to see from cloud GTM</span>
+          </div>
+          <div style="display:flex;gap:10px;align-items:flex-start">
+            <div style="width:28px;height:28px;border-radius:50%;background:rgba(241,153,83,.15);border:1px solid rgba(241,153,83,.3);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px">
+              <svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5l3 3L11 1" stroke="var(--orange)" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <span style="font-size:14px;color:rgba(255,255,255,.65)">ISV Accelerate, Azure co-sell, and GCP Partner Advantage, demystified</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY FILTER -->
+<div class="web-filters">
+  <div class="web-filters-inner">
+    <button class="web-filter-btn active" onclick="filterWebinar(this,'all')">All Sessions</button>
+    <button class="web-filter-btn" onclick="filterWebinar(this,'aws')">AWS</button>
+    <button class="web-filter-btn" onclick="filterWebinar(this,'azure')">Azure</button>
+    <button class="web-filter-btn" onclick="filterWebinar(this,'gcp')">GCP</button>
+    <button class="web-filter-btn" onclick="filterWebinar(this,'multi')">Multi-Cloud</button>
+    <button class="web-filter-btn" onclick="filterWebinar(this,'board')">Board Proof</button>
+  </div>
+</div>
+
+<!-- FEATURED / LATEST SESSION -->
+<section class="web-featured">
+  <div class="container">
+    <div style="margin-bottom:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px">
+      <div>
+        <span class="eyebrow" style="color:var(--orange);margin-bottom:6px;display:block">Latest Session</span>
+        <h2 style="margin:0">Cloud GTM Execution, Why Most ISVs Stall</h2>
+      </div>
+      <a href="https://www.youtube.com/@SaaSNova-jen" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">View All on YouTube</a>
+    </div>
+    <div class="web-feat-card reveal">
+      <div class="web-feat-video">
+        <iframe src="https://www.youtube.com/embed/EN63uxhcn08" title="Cloud GTM Execution" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
+      </div>
+      <div class="web-feat-body">
+        <span style="padding:3px 10px;border-radius:var(--r-full);background:rgba(241,153,83,.1);color:var(--orange);font-size:11px;font-weight:700;display:inline-block;margin-bottom:14px">Multi-Cloud · Featured</span>
+        <h3 style="margin-bottom:12px">Cloud GTM Execution, Why Most ISVs Stall on Marketplace</h3>
+        <p style="font-size:15px;color:var(--text-secondary);line-height:1.75;margin-bottom:18px">Jen Dawson walks through the core execution gap that prevents ISVs from generating measurable co-sell pipeline on AWS, Azure, and GCP, and exactly what it takes to close it.</p>
+        <div style="display:flex;align-items:center;gap:10px">
+          <img src="images/jen-dp.jpg" alt="Jen Dawson" style="width:36px;height:36px;border-radius:50%;object-fit:cover;object-position:top"/>
+          <div>
+            <div style="font-weight:600;font-size:14px">Jen Dawson</div>
+            <div style="font-size:12px;color:var(--text-muted)">Founder &amp; CEO · SaaSNova</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SESSION GRID -->
+<section class="web-grid-section">
+  <div class="container">
+    <h2 style="margin-bottom:var(--sp-4)" class="reveal">All Sessions</h2>
+    <div class="web-grid">
+
+      <div class="web-card reveal delay-1" data-cat="aws">
+        <div class="web-card-video">
+          <iframe src="https://www.youtube.com/embed/rdTY8zhLqPA" title="Co-Sell Submissions" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="web-card-body">
+          <div class="web-card-cat" style="color:var(--aws)">AWS Co-Sell</div>
+          <h4 style="font-size:15px;margin-bottom:8px;line-height:1.4">Co-Sell Submissions That Cloud Partners Actually Respond To</h4>
+          <p class="text-sm" style="color:var(--text-muted);line-height:1.6">The language, structure, and relationship context behind submissions that get field team engagement, not silence.</p>
+        </div>
+      </div>
+
+      <div class="web-card reveal delay-2" data-cat="multi">
+        <div class="web-card-video">
+          <iframe src="https://www.youtube.com/embed/htHzhWLdVcA" title="Multi-Cloud GTM" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="web-card-body">
+          <div class="web-card-cat" style="color:var(--azure)">Multi-Cloud</div>
+          <h4 style="font-size:15px;margin-bottom:8px;line-height:1.4">Running Multi-Cloud GTM Without Three Separate Programs</h4>
+          <p class="text-sm" style="color:var(--text-muted);line-height:1.6">How ISVs coordinate AWS, Azure, and GCP co-sell motions into a single board-ready narrative without duplicating effort.</p>
+        </div>
+      </div>
+
+      <div class="web-card reveal delay-3" data-cat="board">
+        <div class="web-card-video">
+          <iframe src="https://www.youtube.com/embed/0FrVn0tB8zs" title="Board-Ready Pipeline Proof" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="web-card-body">
+          <div class="web-card-cat" style="color:var(--pink)">Board Proof</div>
+          <h4 style="font-size:15px;margin-bottom:8px;line-height:1.4">What Boards Actually Want to See from Cloud Marketplace GTM</h4>
+          <p class="text-sm" style="color:var(--text-muted);line-height:1.6">The difference between activity reporting and board-visible proof, and what investors specifically look for.</p>
+        </div>
+      </div>
+
+      <div class="web-card reveal delay-1" data-cat="aws">
+        <div class="web-card-video">
+          <iframe src="https://www.youtube.com/embed/JcOlFRFdY8U" title="ISV Programs" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
+        </div>
+        <div class="web-card-body">
+          <div class="web-card-cat" style="color:var(--gcp)">All Clouds</div>
+          <h4 style="font-size:15px;margin-bottom:8px;line-height:1.4">ISV Accelerate, Azure Co-Sell, and GCP Partner Advantage Explained</h4>
+          <p class="text-sm" style="color:var(--text-muted);line-height:1.6">A practitioner walkthrough of all three major cloud co-sell programs, where ISVs leave value on the table.</p>
+        </div>
+      </div>
+
+      <!-- Newsletter capture card -->
+      <div class="web-card reveal delay-2" style="border:2px dashed var(--border-light);background:linear-gradient(135deg,#FFF8F0,#FFF0F7)">
+        <div style="padding:32px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:280px">
+          <div class="icon-wrap icon-orange" style="margin-bottom:16px">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="1.5" y="4" width="17" height="12" rx="2" stroke="currentColor" stroke-width="1.5" fill="none"/><path d="M1.5 7l8.5 5 8.5-5" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <h3 style="font-size:17px;margin-bottom:8px">Get episode alerts</h3>
+          <p class="text-sm" style="color:var(--text-muted);margin-bottom:16px;max-width:200px;line-height:1.65">New sessions every month. Subscribe to The Nova Brief to never miss one.</p>
+          <a href="newsletter" class="btn btn-primary btn-sm">Subscribe Free</a>
+        </div>
+      </div>
+
+      <!-- YouTube subscribe card -->
+      <div class="web-card reveal delay-3" style="border:2px dashed var(--border-light);background:linear-gradient(135deg,#F5F0FF,#EBF5FF)">
+        <div style="padding:32px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:280px">
+          <div style="width:48px;height:48px;border-radius:50%;background:rgba(255,0,0,.1);border:1.5px solid rgba(255,0,0,.2);display:flex;align-items:center;justify-content:center;margin-bottom:16px">
+            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="#ff0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </div>
+          <h3 style="font-size:17px;margin-bottom:8px">Subscribe on YouTube</h3>
+          <p class="text-sm" style="color:var(--text-muted);margin-bottom:16px;max-width:200px;line-height:1.65">All episodes available free on the SaaSNova YouTube channel.</p>
+          <a href="https://www.youtube.com/@SaaSNova-jen" target="_blank" rel="noopener" class="btn btn-secondary btn-sm">Go to YouTube</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SUBSCRIBE / CTA -->
+<section class="web-sub">
+  <div class="container-sm" style="position:relative">
+    <span class="eyebrow" style="color:rgba(241,153,83,.7);margin-bottom:12px;display:block">Never Miss a Session</span>
+    <h2 style="color:#fff;margin-bottom:12px">New cloud GTM sessions<br/>every month.</h2>
+    <p style="color:rgba(255,255,255,.62);font-size:17px;max-width:440px;margin:0 auto 28px">Subscribe to The Nova Brief, get episode drops, session takeaways, and co-sell tactics in your inbox.</p>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
+      <a href="newsletter" class="btn btn-primary">Subscribe to The Nova Brief</a>
+      <a href="https://www.youtube.com/@SaaSNova-jen" target="_blank" rel="noopener" class="btn btn-outline-white">Follow on YouTube</a>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="shared.js"></script>
+<script>
+function filterWebinar(btn, cat) {
+  document.querySelectorAll('.web-filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.web-card[data-cat]').forEach(card => {
+    const cats = card.dataset.cat ? card.dataset.cat.split(' ') : [];
+    card.style.display = (cat === 'all' || cats.includes(cat)) ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>

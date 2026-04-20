@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="images/logo-favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/logo-favicon-16x16.png">
+<link rel="apple-touch-icon" href="images/logo-favicon-apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@700;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+<title>SaaSNova Services, Cloud Marketplace GTM Execution</title>
+<meta name="description" content="Three cloud marketplace GTM services for SaaS ISVs: Ignite, SuperNova, and NovaX. Customized to your cloud mix, listing status, and internal readiness. AWS, Azure, GCP."/>
+
+<style>
+  /* ── CUSTOM SCROLLBAR (Overrides Windows 11 pop-in behavior) ── */
+  ::-webkit-scrollbar {
+    width: 12px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F8FAFC; 
+    border-left: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #cbd5e1; 
+    border-radius: 8px;
+    border: 3px solid #F8FAFC; /* Creates a padding effect around the thumb */
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: #94a3b8; 
+  }
+  /* Firefox Fallback */
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 #F8FAFC;
+  }
+
+  /* ── AGGRESSIVE MOBILE OVERFLOW & CUT-OFF FIXES ── */
+  *, *::before, *::after { box-sizing: border-box !important; }
+  html, body { overflow-x: hidden !important; width: 100%; position: relative; margin: 0; padding: 0; }
+  
+  /* Fix Grid/Flex blowouts on narrow screens */
+  .container { width: 100% !important; max-width: 1200px; margin: 0 auto; padding: 0 20px !important; overflow-x: hidden !important; }
+  .container-sm { width: 100% !important; max-width: 800px; margin: 0 auto; padding: 0 20px !important; overflow-x: hidden !important; }
+  .program-row, .program-row > div { min-width: 0 !important; max-width: 100% !important; }
+  
+  /* Responsive typography fallbacks */
+  h1 { font-size: clamp(32px, 8vw, 56px) !important; line-height: 1.2 !important; }
+  h2 { font-size: clamp(28px, 6vw, 40px) !important; line-height: 1.3 !important; }
+
+  /* ── FIX TEXT CUTTING OFF IN CARDS (Checklists) ── */
+  .card { 
+    width: 100% !important; 
+    max-width: 100% !important; 
+    overflow-wrap: break-word !important; 
+    box-sizing: border-box !important;
+  }
+  .check-list {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .check-item { 
+    display: flex !important; 
+    align-items: flex-start !important; 
+    gap: 12px !important; 
+    white-space: normal !important; 
+    word-break: break-word !important;
+    overflow-wrap: break-word !important; 
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-right: 8px !important; /* Safety padding to keep text off the exact edge */
+  }
+  .check-dot { 
+    flex-shrink: 0 !important; 
+    min-width: 16px !important; /* Keep the icon from shrinking away */
+    margin-top: 4px; /* Align dot with the first line of wrapped text */
+  }
+
+  /* ── FIX BUTTON OVERFLOW ON NARROW SCREENS ── */
+  .deep-dive-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 100%;
+    padding: 14px 24px;
+    border-radius: 8px; /* Assuming standard rounded corners */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+    white-space: normal !important; /* Forces text to wrap instead of overflowing */
+    word-break: break-word;
+    line-height: 1.4;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  .deep-dive-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+  }
+
+  /* Ultra-narrow phone safety (Galaxy Z Fold sizes ~280-360px) */
+  @media (max-width: 400px) {
+    .card { padding: 24px 20px !important; }
+    .container, .container-sm { padding: 0 16px !important; }
+    .check-item { gap: 10px !important; font-size: 14px !important; }
+    .deep-dive-btn { padding: 12px 16px !important; font-size: 14px !important; } /* Shrinks padding for extra room */
+  }
+
+  /* ── PROGRAM COMPARISON MATRIX CSS ── */
+  .matrix-wrapper { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-bottom: 20px; padding-bottom: 16px; }
+  .matrix-table { width: 100%; min-width: 800px; border-collapse: separate; border-spacing: 0; background: #fff; border-radius: 16px; border: 1px solid var(--border-light); overflow: hidden; box-shadow: 0 8px 32px rgba(0,0,0,0.03); }
+  .matrix-th { padding: 24px 20px; text-align: left; background: var(--light-50); font-size: 18px; font-weight: 800; border-bottom: 2px solid var(--border-light); }
+  .matrix-th.col-label { width: 22%; background: #fff; color: var(--text-primary); }
+  .matrix-th.col-ignite { width: 26%; color: var(--blue); border-left: 1px solid rgba(0,139,248,0.15); border-right: 1px solid rgba(0,139,248,0.15); background: rgba(0,139,248,0.04); }
+  .matrix-th.col-supernova { width: 26%; color: var(--orange); border-right: 1px solid rgba(241,153,83,0.15); background: rgba(241,153,83,0.04); }
+  .matrix-th.col-novax { width: 26%; color: var(--pink); border-right: 1px solid rgba(250,15,156,0.15); background: rgba(250,15,156,0.04); }
+  
+  .matrix-td { padding: 18px 20px; font-size: 14px; color: var(--text-secondary); border-bottom: 1px solid var(--border-light); vertical-align: top; line-height: 1.6; }
+  .matrix-tr:last-child .matrix-td { border-bottom: none; }
+  .matrix-td.col-label { font-weight: 700; color: var(--text-primary); background: #fff; }
+  .matrix-td.col-ignite { border-left: 1px solid rgba(0,139,248,0.15); border-right: 1px solid rgba(0,139,248,0.15); background: rgba(0,139,248,0.015); }
+  .matrix-td.col-supernova { border-right: 1px solid rgba(241,153,83,0.15); background: rgba(241,153,83,0.015); }
+  .matrix-td.col-novax { border-right: 1px solid rgba(250,15,156,0.15); background: rgba(250,15,156,0.015); }
+
+  /* ── FAQ ANIMATION FAILSAFE CSS ── */
+  .faq-body.faq-body-dark {
+    display: block !important; /* Overrides any display:none from style.css */
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease, padding-top 0.3s ease;
+    padding-top: 0;
+  }
+  .faq-item.active .faq-body.faq-body-dark {
+    opacity: 1;
+  }
+  .faq-icon-dark {
+    transition: transform 0.3s ease;
+  }
+
+  /* Smooth scrolling for anchor links */
+  html { scroll-behavior: smooth; }
+
+  /* ── RESPONSIVE FIXES FOR MOBILE/TABLET ── */
+  @media (max-width: 992px) {
+    /* Stacks the Gateway sections on mobile/tablet so they don't squish */
+    .program-row {
+      grid-template-columns: 1fr !important;
+      gap: 32px !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    /* Transforms the Matrix Table into stacked cards on mobile */
+    .matrix-wrapper { overflow-x: hidden; margin-bottom: 0; padding-bottom: 0; width: 100%; }
+    .matrix-table { min-width: 100%; display: block; background: transparent; border: none; box-shadow: none; }
+    .matrix-table thead { display: none; }
+    .matrix-table tbody, .matrix-table tr { display: block; width: 100%; }
+    
+    .matrix-tr { 
+      background: #fff; 
+      margin-bottom: 24px; 
+      border-radius: 12px; 
+      border: 1px solid var(--border-light); 
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03); 
+      overflow: hidden; 
+    }
+    
+    .matrix-td { 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: flex-start; /* Changed to start so multiline text wraps cleanly */
+      padding: 14px 16px; 
+      border-bottom: 1px solid var(--border-light); 
+      text-align: right; 
+      gap: 16px; 
+      word-break: break-word; /* Prevents overflow from long text */
+    }
+    .matrix-td:last-child { border-bottom: none; }
+    
+    .matrix-td.col-label { 
+      background: #F8FAFC; 
+      justify-content: flex-start; 
+      text-align: left; 
+      font-size: 16px; 
+      border-bottom: 2px solid var(--border-light); 
+    }
+    
+    /* Adds program labels back into the row for mobile */
+    .matrix-td.col-ignite::before { content: "Ignite"; font-weight: 700; color: var(--blue); flex-shrink: 0; }
+    .matrix-td.col-supernova::before { content: "SuperNova"; font-weight: 700; color: var(--orange); flex-shrink: 0; }
+    .matrix-td.col-novax::before { content: "NovaX"; font-weight: 700; color: var(--pink); flex-shrink: 0; }
+    
+    .matrix-td.col-ignite, .matrix-td.col-supernova, .matrix-td.col-novax { 
+      border-left: none; 
+      border-right: none; 
+      background: #fff; 
+    }
+  }
+</style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<!-- HERO -->
+<section style="margin-top:64px;padding:var(--sp-16) 0 var(--sp-10);position:relative;overflow:hidden;background:linear-gradient(135deg,#0A1628 0%,#0D1F45 45%,#1A0A2E 100%);color:#fff">
+  <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 70% at 90% 20%,rgba(0,139,248,.2) 0%,transparent 55%),radial-gradient(ellipse 40% 50% at 5% 80%,rgba(250,15,156,.12) 0%,transparent 50%)"></div>
+  <div class="container-sm text-center" style="position:relative">
+    <span class="eyebrow eyebrow-dark reveal">SaaSNova Services</span>
+    <h1 class="reveal delay-1" style="margin-top:var(--sp-1);color:#ffffff; text-wrap: balance;">Choose where you are. Execution is adjusted to your starting point.</h1>
+    <p class="reveal delay-2 mt-3" style="margin:var(--sp-2) auto 0;font-size:18px;color:rgba(255,255,255,.65);max-width:560px">All services are customized based on your cloud mix, listing status, and internal readiness. Three starting points. One execution standard.</p>
+    <div class="flex-gap-2 flex-center reveal delay-3" style="margin-top:var(--sp-4)">
+      <a href="https://calendly.com/jen-saasnova/founder-strategy-session-scale-your-gtm-via-aws?month=2026-03" target="_blank" rel="noopener" class="btn btn-primary">Book a Discovery Call</a>
+      <a href="#compare-matrix" class="btn btn-outline-white">View Services Matrix</a>
+    </div>
+  </div>
+</section>
+<div class="wave-d2w"><svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:48px;display:block;width:100%"><path d="M0,0 C360,48 1080,48 1440,0 L1440,48 L0,48 Z" fill="#F8FAFC"/></svg></div>
+
+<!-- SERVICE QUICK COMPARE (TL;DR) -->
+<section style="background:#F8FAFC; padding: 40px 0; border-bottom:1px solid var(--border-light);">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:32px">
+        <h3 class="reveal" style="font-size:20px; font-weight:800; color:var(--text-primary); margin-bottom:8px;">Service Comparison at a Glance</h3>
+        <p class="reveal delay-1" style="font-size:14px; color:var(--text-secondary);">Quickly compare services to find the right fit for your current GTM stage.</p>
+    </div>
+    <div class="reveal delay-2" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:16px;">
+        <!-- Ignite TLDR -->
+        <div style="background:#fff; border-radius:12px; padding:24px; border:1px solid rgba(0,139,248,0.2); box-shadow:0 8px 24px rgba(0,139,248,0.06); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
+            <div style="font-weight:800; font-size:20px; color:var(--blue); margin-bottom:16px; display:flex; justify-content:space-between; align-items:center;">
+              Ignite <span style="font-size:11px; padding:4px 8px; background:rgba(0,139,248,0.1); border-radius:100px;">3 Mo</span>
+            </div>
+            <div style="font-size:13px; font-weight:700; color:var(--text-primary); margin-bottom:6px;">Target Stage: <span style="font-weight:500; color:var(--text-secondary);">Pre-Series A → Series A</span></div>
+            <div style="font-size:13px; font-weight:700; color:var(--text-primary); margin-bottom:6px;">Core Focus: <span style="font-weight:500; color:var(--text-secondary);">First Attributable Revenue</span></div>
+            <div style="font-size:13px; font-weight:700; color:var(--text-primary); margin-bottom:20px;">Cloud Mix: <span style="font-weight:500; color:var(--text-secondary);">Any Cloud (AWS, Azure, GCP)</span></div>
+            <a href="#ignite" style="font-size:13px; font-weight:700; color:var(--blue); text-decoration:none; display:inline-flex; align-items:center; gap:4px;">Jump to details <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M7 3v8M3 7l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <!-- SuperNova TLDR -->
+        <div style="background:#fff; border-radius:12px; padding:24px; border:1px solid rgba(241,153,83,0.2); box-shadow:0 8px 24px rgba(241,153,83,0.06); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
+            <div style="font-weight:800; font-size:20px; color:var(--orange); margin-bottom:16px; display:flex; justify-content:space-between; align-items:center;">
+              SuperNova <span style="font-size:11px; padding:4px 8px; background:rgba(241,153,83,0.1); border-radius:100px;">4 Mo</span>
+            </div>
+            <div style="font-size:13px; font-weight:700; color:var(--text-primary); margin-bottom:6px;">Target Stage: <span style="font-weight:500; color:var(--text-secondary);">Series A → Series B</span></div>
+            <div style="font-size:13px; font-weight:700; color:var(--text-primary); margin-bottom:6px;">Core Focus: <span style="font-weight:500; color:var(--text-secondary);">US Market Entry / Growth</span></div>
+            <div style="font-size:13px; font-weight:700; color:var(--text-primary); margin-bottom:20px;">Cloud Mix: <span style="font-weight:500; color:var(--text-secondary);">Any Cloud (AWS, Azure, GCP)</span></div>
+            <a href="#supernova" style="font-size:13px; font-weight:700; color:var(--orange); text-decoration:none; display:inline-flex; align-items:center; gap:4px;">Jump to details <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M7 3v8M3 7l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+        <!-- NovaX TLDR -->
+        <div style="background:#fff; border-radius:12px; padding:24px; border:1px solid rgba(250,15,156,0.2); box-shadow:0 8px 24px rgba(250,15,156,0.06); transition:transform 0.2s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='none'">
+            <div style="font-weight:800; font-size:20px; color:var(--pink); margin-bottom:16px; display:flex; justify-content:space-between; align-items:center;">
+              NovaX <span style="font-size:11px; padding:4px 8px; background:rgba(250,15,156,0.1); border-radius:100px;">6 Mo</span>
+            </div>
+            <div style="font-size:13px; font-weight:700; color:var(--text-primary); margin-bottom:6px;">Target Stage: <span style="font-weight:500; color:var(--text-secondary);">Series B → Series C</span></div>
+            <div style="font-size:13px; font-weight:700; color:var(--text-primary); margin-bottom:6px;">Core Focus: <span style="font-weight:500; color:var(--text-secondary);">Global Scale</span></div>
+            <div style="font-size:13px; font-weight:700; color:var(--text-primary); margin-bottom:20px;">Cloud Mix: <span style="font-weight:500; color:var(--text-secondary);">Any Cloud (AWS, Azure, GCP)</span></div>
+            <a href="#novax" style="font-size:13px; font-weight:700; color:var(--pink); text-decoration:none; display:inline-flex; align-items:center; gap:4px;">Jump to details <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M7 3v8M3 7l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- SERVICES GATEWAY -->
+<section style="background:#fff;padding:var(--sp-8) 0">
+  <div class="container">
+
+    <!-- IGNITE -->
+    <div id="ignite" class="program-row" style="display:grid;grid-template-columns:1fr 1.1fr;gap:var(--sp-8);align-items:center;padding:var(--sp-8) 0;border-bottom:1px solid var(--border-light)">
+      
+      <!-- IGNITE LEFT (Description & Ideal Stage) -->
+      <div class="reveal">
+        <h2 style="margin-bottom:var(--sp-2)">SaaSNova Ignite</h2>
+        <p style="margin-bottom:var(--sp-4);font-size:17px;color:var(--text-secondary);line-height:1.6;">For ISVs launching, relaunching, or proving first attributable cloud revenue. <strong>(3 Months)</strong></p>
+        
+        <div class="card card-p card-accent-blue">
+          <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:var(--sp-3)">Ideal Stage &amp; Fit</div>
+          <ul class="check-list" style="display:flex;flex-direction:column;gap:12px;">
+            <li class="check-item"><span class="check-dot"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span>Pre‑Series A &rarr; Series A</li>
+            <li class="check-item"><span class="check-dot"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span>ISVs establishing their first cloud‑attributable traction</li>
+            <li class="check-item"><span class="check-dot"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span>Teams looking to prove first attributable cloud revenue before scaling</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- IGNITE RIGHT (Pitch Card) -->
+      <div class="reveal delay-2">
+        <div style="padding:var(--sp-5);background:#fff;border-radius:var(--r-xl);border:1px solid var(--border-light);box-shadow:0 12px 32px rgba(0,0,0,0.03);display:flex;flex-direction:column;justify-content:center;height:100%;">
+          <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:16px">The Goal</div>
+          <h3 style="font-size:24px;margin-bottom:16px;line-height:1.3;color:var(--text-primary);">Establish your foundation and prove cloud viability.</h3>
+          <p style="font-size:16px;color:var(--text-secondary);line-height:1.7;margin-bottom:32px">Ignite bridges the gap between a dormant marketplace listing and active co-sell pipeline. We establish the foundational hygiene, validate your first opportunities, and produce the investor-ready evidence needed to prove cloud GTM viability.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:auto;">
+            <!-- Fixed overflowing button with deep-dive-btn class -->
+            <a href="ignite.html" class="deep-dive-btn" style="color:var(--blue);background:rgba(0,139,248,0.1);">Explore Ignite Deep Dive &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUPERNOVA -->
+    <div id="supernova" class="program-row" style="display:grid;grid-template-columns:1fr 1.1fr;gap:var(--sp-8);align-items:center;padding:var(--sp-8) 0;border-bottom:1px solid var(--border-light)">
+      
+      <!-- SUPERNOVA LEFT -->
+      <div class="reveal">
+        <div style="margin-bottom:var(--sp-2)">
+          <span style="padding:3px 10px;border-radius:var(--r-full);background:var(--blue);color:#fff;font-size:10px;font-weight:700">MOST POPULAR</span>
+        </div>
+        <h2 style="margin-bottom:var(--sp-2)">SaaSNova SuperNova</h2>
+        <p style="margin-bottom:var(--sp-4);font-size:17px;color:var(--text-secondary);line-height:1.6;">Designed for APAC and EMEA ISVs entering the US market with cloud‑attributed revenue goals. <strong>(4 Months)</strong></p>
+        
+        <div class="card card-p card-accent-orange">
+          <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--orange);margin-bottom:var(--sp-3)">Ideal Stage &amp; Fit</div>
+          <ul class="check-list" style="display:flex;flex-direction:column;gap:12px;">
+            <li class="check-item"><span class="check-dot" style="background:var(--orange)"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span>Series A &rarr; Series B</li>
+            <li class="check-item"><span class="check-dot" style="background:var(--orange)"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span>Global ISVs entering or expanding in the US market</li>
+            <li class="check-item"><span class="check-dot" style="background:var(--orange)"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span>ISVs proving US traction and cloud-validated revenue</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- SUPERNOVA RIGHT (Pitch Card) -->
+      <div class="reveal delay-2">
+        <div style="padding:var(--sp-5);background:#fff;border-radius:var(--r-xl);border:1px solid var(--border-light);box-shadow:0 12px 32px rgba(0,0,0,0.03);display:flex;flex-direction:column;justify-content:center;height:100%;">
+          <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--orange);margin-bottom:16px">The Goal</div>
+          <h3 style="font-size:24px;margin-bottom:16px;line-height:1.3;color:var(--text-primary);">Penetrate the US market with cloud-attributed revenue.</h3>
+          <p style="font-size:16px;color:var(--text-secondary);line-height:1.7;margin-bottom:32px">Designed specifically for international ISVs breaking into the US market. We navigate the complexities of US channel partners, drive targeted field engagement, and build the attribution models necessary to secure your US foothold.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:auto;">
+            <!-- Fixed overflowing button with deep-dive-btn class -->
+            <a href="supernova.html" class="deep-dive-btn" style="color:var(--orange);background:rgba(241,153,83,0.1);">Explore SuperNova Deep Dive &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NOVAX -->
+    <div id="novax" class="program-row" style="display:grid;grid-template-columns:1fr 1.1fr;gap:var(--sp-8);align-items:center;padding:var(--sp-8) 0">
+      
+      <!-- NOVAX LEFT -->
+      <div class="reveal">
+        <h2 style="margin-bottom:var(--sp-2)">SaaSNova NovaX</h2>
+        <p style="margin-bottom:var(--sp-4);font-size:17px;color:var(--text-secondary);line-height:1.6;">For ISVs expanding beyond early traction into repeatable, attributable revenue across one or multiple clouds. <strong>(6 Months)</strong></p>
+        
+        <div class="card card-p card-accent-pink">
+          <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--pink);margin-bottom:var(--sp-3)">Ideal Stage &amp; Fit</div>
+          <ul class="check-list" style="display:flex;flex-direction:column;gap:12px;">
+            <li class="check-item"><span class="check-dot" style="background:var(--pink)"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span>Series A &rarr; Series C</li>
+            <li class="check-item"><span class="check-dot" style="background:var(--pink)"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span>ISVs scaling their global footprint across any cloud</li>
+            <li class="check-item"><span class="check-dot" style="background:var(--pink)"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span>Teams ready to operationalize co‑sell and scale partner pipeline</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- NOVAX RIGHT (Pitch Card) -->
+      <div class="reveal delay-2">
+        <div style="padding:var(--sp-5);background:#fff;border-radius:var(--r-xl);border:1px solid var(--border-light);box-shadow:0 12px 32px rgba(0,0,0,0.03);display:flex;flex-direction:column;justify-content:center;height:100%;">
+          <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--pink);margin-bottom:16px">The Goal</div>
+          <h3 style="font-size:24px;margin-bottom:16px;line-height:1.3;color:var(--text-primary);">Operationalize and scale a global cloud GTM engine.</h3>
+          <p style="font-size:16px;color:var(--text-secondary);line-height:1.7;margin-bottom:32px">For established ISVs ready for sustained execution. NovaX provides ongoing, fractional alliance leadership across your chosen clouds, scaling partner-led pipeline and automating lifecycle workflows for high-volume growth.</p>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:auto;">
+            <!-- Fixed overflowing button with deep-dive-btn class -->
+            <a href="novax.html" class="deep-dive-btn" style="color:var(--pink);background:rgba(250,15,156,0.1);">Explore NovaX Deep Dive &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ SERVICE COMPARISON MATRIX ══ -->
+<section id="compare-matrix" style="background:linear-gradient(160deg,#F8F9FF 0%,#EFF4FF 100%); padding:80px 0; border-top:1px solid var(--border-light); border-bottom:1px solid var(--border-light);">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="section-tag st-blue" style="margin-bottom:12px">Comparison</div>
+      <h2 style="color:var(--text-primary);margin-bottom:10px; font-size:clamp(32px, 4vw, 44px); font-weight:800; letter-spacing:-0.02em;">Find your exact service fit.</h2>
+      <p style="color:var(--text-secondary);max-width:560px;margin:0 auto;font-size:17px;text-align:center">Compare the depth, focus, and outputs of our three execution services to align with your ISV's current GTM stage.</p>
+    </div>
+    
+    <div class="reveal matrix-wrapper">
+      <table class="matrix-table">
+        <thead>
+          <tr class="matrix-tr">
+            <th class="matrix-th col-label">Capability / Focus</th>
+            <th class="matrix-th col-ignite">Ignite</th>
+            <th class="matrix-th col-supernova">SuperNova</th>
+            <th class="matrix-th col-novax">NovaX</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="matrix-tr">
+            <td class="matrix-td col-label">Timeline</td>
+            <td class="matrix-td col-ignite"><strong>3 Months</strong></td>
+            <td class="matrix-td col-supernova"><strong>4 Months</strong></td>
+            <td class="matrix-td col-novax"><strong>6 Months</strong></td>
+          </tr>
+          <tr class="matrix-tr">
+            <td class="matrix-td col-label">Target Stage</td>
+            <td class="matrix-td col-ignite">Pre-Series A → Series A</td>
+            <td class="matrix-td col-supernova">Series A → Series B</td>
+            <td class="matrix-td col-novax">Series B → Series C</td>
+          </tr>
+          <tr class="matrix-tr">
+            <td class="matrix-td col-label">Cloud Mix</td>
+            <td class="matrix-td col-ignite">Any Cloud (AWS, Azure, GCP)</td>
+            <td class="matrix-td col-supernova">Any Cloud (AWS, Azure, GCP)</td>
+            <td class="matrix-td col-novax">Any Cloud (AWS, Azure, GCP)</td>
+          </tr>
+          <tr class="matrix-tr">
+            <td class="matrix-td col-label">Primary Goal</td>
+            <td class="matrix-td col-ignite">First Attributable Revenue</td>
+            <td class="matrix-td col-supernova">US Market Penetration</td>
+            <td class="matrix-td col-novax">Global Scale (Single or Multi-Cloud)</td>
+          </tr>
+          <tr class="matrix-tr">
+            <td class="matrix-td col-label">Channel & SI/GSI</td>
+            <td class="matrix-td col-ignite">Channel Readiness Assessment</td>
+            <td class="matrix-td col-supernova">US Partner Map & CPPO</td>
+            <td class="matrix-td col-novax">Global SI/GSI Pipeline Scale</td>
+          </tr>
+          <tr class="matrix-tr">
+            <td class="matrix-td col-label">Field Enablement</td>
+            <td class="matrix-td col-ignite">Opportunity Validation</td>
+            <td class="matrix-td col-supernova">Targeted US Field Activation</td>
+            <td class="matrix-td col-novax">Ongoing Sustained Execution</td>
+          </tr>
+          <tr class="matrix-tr">
+            <td class="matrix-td col-label">Output Delivery</td>
+            <td class="matrix-td col-ignite">Investor-ready Evidence</td>
+            <td class="matrix-td col-supernova">US Traction Proof</td>
+            <td class="matrix-td col-novax">Quarterly Board Reporting</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="s-dark" style="padding:var(--sp-10) 0">
+  <div class="container-sm" data-faq-group>
+    <h2 style="color:#fff;text-align:center;margin-bottom:var(--sp-6)">Common Questions</h2>
+    <div class="faq-item" style="border-color:rgba(255,255,255,.08)">
+      <button class="faq-trigger faq-trigger-dark" style="color:#fff" onclick="toggleFaq(this)">Do services follow a set sequence?<span class="faq-icon faq-icon-dark"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5l3 3 3-3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+      <div class="faq-body faq-body-dark">No. All three services are standalone. Each ISV selects the service that matches their current stage, cloud mix, and timeline. The discovery call with Jen Dawson is how the right fit is confirmed.</div>
+    </div>
+    <div class="faq-item" style="border-color:rgba(255,255,255,.08)">
+      <button class="faq-trigger faq-trigger-dark" style="color:#fff" onclick="toggleFaq(this)">Do services include marketplace listing setup?<span class="faq-icon faq-icon-dark"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5l3 3 3-3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+      <div class="faq-body faq-body-dark">Yes. Every service includes listing setup or optimization as part of execution. ISVs do not need to be pre-listed to begin. If you are already listed, the listing is audited and corrected where needed.</div>
+    </div>
+    <div class="faq-item" style="border-color:rgba(255,255,255,.08)">
+      <button class="faq-trigger faq-trigger-dark" style="color:#fff" onclick="toggleFaq(this)">Can one service cover multiple cloud marketplaces?<span class="faq-icon faq-icon-dark"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5l3 3 3-3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+      <div class="faq-body faq-body-dark">Yes. Services are scoped to your target cloud mix. Execution, reporting, and field relationship work are coordinated across the clouds in scope.</div>
+    </div>
+    <div class="faq-item" style="border-color:rgba(255,255,255,.08);border-bottom:none">
+      <button class="faq-trigger faq-trigger-dark" style="color:#fff" onclick="toggleFaq(this)">How is this different from a consultant?<span class="faq-icon faq-icon-dark"><svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M2 3.5l3 3 3-3" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+      <div class="faq-body faq-body-dark">Consultants produce recommendations. SaaSNova runs the execution directly alongside your team. Co-sell submissions are filed. Field sessions are run. Board pipeline reports are produced at service end. The output is evidence, not advice.</div>
+    </div>
+    <div style="text-align:center;margin-top:var(--sp-6)">
+      <a href="https://calendly.com/jen-saasnova/founder-strategy-session-scale-your-gtm-via-aws?month=2026-03" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book a Discovery Call</a>
+    </div>
+  </div>
+</section>
+<div class="wave-d2w"><svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:48px;display:block;width:100%"><path d="M0,0 C360,48 1080,48 1440,0 L1440,48 L0,48 Z" fill="#fff"/></svg></div>
+
+<section class="s-gradient" style="padding:var(--sp-12) 0;text-align:center">
+  <div class="container-sm">
+    <h2 class="reveal" style="margin-bottom:var(--sp-2)">Not sure which service fits?</h2>
+    <p class="reveal delay-1" style="font-size:18px;max-width:480px;margin:0 auto var(--sp-5)">Book a discovery call. Jen Dawson reviews every submission and confirms the right service for your ISV.</p>
+    <div style="display:flex;gap:var(--sp-2);justify-content:center;flex-wrap:wrap" class="reveal delay-2">
+      <a href="https://calendly.com/jen-saasnova/founder-strategy-session-scale-your-gtm-via-aws?month=2026-03" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book a Discovery Call</a>
+      <a href="contact.html" class="btn btn-outline-white btn-lg">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="shared.js"></script>
+
+<!-- Embedded Reveal Animation & FAQ Logic -->
+<script>
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const body = item.querySelector('.faq-body');
+  const isActive = item.classList.contains('active');
+  
+  // Close other open FAQs in the same group
+  const group = item.closest('[data-faq-group]');
+  if (group) {
+    group.querySelectorAll('.faq-item').forEach(el => {
+      el.classList.remove('active');
+      if (el.querySelector('.faq-body')) {
+        el.querySelector('.faq-body').style.maxHeight = null;
+        el.querySelector('.faq-body').style.paddingTop = '0';
+      }
+      if (el.querySelector('.faq-icon')) {
+        el.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+      }
+    });
+  }
+
+  // Open clicked FAQ
+  if (!isActive) {
+    item.classList.add('active');
+    if (body) {
+      body.style.maxHeight = body.scrollHeight + 20 + "px";
+      body.style.paddingTop = '12px';
+    }
+    const icon = btn.querySelector('.faq-icon');
+    if (icon) {
+      icon.style.transform = 'rotate(180deg)';
+    }
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  try {
+    const revs = document.querySelectorAll('.reveal');
+    if('IntersectionObserver' in window) {
+      const obs = new IntersectionObserver(entries => {
+        entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+      }, { threshold: 0.05 });
+      revs.forEach(r => obs.observe(r));
+    } else {
+      revs.forEach(r => r.classList.add('visible'));
+    }
+  } catch(e) {
+    document.querySelectorAll('.reveal').forEach(r => r.classList.add('visible'));
+  }
+});
+</script>
+</body>
+</html>

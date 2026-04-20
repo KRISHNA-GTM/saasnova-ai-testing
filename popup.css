@@ -1,0 +1,110 @@
+/* ═══════════════════════════════════════════════════
+   SaaSNova Lead Popup — popup.css  v1.0
+   ═══════════════════════════════════════════════════ */
+
+#sn-popup-overlay {
+  position: fixed; inset: 0;
+  background: rgba(10,22,40,.68);
+  backdrop-filter: blur(5px); -webkit-backdrop-filter: blur(5px);
+  z-index: 10000;
+  display: flex; align-items: center; justify-content: center;
+  padding: 16px;
+  opacity: 0; pointer-events: none;
+  transition: opacity .28s ease;
+}
+#sn-popup-overlay.sn-popup-visible { opacity: 1; pointer-events: all; }
+#sn-popup-overlay.sn-popup-closing { opacity: 0; pointer-events: none; }
+
+#sn-popup-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 36px 36px 32px;
+  max-width: 440px; width: 100%;
+  position: relative;
+  box-shadow: 0 24px 80px rgba(15,25,35,.24);
+  border: 1px solid #E8EEF4;
+  overflow: hidden;
+  transform: translateY(20px) scale(.97);
+  transition: transform .3s cubic-bezier(.34,1.4,.64,1);
+}
+#sn-popup-overlay.sn-popup-visible #sn-popup-card { transform: translateY(0) scale(1); }
+#sn-popup-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, #008BF8, #FA0F9C); }
+
+#sn-popup-close {
+  position: absolute; top: 16px; right: 16px;
+  width: 32px; height: 32px; border-radius: 50%;
+  background: #F7F9FC; border: 1px solid #E8EEF4;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; color: #6B7E8F;
+  transition: background .15s ease, color .15s ease;
+}
+#sn-popup-close:hover { background: #E8EEF4; color: #0F1923; }
+
+#sn-popup-badge {
+  display: inline-flex; align-items: center;
+  padding: 5px 12px; border-radius: 999px;
+  background: rgba(241,153,83,.12); color: #C85000;
+  font-size: 11px; font-weight: 700; font-family: 'Inter', sans-serif;
+  text-transform: uppercase; letter-spacing: .1em;
+  margin-bottom: 14px;
+}
+
+#sn-popup-headline {
+  font-size: clamp(18px,3vw,22px);
+  font-weight: 800; color: #0F1923;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.2; letter-spacing: -.022em;
+  margin-bottom: 10px;
+}
+
+#sn-popup-sub {
+  font-size: 14px; color: #3D4E5C;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.72; margin-bottom: 14px;
+}
+
+#sn-popup-proof {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  font-size: 12px; font-family: 'Inter', sans-serif;
+  font-weight: 600; color: #6B7E8F;
+  margin-bottom: 20px;
+}
+
+#sn-popup-fields { display: flex; gap: 10px; margin-bottom: 10px; }
+
+#sn-popup-name, #sn-popup-email {
+  flex: 1; padding: 12px 14px;
+  border: 1.5px solid #E8EEF4; border-radius: 12px;
+  font-size: 14px; font-family: 'Inter', sans-serif; color: #0F1923;
+  background: #F7F9FC; outline: none;
+  transition: border-color .15s ease, background .15s ease;
+  min-width: 0;
+}
+#sn-popup-name:focus, #sn-popup-email:focus { border-color: #008BF8; background: #fff; }
+#sn-popup-name::placeholder, #sn-popup-email::placeholder { color: #9DAABB; }
+
+#sn-popup-submit {
+  width: 100%; padding: 14px 20px;
+  background: #FA0F9C; color: white;
+  border: none; border-radius: 12px;
+  font-size: 15px; font-weight: 700; font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  transition: background .15s ease, transform .15s ease;
+}
+#sn-popup-submit:hover { background: #D90085; transform: translateY(-1px); }
+#sn-popup-submit:active { transform: translateY(0); }
+#sn-popup-submit:disabled { background: #ccc; cursor: not-allowed; transform: none; }
+
+#sn-popup-success {
+  flex-direction: column; align-items: center; justify-content: center;
+  padding: 20px 0 8px; text-align: center; gap: 10px;
+}
+#sn-popup-success-text { font-size: 18px; font-weight: 700; font-family: 'Inter', sans-serif; color: #0F1923; }
+#sn-popup-success-sub  { font-size: 14px; font-family: 'Inter', sans-serif; color: #6B7E8F; }
+
+@media (max-width: 540px) {
+  #sn-popup-card { padding: 28px 20px 24px; border-radius: 20px 20px 0 0; }
+  #sn-popup-overlay { align-items: flex-end; padding: 0; }
+  #sn-popup-fields { flex-direction: column; }
+}

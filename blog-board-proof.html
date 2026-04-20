@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" type="image/png" sizes="32x32" href="images/logo-favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/logo-favicon-16x16.png">
+<link rel="apple-touch-icon" href="images/logo-favicon-apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/style.css">
+<title>What Board-Ready Cloud GTM Proof Actually Looks Like, SaaSNova Blog</title>
+<meta name="description" content="A practical framework for producing the board-visible, investor-grade cloud marketplace evidence that boards and investors need across AWS, Azure, and GCP."/>
+<meta property="og:title" content="What Board-Ready Cloud GTM Proof Actually Looks Like"/>
+<meta property="og:description" content="A practical framework for producing the board-visible, investor-grade cloud marketplace evidence that boards and investors need."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://saasnova.ai/blog-board-proof"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="What Board-Ready Cloud GTM Proof Actually Looks Like"/>
+<meta name="twitter:description" content="Five elements of a credible board pipeline report, from Jen Dawson at SaaSNova."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@700;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<section style="margin-top:64px;padding:var(--sp-12) 0;background:linear-gradient(135deg,#1A0A2E 0%,#0A1628 50%,#0A1020 100%);position:relative;overflow:hidden;color:#fff">
+  <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 55% 65% at 75% 25%,rgba(0,139,248,.18) 0%,transparent 55%),radial-gradient(ellipse 40% 50% at 15% 75%,rgba(250,15,156,.1) 0%,transparent 50%)"></div>
+  <div class="container-sm" style="position:relative;z-index:2">
+    <a href="resources.html#blog" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:rgba(255,255,255,.5);margin-bottom:var(--sp-4);text-decoration:none">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 11L5 7l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      Back to Blog
+    </a>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:var(--sp-3)">
+      <span style="padding:4px 10px;border-radius:var(--r-full);background:rgba(250,15,156,.15);color:var(--pink);font-size:11px;font-weight:700">Board Proof</span>
+      <span style="padding:4px 10px;border-radius:var(--r-full);background:rgba(250,15,156,.15);color:var(--pink);font-size:11px;font-weight:700">Investor GTM</span>
+    </div>
+    <h1 style="margin-bottom:var(--sp-3);color:#fff">What Board-Ready Cloud GTM Proof Actually Looks Like</h1>
+    <div style="display:flex;align-items:center;gap:var(--sp-2);flex-wrap:wrap">
+      <span style="font-size:14px;color:rgba(255,255,255,.5)">By Jen Dawson</span>
+      <span style="width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.25)"></span>
+      <span style="width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.25)"></span>
+      <span style="font-size:14px;color:rgba(255,255,255,.5)">March 2026</span>
+      <span style="width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.25)"></span>
+      <span style="font-size:14px;color:rgba(255,255,255,.5)">10 min read</span>
+      <span style="width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.25)"></span>
+      <span style="font-size:14px;color:rgba(255,255,255,.5)">AWS · Azure · GCP</span>
+    </div>
+  </div>
+</section>
+<div class="wave-d2w"><svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:48px;display:block;width:100%"><path d="M0,0 C360,48 1080,48 1440,0 L1440,48 L0,48 Z" fill="#fff"/></svg></div>
+
+<section style="background:linear-gradient(180deg,#FAFBFF 0%,#fff 20%);padding:var(--sp-8) 0">
+  <div class="container-xs">
+    <div class="blog-body">
+
+      <div class="callout">
+        <p>Every week I talk to ISV executives who believe they have a board reporting problem. What they actually have is an execution problem. The board cannot see meaningful cloud GTM proof because meaningful cloud GTM proof has not been produced. This post explains exactly what that proof looks like, and how to build it.</p>
+      </div>
+
+      <h2>Why Activity Metrics Fail in the Boardroom</h2>
+      <p>The most common cloud GTM board update sounds something like this: we are listed on AWS and Azure, we have submitted several co-sell opportunities, we attended two cloud partner events, and we have ongoing conversations with field teams. We expect pipeline to develop in the next quarter.</p>
+      <p>This update produces no confidence in a board or investor audience. It contains no named evidence, no attributed outcomes, and no verifiable claims. The phrase "ongoing conversations" is the cloud GTM equivalent of "we have a verbal commitment", it means nothing has actually happened.</p>
+      <p>Boards and investors who evaluate cloud marketplace investment want to see three things: that execution is actually occurring (not just being planned), that execution is producing specific, named, and verifiable outputs, and that those outputs are moving toward revenue attribution. Activity metrics, listing counts, event attendance, conversation volume, do not demonstrate any of these three things.</p>
+
+      <h2>The Five Elements of Board-Ready Cloud GTM Proof</h2>
+      <p>After producing pipeline reports for 100+ ISVs across AWS, Azure, and GCP, the format that consistently generates board and investor confidence contains five elements. Each is specific, named, and independently verifiable.</p>
+
+      <h3>Element 1: Co-Sell Opportunity Log</h3>
+      <p>A complete log of co-sell opportunities submitted during the reporting period, on AWS ACE, Azure co-sell, GCP Partner Advantage, or across multiple clouds. Each entry should include the cloud platform, the submission date, the current stage (submitted, in review, accepted, active), the associated deal value, and the cloud field partner assigned to the opportunity.</p>
+      <p>This log demonstrates that submissions are actually being filed, not just described. It shows the board exactly how many opportunities are in the cloud co-sell pipeline, at what stage, and on which cloud. It is independently verifiable against each cloud partner portal.</p>
+
+      <h3>Element 2: WinWire Record</h3>
+      <p>A log of WinWires submitted during the reporting period, with the cloud platform, submission date, deal outcome described in the WinWire, and confirmation of field team receipt. WinWires are one of the clearest signals of cloud co-sell maturity available in the AWS ecosystem specifically, and equivalent win documentation formats exist on Azure and GCP.</p>
+      <p>A board that sees a WinWire record understands that the ISV is not just submitting opportunities but closing deals with cloud involvement, and documenting those wins in the cloud partner's own system. That is the difference between co-sell activity and co-sell traction.</p>
+
+      <h3>Element 3: Field Enablement Session Log</h3>
+      <p>A record of field enablement sessions conducted during the reporting period, with the cloud platform, the date, the field team or team segment covered, attendance count, and a one-sentence description of the session content. This demonstrates that the ISV is building the field trust infrastructure that makes future co-sell submissions more likely to be responded to.</p>
+      <p>Boards understand headcount. When an ISV can report that 12 AWS PDMs, 8 Microsoft sellers, and 6 GCP field reps have been through an enablement session in the last quarter, the board understands that the ISV has a growing field awareness footprint, not just a listing and a hope.</p>
+
+      <h3>Element 4: Cloud Field Relationship Map</h3>
+      <p>A named list of cloud field relationships, AWS PDMs, Microsoft sales specialists, Google Cloud partner managers, who have been engaged during the reporting period. Each entry should include the name, role, cloud, and the most recent touchpoint type (enablement session, co-sell submission, deal review, or field call).</p>
+      <p>This is the element most often missing from cloud GTM board reports. It is also the element that investors find most compelling, because it demonstrates that the ISV's cloud marketplace position is built on actual human relationships, not just portal registrations. A relationship map with 8–12 named cloud field contacts is a meaningful competitive moat. A listing with no named field contacts is not.</p>
+
+      <h3>Element 5: Revenue Attribution Summary</h3>
+      <p>A summary of deals closed during the reporting period where cloud co-sell involvement can be documented. Attribution does not require that the cloud partner closed the deal, it requires that cloud co-sell activity influenced the outcome. This can be documented as: the deal was originated through an ACE submission that led to a PDM introduction; the deal closed faster because a GCP field rep provided a technical reference; the deal included Azure Marketplace transact because Microsoft co-sell support accelerated procurement.</p>
+      <p>Revenue attribution is the metric boards use to evaluate whether cloud marketplace investment is producing a return. Without it, cloud GTM is a cost center. With it, cloud GTM becomes a documented revenue driver with a calculable ROI.</p>
+
+      <div class="diagram">
+        <div style="font-weight:700;font-size:14px;margin-bottom:var(--sp-3);color:var(--text-primary);text-align:left">Board Pipeline Report, Component Summary</div>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="display:grid;grid-template-columns:2fr 1fr 3fr;gap:12px;padding:10px 14px;background:#fff;border-radius:8px;border:1px solid var(--border-light);font-size:13px;align-items:center">
+            <div style="font-weight:700;color:var(--text-primary)">Co-Sell Opportunity Log</div>
+            <div style="font-weight:600;color:var(--blue)">High impact</div>
+            <div style="color:var(--text-muted)">Named submissions per cloud, stage, value, assigned field partner</div>
+          </div>
+          <div style="display:grid;grid-template-columns:2fr 1fr 3fr;gap:12px;padding:10px 14px;background:#fff;border-radius:8px;border:1px solid var(--border-light);font-size:13px;align-items:center">
+            <div style="font-weight:700;color:var(--text-primary)">WinWire Record</div>
+            <div style="font-weight:600;color:var(--blue)">High impact</div>
+            <div style="color:var(--text-muted)">Submitted wins with cloud involvement documented and confirmed</div>
+          </div>
+          <div style="display:grid;grid-template-columns:2fr 1fr 3fr;gap:12px;padding:10px 14px;background:#fff;border-radius:8px;border:1px solid var(--border-light);font-size:13px;align-items:center">
+            <div style="font-weight:700;color:var(--text-primary)">Field Enablement Log</div>
+            <div style="font-weight:600;color:var(--orange)">Medium impact</div>
+            <div style="color:var(--text-muted)">Sessions run, platform, date, team segment, attendance</div>
+          </div>
+          <div style="display:grid;grid-template-columns:2fr 1fr 3fr;gap:12px;padding:10px 14px;background:#fff;border-radius:8px;border:1px solid var(--border-light);font-size:13px;align-items:center">
+            <div style="font-weight:700;color:var(--text-primary)">Field Relationship Map</div>
+            <div style="font-weight:600;color:var(--orange)">Medium impact</div>
+            <div style="color:var(--text-muted)">Named cloud field contacts, role, platform, last touchpoint</div>
+          </div>
+          <div style="display:grid;grid-template-columns:2fr 1fr 3fr;gap:12px;padding:10px 14px;background:#fff;border-radius:8px;border:1px solid var(--border-light);font-size:13px;align-items:center">
+            <div style="font-weight:700;color:var(--text-primary)">Revenue Attribution</div>
+            <div style="font-weight:600;color:var(--pink)">Highest impact</div>
+            <div style="color:var(--text-muted)">Deals where cloud co-sell activity influenced outcome, documented</div>
+          </div>
+        </div>
+      </div>
+
+      <h2>When to Report and How Often</h2>
+      <p>Cloud GTM board reporting works best on a quarterly cadence that aligns with the standard board reporting schedule. A quarterly report allows enough time for co-sell submissions to move through the pipeline, for WinWires to be filed and confirmed, and for field relationships to show meaningful progression from one quarter to the next.</p>
+      <p>Monthly reporting on cloud GTM activity tends to produce anxiety rather than confidence, the metrics move slowly enough that month-over-month comparisons often look flat or declining even when the underlying trajectory is positive. Quarterly comparisons show the compounding nature of field relationship investment and co-sell submission volume.</p>
+
+      <h2>The Investor Variant</h2>
+      <p>For ISVs in fundraising, the board pipeline report described above can be adapted into an investor-facing GTM evidence deck with two additions: a cloud marketplace revenue projection based on the current co-sell submission volume and close rate, and a field relationship depth score that quantifies the ISV's positioning within each cloud partner ecosystem relative to competitors.</p>
+      <p>Investors evaluating cloud marketplace traction are looking for evidence that the ISV has built a durable distribution channel within the hyperscaler ecosystem, not just a listing. A pipeline report with named field relationships, documented WinWires, and attributed revenue provides that evidence in a format that survives due diligence scrutiny.</p>
+
+      <h2>The Execution Takeaway</h2>
+      <p>Board-ready cloud GTM proof is not a reporting format problem. It is an execution problem. The five elements of a credible pipeline report, co-sell opportunity log, WinWire record, field enablement log, relationship map, and revenue attribution, cannot be assembled retroactively. They are built through structured, consistent execution of cloud co-sell motions during the reporting period.</p>
+      <p>ISVs who are running the motions correctly can produce this report at the end of any quarter. ISVs who are not running the motions have nothing to report except activity descriptions, and activity descriptions do not close funding rounds or build board confidence in cloud marketplace as a revenue channel.</p>
+
+    </div>
+
+    <div style="margin-top:var(--sp-8);padding:var(--sp-5);background:var(--light-100);border-radius:var(--r-2xl);border:1px solid var(--border-light);text-align:center">
+      <h3 style="margin-bottom:var(--sp-2)">SaaSNova delivers this report every quarter.</h3>
+      <p style="margin-bottom:var(--sp-3);max-width:480px;margin-left:auto;margin-right:auto">Every SaaSNova program ends with a board-ready pipeline report covering all five elements, across AWS, Azure, and GCP. NovaX delivers one every quarter throughout the 6-month engagement.</p>
+      <a href="https://calendly.com/jen-saasnova/founder-strategy-session-scale-your-gtm-via-aws?month=2026-03" target="_blank" rel="noopener" class="btn btn-primary">Book a Discovery Call</a>
+    </div>
+
+    <div style="margin-top:var(--sp-6)">
+      <h3 style="margin-bottom:var(--sp-3)">Related Reading</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-2)">
+        <a href="blog-ace-submissions.html" class="card card-p-sm" style="text-decoration:none;color:inherit">
+          <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);display:block;margin-bottom:6px">AWS Co-Sell</span>
+          <div style="font-weight:600;font-size:14px">Why Your ACE Submissions Go Unanswered</div>
+        </a>
+        <a href="blog-multi-cloud-gtm.html" class="card card-p-sm" style="text-decoration:none;color:inherit">
+          <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--orange);display:block;margin-bottom:6px">Multi-Cloud</span>
+          <div style="font-weight:600;font-size:14px">The Multi-Cloud GTM Playbook</div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="shared.js"></script>
+</body>
+</html>
