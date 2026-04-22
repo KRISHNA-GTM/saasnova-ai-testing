@@ -179,7 +179,7 @@ const NAV_STYLE_AND_DESKTOP = `
               <div class="dd-icon-wrap" style="background:rgba(0,139,248,0.08); color:var(--blue);">${SVG.partCloud}</div>
               <div style="flex:1;">
                 <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px; display:flex; justify-content:space-between; align-items:center;">
-                  Cloud GTM Programs <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M3 1.5L7 5L3 8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  Cloud GTM Partners <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M3 1.5L7 5L3 8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </div>
                 <div style="font-size:12px; color:var(--text-muted); font-weight:500;">AWS · Azure · GCP SME Registration</div>
               </div>
@@ -215,7 +215,7 @@ const NAV_STYLE_AND_DESKTOP = `
               <div class="dd-icon-wrap" style="background:rgba(100,116,139,0.08); color:var(--text-muted);">${SVG.part3PI}</div>
               <div style="flex:1;">
                 <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px; display:flex; justify-content:space-between; align-items:center;">
-                  3PI Programs <svg width="10" height="10" viewBox="0 10 10" fill="none"><path d="M3 1.5L7 5L3 8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  3PI Partners <svg width="10" height="10" viewBox="0 10 10" fill="none"><path d="M3 1.5L7 5L3 8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </div>
                 <div style="font-size:12px; color:var(--text-muted); font-weight:500;">SaaSify, Workspan</div>
               </div>
@@ -362,7 +362,7 @@ const NAV_MOBILE = `
       
       <div class="mob-accordion" style="border-bottom:none !important; display:block !important;">
         <button class="mob-accordion-btn" style="padding: 14px 20px 14px 24px !important; font-size:15px !important; color:#3D4E5C !important;">
-          <span style="display:flex;align-items:center;gap:8px;color:var(--blue);">${SVG.partCloud} Cloud GTM Programs</span> ${SVG.chevDown}
+          <span style="display:flex;align-items:center;gap:8px;color:var(--blue);">${SVG.partCloud} Cloud GTM Partners</span> ${SVG.chevDown}
         </button>
         <div class="mob-accordion-content" style="background: #f1f5f9 !important;">
           <a href="partner-aws-gtm.html" class="mob-sub-link" style="padding-left: 40px !important;"><img src="images/aws-logo.png" alt="AWS" style="width:18px;height:18px;margin-right:12px;object-fit:contain;"/> AWS Partner GTM</a>
@@ -373,7 +373,7 @@ const NAV_MOBILE = `
 
       <div class="mob-accordion" style="border-bottom:none !important; display:block !important;">
         <button class="mob-accordion-btn" style="padding: 14px 20px 14px 24px !important; font-size:15px !important; color:#3D4E5C !important;">
-          <span style="display:flex;align-items:center;gap:8px;color:#64748B;">${SVG.part3PI} 3PI Programs</span> ${SVG.chevDown}
+          <span style="display:flex;align-items:center;gap:8px;color:#64748B;">${SVG.part3PI} 3PI Partners</span> ${SVG.chevDown}
         </button>
         <div class="mob-accordion-content" style="background: #f1f5f9 !important;">
           <a href="partner-saasify.html" class="mob-sub-link" style="padding-left: 40px !important;"><img src="images/saasify-logo.png" alt="SaaSify" style="width:18px;height:18px;margin-right:12px;object-fit:contain;border-radius:3px;"/> SaaSify</a>
@@ -567,7 +567,6 @@ function toggleMob() {
   if(btn) btn.setAttribute('aria-expanded', isOpen);
   document.body.style.overflow = isOpen ? 'hidden' : '';
 }
-
 
 // Global Click Handlers
 document.addEventListener('click', e => {
