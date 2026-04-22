@@ -25,12 +25,12 @@ const SVG = {
   resVideo: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>`,
   resBlog: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`,
   resNews: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>`,
-  srvAll: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>`,
-  srvIgnite: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`,
-  srvSuper: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>`,
-  srvNova: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>`,
-  partAll: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
-  part3PI: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>`,
+  srvAll: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="9" x="3" y="3" rx="1"/><rect width="7" height="5" x="14" y="3" rx="1"/><rect width="7" height="9" x="14" y="12" rx="1"/><rect width="7" height="5" x="3" y="16" rx="1"/></svg>`,
+  srvIgnite: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>`,
+  srvSuper: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>`,
+  srvNova: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>`,
+  partAll: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg>`,
+  part3PI: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>`,
   partCloud: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>`,
   careers: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>`
 };
@@ -173,35 +173,6 @@ const NAV_STYLE_AND_DESKTOP = `
           </a>
           <div style="margin: 4px 0; height: 1px; background: var(--border-light);"></div>
 
-          <!-- 3PI Sub-menu -->
-          <div class="dropdown-submenu">
-            <div class="premium-dd-item" style="cursor:default;">
-              <div class="dd-icon-wrap" style="background:rgba(100,116,139,0.08); color:var(--text-muted);">${SVG.part3PI}</div>
-              <div style="flex:1;">
-                <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px; display:flex; justify-content:space-between; align-items:center;">
-                  3PI Programs <svg width="10" height="10" viewBox="0 10 10" fill="none"><path d="M3 1.5L7 5L3 8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </div>
-                <div style="font-size:12px; color:var(--text-muted); font-weight:500;">SaaSify, Workspan</div>
-              </div>
-            </div>
-            <div class="dropdown-menu-sub" style="min-width: 240px; padding: 8px;">
-              <a href="partner-saasify.html" class="premium-dd-item">
-                <div class="dd-icon-wrap" style="background:#fff; border:1px solid var(--border-light);"><img src="images/saasify-logo.png" style="width:20px;height:20px;object-fit:contain;"/></div>
-                <div>
-                  <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">SaaSify</div>
-                  <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Listing Infrastructure</div>
-                </div>
-              </a>
-              <a href="partner-workspan.html" class="premium-dd-item">
-                <div class="dd-icon-wrap" style="background:#fff; border:1px solid var(--border-light);"><img src="images/workspan-logo.jpeg" style="width:20px;height:20px;object-fit:contain;border-radius:4px;"/></div>
-                <div>
-                  <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">Workspan</div>
-                  <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Co-Sell Automation</div>
-                </div>
-              </a>
-            </div>
-          </div>
-
           <!-- Cloud GTM SME Sub-menu -->
           <div class="dropdown-submenu">
             <div class="premium-dd-item" style="cursor:default;">
@@ -238,6 +209,57 @@ const NAV_STYLE_AND_DESKTOP = `
             </div>
           </div>
 
+          <!-- 3PI Sub-menu -->
+          <div class="dropdown-submenu">
+            <div class="premium-dd-item" style="cursor:default;">
+              <div class="dd-icon-wrap" style="background:rgba(100,116,139,0.08); color:var(--text-muted);">${SVG.part3PI}</div>
+              <div style="flex:1;">
+                <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px; display:flex; justify-content:space-between; align-items:center;">
+                  3PI Programs <svg width="10" height="10" viewBox="0 10 10" fill="none"><path d="M3 1.5L7 5L3 8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div style="font-size:12px; color:var(--text-muted); font-weight:500;">SaaSify, Workspan</div>
+              </div>
+            </div>
+            <div class="dropdown-menu-sub" style="min-width: 240px; padding: 8px;">
+              <a href="partner-saasify.html" class="premium-dd-item">
+                <div class="dd-icon-wrap" style="background:#fff; border:1px solid var(--border-light);"><img src="images/saasify-logo.png" style="width:20px;height:20px;object-fit:contain;"/></div>
+                <div>
+                  <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">SaaSify</div>
+                  <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Listing Infrastructure</div>
+                </div>
+              </a>
+              <a href="partner-workspan.html" class="premium-dd-item">
+                <div class="dd-icon-wrap" style="background:#fff; border:1px solid var(--border-light);"><img src="images/workspan-logo.jpeg" style="width:20px;height:20px;object-fit:contain;border-radius:4px;"/></div>
+                <div>
+                  <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">Workspan</div>
+                  <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Co-Sell Automation</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- SI / GSI Sub-menu -->
+          <div class="dropdown-submenu">
+            <div class="premium-dd-item" style="cursor:default;">
+              <div class="dd-icon-wrap" style="background:#fff; border:1px solid var(--border-light);"><img src="images/SI-GSI.png" alt="SI / GSI" style="width:22px;height:22px;object-fit:contain;"/></div>
+              <div style="flex:1;">
+                <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px; display:flex; justify-content:space-between; align-items:center;">
+                  SI / GSI <svg width="10" height="10" viewBox="0 10 10" fill="none"><path d="M3 1.5L7 5L3 8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Pronix</div>
+              </div>
+            </div>
+            <div class="dropdown-menu-sub" style="min-width: 240px; padding: 8px;">
+              <a href="partner-pronix.html" class="premium-dd-item">
+                <div class="dd-icon-wrap" style="background:#fff; border:1px solid var(--border-light);"><img src="images/pronix_inc_logo.jpeg" style="width:20px;height:20px;object-fit:contain;border-radius:4px;"/></div>
+                <div>
+                  <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">Pronix</div>
+                  <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Enterprise Deployment</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -264,7 +286,7 @@ const NAV_STYLE_AND_DESKTOP = `
             </div>
           </a>
           
-          <a href="results.html" class="premium-dd-item">
+          <a href="case-study.html" class="premium-dd-item">
             <div class="dd-icon-wrap" style="background:rgba(241,153,83,0.1); color:var(--orange);">${SVG.resCase}</div>
             <div>
               <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">Case Studies</div>
@@ -339,7 +361,20 @@ const NAV_MOBILE = `
       <a href="partners.html" class="mob-sub-link" style="color:#008BF8 !important; font-weight:700 !important;">All Partners</a>
       
       <div class="mob-accordion" style="border-bottom:none !important; display:block !important;">
-        <button class="mob-accordion-btn" style="padding: 14px 20px 14px 24px !important; font-size:15px !important; color:#3D4E5C !important;">3PI Programs ${SVG.chevDown}</button>
+        <button class="mob-accordion-btn" style="padding: 14px 20px 14px 24px !important; font-size:15px !important; color:#3D4E5C !important;">
+          <span style="display:flex;align-items:center;gap:8px;color:var(--blue);">${SVG.partCloud} Cloud GTM Programs</span> ${SVG.chevDown}
+        </button>
+        <div class="mob-accordion-content" style="background: #f1f5f9 !important;">
+          <a href="partner-aws-gtm.html" class="mob-sub-link" style="padding-left: 40px !important;"><img src="images/aws-logo.png" alt="AWS" style="width:18px;height:18px;margin-right:12px;object-fit:contain;"/> AWS Partner GTM</a>
+          <a href="partner-azure-gtm.html" class="mob-sub-link" style="padding-left: 40px !important;"><img src="images/azure-logo.png" alt="Azure" style="width:18px;height:18px;margin-right:12px;object-fit:contain;"/> Azure Partner GTM</a>
+          <a href="partner-gcp-gtm.html" class="mob-sub-link" style="padding-left: 40px !important;"><img src="images/gcp-logo.png" alt="GCP" style="width:18px;height:18px;margin-right:12px;object-fit:contain;"/> GCP Partner GTM</a>
+        </div>
+      </div>
+
+      <div class="mob-accordion" style="border-bottom:none !important; display:block !important;">
+        <button class="mob-accordion-btn" style="padding: 14px 20px 14px 24px !important; font-size:15px !important; color:#3D4E5C !important;">
+          <span style="display:flex;align-items:center;gap:8px;color:#64748B;">${SVG.part3PI} 3PI Programs</span> ${SVG.chevDown}
+        </button>
         <div class="mob-accordion-content" style="background: #f1f5f9 !important;">
           <a href="partner-saasify.html" class="mob-sub-link" style="padding-left: 40px !important;"><img src="images/saasify-logo.png" alt="SaaSify" style="width:18px;height:18px;margin-right:12px;object-fit:contain;border-radius:3px;"/> SaaSify</a>
           <a href="partner-workspan.html" class="mob-sub-link" style="padding-left: 40px !important;"><img src="images/workspan-logo.jpeg" alt="Workspan" style="width:18px;height:18px;margin-right:12px;object-fit:contain;border-radius:3px;"/> Workspan</a>
@@ -347,11 +382,11 @@ const NAV_MOBILE = `
       </div>
 
       <div class="mob-accordion" style="border-bottom:none !important; display:block !important;">
-        <button class="mob-accordion-btn" style="padding: 14px 20px 14px 24px !important; font-size:15px !important; color:#3D4E5C !important;">Cloud GTM Programs ${SVG.chevDown}</button>
+        <button class="mob-accordion-btn" style="padding: 14px 20px 14px 24px !important; font-size:15px !important; color:#3D4E5C !important;">
+          <span style="display:flex;align-items:center;gap:8px;"><img src="images/SI-GSI.png" alt="SI / GSI" style="width:18px;height:18px;object-fit:contain;"/> SI / GSI</span> ${SVG.chevDown}
+        </button>
         <div class="mob-accordion-content" style="background: #f1f5f9 !important;">
-          <a href="partner-aws-gtm.html" class="mob-sub-link" style="padding-left: 40px !important;"><img src="images/aws-logo.png" alt="AWS" style="width:18px;height:18px;margin-right:12px;object-fit:contain;"/> AWS Partner GTM</a>
-          <a href="partner-azure-gtm.html" class="mob-sub-link" style="padding-left: 40px !important;"><img src="images/azure-logo.png" alt="Azure" style="width:18px;height:18px;margin-right:12px;object-fit:contain;"/> Azure Partner GTM</a>
-          <a href="partner-gcp-gtm.html" class="mob-sub-link" style="padding-left: 40px !important;"><img src="images/gcp-logo.png" alt="GCP" style="width:18px;height:18px;margin-right:12px;object-fit:contain;"/> GCP Partner GTM</a>
+          <a href="partner-pronix.html" class="mob-sub-link" style="padding-left: 40px !important;"><img src="images/pronix_inc_logo.jpeg" alt="Pronix" style="width:18px;height:18px;margin-right:12px;object-fit:contain;border-radius:3px;"/> Pronix</a>
         </div>
       </div>
     </div>
@@ -362,7 +397,7 @@ const NAV_MOBILE = `
     <div class="mob-accordion-content">
       <a href="blog.html" class="mob-sub-link">Blog</a>
       <a href="show.html" class="mob-sub-link">The Jen GTM Show</a>
-      <a href="results.html" class="mob-sub-link">Case Studies</a>
+      <a href="case-study.html" class="mob-sub-link">Case Studies</a>
       <a href="webinars.html" class="mob-sub-link">Webinars</a>
       <a href="newsletter.html" class="mob-sub-link" style="color:#FA0F9C !important;">The Nova Brief</a>
     </div>
@@ -437,7 +472,7 @@ const FOOTER_HTML = `
       <div>
         <div class="footer-col-title">COMPANY</div>
         <a href="about.html" class="footer-link">About &amp; Team</a>
-        <a href="results.html" class="footer-link">Case Studies</a>
+        <a href="case-study.html" class="footer-link">Case Studies</a>
         <a href="show.html" class="footer-link">The Jen GTM Show</a>
         <a href="partners.html" class="footer-link">Partners</a>
         <a href="careers.html" class="footer-link">Careers</a>
