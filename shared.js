@@ -568,6 +568,7 @@ function toggleMob() {
   document.body.style.overflow = isOpen ? 'hidden' : '';
 }
 
+
 // Global Click Handlers
 document.addEventListener('click', e => {
   if(e.target.closest('#sn-mob-menu a')) {
