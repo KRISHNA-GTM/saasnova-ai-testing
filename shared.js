@@ -156,7 +156,7 @@ const NAV_STYLE_AND_DESKTOP = `
         </div>
       </div>
       
-      <a href="/about" class="nav-link">About</a>
+      <a href="/about.html" class="nav-link">About</a>
       
       <!-- PARTNERS DROPDOWN -->
       <div class="dropdown">
