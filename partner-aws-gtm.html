@@ -1,16 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta name="google-site-verification" content="google960def4cf195e9cf" />
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Google Analytics GA4 -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-185EJ40PT4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-185EJ40PT4');
-</script>
+<!-- GA4 loaded via shared.js -->
 <link rel="icon" type="image/png" sizes="32x32" href="images/logo-favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="images/logo-favicon-16x16.png">
 <link rel="apple-touch-icon" href="images/logo-favicon-apple-touch-icon.png">
@@ -18,8 +12,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@700;900&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="style.css"/>
-<title>AWS Partner &amp; SME GTM | SaaSNova – Welcome Amazonians</title>
-<meta name="description" content="AWS Leaders, SMEs (L5+) and Partner-aligned Amazonians: register with SaaSNova to receive invitations for GTM speaking opportunities, co-sell enablement sessions, ISV advisory panels, and AWS ecosystem events."/>
+<title>AWS Partner & SME GTM Registration | SaaSNova</title>
+<meta name="description" content="AWS Leaders, SMEs and Partner-aligned Amazonians: register with SaaSNova to receive invitations for GTM events, co-sell enablement, and ISV advisory panels."/>
 <meta property="og:title" content="AWS Partner & SME GTM | SaaSNova – Welcome Amazonians"/>
 <meta property="og:description" content="Register as an AWS SME or Partner-aligned Amazonian with SaaSNova for co-sell enablement, ISV advisory panels, and marketplace GTM workshops."/>
 <meta property="og:type" content="website"/>
@@ -88,6 +82,8 @@ html, body { overflow-x: hidden; }
   .partner-hero-grid { grid-template-columns:1fr !important; }
 }
 </style>
+<link rel="canonical" href="https://saasnova.ai/partner-aws-gtm" />
+<meta property="og:image" content="https://saasnova.ai/images/logo-color.png"/>
 </head>
 <body>
 <div id="nav-placeholder"></div>
@@ -96,7 +92,7 @@ html, body { overflow-x: hidden; }
 <section style="margin-top:64px;padding:var(--sp-12) 0;background:linear-gradient(135deg,#1A0800 0%,#0A1628 40%,#0D1F45 100%);position:relative;overflow:hidden;color:#fff">
   <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 55% 65% at 80% 20%,rgba(255,153,0,.2) 0%,transparent 55%),radial-gradient(ellipse 40% 50% at 10% 75%,rgba(0,139,248,.1) 0%,transparent 50%)"></div>
   <div class="container" style="position:relative">
-    <a href="partners.html" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:rgba(255,255,255,.4);margin-bottom:var(--sp-4);text-decoration:none">
+    <a href="/partners" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:rgba(255,255,255,.4);margin-bottom:var(--sp-4);text-decoration:none">
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 11L5 7l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
       Back to Partners
     </a>
@@ -163,8 +159,8 @@ html, body { overflow-x: hidden; }
           <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#C87000;margin-bottom:8px">Also on Azure &amp; GCP?</div>
           <p style="font-size:13px;color:var(--text-secondary);margin-bottom:12px;line-height:1.6">SaaSNova runs parallel GTM programs across all three hyperscalers.</p>
           <div style="display:flex;gap:8px;flex-wrap:wrap">
-            <a href="partner-azure-gtm.html" style="padding:6px 14px;border-radius:var(--r-full);background:#EEF6FF;color:#0055A0;font-size:12px;font-weight:700;text-decoration:none;border:1px solid rgba(0,120,212,.2)">Azure SME Register</a>
-            <a href="partner-gcp-gtm.html" style="padding:6px 14px;border-radius:var(--r-full);background:#EDFFF4;color:#1A5CB8;font-size:12px;font-weight:700;text-decoration:none;border:1px solid rgba(66,133,244,.2)">GCP SME Register</a>
+            <a href="/partner-azure-gtm" style="padding:6px 14px;border-radius:var(--r-full);background:#EEF6FF;color:#0055A0;font-size:12px;font-weight:700;text-decoration:none;border:1px solid rgba(0,120,212,.2)">Azure SME Register</a>
+            <a href="/partner-gcp-gtm" style="padding:6px 14px;border-radius:var(--r-full);background:#EDFFF4;color:#1A5CB8;font-size:12px;font-weight:700;text-decoration:none;border:1px solid rgba(66,133,244,.2)">GCP SME Register</a>
           </div>
         </div>
       </div>
@@ -182,7 +178,9 @@ html, body { overflow-x: hidden; }
             </div>
           </div>
 
-          <form id="aws-gtm-form" onsubmit="handleAwsGtmSubmit(event)" novalidate>
+          <!-- HUBSPOT FORM PLACEHOLDER: Replace form below with HubSpot embed when ready -->
+<!-- <div id="hubspot-form-aws-gtm-form"></div> -->
+<form id="aws-gtm-form" onsubmit="handleAwsGtmSubmit(event)" novalidate>
 
             <!-- Name Row -->
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
@@ -280,7 +278,7 @@ html, body { overflow-x: hidden; }
             <div style="padding:14px;background:var(--light-100);border-radius:var(--r-md);margin-bottom:18px;border:1px solid var(--border-light)">
               <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer">
                 <input type="checkbox" id="consent-aws" required style="margin-top:2px;width:15px;height:15px;accent-color:#FF9900;flex-shrink:0;"/>
-                <span style="font-size:12px;color:var(--text-muted);line-height:1.6">By submitting this form, I acknowledge and consent to the <a href="privacy.html" style="color:var(--blue)">SaaSNova Communications Policy</a> and agree to receive event invitations and GTM program updates from SaaSNova.<span style="color:var(--pink)">*</span></span>
+                <span style="font-size:12px;color:var(--text-muted);line-height:1.6">By submitting this form, I acknowledge and consent to the <a href="/privacy" style="color:var(--blue)">SaaSNova Communications Policy</a> and agree to receive event invitations and GTM program updates from SaaSNova.<span style="color:var(--pink)">*</span></span>
               </label>
             </div>
 
@@ -307,8 +305,8 @@ html, body { overflow-x: hidden; }
 <section style="background:linear-gradient(135deg,#0A1628,#1A0A2E);padding:var(--sp-10) 0;text-align:center">
   <div class="container-sm">
     <h2 style="color:#fff;margin-bottom:12px" class="reveal">Ready to execute on AWS together?</h2>
-    <p style="color:rgba(255,255,255,.62);font-size:17px;max-width:480px;margin:0 auto var(--sp-4)" class="reveal delay-1">Book a discovery call with Jen Dawson to explore how SaaSNova and your AWS team can accelerate ISV co-sell and marketplace pipeline.</p>
-    <a href="https://calendly.com/jen-saasnova/founder-strategy-session-scale-your-gtm-via-aws?month=2026-03" target="_blank" rel="noopener" class="btn btn-primary reveal delay-2">Book a Discovery Call</a>
+    <p style="color:rgba(255,255,255,.62);font-size:17px;max-width:480px;margin:0 auto var(--sp-4)" class="reveal delay-1">Book a 30-min Execution Strategy Session with Jen Dawson to explore how SaaSNova and your AWS team can accelerate ISV co-sell and marketplace pipeline.</p>
+    <a href="https://calendly.com/jen-saasnova/founder-strategy-session-scale-your-gtm-via-aws?month=2026-03" target="_blank" rel="noopener" class="btn btn-primary reveal delay-2">Book a 30-min Execution Strategy Session</a>
   </div>
 </section>
 

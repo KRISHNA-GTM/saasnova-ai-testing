@@ -1,0 +1,74 @@
+# SaaSNova URL Routing — Clean URLs (no .html)
+
+# Canonical redirects: old .html → clean URL
+/index.html                             /                                       301
+/about.html                             /about                                  301
+/services.html                          /services                               301
+/contact.html                           /contact                                301
+/careers.html                           /careers                                301
+/partners.html                          /partners                               301
+/results.html                           /case-study                             301
+/case-study.html                        /case-study                             301
+/blog.html                              /blog                                   301
+/show.html                              /show                                   301
+/webinars.html                          /webinars                               301
+/newsletter.html                        /newsletter                             301
+/privacy.html                           /privacy                                301
+/terms.html                             /terms                                  301
+
+# Services
+/ignite.html                            /ignite                                 301
+/supernova.html                         /supernova                              301
+/novax.html                             /novax                                  301
+
+# Blog posts
+/blog-aws-alignment.html                /blog-aws-alignment                     301
+/blog-aws-prm-deadline.html             /blog-aws-prm-deadline                  301
+/blog-cloud-marketplace-listing-silent-fix.html  /blog-cloud-marketplace-listing-silent-fix  301
+/blog-multi-cloud-gtm.html              /blog-multi-cloud-gtm                   301
+
+# Partners
+/partner-saasify.html                   /partner-saasify                        301
+/partner-workspan.html                  /partner-workspan                       301
+/partner-pronix.html                    /partner-pronix                         301
+/partner-aws-gtm.html                   /partner-aws-gtm                        301
+/partner-azure-gtm.html                 /partner-azure-gtm                      301
+/partner-gcp-gtm.html                   /partner-gcp-gtm                        301
+
+# Clean URL rewrites (serves .html file at clean path)
+/about                                  /about.html                             200
+/services                               /services.html                          200
+/contact                                /contact.html                           200
+/careers                                /careers.html                           200
+/partners                               /partners.html                          200
+/case-study                             /case-study.html                        200
+/blog                                   /blog.html                              200
+/show                                   /show.html                              200
+/webinars                               /webinars.html                          200
+/newsletter                             /newsletter.html                        200
+/privacy                                /privacy.html                           200
+/terms                                  /terms.html                             200
+
+/ignite                                 /ignite.html                            200
+/supernova                              /supernova.html                         200
+/novax                                  /novax.html                             200
+
+/blog-aws-alignment                     /blog-aws-alignment.html                200
+/blog-aws-prm-deadline                  /blog-aws-prm-deadline.html             200
+/blog-cloud-marketplace-listing-silent-fix  /blog-cloud-marketplace-listing-silent-fix.html  200
+/blog-multi-cloud-gtm                   /blog-multi-cloud-gtm.html              200
+
+/partner-saasify                        /partner-saasify.html                   200
+/partner-workspan                       /partner-workspan.html                  200
+/partner-pronix                         /partner-pronix.html                    200
+/partner-aws-gtm                        /partner-aws-gtm.html                   200
+/partner-azure-gtm                      /partner-azure-gtm.html                 200
+/partner-gcp-gtm                        /partner-gcp-gtm.html                   200
+
+
+# Services overview
+/services.html                          /services                               301
+/services                               /services.html                          200
+
+# 404 fallback
+/*                                      /404.html                               404
