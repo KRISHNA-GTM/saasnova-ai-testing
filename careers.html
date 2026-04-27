@@ -14,6 +14,7 @@
 <title>Careers at SaaSNova | Open Roles in Cloud GTM</title>
 <meta name="description" content="Join SaaSNova. We're hiring Partner Pipeline Executives in the US and India to activate ISV pipeline across AWS, Azure, and GCP ecosystems."/>
 <meta name="robots" content="index, follow"/>
+
 <style>
 *, *::before, *::after { box-sizing: border-box; }
 html, body { overflow-x: hidden; }
@@ -503,9 +504,10 @@ function handleApplySubmit(e, roleKey) {
   const originalText = btn.textContent;
   btn.textContent = 'Submitting\u2026'; btn.disabled = true;
   const fd = new FormData(form);
-  const job = JOBS[roleKey];
-  const message = `Role: ${fd.get('role') || roleKey}\nLocation: ${fd.get('location') || 'N/A'}\nLinkedIn: ${fd.get('linkedin') || 'N/A'}\n\nWhy this role:\n${fd.get('why') || 'N/A'}\n\nBackground:\n${fd.get('background') || 'N/A'}\n\nEmail subject: ${job ? job.emailSubject : 'Open Application'}`;
-  const url = 'https://api.hsforms.com/submissions/v3/integration/submit/245317385/aa170816-bdf0-44f2-a14c-97dd671d1762';
+  
+  // Submit specifically to the NEW form ID using HubSpot's API 
+  const url = 'https://api.hsforms.com/submissions/v3/integration/submit/245317385/094ad5f6-008f-4614-9d45-ce72e96744d2';
+  
   fetch(url, {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
@@ -513,7 +515,11 @@ function handleApplySubmit(e, roleKey) {
         { name: 'firstname', value: fd.get('first_name') || '' },
         { name: 'lastname', value: fd.get('last_name') || '' },
         { name: 'email', value: fd.get('email') || '' },
-        { name: 'message', value: message }
+        { name: 'hs_linkedin_url', value: fd.get('linkedin') || '' },
+        { name: 'country', value: fd.get('location') || '' },
+        { name: 'applied_role', value: fd.get('role') || roleKey },
+        { name: 'why_this_role', value: fd.get('why') || '' },
+        { name: 'relevant_background', value: fd.get('background') || '' }
       ],
       context: { pageUri: window.location.href, pageName: document.title }
     })
