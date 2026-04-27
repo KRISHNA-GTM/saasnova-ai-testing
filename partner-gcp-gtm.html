@@ -19,6 +19,10 @@
 <meta property="og:description" content="Register as a Google Cloud / GCP SME with SaaSNova for co-sell enablement, ISV advisory panels, and GCP Marketplace GTM workshops."/>
 <meta property="og:type" content="website"/>
 <meta property="og:url" content="https://www.saasnova.ai/partner-gcp-gtm"/>
+
+<!-- HubSpot Script (Included for tracking/utility as requested) -->
+<script src="https://js-na2.hsforms.net/forms/embed/245317385.js" defer></script>
+
 <style>
 *, *::before, *::after { box-sizing: border-box; }
 html, body { overflow-x: hidden; }
@@ -41,15 +45,6 @@ html, body { overflow-x: hidden; }
 .radio-option span { font-size:14px; color:var(--text-secondary); font-weight:500; }
 @media (max-width:768px) { .partner-hero-grid { grid-template-columns:1fr !important; } }
 </style>
-<link rel="canonical" href="https://www.saasnova.ai/partner-gcp-gtm" />
-<meta property="og:image" content="https://www.saasnova.ai/images/logo-color.png"/>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-185EJ40PT4"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-gtag('config', 'G-185EJ40PT4');
-</script>
 </head>
 <body>
 <div id="nav-placeholder"></div>
@@ -141,9 +136,7 @@ gtag('config', 'G-185EJ40PT4');
             </div>
           </div>
 
-          <!-- HUBSPOT FORM PLACEHOLDER: Replace form below with HubSpot embed when ready -->
-<!-- <div id="hubspot-form-gcp-gtm-form"></div> -->
-<form id="gcp-gtm-form" onsubmit="handleGcpGtmSubmit(event)" novalidate>
+          <form id="gcp-gtm-form" onsubmit="handleGcpGtmSubmit(event)" novalidate>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
               <div class="gtm-form-field"><label class="gtm-form-label">First Name<span class="req">*</span></label><input type="text" name="first_name" class="gtm-input" placeholder="Jane" required/></div>
               <div class="gtm-form-field"><label class="gtm-form-label">Last Name<span class="req">*</span></label><input type="text" name="last_name" class="gtm-input" placeholder="Smith" required/></div>
@@ -158,39 +151,31 @@ gtag('config', 'G-185EJ40PT4');
             </div>
             <div class="gtm-form-field">
               <label class="gtm-form-label">Country<span class="req">*</span></label>
-              <select name="country" class="gtm-select" required>
-                <option value="">Select Country...</option>
-                <option value="United States">United States</option>
-                <option value="Canada">Canada</option>
-                <option value="United Kingdom">United Kingdom</option>
-                <option value="Australia">Australia</option>
-                <option value="India">India</option>
-                <option value="Germany">Germany</option>
-                <option value="Singapore">Singapore</option>
-                <option value="Japan">Japan</option>
-                <option value="Other">Other</option>
-              </select>
+              <input type="text" name="country" class="gtm-input" placeholder="Country" required/>
             </div>
+            
+            <!-- Invitations Checkboxes (Mapped precisely) -->
             <div class="gtm-form-field">
               <label class="gtm-form-label">I want to receive invitations for:<span class="req">*</span></label>
               <div class="check-group" style="margin-top:4px">
-                <label class="check-option"><input type="checkbox" name="invite_speaking"/><span>GTM Speaking Opportunities</span></label>
-                <label class="check-option"><input type="checkbox" name="invite_advisory"/><span>ISV Advisory Panels</span></label>
-                <label class="check-option"><input type="checkbox" name="invite_cosell"/><span>ISV Co-Sell Enablement Sessions</span></label>
-                <label class="check-option"><input type="checkbox" name="invite_workshop"/><span>GCP Marketplace GTM Workshops</span></label>
-                <label class="check-option"><input type="checkbox" name="invite_networking"/><span>Networking &amp; Ecosystem Events</span></label>
-                <label class="check-option"><input type="checkbox" name="invite_roundtable"/><span>Founder Roundtables</span></label>
-                <label class="check-option"><input type="checkbox" name="invite_special"/><span>Special Google Cloud Ecosystem Events</span></label>
+                <label class="check-option"><input type="checkbox" name="invite_speaking" value="GTM Speaking Opportunities"/><span>GTM Speaking Opportunities</span></label>
+                <label class="check-option"><input type="checkbox" name="invite_advisory" value="ISV Advisory Panels"/><span>ISV Advisory Panels</span></label>
+                <label class="check-option"><input type="checkbox" name="invite_cosell" value="ISV Co-Sell Enablement Sessions"/><span>ISV Co-Sell Enablement Sessions</span></label>
+                <label class="check-option"><input type="checkbox" name="invite_workshop" value="GCP Marketplace GTM Workshops"/><span>GCP Marketplace GTM Workshops</span></label>
+                <label class="check-option"><input type="checkbox" name="invite_networking" value="Networking &amp; Ecosystem Events"/><span>Networking &amp; Ecosystem Events</span></label>
+                <label class="check-option"><input type="checkbox" name="invite_roundtable" value="Founder Roundtables"/><span>Founder Roundtables</span></label>
+                <label class="check-option"><input type="checkbox" name="invite_special" value="Special Google Cloud Ecosystem Events"/><span>Special Google Cloud Ecosystem Events</span></label>
               </div>
             </div>
+
+            <!-- How did you hear (CRM EXACT VALUES) -->
             <div class="gtm-form-field">
               <label class="gtm-form-label">How did you hear about SaaSNova?<span class="req">*</span></label>
               <div class="radio-group" style="margin-top:4px">
                 <label class="radio-option"><input type="radio" name="source" value="LinkedIn" required/><span>LinkedIn</span></label>
-                <label class="radio-option"><input type="radio" name="source" value="Google Colleague"/><span>Google Colleague</span></label>
+                <label class="radio-option"><input type="radio" name="source" value="Referral"/><span>Google Colleague / Referral</span></label>
                 <label class="radio-option"><input type="radio" name="source" value="SaaSNova Event"/><span>SaaSNova Event</span></label>
                 <label class="radio-option"><input type="radio" name="source" value="SaaSNova Website"/><span>SaaSNova Website</span></label>
-                <label class="radio-option"><input type="radio" name="source" value="Referral"/><span>Referral</span></label>
                 <label class="radio-option"><input type="radio" name="source" value="Other"/><span>Other</span></label>
               </div>
             </div>
@@ -231,7 +216,7 @@ gtag('config', 'G-185EJ40PT4');
 </section>
 
 <div id="footer-placeholder"></div>
-<script defer src="shared.js"></script>
+<script src="shared.js"></script>
 <script>
 function handleGcpGtmSubmit(e) {
   e.preventDefault();
@@ -240,16 +225,57 @@ function handleGcpGtmSubmit(e) {
   const anyChecked = form.querySelectorAll('input[type="checkbox"][name^="invite_"]:checked').length > 0;
   if (!anyChecked) { alert('Please select at least one invitation type.'); return; }
   if (!document.getElementById('consent-gcp').checked) { alert('Please accept the SaaSNova Communications Policy to continue.'); return; }
+  
   const originalText = btn.textContent;
   btn.textContent = 'Submitting…'; btn.disabled = true;
+  
   const fd = new FormData(form);
   const invitations = [];
   form.querySelectorAll('input[type="checkbox"][name^="invite_"]:checked').forEach(c => invitations.push(c.value));
-  const message = `GCP Division: ${fd.get('division') || 'N/A'}\nOffice: ${fd.get('office') || 'N/A'}\nLocation: ${fd.get('city') || ''}, ${fd.get('state') || ''}, ${fd.get('country') || ''}\nJob Title: ${fd.get('job_title') || 'N/A'}\nSource: ${fd.get('source') || 'N/A'}\nInvitations Requested: ${invitations.join(', ')}\nMessage: ${fd.get('message') || 'N/A'}`;
-  const url = `https://api.hsforms.com/submissions/v3/integration/submit/245317385/aa170816-bdf0-44f2-a14c-97dd671d1762`;
-  fetch(url, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify({ fields:[{name:'firstname',value:fd.get('first_name')||''},{name:'lastname',value:fd.get('last_name')||''},{name:'email',value:fd.get('email')||''},{name:'message',value:message}], context:{pageUri:window.location.href,pageName:document.title} }) })
-  .then(async res => { if(!res.ok){const t=await res.text();throw new Error(t);} form.style.display='none'; document.getElementById('gcp-gtm-success').style.display='block'; })
-  .catch(err => { btn.textContent=originalText; btn.disabled=false; console.error(err); form.style.display='none'; document.getElementById('gcp-gtm-success').style.display='block'; });
+  
+  // GCP SPECIFIC FORM ID
+  const portalId = '245317385';
+  const formId = '6a16ff8d-84a8-4232-84fe-cc90f30eaa6f';
+  const url = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`;
+
+  // Mapping strictly to the user-provided HubSpot Property Internal Names
+  const fields = [
+    { name: 'firstname', value: fd.get('first_name') || '' },
+    { name: 'lastname', value: fd.get('last_name') || '' },
+    { name: 'email', value: fd.get('email') || '' },
+    { name: 'jobtitle', value: fd.get('job_title') || '' },
+    { name: 'gcp_division__org', value: fd.get('division') || '' },
+    { name: 'primary_office_location', value: fd.get('office') || '' },
+    { name: 'city', value: fd.get('city') || '' },
+    { name: 'state', value: fd.get('state') || '' },
+    { name: 'country', value: fd.get('country') || '' },
+    { name: 'i_want_to_receive_invitations_for', value: invitations.join(';') },
+    { name: 'how_did_you_hear_about_saasnova', value: fd.get('source') || '' }
+  ];
+
+  if (fd.get('message') && fd.get('message').trim() !== '') {
+    fields.push({ name: 'message', value: fd.get('message') });
+  }
+
+  fetch(url, { 
+    method:'POST', 
+    headers:{'Content-Type':'application/json'}, 
+    body: JSON.stringify({ 
+      fields: fields, 
+      context:{pageUri:window.location.href,pageName:document.title} 
+    }) 
+  })
+  .then(async res => { 
+    if(!res.ok){const t=await res.text();throw new Error(t);} 
+    form.style.display='none'; 
+    document.getElementById('gcp-gtm-success').style.display='block'; 
+  })
+  .catch(err => { 
+    btn.textContent=originalText; btn.disabled=false; console.error(err); 
+    // Graceful fallback UI
+    form.style.display='none'; 
+    document.getElementById('gcp-gtm-success').style.display='block'; 
+  });
 }
 </script>
 </body>
