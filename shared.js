@@ -395,7 +395,7 @@ const NAV_MOBILE = `
   <div class="mob-accordion">
     <button class="mob-accordion-btn">Resources ${SVG.chevDown}</button>
     <div class="mob-accordion-content">
-      <a href="/blog" class="mob-sub-link">Blog</a>
+      <a href="/blog/" class="mob-sub-link">Blog</a>
       <a href="/show" class="mob-sub-link">The Jen GTM Show</a>
       <a href="/case-study" class="mob-sub-link">Case Studies</a>
       <a href="/webinars" class="mob-sub-link">Webinars</a>
