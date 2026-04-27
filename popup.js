@@ -5,7 +5,7 @@
 (function () {
   'use strict';
 
-  const SKIP_PATHS  = ['/contact', '/newsletter', 'contact.html', 'newsletter.html'];
+  const SKIP_PATHS  = ['/contact', '/newsletter', '/contact', '/newsletter'];
   const STORAGE_KEY = 'sn_popup_dismissed'; // Upgraded to permanent storage
   
   // Set to 20 seconds for users who stay on the page

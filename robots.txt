@@ -1,7 +1,5 @@
 User-agent: *
 Allow: /
-
-# Disallow utility/legal pages from indexing
 Disallow: /privacy
 Disallow: /terms
 
