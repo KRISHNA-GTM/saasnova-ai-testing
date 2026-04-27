@@ -1,25 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="google-site-verification" content="google960def4cf195e9cf" />
-<link rel="icon" type="image/png" sizes="32x32" href="/images/logo-favicon-32x32.png">
+<meta name="google-site-verification" content="LwLN-rte3Gr-8_iFc-B2XCoqCsiEHGN2MoECtAgx2C8" />
+<link rel="icon" type="image/png" sizes="32x32" href="images/logo-favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="images/logo-favicon-16x16.png">
 <link rel="apple-touch-icon" href="images/logo-favicon-apple-touch-icon.png">
-
 <title>Page Not Found | SaaSNova</title>
-<meta http-equiv="refresh" content="5;url=/"/>
-<link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@700;900&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="style.css"/>
-<link rel="canonical" href="https://saasnova.ai/" />
-<meta name="description" content="This page does not exist or has been moved."/>
-<meta property="og:url" content="https://saasnova.ai/"/>
-<meta property="og:site_name" content="SaaSNova"/>
-<meta property="og:type" content="website"/>
 <meta name="robots" content="noindex, follow"/>
+<script>
+// GitHub Pages Clean URL Handler
+// When GitHub Pages can't find a file, it serves 404.html
+// This script checks if the URL matches a known page and redirects to the .html version
+(function() {
+  var path = window.location.pathname;
+  var base = window.location.origin;
+
+  // Strip leading slash and trailing slash
+  var clean = path.replace(/^\//, '').replace(/\/$/, '');
+
+  // If it already ends in .html, we have a real 404
+  if (clean.endsWith('.html')) return;
+
+  // Map of clean slugs to .html files
+  var pages = {
+    '': 'index.html',
+    'index': 'index.html',
+    'services': 'services.html',
+    'ignite': 'ignite.html',
+    'supernova': 'supernova.html',
+    'novax': 'novax.html',
+    'about': 'about.html',
+    'partners': 'partners.html',
+    'partner-aws-gtm': 'partner-aws-gtm.html',
+    'partner-azure-gtm': 'partner-azure-gtm.html',
+    'partner-gcp-gtm': 'partner-gcp-gtm.html',
+    'partner-saasify': 'partner-saasify.html',
+    'partner-workspan': 'partner-workspan.html',
+    'partner-pronix': 'partner-pronix.html',
+    'blog': 'blog.html',
+    'blog-aws-alignment': 'blog-aws-alignment.html',
+    'blog-aws-prm-deadline': 'blog-aws-prm-deadline.html',
+    'blog-cloud-marketplace-listing-silent-fix': 'blog-cloud-marketplace-listing-silent-fix.html',
+    'show': 'show.html',
+    'case-study': 'case-study.html',
+    'webinars': 'webinars.html',
+    'newsletter': 'newsletter.html',
+    'careers': 'careers.html',
+    'contact': 'contact.html',
+    'privacy': 'privacy.html',
+    'terms': 'terms.html',
+    'results': 'results.html',
+  };
+
+  // Handle GitHub Pages subpath (repo name in URL)
+  // e.g. /saasnova/about -> clean = 'saasnova/about' -> strip repo prefix
+  var parts = clean.split('/');
+  var slug = parts[parts.length - 1];
+
+  if (pages.hasOwnProperty(slug)) {
+    // Reconstruct the base path (handles repo subdirectory on GitHub Pages)
+    var basePath = window.location.pathname.replace(/[^\/]*$/, '');
+    window.location.replace(basePath + pages[slug] + window.location.search + window.location.hash);
+    return;
+  }
+
+  // Also try the full clean path as slug
+  if (pages.hasOwnProperty(clean)) {
+    window.location.replace(base + '/' + pages[clean] + window.location.search + window.location.hash);
+    return;
+  }
+
+  // No match — show the 404 UI below
+})();
+</script>
 </head>
 <body>
 <div id="nav-placeholder"></div>
@@ -27,28 +87,21 @@
   <div style="max-width:480px">
     <div style="font-family:'JetBrains Mono',monospace;font-weight:900;font-size:80px;line-height:1;background:linear-gradient(90deg,var(--blue),var(--pink));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:var(--sp-3)">404</div>
     <h2 style="margin-bottom:var(--sp-2)">Page not found.</h2>
-    <p style="margin-bottom:var(--sp-5);color:var(--text-muted)">This page does not exist or has been moved. Redirecting to the homepage in 5 seconds.</p>
+    <p style="margin-bottom:var(--sp-5);color:var(--text-muted)">This page does not exist or has been moved.</p>
     <div style="display:flex;gap:var(--sp-2);justify-content:center;flex-wrap:wrap">
-      <a href="/" class="btn btn-primary">Go to Homepage</a>
-      <a href="/contact" class="btn btn-secondary">Contact SaaSNova</a>
+      <a href="index.html" class="btn btn-primary">Go to Homepage</a>
+      <a href="contact.html" class="btn btn-secondary">Contact SaaSNova</a>
     </div>
   </div>
 </section>
 <div id="footer-placeholder"></div>
-<script src="shared.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-185EJ40PT4"></script>
 <script>
-// Smart redirect: handles .html → clean URL and old bookmarks
-(function() {
-  var path = window.location.pathname;
-  // If someone lands on a .html URL, strip it and redirect
-  if (path.endsWith('.html')) {
-    var cleanPath = path.replace('.html', '');
-    if (cleanPath === '/index') cleanPath = '/';
-    window.location.replace(cleanPath);
-    return;
-  }
-  // Otherwise just let the 5s meta refresh handle it
-})();
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-185EJ40PT4');
 </script>
+<script defer src="shared.js"></script>
 </body>
 </html>
