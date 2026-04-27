@@ -259,12 +259,12 @@ function handleContactSubmit(e) {
   const formData = new FormData(form);
   const inquiryType = formData.get('inquiry_type') || '';
   
-  // Shared fields across both form types
+  // Shared fields across both form types mapped to exact HubSpot internal names
   const fields = [
     { name: 'firstname', value: formData.get('first_name') || '' },
     { name: 'lastname', value: formData.get('last_name') || '' },
     { name: 'email', value: formData.get('email') || '' },
-    { name: 'company_name', value: formData.get('company') || '' } // Using specific company_name internal ID
+    { name: 'company_name', value: formData.get('company') || '' }
   ];
 
   const portalId = '245317385';
@@ -312,8 +312,21 @@ function handleContactSubmit(e) {
     btn.textContent = originalText;
     btn.disabled = false;
     
-    // Show exact HubSpot failure alert for troubleshooting
-    alert("HubSpot Submission Failed. Ensure field values match exactly. Check console for details.");
+    // SMART ERROR REPORTING: Extracts the exact HubSpot reason for rejection
+    let errorDetails = err.message;
+    try {
+      const parsed = JSON.parse(err.message);
+      if (parsed.errors && parsed.errors.length > 0) {
+        errorDetails = parsed.errors.map(e => e.message).join('\\n');
+      }
+    } catch(e) {}
+
+    // Check for AdBlocker network interference
+    if (err.message.includes('Failed to fetch') || err.message.includes('NetworkError')) {
+       alert("Network Error: Could not connect to HubSpot.\\n\\nIf you are using an AdBlocker (like Brave Shields or uBlock Origin), please temporarily disable it to submit the form.");
+    } else {
+       alert("HubSpot Submission Failed!\\n\\nReason:\\n" + errorDetails);
+    }
     console.error('HubSpot Error Details:', err);
   });
 }
