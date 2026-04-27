@@ -263,8 +263,7 @@ function handleContactSubmit(e) {
   const fields = [
     { name: 'firstname', value: formData.get('first_name') || '' },
     { name: 'lastname', value: formData.get('last_name') || '' },
-    { name: 'email', value: formData.get('email') || '' },
-    { name: 'company_name', value: formData.get('company') || '' }
+    { name: 'email', value: formData.get('email') || '' }
   ];
 
   const portalId = '245317385';
@@ -274,6 +273,9 @@ function handleContactSubmit(e) {
   if (inquiryType === 'Partnership Inquiry') {
     formId = '3427559f-e65d-4cfd-b29b-26ba43a79822'; // Partnership Form ID
     
+    // Uses company_name for Partnership
+    fields.push({ name: 'company_name', value: formData.get('company') || '' });
+
     if (formData.get('message') && formData.get('message').trim() !== '') {
       fields.push({ name: 'tell_us_what_you_re_looking_to_explore_together_', value: formData.get('message') });
     }
@@ -281,6 +283,9 @@ function handleContactSubmit(e) {
   } else {
     formId = 'aa170816-bdf0-44f2-a14c-97dd671d1762'; // Service Inquiry Form ID
     
+    // Uses company for Service Inquiry
+    fields.push({ name: 'company', value: formData.get('company') || '' });
+
     fields.push({ name: 'target_cloud_marketplace_s_', value: formData.get('target_cloud') || '' });
     fields.push({ name: 'current_marketplace_status', value: formData.get('marketplace_status') || '' });
     
