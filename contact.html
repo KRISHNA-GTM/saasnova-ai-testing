@@ -144,7 +144,6 @@ gtag('config', 'G-185EJ40PT4');
                 </div>
               </div>
 
-              <!-- This text area is technically optional based on your screenshots -->
               <div class="form-field"><label class="form-label" id="message-label">What is your biggest cloud GTM challenge?</label><textarea name="message" class="form-textarea" id="message-area" placeholder="e.g. Listed on AWS and Azure but no co-sell traction and nothing board-ready to show..."></textarea></div>
               <button type="submit" class="btn btn-primary w-full" style="justify-content:center;">Send Message</button>
             </form>
@@ -219,7 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function updateFormContent() {
     if (partnerRadio.checked) {
-      msgLabel.textContent = "Tell us what you’re looking to explore together.";
+      msgLabel.innerHTML = "Tell us what you’re looking to explore together? <span style='color:var(--pink);margin-left:2px'>*</span>";
       msgArea.placeholder = "e.g. We provide cloud listing infrastructure and want to explore aligning our platforms with SaaSNova's execution motion...";
       isvFields.style.display = 'none';
       
@@ -227,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
       targetCloudSelect.removeAttribute('required');
       marketplaceStatusSelect.removeAttribute('required');
     } else {
-      msgLabel.textContent = "What is your biggest cloud GTM challenge?";
+      msgLabel.innerHTML = "What is your biggest cloud GTM challenge? <span style='color:var(--pink);margin-left:2px'>*</span>";
       msgArea.placeholder = "e.g. Listed on AWS and Azure but no co-sell traction and nothing board-ready to show...";
       isvFields.style.display = 'block';
       
@@ -253,6 +252,7 @@ function handleContactSubmit(e) {
   e.preventDefault();
   const form = e.target;
   const btn = form.querySelector('[type="submit"]');
+  const originalText = btn.textContent;
   btn.textContent = 'Sending…';
   btn.disabled = true;
 
@@ -263,7 +263,8 @@ function handleContactSubmit(e) {
   const fields = [
     { name: 'firstname', value: formData.get('first_name') || '' },
     { name: 'lastname', value: formData.get('last_name') || '' },
-    { name: 'email', value: formData.get('email') || '' }
+    { name: 'email', value: formData.get('email') || '' },
+    { name: 'company_name', value: formData.get('company') || '' } // Using specific company_name internal ID
   ];
 
   const portalId = '245317385';
@@ -273,23 +274,18 @@ function handleContactSubmit(e) {
   if (inquiryType === 'Partnership Inquiry') {
     formId = '3427559f-e65d-4cfd-b29b-26ba43a79822'; // Partnership Form ID
     
-    // Add specific Partnership fields exactly as named in HubSpot
-    fields.push({ name: 'name', value: formData.get('company') || '' });
-    
     if (formData.get('message') && formData.get('message').trim() !== '') {
-      fields.push({ name: 'tell_us_what_youre_looking_to_explore_together', value: formData.get('message') });
+      fields.push({ name: 'tell_us_what_you_re_looking_to_explore_together_', value: formData.get('message') });
     }
     
   } else {
     formId = 'aa170816-bdf0-44f2-a14c-97dd671d1762'; // Service Inquiry Form ID
     
-    // Add specific Service Inquiry fields exactly as named in HubSpot
-    fields.push({ name: 'company', value: formData.get('company') || '' });
-    fields.push({ name: 'target_cloud_marketplaces', value: formData.get('target_cloud') || '' });
+    fields.push({ name: 'target_cloud_marketplace_s_', value: formData.get('target_cloud') || '' });
     fields.push({ name: 'current_marketplace_status', value: formData.get('marketplace_status') || '' });
     
     if (formData.get('message') && formData.get('message').trim() !== '') {
-      fields.push({ name: 'what_is_your_biggest_cloud_gtm_challenge', value: formData.get('message') });
+      fields.push({ name: 'what_is_your_biggest_cloud_gtm_challenge_', value: formData.get('message') });
     }
   }
 
@@ -313,11 +309,11 @@ function handleContactSubmit(e) {
     form.innerHTML = '<div style="padding:var(--sp-4);text-align:center;background:rgba(52,168,83,.06);border-radius:var(--r-xl);border:1px solid rgba(52,168,83,.2)"><div style="font-size:32px;margin-bottom:8px;color:#34a853;">✓</div><div style="font-weight:700;font-size:18px;color:var(--text-primary);margin-bottom:6px">Message sent.</div><p style="color:var(--text-muted)">Founder Jen Dawson reviews every submission personally and responds within 24 hours.</p></div>';
   })
   .catch((err) => {
-    btn.textContent = 'Send Message';
+    btn.textContent = originalText;
     btn.disabled = false;
     
-    // REAL ERROR ALERT: Show the actual issue so you know it failed!
-    alert("HubSpot Submission Failed. Check console for details.");
+    // Show exact HubSpot failure alert for troubleshooting
+    alert("HubSpot Submission Failed. Ensure field values match exactly. Check console for details.");
     console.error('HubSpot Error Details:', err);
   });
 }
