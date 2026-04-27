@@ -15,6 +15,10 @@
 <title>Careers at SaaSNova | Open Roles in Cloud GTM</title>
 <meta name="description" content="Join SaaSNova. We're hiring Partner Pipeline Executives in the US and India to activate ISV pipeline across AWS, Azure, and GCP ecosystems."/>
 <meta name="robots" content="index, follow"/>
+
+<!-- HubSpot Script (Included for tracking/utility as requested) -->
+<script src="https://js-na2.hsforms.net/forms/embed/245317385.js" defer></script>
+
 <style>
 *, *::before, *::after { box-sizing: border-box; }
 html, body { overflow-x: hidden; }
@@ -516,31 +520,40 @@ function handleApplySubmit(e, roleKey) {
   // Specific Form ID for Careers
   const url = 'https://api.hsforms.com/submissions/v3/integration/submit/245317385/094ad5f6-008f-4614-9d45-ce72e96744d2';
   
+  const fields = [
+    { name: 'firstname', value: fd.get('first_name') || '' },
+    { name: 'lastname', value: fd.get('last_name') || '' },
+    { name: 'email', value: fd.get('email') || '' },
+    { name: 'hs_linkedin_url', value: fd.get('linkedin') || '' },
+    { name: 'country', value: fd.get('location') || '' },
+    { name: 'role', value: fd.get('role') || '' },
+    { name: 'why_this_role', value: fd.get('why') || '' }
+  ];
+
+  if (fd.get('background') && fd.get('background').trim() !== '') {
+    fields.push({ name: 'relevant_background', value: fd.get('background') });
+  }
+
   fetch(url, {
     method: 'POST', 
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      fields: [
-        { name: 'firstname', value: fd.get('first_name') || '' },
-        { name: 'lastname', value: fd.get('last_name') || '' },
-        { name: 'email', value: fd.get('email') || '' },
-        { name: 'hs_linkedin_url', value: fd.get('linkedin') || '' },
-        { name: 'country', value: fd.get('location') || '' },
-        { name: 'applied_role', value: fd.get('role') || '' },
-        { name: 'why_this_role', value: fd.get('why') || '' },
-        { name: 'relevant_background', value: fd.get('background') || '' }
-      ],
+      fields: fields,
       context: { 
         pageUri: window.location.href, 
         pageName: document.title 
       }
     })
   }).then(async res => {
-    if (!res.ok) { const t = await res.text(); throw new Error(t); }
+    if (!res.ok) { 
+      const t = await res.text(); 
+      console.error('HubSpot API Error:', t); 
+      throw new Error(t); 
+    }
     form.style.display = 'none';
     document.getElementById('apply-success').style.display = 'block';
   }).catch(err => {
-    console.error(err);
+    console.error('Submission failed:', err);
     // Graceful fallback for the user UI
     form.style.display = 'none';
     document.getElementById('apply-success').style.display = 'block';
