@@ -118,41 +118,100 @@ const NAV_STYLE_AND_DESKTOP = `
     <nav class="nav-links" aria-label="Main">
       <a href="index.html" class="nav-link">Home</a>
       
-      <!-- SERVICES DROPDOWN -->
+      <!-- OFFERINGS DROPDOWN (Updated to Fly-out structure) -->
       <div class="dropdown">
         <button class="dropdown-trigger" aria-expanded="false" aria-haspopup="true">
-          Services ${SVG.chevDown}
+          Offerings ${SVG.chevDown}
         </button>
-        <div class="dropdown-menu" role="menu" style="min-width: 270px; padding: 8px;">
+        <div class="dropdown-menu" role="menu" style="min-width: 290px; padding: 8px;">
           <a href="services.html" class="premium-dd-item">
             <div class="dd-icon-wrap" style="background:rgba(15,25,35,0.05); color:var(--text-primary);">${SVG.srvAll}</div>
             <div>
-              <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">All Services</div>
-              <div style="font-size:12px; color:var(--text-muted); font-weight:500;">View full execution suite</div>
+              <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">All Offerings</div>
+              <div style="font-size:12px; color:var(--text-muted); font-weight:500;">View full program suite</div>
             </div>
           </a>
           <div style="margin: 4px 0; height: 1px; background: var(--border-light);"></div>
-          <a href="ignite.html" class="premium-dd-item">
-            <div class="dd-icon-wrap" style="background:rgba(0,139,248,0.1); color:var(--blue);">${SVG.srvIgnite}</div>
-            <div>
-              <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">Ignite</div>
-              <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Cloud GTM Activation</div>
+
+          <!-- Programs Sub-menu -->
+          <div class="dropdown-submenu">
+            <div class="premium-dd-item" style="cursor:default;">
+              <div class="dd-icon-wrap" style="background:rgba(0,139,248,0.08); color:var(--blue);">${SVG.srvAll}</div>
+              <div style="flex:1;">
+                <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px; display:flex; justify-content:space-between; align-items:center;">
+                  Programs <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M3 1.5L7 5L3 8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Ignite, SuperNova, NovaX</div>
+              </div>
             </div>
-          </a>
-          <a href="supernova.html" class="premium-dd-item">
-            <div class="dd-icon-wrap" style="background:rgba(241,153,83,0.1); color:var(--orange);">${SVG.srvSuper}</div>
-            <div>
-              <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">SuperNova</div>
-              <div style="font-size:12px; color:var(--text-muted); font-weight:500;">US Market Entry</div>
+            <div class="dropdown-menu-sub" style="min-width: 260px; padding: 8px;">
+              <a href="ignite.html" class="premium-dd-item">
+                <div class="dd-icon-wrap" style="background:rgba(0,139,248,0.1); color:var(--blue);">${SVG.srvIgnite}</div>
+                <div>
+                  <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">Ignite</div>
+                  <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Cloud GTM Activation</div>
+                </div>
+              </a>
+              <a href="supernova.html" class="premium-dd-item">
+                <div class="dd-icon-wrap" style="background:rgba(241,153,83,0.1); color:var(--orange);">${SVG.srvSuper}</div>
+                <div>
+                  <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">SuperNova</div>
+                  <div style="font-size:12px; color:var(--text-muted); font-weight:500;">US Market Entry</div>
+                </div>
+              </a>
+              <a href="novax.html" class="premium-dd-item">
+                <div class="dd-icon-wrap" style="background:rgba(250,15,156,0.1); color:var(--pink);">${SVG.srvNova}</div>
+                <div>
+                  <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">NovaX</div>
+                  <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Global Multi-Cloud Scale</div>
+                </div>
+              </a>
             </div>
-          </a>
-          <a href="novax.html" class="premium-dd-item">
-            <div class="dd-icon-wrap" style="background:rgba(250,15,156,0.1); color:var(--pink);">${SVG.srvNova}</div>
-            <div>
-              <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">NovaX</div>
-              <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Global Multi-Cloud Scale</div>
+          </div>
+
+          <!-- Services Sub-menu -->
+          <div class="dropdown-submenu">
+            <div class="premium-dd-item" style="cursor:default;">
+              <div class="dd-icon-wrap" style="background:rgba(241,153,83,0.08); color:var(--orange);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div style="flex:1;">
+                <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px; display:flex; justify-content:space-between; align-items:center;">
+                  Services <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M3 1.5L7 5L3 8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div style="font-size:12px; color:var(--text-muted); font-weight:500;">PDMaaS, PMMaaS, PALaaS</div>
+              </div>
             </div>
-          </a>
+            <div class="dropdown-menu-sub" style="min-width: 260px; padding: 8px;">
+              <a href="pdmaas.html" class="premium-dd-item">
+                <div class="dd-icon-wrap" style="background:rgba(0,139,248,0.1); color:var(--blue);">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <div>
+                  <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">PDMaaS</div>
+                  <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Partner Development</div>
+                </div>
+              </a>
+              <a href="pmmaas.html" class="premium-dd-item">
+                <div class="dd-icon-wrap" style="background:rgba(241,153,83,0.1); color:var(--orange);">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                </div>
+                <div>
+                  <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">PMMaaS</div>
+                  <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Partner Marketing</div>
+                </div>
+              </a>
+              <a href="palaas.html" class="premium-dd-item">
+                <div class="dd-icon-wrap" style="background:rgba(250,15,156,0.1); color:var(--pink);">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                </div>
+                <div>
+                  <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">PALaaS</div>
+                  <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Alliance Leadership</div>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
       
@@ -338,18 +397,31 @@ const NAV_MOBILE = `
   <a href="index.html" class="mob-link" style="padding:18px 20px !important; font-weight:600 !important; text-decoration:none !important; color:#0F1923 !important; border-bottom:1px solid rgba(0,0,0,0.04) !important; display:block !important;">Home</a>
   
   <div class="mob-accordion">
-    <button class="mob-accordion-btn">Services ${SVG.chevDown}</button>
+    <button class="mob-accordion-btn">Offerings ${SVG.chevDown}</button>
     <div class="mob-accordion-content">
-      <a href="services.html" class="mob-sub-link" style="color:#008BF8 !important; font-weight:700 !important;">All Services</a>
-      <a href="ignite.html" class="mob-sub-link">
-        <span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#008BF8; margin-right:12px; box-shadow: 0 0 8px rgba(0,139,248,0.4);"></span> Ignite
-      </a>
-      <a href="supernova.html" class="mob-sub-link">
-        <span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#F19953; margin-right:12px; box-shadow: 0 0 8px rgba(241,153,83,0.4);"></span> SuperNova
-      </a>
-      <a href="novax.html" class="mob-sub-link">
-        <span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#FA0F9C; margin-right:12px; box-shadow: 0 0 8px rgba(250,15,156,0.4);"></span> NovaX
-      </a>
+      <a href="services.html" class="mob-sub-link" style="color:#008BF8 !important; font-weight:700 !important;">All Offerings</a>
+      
+      <div class="mob-accordion" style="border-bottom:none !important; display:block !important;">
+        <button class="mob-accordion-btn" style="padding: 14px 20px 14px 24px !important; font-size:15px !important; color:#3D4E5C !important;">
+          <span style="display:flex;align-items:center;gap:8px;color:var(--blue);">${SVG.srvAll} Programs</span> ${SVG.chevDown}
+        </button>
+        <div class="mob-accordion-content" style="background: #f1f5f9 !important;">
+          <a href="ignite.html" class="mob-sub-link" style="padding-left: 40px !important;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#008BF8; margin-right:12px;"></span> Ignite</a>
+          <a href="supernova.html" class="mob-sub-link" style="padding-left: 40px !important;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#F19953; margin-right:12px;"></span> SuperNova</a>
+          <a href="novax.html" class="mob-sub-link" style="padding-left: 40px !important;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#FA0F9C; margin-right:12px;"></span> NovaX</a>
+        </div>
+      </div>
+
+      <div class="mob-accordion" style="border-bottom:none !important; display:block !important;">
+        <button class="mob-accordion-btn" style="padding: 14px 20px 14px 24px !important; font-size:15px !important; color:#3D4E5C !important;">
+          <span style="display:flex;align-items:center;gap:8px;color:var(--orange);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Services</span> ${SVG.chevDown}
+        </button>
+        <div class="mob-accordion-content" style="background: #f1f5f9 !important;">
+          <a href="pdmaas.html" class="mob-sub-link" style="padding-left: 40px !important;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#008BF8; margin-right:12px;"></span> PDMaaS</a>
+          <a href="pmmaas.html" class="mob-sub-link" style="padding-left: 40px !important;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#F19953; margin-right:12px;"></span> PMMaaS</a>
+          <a href="palaas.html" class="mob-sub-link" style="padding-left: 40px !important;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#FA0F9C; margin-right:12px;"></span> PALaaS</a>
+        </div>
+      </div>
     </div>
   </div>
   
@@ -452,21 +524,25 @@ const FOOTER_HTML = `
           </div>
         </div>
         <div style="display:flex;gap:16px;align-items:center;">
-          <a href="https://www.linkedin.com/company/saasnova" target="_blank" rel="noopener" style="color:#0A66C2;" aria-label="LinkedIn">
+          <a href="#" style="color:#0A66C2;" aria-label="LinkedIn">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
           </a>
-          <a href="https://www.youtube.com/@SaaSNovaGTM" target="_blank" rel="noopener" style="color:#FF0000;" aria-label="YouTube">
+          <a href="#" style="color:#FF0000;" aria-label="YouTube">
             <svg width="26" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.582 6.186c-.23-.86-.908-1.538-1.768-1.768C18.254 4 12 4 12 4s-6.254 0-7.814.418c-.86.23-1.538.908-1.768 1.768C2 7.746 2 12 2 12s0 4.254.418 5.814c.23.86.908 1.538 1.768 1.768 1.56.418 7.814.418 7.814.418s6.254 0 7.814-.418c.86-.23 1.538-.908 1.768-1.768C22 16.254 22 12 22 12s0-4.254-.418-5.814zM9.996 15.005l.005-6 5.207 3.005-5.212 2.995z"/></svg>
           </a>
         </div>
       </div>
       
       <div>
-        <div class="footer-col-title">SERVICES</div>
-        <a href="services.html" class="footer-link">All Services</a>
+        <div class="footer-col-title">PROGRAMS</div>
+        <a href="services.html" class="footer-link">All Programs</a>
         <a href="ignite.html" class="footer-link">Ignite</a>
         <a href="supernova.html" class="footer-link">SuperNova</a>
         <a href="novax.html" class="footer-link">NovaX</a>
+        <div class="footer-col-title" style="margin-top:20px;">SERVICES</div>
+        <a href="pdmaas.html" class="footer-link">PDMaaS</a>
+        <a href="pmmaas.html" class="footer-link">PMMaaS</a>
+        <a href="palaas.html" class="footer-link">PALaaS</a>
       </div>
       
       <div>
