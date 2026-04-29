@@ -118,17 +118,17 @@ const NAV_STYLE_AND_DESKTOP = `
     <nav class="nav-links" aria-label="Main">
       <a href="index.html" class="nav-link">Home</a>
       
-      <!-- OFFERINGS DROPDOWN (Updated to Fly-out structure) -->
+      <!-- SOLUTIONS DROPDOWN (Updated to Fly-out structure) -->
       <div class="dropdown">
         <button class="dropdown-trigger" aria-expanded="false" aria-haspopup="true">
-          Offerings ${SVG.chevDown}
+          Solutions ${SVG.chevDown}
         </button>
         <div class="dropdown-menu" role="menu" style="min-width: 290px; padding: 8px;">
           <a href="services.html" class="premium-dd-item">
             <div class="dd-icon-wrap" style="background:rgba(15,25,35,0.05); color:var(--text-primary);">${SVG.srvAll}</div>
             <div>
-              <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">All Offerings</div>
-              <div style="font-size:12px; color:var(--text-muted); font-weight:500;">View full program suite</div>
+              <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">All Programs & Services</div>
+              <div style="font-size:12px; color:var(--text-muted); font-weight:500;">View full execution suite</div>
             </div>
           </a>
           <div style="margin: 4px 0; height: 1px; background: var(--border-light);"></div>
@@ -189,7 +189,7 @@ const NAV_STYLE_AND_DESKTOP = `
                 </div>
                 <div>
                   <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">PDMaaS</div>
-                  <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Partner Development</div>
+                  <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Pipeline Execution</div>
                 </div>
               </a>
               <a href="pmmaas.html" class="premium-dd-item">
@@ -198,7 +198,7 @@ const NAV_STYLE_AND_DESKTOP = `
                 </div>
                 <div>
                   <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">PMMaaS</div>
-                  <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Partner Marketing</div>
+                  <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Cloud Messaging</div>
                 </div>
               </a>
               <a href="palaas.html" class="premium-dd-item">
@@ -207,7 +207,7 @@ const NAV_STYLE_AND_DESKTOP = `
                 </div>
                 <div>
                   <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">PALaaS</div>
-                  <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Alliance Leadership</div>
+                  <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Alliance Operations</div>
                 </div>
               </a>
             </div>
@@ -397,9 +397,9 @@ const NAV_MOBILE = `
   <a href="index.html" class="mob-link" style="padding:18px 20px !important; font-weight:600 !important; text-decoration:none !important; color:#0F1923 !important; border-bottom:1px solid rgba(0,0,0,0.04) !important; display:block !important;">Home</a>
   
   <div class="mob-accordion">
-    <button class="mob-accordion-btn">Offerings ${SVG.chevDown}</button>
+    <button class="mob-accordion-btn">Solutions ${SVG.chevDown}</button>
     <div class="mob-accordion-content">
-      <a href="services.html" class="mob-sub-link" style="color:#008BF8 !important; font-weight:700 !important;">All Offerings</a>
+      <a href="services.html" class="mob-sub-link" style="color:#008BF8 !important; font-weight:700 !important;">All Programs & Services</a>
       
       <div class="mob-accordion" style="border-bottom:none !important; display:block !important;">
         <button class="mob-accordion-btn" style="padding: 14px 20px 14px 24px !important; font-size:15px !important; color:#3D4E5C !important;">
@@ -535,7 +535,7 @@ const FOOTER_HTML = `
       
       <div>
         <div class="footer-col-title">PROGRAMS</div>
-        <a href="services.html" class="footer-link">All Programs</a>
+        <a href="services.html" class="footer-link">All Programs & Services</a>
         <a href="ignite.html" class="footer-link">Ignite</a>
         <a href="supernova.html" class="footer-link">SuperNova</a>
         <a href="novax.html" class="footer-link">NovaX</a>
