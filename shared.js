@@ -13,7 +13,7 @@
 })();
 /* ------------------------------------------------- */
 
-/* SaaSNova V5.5, shared.js — Updated with AWS/Azure/GCP GTM + Careers pages */
+/* SaaSNova V5.6, shared.js — Fixed Nav/Banner Overlaps & Smooth Swiping */
 
 const CALENDLY = "https://calendly.com/jen-saasnova/founder-strategy-session-scale-your-gtm-via-aws?month=2026-03";
 
@@ -35,6 +35,158 @@ const SVG = {
   careers: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="7" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>`
 };
 
+// ── GLOBAL URGENCY TOP BANNER ──
+const TOP_BANNER_HTML = `
+<style>
+  /* 1. Push everything down so the fixed banner doesn't cover content */
+  body {
+    padding-top: 48px !important;
+  }
+
+  /* 2. Banner styling */
+  #sn-top-banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* Frosted Glass + Soft Aurora */
+    background: rgba(255, 255, 255, 0.6);
+    background-image: linear-gradient(90deg, rgba(0,139,248,0.03), rgba(250,15,156,0.03));
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    color: #0F1923;
+    z-index: 10005; /* Keeps it above everything */
+    display: flex;
+    align-items: center;
+    height: 48px;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+  
+  /* Animated Shimmer Line */
+  #sn-top-banner::after {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%;
+    width: 40%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.7), transparent);
+    animation: sn-shimmer 8s infinite;
+    pointer-events: none;
+  }
+  @keyframes sn-shimmer { 100% { left: 200%; } }
+
+  .sn-banner-track {
+    display: flex;
+    height: 48px;
+    width: 100%;
+    cursor: grab;
+    transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  .sn-banner-track:active { cursor: grabbing; }
+
+  .sn-banner-slide {
+    width: 100%;
+    height: 48px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 0 100px;
+    box-sizing: border-box;
+  }
+
+  /* Tag Styling */
+  .sn-banner-tag {
+    padding: 3px 10px;
+    border-radius: 6px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,0.08);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+  .sn-tag-orange { color: #D96A00; border-color: rgba(241,153,83,0.3); }
+  .sn-tag-blue { color: #008BF8; border-color: rgba(0,139,248,0.2); }
+  
+  .sn-banner-pulse { width: 6px; height: 6px; border-radius: 50%; }
+  .sn-banner-pulse.deadline-pulse { background: #F19953; animation: ring-pulse-orange 2s infinite; }
+  .sn-banner-pulse.launch-pulse { background: #008BF8; animation: ring-pulse-blue 2s infinite; }
+  
+  @keyframes ring-pulse-orange {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(241, 153, 83, 0.4); }
+    70% { transform: scale(1); box-shadow: 0 0 0 4px rgba(241, 153, 83, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(241, 153, 83, 0); }
+  }
+  @keyframes ring-pulse-blue {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 139, 248, 0.4); }
+    70% { transform: scale(1); box-shadow: 0 0 0 4px rgba(0, 139, 248, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(0, 139, 248, 0); }
+  }
+
+  .sn-banner-text { font-size: 13px; font-weight: 600; color: #3D4E5C; pointer-events: none; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .sn-banner-text strong { color: #0F1923; font-weight: 800; }
+
+  /* Premium Pill Link */
+  .sn-banner-link {
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+    background: #0F1923;
+    color: #fff !important;
+    padding: 5px 14px;
+    border-radius: 999px;
+    transition: all 0.2s ease;
+    box-shadow: 0 4px 12px rgba(15,25,35,0.15);
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    flex-shrink: 0;
+  }
+  .sn-banner-link:hover { transform: translateY(-1px); background: #FA0F9C; box-shadow: 0 6px 16px rgba(250,15,156,0.2); }
+
+  .sn-banner-controls { position: absolute; right: 20px; display: flex; gap: 8px; }
+  .sn-banner-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(0,0,0,0.1); transition: all 0.3s; cursor: pointer; border: none; padding:0; }
+  .sn-banner-dot.active { background: #008BF8; width: 18px; border-radius: 4px; }
+
+  /* 3. FIX: Ensure Nav doesn't overlap the new Glass Banner */
+  #nav { top: 48px !important; }
+  #nav.is-floating { top: 15px !important; } /* Floats near the top when scrolling */
+
+  @media (max-width: 768px) {
+    .sn-banner-slide { padding: 0 60px 0 16px; justify-content: flex-start; }
+    .sn-banner-tag { display: none; }
+    .sn-banner-text { font-size: 12px; }
+    .sn-banner-controls { display: none; }
+  }
+</style>
+
+<div id="sn-top-banner">
+  <div class="sn-banner-track" id="sn-banner-track">
+    <div class="sn-banner-slide">
+      <div class="sn-banner-tag sn-tag-orange"><span class="sn-banner-pulse deadline-pulse"></span> Deadline</div>
+      <div class="sn-banner-text"><strong>AWS PRM Compliance:</strong> Required by July 31.</div>
+      <a href="https://calendly.com/jen-saasnova/aws-prm-deadline-july-31-act-now" target="_blank" class="sn-banner-link">Book Implementation</a>
+    </div>
+    <div class="sn-banner-slide">
+      <div class="sn-banner-tag sn-tag-blue"><span class="sn-banner-pulse launch-pulse"></span> New Launch</div>
+      <div class="sn-banner-text"><strong>SaaSNova × SaaSify:</strong> First AWS Partner Starter Bundle.</div>
+      <a href="https://www.saasnova.ai/aws-partner-starter-bundle-with-saasify-saasnova/" target="_blank" class="sn-banner-link">View Bundle</a>
+    </div>
+  </div>
+  <div class="sn-banner-controls" id="sn-banner-dots">
+    <button class="sn-banner-dot active" data-slide="0" aria-label="Slide 1"></button>
+    <button class="sn-banner-dot" data-slide="1" aria-label="Slide 2"></button>
+  </div>
+</div>
+`;
+
 // ── DESKTOP NAV & GLOBAL STYLES ──
 const NAV_STYLE_AND_DESKTOP = `
 <style>
@@ -42,7 +194,6 @@ const NAV_STYLE_AND_DESKTOP = `
   #nav { 
     transition: all 0.3s ease-in-out; 
     position: absolute; 
-    top: 0; 
     left: 0; 
     right: 0; 
     z-index: 9999; 
@@ -50,7 +201,6 @@ const NAV_STYLE_AND_DESKTOP = `
   }
   #nav.is-floating { 
     position: fixed; 
-    top: 15px; 
     left: 50%; 
     transform: translateX(-50%); 
     width: 95%; 
@@ -98,7 +248,7 @@ const NAV_STYLE_AND_DESKTOP = `
   .dd-icon-wrap { display: flex; align-items: center; justify-content: center; width: 36px; height: 36px; border-radius: 8px; flex-shrink: 0; }
 
   /* ── NUCLEAR CACHE BUSTER FOR MOBILE MENU ── */
-  #sn-mob-menu { display: none !important; position: fixed !important; top: 64px !important; left: 0 !important; right: 0 !important; bottom: 0 !important; background: #ffffff !important; z-index: 9999 !important; padding: 24px !important; flex-direction: column !important; gap: 2px !important; overflow-y: auto !important; border-top: 1px solid #E8EEF4 !important; }
+  #sn-mob-menu { display: none !important; position: fixed !important; top: 0 !important; left: 0 !important; right: 0 !important; bottom: 0 !important; background: #ffffff !important; z-index: 9998 !important; padding: 112px 24px 24px !important; flex-direction: column !important; gap: 2px !important; overflow-y: auto !important; border-top: 1px solid #E8EEF4 !important; }
   #sn-mob-menu.open { display: flex !important; }
   .mob-accordion { border-bottom: 1px solid rgba(0,0,0,0.04) !important; display: block !important; visibility: visible !important; }
   .mob-accordion-btn { display: flex !important; justify-content: space-between !important; align-items: center !important; width: 100% !important; padding: 18px 20px !important; font-size: 18px !important; font-weight: 600 !important; color: #0F1923 !important; background: none !important; border: none !important; cursor: pointer !important; text-align: left !important; visibility: visible !important; font-family: inherit !important;}
@@ -118,7 +268,7 @@ const NAV_STYLE_AND_DESKTOP = `
     <nav class="nav-links" aria-label="Main">
       <a href="index.html" class="nav-link">Home</a>
       
-      <!-- SOLUTIONS DROPDOWN (Updated to Fly-out structure) -->
+      <!-- SOLUTIONS DROPDOWN -->
       <div class="dropdown">
         <button class="dropdown-trigger" aria-expanded="false" aria-haspopup="true">
           Solutions ${SVG.chevDown}
@@ -133,7 +283,6 @@ const NAV_STYLE_AND_DESKTOP = `
           </a>
           <div style="margin: 4px 0; height: 1px; background: var(--border-light);"></div>
 
-          <!-- Programs Sub-menu -->
           <div class="dropdown-submenu">
             <div class="premium-dd-item" style="cursor:default;">
               <div class="dd-icon-wrap" style="background:rgba(0,139,248,0.08); color:var(--blue);">${SVG.srvAll}</div>
@@ -169,7 +318,6 @@ const NAV_STYLE_AND_DESKTOP = `
             </div>
           </div>
 
-          <!-- Services Sub-menu -->
           <div class="dropdown-submenu">
             <div class="premium-dd-item" style="cursor:default;">
               <div class="dd-icon-wrap" style="background:rgba(241,153,83,0.08); color:var(--orange);">
@@ -232,7 +380,6 @@ const NAV_STYLE_AND_DESKTOP = `
           </a>
           <div style="margin: 4px 0; height: 1px; background: var(--border-light);"></div>
 
-          <!-- Cloud GTM SME Sub-menu -->
           <div class="dropdown-submenu">
             <div class="premium-dd-item" style="cursor:default;">
               <div class="dd-icon-wrap" style="background:rgba(0,139,248,0.08); color:var(--blue);">${SVG.partCloud}</div>
@@ -268,7 +415,6 @@ const NAV_STYLE_AND_DESKTOP = `
             </div>
           </div>
 
-          <!-- 3PI Sub-menu -->
           <div class="dropdown-submenu">
             <div class="premium-dd-item" style="cursor:default;">
               <div class="dd-icon-wrap" style="background:rgba(100,116,139,0.08); color:var(--text-muted);">${SVG.part3PI}</div>
@@ -297,7 +443,6 @@ const NAV_STYLE_AND_DESKTOP = `
             </div>
           </div>
 
-          <!-- SI / GSI Sub-menu -->
           <div class="dropdown-submenu">
             <div class="premium-dd-item" style="cursor:default;">
               <div class="dd-icon-wrap" style="background:#fff; border:1px solid var(--border-light);"><img src="images/SI-GSI.png" alt="SI / GSI" style="width:22px;height:22px;object-fit:contain;"/></div>
@@ -616,6 +761,82 @@ if(navEl) navEl.innerHTML = NAV_STYLE_AND_DESKTOP;
 
 if (!document.getElementById('sn-mob-menu')) {
   document.body.insertAdjacentHTML('beforeend', NAV_MOBILE);
+}
+
+// Inject the new Top Banner right at the start of the body
+document.body.insertAdjacentHTML('afterbegin', TOP_BANNER_HTML);
+
+
+// ── BANNER LOGIC ──
+const track = document.getElementById('sn-banner-track');
+const dots = document.querySelectorAll('.sn-banner-dot');
+let currentIdx = 0;
+let bannerAuto;
+
+function startAuto() {
+  clearInterval(bannerAuto);
+  bannerAuto = setInterval(() => goToSlide((currentIdx + 1) % 2), 6000);
+}
+
+function goToSlide(idx) {
+  currentIdx = idx;
+  track.style.transform = `translateX(-${currentIdx * 100}%)`;
+  dots.forEach((d, i) => d.classList.toggle('active', i === currentIdx));
+}
+
+if (track && dots.length > 0) {
+  startAuto();
+
+  let startX = 0;
+  let isDragging = false;
+
+  track.addEventListener('mousedown', e => { 
+    e.preventDefault(); // Prevents text selection highlighting
+    startX = e.pageX; 
+    isDragging = true;
+    clearInterval(bannerAuto); 
+    track.style.transition = 'none';
+  });
+  
+  window.addEventListener('mouseup', e => {
+    if(!isDragging) return;
+    isDragging = false;
+    const diff = startX - e.pageX;
+    track.style.transition = 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
+    if (Math.abs(diff) > 40) {
+      goToSlide(diff > 0 ? (currentIdx + 1) % 2 : (currentIdx - 1 + 2) % 2);
+    } else {
+      goToSlide(currentIdx);
+    }
+    startAuto();
+  });
+
+  track.addEventListener('touchstart', e => { 
+    startX = e.touches[0].clientX; 
+    isDragging = true;
+    clearInterval(bannerAuto); 
+    track.style.transition = 'none';
+  }, {passive: true});
+
+  window.addEventListener('touchend', e => {
+    if(!isDragging) return;
+    isDragging = false;
+    const diff = startX - e.changedTouches[0].clientX;
+    track.style.transition = 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
+    if (Math.abs(diff) > 40) {
+      goToSlide(diff > 0 ? (currentIdx + 1) % 2 : (currentIdx - 1 + 2) % 2);
+    } else {
+      goToSlide(currentIdx);
+    }
+    startAuto();
+  });
+
+  dots.forEach((d, i) => {
+    d.addEventListener('click', () => {
+      goToSlide(i);
+      startAuto();
+    });
+  });
 }
 
 const footerEl = document.getElementById('footer-placeholder');

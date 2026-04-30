@@ -81,6 +81,14 @@ h1, h2, h3, h4, h5, h6 {
   overflow-x: hidden;
 }
 
+ /* ── MOBILE OVERFLOW & TEXT WRAPPING FIXES ── */
+  .card { overflow-wrap: break-word !important; box-sizing: border-box !important; }
+  .check-item { display: flex !important; align-items: flex-start !important; gap: 12px !important; white-space: normal !important; word-break: break-word !important; }
+  .check-dot { flex-shrink: 0 !important; min-width: 16px !important; margin-top: 4px; }
+  .cloud-pill-tag { display: inline-block !important; padding: 6px 16px; border-radius: 24px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 20px; line-height: 1.5; text-align: left; white-space: normal !important; word-break: break-word; }
+  .deep-dive-btn { display: inline-flex; align-items: center; justify-content: center; width: 100%; padding: 14px 24px; border-radius: 8px; font-weight: 700; font-size: 15px; text-align: center; white-space: normal !important; word-break: break-word; transition: transform 0.2s ease, opacity 0.2s ease; }
+  .deep-dive-btn:hover { transform: translateY(-2px); opacity: 0.9; }
+
 /* ══════════════════════════════════════════
    HERO SECTION
 ══════════════════════════════════════════ */
@@ -679,6 +687,8 @@ gtag('config', 'G-185EJ40PT4');
   <div class="sn-hero-inner" style="position: relative;">
     
     <div class="sn-hero-text reveal">
+      
+ 
       <div class="sn-hero-eyebrow">
         <span class="sn-eyebrow-dot"></span>
         GTM Execution Across AWS, Microsoft, and GCP
@@ -976,7 +986,7 @@ gtag('config', 'G-185EJ40PT4');
 <section class="sn-programs" style="background:#ffffff; padding: 64px 0;">
   <div class="container">
     <div style="text-align:center;margin-bottom:60px">
-      <div class="section-tag st-blue" style="margin-bottom:12px">Services</div>
+      <div class="section-tag st-blue" style="margin-bottom:12px">Programs</div>
       <h2 class="reveal" style="margin-bottom:10px">Pick your stage,<br/>We customize the execution.</h2>
       <p class="reveal" style="max-width:580px;margin:0 auto;font-size:17px;color:var(--text-secondary)">Start at the stage that matches your GTM maturity. Execution is customized to your cloud mix and revenue targets.</p>
     </div>
@@ -1119,6 +1129,60 @@ gtag('config', 'G-185EJ40PT4');
         </div>
       </div>
 
+    </div>
+  </div>
+</section>
+
+<!-- 6.5 DEDICATED SERVICES GATEWAY -->
+<section id="managed-services" style="background:linear-gradient(160deg,#F5EEFF 0%,#FFF8F0 100%);padding:var(--sp-10) 0;border-top:1px solid var(--border-light)">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:var(--sp-8)">
+      <div class="section-tag st-pink reveal" style="margin-bottom:12px">Services</div>
+      <h2 class="reveal delay-1" style="color:var(--text-primary);margin-bottom:10px; font-size:clamp(32px, 4vw, 44px); font-weight:800; letter-spacing:-0.02em;">Embedded GTM Operations</h2>
+      <p class="reveal delay-2" style="color:var(--text-secondary);max-width:600px;margin:0 auto;font-size:17px;">
+        Flexible execution for ISVs who have a motion but need a <strong>fractional alliance team</strong> to sustain it. Switch between programs and dedicated services as your cloud revenue targets evolve.
+      </p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:32px;">
+      <!-- PDMaaS -->
+      <div class="card reveal delay-1" style="background:#fff;border-radius:var(--r-2xl);padding:32px;border:1px solid rgba(0,139,248,0.2);box-shadow:0 12px 32px rgba(0,139,248,0.04);display:flex;flex-direction:column;height:100%;">
+        <div style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:rgba(0,139,248,.1);color:var(--blue);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-bottom:20px;align-self:flex-start;">Pipeline Execution</div>
+        <h3 style="font-size:24px;margin-bottom:12px;">PDM as a Service</h3>
+        <p style="color:var(--text-secondary);font-size:15px;line-height:1.6;margin-bottom:24px;">Simulate ISV-side execution of what a hyperscaler PDM demands. We run PRM hygiene, ACE pipeline progression, and active field engagement.</p>
+        <ul class="check-list" style="margin-bottom:32px; flex-grow:1;">
+          <li class="check-item"><span class="check-dot" style="background:var(--blue)"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span><div>Partner strategy &amp; portal hygiene</div></li>
+          <li class="check-item"><span class="check-dot" style="background:var(--blue)"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span><div>Co-sell pipeline development</div></li>
+          <li class="check-item"><span class="check-dot" style="background:var(--blue)"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span><div>Marketplace funding workflows</div></li>
+        </ul>
+        <a href="pdmaas.html" class="deep-dive-btn" style="color:var(--blue);background:rgba(0,139,248,0.08);margin-top:auto;">Explore PDMaaS &rarr;</a>
+      </div>
+
+      <!-- PMMaaS -->
+      <div class="card reveal delay-2" style="background:#fff;border-radius:var(--r-2xl);padding:32px;border:1px solid rgba(241,153,83,0.2);box-shadow:0 12px 32px rgba(241,153,83,0.04);display:flex;flex-direction:column;height:100%;">
+        <div style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:rgba(241,153,83,.1);color:var(--orange);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-bottom:20px;align-self:flex-start;">Cloud Messaging</div>
+        <h3 style="font-size:24px;margin-bottom:12px;">PMM as a Service</h3>
+        <p style="color:var(--text-secondary);font-size:15px;line-height:1.6;margin-bottom:24px;">Translate product capabilities into field-ready cloud narratives. We deliver continuous messaging and Marketplace optimization.</p>
+        <ul class="check-list" style="margin-bottom:32px; flex-grow:1;">
+          <li class="check-item"><span class="check-dot" style="background:var(--orange)"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span><div>Cloud-native positioning</div></li>
+          <li class="check-item"><span class="check-dot" style="background:var(--orange)"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span><div>Field Readiness Kits (FRKs)</div></li>
+          <li class="check-item"><span class="check-dot" style="background:var(--orange)"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span><div>Marketplace evidence optimization</div></li>
+        </ul>
+        <a href="pmmaas.html" class="deep-dive-btn" style="color:var(--orange);background:rgba(241,153,83,0.08);margin-top:auto;">Explore PMMaaS &rarr;</a>
+      </div>
+
+      <!-- PALaaS -->
+      <div class="card reveal delay-3" style="background:#fff;border-radius:var(--r-2xl);padding:32px;border:1px solid rgba(250,15,156,0.2);box-shadow:0 12px 32px rgba(250,15,156,0.04);display:flex;flex-direction:column;height:100%;">
+        <div style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:rgba(250,15,156,.1);color:var(--pink);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-bottom:20px;align-self:flex-start;">Alliance Operations</div>
+        <h3 style="font-size:24px;margin-bottom:12px;">PAL as a Service</h3>
+        <p style="color:var(--text-secondary);font-size:15px;line-height:1.6;margin-bottom:24px;">The 12-month operational execution engine for ISVs needing sustained multi-cloud alliance management and executive alignment.</p>
+        <ul class="check-list" style="margin-bottom:32px; flex-grow:1;">
+          <li class="check-item"><span class="check-dot" style="background:var(--pink)"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span><div>Executive strategy &amp; alignment</div></li>
+          <li class="check-item"><span class="check-dot" style="background:var(--pink)"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span><div>Program &amp; funding navigation</div></li>
+          <li class="check-item"><span class="check-dot" style="background:var(--pink)"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span><div>Internal GTM coordination</div></li>
+        </ul>
+        <a href="palaas.html" class="deep-dive-btn" style="color:var(--pink);background:rgba(250,15,156,0.08);margin-top:auto;">Explore PALaaS &rarr;</a>
+      </div>
     </div>
   </div>
 </section>
