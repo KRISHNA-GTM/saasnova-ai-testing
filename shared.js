@@ -520,7 +520,30 @@ const NAV_STYLE_AND_DESKTOP = `
       </div>
 
       <a href="careers.html" class="nav-link">Careers</a>
-      <a href="contact.html" class="nav-link">Contact</a>
+      
+      <!-- CONTACT DROPDOWN -->
+      <div class="dropdown">
+        <button class="dropdown-trigger" aria-expanded="false" aria-haspopup="true">
+          Contact ${SVG.chevDown}
+        </button>
+        <div class="dropdown-menu" role="menu" style="min-width: 250px; padding: 8px;">
+          <a href="contact.html" class="premium-dd-item">
+            <div class="dd-icon-wrap" style="background:rgba(0,139,248,0.1); color:var(--blue);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+            <div>
+              <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">Contact Sales</div>
+              <div style="font-size:12px; color:var(--text-muted); font-weight:500;">General & partnerships</div>
+            </div>
+          </a>
+          <a href="support.html" class="premium-dd-item">
+            <div class="dd-icon-wrap" style="background:rgba(16,185,129,0.1); color:var(--green);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+            <div>
+              <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">Support</div>
+              <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Help for existing customers</div>
+            </div>
+          </a>
+        </div>
+      </div>
+      
     </nav>
   
     <div class="nav-cta">
@@ -621,7 +644,14 @@ const NAV_MOBILE = `
   </div>
 
   <a href="careers.html" class="mob-link" style="padding:18px 20px !important; font-weight:600 !important; text-decoration:none !important; color:#0F1923 !important; border-bottom:1px solid rgba(0,0,0,0.04) !important; display:block !important;">Careers</a>
-  <a href="contact.html" class="mob-link" style="padding:18px 20px !important; font-weight:600 !important; text-decoration:none !important; color:#0F1923 !important; border-bottom:none !important; display:block !important;">Contact</a>
+  
+  <div class="mob-accordion">
+    <button class="mob-accordion-btn">Contact ${SVG.chevDown}</button>
+    <div class="mob-accordion-content">
+      <a href="contact.html" class="mob-sub-link">Contact Sales</a>
+      <a href="support.html" class="mob-sub-link">Support</a>
+    </div>
+  </div>
   
   <div style="padding:24px 20px 80px !important; display:block !important;">
     <a href="${CALENDLY}" target="_blank" rel="noopener"
@@ -698,6 +728,7 @@ const FOOTER_HTML = `
         <a href="partners.html" class="footer-link">Partners</a>
         <a href="careers.html" class="footer-link">Careers</a>
         <a href="contact.html" class="footer-link">Contact</a>
+        <a href="support.html" class="footer-link">Support</a>
       </div>
       
       <div>
