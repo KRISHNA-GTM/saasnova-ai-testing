@@ -4,7 +4,7 @@
 <meta name="google-site-verification" content="google960def4cf195e9cf" />
 <meta name="google-site-verification" content="LwLN-rte3Gr-8_iFc-B2XCoqCsiEHGN2MoECtAgx2C8" />
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link rel="icon" type="image/png" sizes="32x32" href="images/logo-favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="images/logo-favicon-16x16.png">
 <link rel="apple-touch-icon" href="images/logo-favicon-apple-touch-icon.png">
@@ -16,47 +16,49 @@
 <meta name="description" content="Cloud marketplace GTM solutions for SaaS ISVs: Ignite, SuperNova, and NovaX programs, plus managed PDM, PMM, and PAL execution services."/>
 
 <style>
-  /* ── CUSTOM SCROLLBAR ── */
-  ::-webkit-scrollbar { width: 12px; }
-  ::-webkit-scrollbar-track { background: #F8FAFC; border-left: 1px solid rgba(0, 0, 0, 0.05); }
-  ::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 8px; border: 3px solid #F8FAFC; }
-  ::-webkit-scrollbar-thumb:hover { background-color: #94a3b8; }
-  html { scrollbar-width: thin; scrollbar-color: #cbd5e1 #F8FAFC; scroll-behavior: smooth; }
-
-  /* ── AGGRESSIVE MOBILE OVERFLOW & CUT-OFF FIXES ── */
+  /* ── UNIFIED RESPONSIVE & MOBILE OVERFLOW FIXES ── */
   *, *::before, *::after { box-sizing: border-box !important; }
   html, body { overflow-x: hidden !important; width: 100%; position: relative; margin: 0; padding: 0; }
+  
   .container { width: 100% !important; max-width: 1240px; margin: 0 auto; padding: 0 24px !important; }
   .container-sm { width: 100% !important; max-width: 800px; margin: 0 auto; padding: 0 24px !important; }
   
-  h1 { font-size: clamp(32px, 8vw, 56px) !important; line-height: 1.2 !important; }
-  h2 { font-size: clamp(28px, 6vw, 40px) !important; line-height: 1.3 !important; }
+  /* Typography Scaling */
+  h1 { font-size: clamp(32px, 8vw, 56px) !important; line-height: 1.15 !important; }
+  h2 { font-size: clamp(28px, 6vw, 40px) !important; line-height: 1.25 !important; }
+  p, h3, h4, div { overflow-wrap: break-word; word-break: break-word; max-width: 100%; }
 
-  /* ── DIRECTORY DEEP-DIVE LAYOUT ── */
-  .program-row { display: grid; grid-template-columns: 1fr 1.1fr; gap: var(--sp-8); align-items: center; padding: var(--sp-8) 0; border-bottom: 1px solid var(--border-light); }
-  .program-row:last-child { border-bottom: none; }
-  @media (max-width: 992px) { .program-row { grid-template-columns: 1fr; gap: 32px; padding: 40px 0; } }
-
-  /* ── FIX TEXT CUTTING OFF IN CARDS ── */
-  .card { width: 100% !important; max-width: 100% !important; overflow-wrap: break-word !important; box-sizing: border-box !important; }
-  .card-p { background: #fff; border: 1px solid var(--border-light); border-radius: 16px; padding: 24px; box-shadow: 0 8px 24px rgba(0,0,0,0.03); }
-  .check-list { width: 100% !important; box-sizing: border-box !important; padding: 0 !important; margin: 0 !important; list-style: none; }
-  .check-item { display: flex !important; align-items: flex-start !important; gap: 12px !important; white-space: normal !important; word-break: break-word !important; overflow-wrap: break-word !important; width: 100% !important; max-width: 100% !important; padding-right: 8px !important; color: var(--text-secondary); font-size: 14px; line-height: 1.5; }
-  .check-dot { flex-shrink: 0 !important; width: 16px !important; height: 16px !important; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-top: 4px; }
-  .deep-dive-btn { display: inline-flex; align-items: center; justify-content: center; width: 100%; max-width: 100%; padding: 14px 24px; border-radius: 8px; font-weight: 700; font-size: 15px; text-align: center; white-space: normal !important; word-break: break-word; line-height: 1.4; transition: transform 0.2s ease, opacity 0.2s ease; text-decoration: none; }
-  .deep-dive-btn:hover { transform: translateY(-2px); opacity: 0.9; }
-
-  @media (max-width: 400px) {
-    .card { padding: 24px 20px !important; }
+  /* Reusable Grid Utilities */
+  .auto-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px; }
+  @media (max-width: 768px) {
+    .auto-grid { grid-template-columns: 1fr; gap: 24px; }
     .container, .container-sm { padding: 0 16px !important; }
-    .check-item { gap: 10px !important; font-size: 14px !important; }
-    .deep-dive-btn { padding: 12px 16px !important; font-size: 14px !important; } 
   }
 
+  /* List Overrides & Standardized SVGs */
+  .check-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; width: 100%; }
+  .check-item { display: flex; align-items: flex-start; gap: 12px; font-size: 15px; line-height: 1.5; color: var(--text-secondary, #475569); width: 100%; }
+  .check-dot { flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+  .check-dot svg { width: 12px; height: 12px; display: block; }
+  
+  /* Utilities */
+  .card-p { background: #fff; border: 1px solid var(--border-light, #e2e8f0); border-radius: 16px; padding: 24px; box-shadow: 0 8px 24px rgba(0,0,0,0.03); width: 100%; overflow: hidden; }
+  .btn-wrapper { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+  .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 24px; border-radius: 8px; font-weight: 600; text-align: center; transition: all 0.2s; white-space: normal; text-decoration: none; line-height: 1.4; max-width: 100%; }
+  img, svg { max-width: 100%; }
+
+  /* ── DIRECTORY DEEP-DIVE LAYOUT ── */
+  .program-row { display: grid; grid-template-columns: 1fr 1.1fr; gap: 48px; align-items: center; padding: 64px 0; border-bottom: 1px solid var(--border-light, #e2e8f0); }
+  .program-row:last-child { border-bottom: none; }
+  @media (max-width: 992px) { .program-row { grid-template-columns: 1fr; gap: 32px; padding: 48px 0; } }
+
+  .deep-dive-btn { display: inline-flex; align-items: center; justify-content: center; width: 100%; padding: 14px 24px; border-radius: 8px; font-weight: 700; font-size: 15px; text-align: center; line-height: 1.4; transition: transform 0.2s ease, opacity 0.2s ease; text-decoration: none; }
+  .deep-dive-btn:hover { transform: translateY(-2px); opacity: 0.9; }
+
   .section-tag { padding: 4px 10px; border-radius: 99px; font-size: 11px; font-weight: 700; display: inline-block; text-transform: uppercase; letter-spacing: 0.05em; }
-  .st-blue { background: rgba(0,139,248,0.1); color: var(--blue); }
-  .st-orange { background: rgba(241,153,83,0.1); color: var(--orange); }
-  .st-pink { background: rgba(250,15,156,0.1); color: var(--pink); }
+  .st-blue { background: rgba(0,139,248,0.1); color: var(--blue, #008bf8); }
+  .st-orange { background: rgba(241,153,83,0.1); color: var(--orange, #f19953); }
+  .st-pink { background: rgba(250,15,156,0.1); color: var(--pink, #fa0f9c); }
   .st-dark { background: #0D2040; color: #fff; }
 
   /* ── COMPARISON MATRIX CSS ── */
@@ -65,34 +67,17 @@
   .matrix-th { padding: 24px 20px; text-align: left; background: var(--light-50); font-size: 18px; font-weight: 800; border-bottom: 2px solid var(--border-light); }
   .matrix-th.col-label { width: 22%; background: #fff; color: var(--text-primary); }
   
-  /* Matrix 1 (Programs) */
-  .matrix-th.col-ignite { width: 26%; color: var(--blue); border-left: 1px solid rgba(0,139,248,0.15); border-right: 1px solid rgba(0,139,248,0.15); background: rgba(0,139,248,0.04); }
-  .matrix-th.col-supernova { width: 26%; color: var(--orange); border-right: 1px solid rgba(241,153,83,0.15); background: rgba(241,153,83,0.04); }
-  .matrix-th.col-novax { width: 26%; color: var(--pink); border-right: 1px solid rgba(250,15,156,0.15); background: rgba(250,15,156,0.04); }
+  /* Matrix Columns */
+  .matrix-th.col-ignite, .matrix-th.col-pdmaas { width: 26%; color: var(--blue); border-left: 1px solid rgba(0,139,248,0.15); border-right: 1px solid rgba(0,139,248,0.15); background: rgba(0,139,248,0.04); }
+  .matrix-th.col-supernova, .matrix-th.col-pmmaas { width: 26%; color: var(--orange); border-right: 1px solid rgba(241,153,83,0.15); background: rgba(241,153,83,0.04); }
+  .matrix-th.col-novax, .matrix-th.col-palaas { width: 26%; color: var(--pink); border-right: 1px solid rgba(250,15,156,0.15); background: rgba(250,15,156,0.04); }
+  
   .matrix-td { padding: 18px 20px; font-size: 14px; color: var(--text-secondary); border-bottom: 1px solid var(--border-light); vertical-align: top; line-height: 1.6; }
   .matrix-tr:last-child .matrix-td { border-bottom: none; }
   .matrix-td.col-label { font-weight: 700; color: var(--text-primary); background: #fff; }
-  .matrix-td.col-ignite { border-left: 1px solid rgba(0,139,248,0.15); border-right: 1px solid rgba(0,139,248,0.15); background: rgba(0,139,248,0.015); }
-  .matrix-td.col-supernova { border-right: 1px solid rgba(241,153,83,0.15); background: rgba(241,153,83,0.015); }
-  .matrix-td.col-novax { border-right: 1px solid rgba(250,15,156,0.15); background: rgba(250,15,156,0.015); }
-
-  /* Matrix 2 (Services) */
-  .matrix-th.col-pdmaas { width: 26%; color: var(--blue); border-left: 1px solid rgba(0,139,248,0.15); border-right: 1px solid rgba(0,139,248,0.15); background: rgba(0,139,248,0.04); }
-  .matrix-th.col-pmmaas { width: 26%; color: var(--orange); border-right: 1px solid rgba(241,153,83,0.15); background: rgba(241,153,83,0.04); }
-  .matrix-th.col-palaas { width: 26%; color: var(--pink); border-right: 1px solid rgba(250,15,156,0.15); background: rgba(250,15,156,0.04); }
-  .matrix-td.col-pdmaas { border-left: 1px solid rgba(0,139,248,0.15); border-right: 1px solid rgba(0,139,248,0.15); background: rgba(0,139,248,0.015); }
-  .matrix-td.col-pmmaas { border-right: 1px solid rgba(241,153,83,0.15); background: rgba(241,153,83,0.015); }
-  .matrix-td.col-palaas { border-right: 1px solid rgba(250,15,156,0.15); background: rgba(250,15,156,0.015); }
-
-  /* ── FAQ ANIMATION FAILSAFE CSS ── */
-  .faq-body.faq-body-dark {
-    display: block !important;
-    max-height: 0; overflow: hidden; opacity: 0;
-    transition: max-height 0.3s ease, opacity 0.3s ease, padding-top 0.3s ease;
-    padding-top: 0;
-  }
-  .faq-item.active .faq-body.faq-body-dark { opacity: 1; }
-  .faq-icon-dark { transition: transform 0.3s ease; }
+  .matrix-td.col-ignite, .matrix-td.col-pdmaas { border-left: 1px solid rgba(0,139,248,0.15); border-right: 1px solid rgba(0,139,248,0.15); background: rgba(0,139,248,0.015); }
+  .matrix-td.col-supernova, .matrix-td.col-pmmaas { border-right: 1px solid rgba(241,153,83,0.15); background: rgba(241,153,83,0.015); }
+  .matrix-td.col-novax, .matrix-td.col-palaas { border-right: 1px solid rgba(250,15,156,0.15); background: rgba(250,15,156,0.015); }
 
   @media (max-width: 768px) {
     /* Mobile Tables to Cards */
@@ -116,6 +101,11 @@
       border-left: none; border-right: none; background: #fff; 
     }
   }
+
+  /* ── FAQ ANIMATION FAILSAFE CSS ── */
+  .faq-body.faq-body-dark { display: block !important; max-height: 0; overflow: hidden; opacity: 0; transition: max-height 0.3s ease, opacity 0.3s ease, padding-top 0.3s ease; padding-top: 0; }
+  .faq-item.active .faq-body.faq-body-dark { opacity: 1; }
+  .faq-icon-dark { transition: transform 0.3s ease; }
 </style>
 </head>
 <body>
@@ -128,7 +118,7 @@
     <span class="eyebrow eyebrow-dark">Programs & Services</span>
     <h1 style="margin-top:var(--sp-1);color:#ffffff; text-wrap: balance;">Stop planning your cloud GTM. Let us execute it.</h1>
     <p class="mt-3" style="margin:var(--sp-2) auto 0;font-size:18px;color:rgba(255,255,255,.65);max-width:680px">We run the partner development, partner marketing, and alliance operations motions that accelerate pipeline across hyperscalers. Delivered through our Managed Services or timeline-driven Programs.</p>
-    <div class="flex-gap-2 flex-center" style="margin-top:var(--sp-4)">
+    <div class="btn-wrapper" style="margin-top:var(--sp-4)">
       <a href="https://calendly.com/jen-saasnova/founder-strategy-session-scale-your-gtm-via-aws?month=2026-03" target="_blank" rel="noopener" class="btn btn-primary">Book a 30-min Execution Strategy Session</a>
       <a href="#compare-matrix" class="btn btn-outline-white">View Solutions Matrix</a>
     </div>
@@ -138,7 +128,7 @@
 <!-- THE SAASNOVA STANDARD (HIGH INTENT WEDGE) -->
 <section style="background:#fff;padding:var(--sp-8) 0;border-bottom:1px solid var(--border-light)">
   <div class="container">
-    <div style="display:grid;grid-template-columns:repeat(auto-fit, minmax(300px, 1fr));gap:32px;">
+    <div class="auto-grid">
       <div class="reveal delay-1" style="display:flex;align-items:flex-start;gap:16px;">
         <div style="background:rgba(0,139,248,0.1);color:var(--blue);padding:12px;border-radius:12px;flex-shrink:0;">
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
@@ -175,7 +165,7 @@
   <div class="container">
     <div style="text-align:center;margin-bottom:var(--sp-8)">
       <div class="section-tag st-blue reveal" style="margin-bottom:12px">Milestone-Driven Sprints</div>
-      <h2 class="reveal delay-1" style="color:var(--text-primary);margin-bottom:10px; font-size:clamp(32px, 4vw, 44px); font-weight:800; letter-spacing:-0.02em;">GTM Execution Programs</h2>
+      <h2 class="reveal delay-1" style="color:var(--text-primary);margin-bottom:10px;">GTM Execution Programs</h2>
       <p class="reveal delay-2" style="color:var(--text-secondary);max-width:600px;margin:0 auto;font-size:17px;">Structured, timeline-driven programs (3-6 Months) designed to build, scale, and operationalize your multi-cloud pipeline based on your specific funding stage.</p>
     </div>
 
@@ -187,12 +177,12 @@
         </div>
         <h2 style="margin-bottom:var(--sp-2)">SaaSNova Ignite</h2>
         <p style="margin-bottom:var(--sp-4);font-size:17px;color:var(--text-secondary);line-height:1.6;">For ISVs launching, relaunching, or proving their first attributable cloud revenue.</p>
-        <div class="card card-p" style="border-left: 3px solid var(--blue);background:rgba(255,255,255,0.6);">
+        <div class="card-p" style="border-left: 3px solid var(--blue);background:rgba(255,255,255,0.6);">
           <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:var(--sp-3)">Ideal Stage &amp; Fit</div>
           <ul class="check-list">
-            <li class="check-item"><span class="check-dot" style="background:var(--blue);color:#fff;font-size:10px;">✓</span>Pre-Series A &rarr; Series A</li>
-            <li class="check-item"><span class="check-dot" style="background:var(--blue);color:#fff;font-size:10px;">✓</span>Establishing first cloud-attributable traction</li>
-            <li class="check-item"><span class="check-dot" style="background:var(--blue);color:#fff;font-size:10px;">✓</span>Generating field-ready evidence before scaling</li>
+            <li class="check-item"><span class="check-dot" style="background:var(--blue);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Pre-Series A &rarr; Series A</li>
+            <li class="check-item"><span class="check-dot" style="background:var(--blue);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Establishing first cloud-attributable traction</li>
+            <li class="check-item"><span class="check-dot" style="background:var(--blue);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Generating field-ready evidence before scaling</li>
           </ul>
         </div>
       </div>
@@ -201,9 +191,9 @@
           <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:16px">Execution Focus</div>
           <h3 style="font-size:20px;margin-bottom:16px;line-height:1.3;color:var(--text-primary);">Activate your co-sell motion and prove early cloud traction.</h3>
           <ul class="check-list" style="margin-bottom:32px;">
-            <li class="check-item"><span class="check-dot" style="background:var(--blue);color:#fff;font-size:10px;">✓</span><div>Establish baseline portal hygiene and optimize marketplace listings.</div></li>
-            <li class="check-item"><span class="check-dot" style="background:var(--blue);color:#fff;font-size:10px;">✓</span><div>Validate initial joint opportunities to build field momentum.</div></li>
-            <li class="check-item"><span class="check-dot" style="background:var(--blue);color:#fff;font-size:10px;">✓</span><div>Generate operational evidence to secure hyperscaler funding.</div></li>
+            <li class="check-item"><span class="check-dot" style="background:var(--blue);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div>Establish baseline portal hygiene and optimize marketplace listings.</div></li>
+            <li class="check-item"><span class="check-dot" style="background:var(--blue);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div>Validate initial joint opportunities to build field momentum.</div></li>
+            <li class="check-item"><span class="check-dot" style="background:var(--blue);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div>Generate operational evidence to secure hyperscaler funding.</div></li>
           </ul>
           <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:auto;">
             <a href="ignite.html" class="deep-dive-btn" style="color:var(--blue);background:rgba(0,139,248,0.1);">Explore Ignite &rarr;</a>
@@ -221,12 +211,12 @@
         </div>
         <h2 style="margin-bottom:var(--sp-2)">SaaSNova SuperNova</h2>
         <p style="margin-bottom:var(--sp-4);font-size:17px;color:var(--text-secondary);line-height:1.6;">Designed for APAC and EMEA ISVs entering the US market to build cloud-attributed pipeline.</p>
-        <div class="card card-p" style="border-left: 3px solid var(--orange);background:rgba(255,255,255,0.6);">
+        <div class="card-p" style="border-left: 3px solid var(--orange);background:rgba(255,255,255,0.6);">
           <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--orange);margin-bottom:var(--sp-3)">Ideal Stage &amp; Fit</div>
           <ul class="check-list">
-            <li class="check-item"><span class="check-dot" style="background:var(--orange);color:#fff;font-size:10px;">✓</span>Series A &rarr; Series B</li>
-            <li class="check-item"><span class="check-dot" style="background:var(--orange);color:#fff;font-size:10px;">✓</span>Global ISVs penetrating the US market</li>
-            <li class="check-item"><span class="check-dot" style="background:var(--orange);color:#fff;font-size:10px;">✓</span>Proving US traction through hyperscaler channels</li>
+            <li class="check-item"><span class="check-dot" style="background:var(--orange);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Series A &rarr; Series B</li>
+            <li class="check-item"><span class="check-dot" style="background:var(--orange);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Global ISVs penetrating the US market</li>
+            <li class="check-item"><span class="check-dot" style="background:var(--orange);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Proving US traction through hyperscaler channels</li>
           </ul>
         </div>
       </div>
@@ -235,9 +225,9 @@
           <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--orange);margin-bottom:16px">Execution Focus</div>
           <h3 style="font-size:20px;margin-bottom:16px;line-height:1.3;color:var(--text-primary);">Break into the US market with a validated cloud pipeline.</h3>
           <ul class="check-list" style="margin-bottom:32px;">
-            <li class="check-item"><span class="check-dot" style="background:var(--orange);color:#fff;font-size:10px;">✓</span><div>Navigate US regional channel partners and CPPO mechanisms.</div></li>
-            <li class="check-item"><span class="check-dot" style="background:var(--orange);color:#fff;font-size:10px;">✓</span><div>Drive targeted field engagement with US-based hyperscaler sellers.</div></li>
-            <li class="check-item"><span class="check-dot" style="background:var(--orange);color:#fff;font-size:10px;">✓</span><div>Build localized attribution models to secure a US foothold.</div></li>
+            <li class="check-item"><span class="check-dot" style="background:var(--orange);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div>Navigate US regional channel partners and CPPO mechanisms.</div></li>
+            <li class="check-item"><span class="check-dot" style="background:var(--orange);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div>Drive targeted field engagement with US-based hyperscaler sellers.</div></li>
+            <li class="check-item"><span class="check-dot" style="background:var(--orange);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div>Build localized attribution models to secure a US foothold.</div></li>
           </ul>
           <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:auto;">
             <a href="supernova.html" class="deep-dive-btn" style="color:var(--orange);background:rgba(241,153,83,0.1);">Explore SuperNova &rarr;</a>
@@ -254,12 +244,12 @@
         </div>
         <h2 style="margin-bottom:var(--sp-2)">SaaSNova NovaX</h2>
         <p style="margin-bottom:var(--sp-4);font-size:17px;color:var(--text-secondary);line-height:1.6;">For ISVs expanding beyond early traction into repeatable, multi-cloud revenue.</p>
-        <div class="card card-p" style="border-left: 3px solid var(--pink);background:rgba(255,255,255,0.6);">
+        <div class="card-p" style="border-left: 3px solid var(--pink);background:rgba(255,255,255,0.6);">
           <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--pink);margin-bottom:var(--sp-3)">Ideal Stage &amp; Fit</div>
           <ul class="check-list">
-            <li class="check-item"><span class="check-dot" style="background:var(--pink);color:#fff;font-size:10px;">✓</span>Series B &rarr; Series C</li>
-            <li class="check-item"><span class="check-dot" style="background:var(--pink);color:#fff;font-size:10px;">✓</span>Expanding from single-cloud to multi-cloud maturity</li>
-            <li class="check-item"><span class="check-dot" style="background:var(--pink);color:#fff;font-size:10px;">✓</span>Operationalizing co-sell workflows at enterprise scale</li>
+            <li class="check-item"><span class="check-dot" style="background:var(--pink);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Series B &rarr; Series C</li>
+            <li class="check-item"><span class="check-dot" style="background:var(--pink);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Expanding from single-cloud to multi-cloud maturity</li>
+            <li class="check-item"><span class="check-dot" style="background:var(--pink);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Operationalizing co-sell workflows at enterprise scale</li>
           </ul>
         </div>
       </div>
@@ -268,9 +258,9 @@
           <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--pink);margin-bottom:16px">Execution Focus</div>
           <h3 style="font-size:20px;margin-bottom:16px;line-height:1.3;color:var(--text-primary);">Scale your multi-cloud co-sell engine for high-volume growth.</h3>
           <ul class="check-list" style="margin-bottom:32px;">
-            <li class="check-item"><span class="check-dot" style="background:var(--pink);color:#fff;font-size:10px;">✓</span><div>Scale partner-led pipeline volume across AWS, Azure, and GCP.</div></li>
-            <li class="check-item"><span class="check-dot" style="background:var(--pink);color:#fff;font-size:10px;">✓</span><div>Automate PRM lifecycle workflows for high-capacity deal flow.</div></li>
-            <li class="check-item"><span class="check-dot" style="background:var(--pink);color:#fff;font-size:10px;">✓</span><div>Deliver rigorous executive and board-level alliance reporting.</div></li>
+            <li class="check-item"><span class="check-dot" style="background:var(--pink);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div>Scale partner-led pipeline volume across AWS, Azure, and GCP.</div></li>
+            <li class="check-item"><span class="check-dot" style="background:var(--pink);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div>Automate PRM lifecycle workflows for high-capacity deal flow.</div></li>
+            <li class="check-item"><span class="check-dot" style="background:var(--pink);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div>Deliver rigorous executive and board-level alliance reporting.</div></li>
           </ul>
           <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:auto;">
             <a href="novax.html" class="deep-dive-btn" style="color:var(--pink);background:rgba(250,15,156,0.1);">Explore NovaX &rarr;</a>
@@ -287,7 +277,7 @@
   <div class="container">
     <div style="text-align:center;margin-bottom:var(--sp-8)">
       <div class="section-tag st-pink reveal" style="margin-bottom:12px">Embedded GTM Operations</div>
-      <h2 class="reveal delay-1" style="color:var(--text-primary);margin-bottom:10px; font-size:clamp(32px, 4vw, 44px); font-weight:800; letter-spacing:-0.02em;">Managed GTM Services</h2>
+      <h2 class="reveal delay-1" style="color:var(--text-primary);margin-bottom:10px;">Managed GTM Services</h2>
       <p class="reveal delay-2" style="color:var(--text-secondary);max-width:600px;margin:0 auto;font-size:17px;">
         Flexible execution for ISVs who have a motion but need a <strong>fractional execution team</strong> to run it month-over-month across AWS, Microsoft, and GCP.
       </p>
@@ -302,12 +292,12 @@
         </div>
         <h2 style="margin-bottom:var(--sp-2)">PDM as a Service</h2>
         <p style="margin-bottom:var(--sp-4);font-size:17px;color:var(--text-secondary);line-height:1.6;">Run a consistent, cloud-aligned partner motion without building an in-house Partner Development team.</p>
-        <div class="card card-p" style="border-left: 3px solid var(--blue);background:rgba(255,255,255,0.6);">
+        <div class="card-p" style="border-left: 3px solid var(--blue);background:rgba(255,255,255,0.6);">
           <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:var(--sp-3)">Ideal Profile</div>
           <ul class="check-list">
-            <li class="check-item"><span class="check-dot" style="background:var(--blue);color:#fff;font-size:10px;">✓</span>Entering or expanding cloud GTM</li>
-            <li class="check-item"><span class="check-dot" style="background:var(--blue);color:#fff;font-size:10px;">✓</span>Needing consistent field engagement and discipline</li>
-            <li class="check-item"><span class="check-dot" style="background:var(--blue);color:#fff;font-size:10px;">✓</span>Early to mid-stage without a dedicated PDM</li>
+            <li class="check-item"><span class="check-dot" style="background:var(--blue);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Entering or expanding cloud GTM</li>
+            <li class="check-item"><span class="check-dot" style="background:var(--blue);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Needing consistent field engagement and discipline</li>
+            <li class="check-item"><span class="check-dot" style="background:var(--blue);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Early to mid-stage without a dedicated PDM</li>
           </ul>
         </div>
       </div>
@@ -316,9 +306,9 @@
           <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:16px">Execution Focus</div>
           <h3 style="font-size:20px;margin-bottom:20px;line-height:1.4;color:var(--text-primary);">We deliver weekly field engagement, co-sell management, and funding execution.</h3>
           <ul class="check-list" style="margin-bottom:32px;">
-            <li class="check-item"><span class="check-dot" style="background:var(--blue);color:#fff;font-size:10px;">✓</span><div>Weekly field engagement and pipeline management.</div></li>
-            <li class="check-item"><span class="check-dot" style="background:var(--blue);color:#fff;font-size:10px;">✓</span><div>Funding program workflows (MDF/SDF) tracked and submitted.</div></li>
-            <li class="check-item"><span class="check-dot" style="background:var(--blue);color:#fff;font-size:10px;">✓</span><div>Field Readiness Kit and Private Offer readiness included.</div></li>
+            <li class="check-item"><span class="check-dot" style="background:var(--blue);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div>Weekly field engagement and pipeline management.</div></li>
+            <li class="check-item"><span class="check-dot" style="background:var(--blue);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div>Funding program workflows (MDF/SDF) tracked and submitted.</div></li>
+            <li class="check-item"><span class="check-dot" style="background:var(--blue);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div>Field Readiness Kit and Private Offer readiness included.</div></li>
           </ul>
           <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:auto;">
             <a href="pdmaas.html" class="deep-dive-btn" style="color:var(--blue);background:rgba(0,139,248,0.1);">Explore PDMaaS &rarr;</a>
@@ -336,12 +326,12 @@
         </div>
         <h2 style="margin-bottom:var(--sp-2)">PMM as a Service</h2>
         <p style="margin-bottom:var(--sp-4);font-size:17px;color:var(--text-secondary);line-height:1.6;">Turn your product capabilities into field-ready messaging that AWS sellers and partners actually use.</p>
-        <div class="card card-p" style="border-left: 3px solid var(--orange);background:rgba(255,255,255,0.6);">
+        <div class="card-p" style="border-left: 3px solid var(--orange);background:rgba(255,255,255,0.6);">
           <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--orange);margin-bottom:var(--sp-3)">Ideal Profile</div>
           <ul class="check-list">
-            <li class="check-item"><span class="check-dot" style="background:var(--orange);color:#fff;font-size:10px;">✓</span>Lacking dedicated PMM with hyperscaler expertise</li>
-            <li class="check-item"><span class="check-dot" style="background:var(--orange);color:#fff;font-size:10px;">✓</span>Needing AWS/Microsoft/GCP-aligned positioning</li>
-            <li class="check-item"><span class="check-dot" style="background:var(--orange);color:#fff;font-size:10px;">✓</span>Requiring steady content output to drive GTM momentum</li>
+            <li class="check-item"><span class="check-dot" style="background:var(--orange);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Lacking dedicated PMM with hyperscaler expertise</li>
+            <li class="check-item"><span class="check-dot" style="background:var(--orange);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Needing AWS/Microsoft/GCP-aligned positioning</li>
+            <li class="check-item"><span class="check-dot" style="background:var(--orange);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Requiring steady content output to drive GTM momentum</li>
           </ul>
         </div>
       </div>
@@ -350,9 +340,9 @@
           <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--orange);margin-bottom:16px">Execution Focus</div>
           <h3 style="font-size:20px;margin-bottom:20px;line-height:1.4;color:var(--text-primary);">We deliver cloud-aligned value propositions, co-sell decks, and marketplace copy continuously.</h3>
           <ul class="check-list" style="margin-bottom:32px;">
-            <li class="check-item"><span class="check-dot" style="background:var(--orange);color:#fff;font-size:10px;">✓</span><div>Cloud-aligned Better-Together narratives and co-sell decks.</div></li>
-            <li class="check-item"><span class="check-dot" style="background:var(--orange);color:#fff;font-size:10px;">✓</span><div>Field Readiness Kits, battlecards, and objection handling.</div></li>
-            <li class="check-item"><span class="check-dot" style="background:var(--orange);color:#fff;font-size:10px;">✓</span><div>Marketplace listing optimization and content calendar management.</div></li>
+            <li class="check-item"><span class="check-dot" style="background:var(--orange);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div>Cloud-aligned Better-Together narratives and co-sell decks.</div></li>
+            <li class="check-item"><span class="check-dot" style="background:var(--orange);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div>Field Readiness Kits, battlecards, and objection handling.</div></li>
+            <li class="check-item"><span class="check-dot" style="background:var(--orange);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div>Marketplace listing optimization and content calendar management.</div></li>
           </ul>
           <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:auto;">
             <a href="pmmaas.html" class="deep-dive-btn" style="color:var(--orange);background:rgba(241,153,83,0.1);">Explore PMMaaS &rarr;</a>
@@ -370,12 +360,12 @@
         </div>
         <h2 style="margin-bottom:var(--sp-2)">PAL as a Service</h2>
         <p style="margin-bottom:var(--sp-4);font-size:17px;color:var(--text-secondary);line-height:1.6;">Manage your multi-cloud alliance relationships with the operational discipline of a seasoned PAL.</p>
-        <div class="card card-p" style="border-left: 3px solid var(--pink);background:rgba(255,255,255,0.6);">
+        <div class="card-p" style="border-left: 3px solid var(--pink);background:rgba(255,255,255,0.6);">
           <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--pink);margin-bottom:var(--sp-3)">Ideal Profile</div>
           <ul class="check-list">
-            <li class="check-item"><span class="check-dot" style="background:var(--pink);color:#fff;font-size:10px;">✓</span>Preparing for multi-cloud co-sell scale</li>
-            <li class="check-item"><span class="check-dot" style="background:var(--pink);color:#fff;font-size:10px;">✓</span>Requiring executive alignment across clouds</li>
-            <li class="check-item"><span class="check-dot" style="background:var(--pink);color:#fff;font-size:10px;">✓</span>Transitioning toward a dedicated internal alliance team</li>
+            <li class="check-item"><span class="check-dot" style="background:var(--pink);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Preparing for multi-cloud co-sell scale</li>
+            <li class="check-item"><span class="check-dot" style="background:var(--pink);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Requiring executive alignment across clouds</li>
+            <li class="check-item"><span class="check-dot" style="background:var(--pink);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Transitioning toward a dedicated internal alliance team</li>
           </ul>
         </div>
       </div>
@@ -384,9 +374,9 @@
           <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--pink);margin-bottom:16px">Execution Focus</div>
           <h3 style="font-size:20px;margin-bottom:20px;line-height:1.4;color:var(--text-primary);">We coordinate hyperscaler engagement, co-sell navigation, and executive alignment.</h3>
           <ul class="check-list" style="margin-bottom:32px;">
-            <li class="check-item"><span class="check-dot" style="background:var(--pink);color:#fff;font-size:10px;">✓</span><div>Multi-cloud alliance strategy and program coordination.</div></li>
-            <li class="check-item"><span class="check-dot" style="background:var(--pink);color:#fff;font-size:10px;">✓</span><div>QBR preparation, co-sell navigation, and funding tracking.</div></li>
-            <li class="check-item"><span class="check-dot" style="background:var(--pink);color:#fff;font-size:10px;">✓</span><div>Executive alignment bridging strategy and daily execution.</div></li>
+            <li class="check-item"><span class="check-dot" style="background:var(--pink);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div>Multi-cloud alliance strategy and program coordination.</div></li>
+            <li class="check-item"><span class="check-dot" style="background:var(--pink);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div>QBR preparation, co-sell navigation, and funding tracking.</div></li>
+            <li class="check-item"><span class="check-dot" style="background:var(--pink);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div>Executive alignment bridging strategy and daily execution.</div></li>
           </ul>
           <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:auto;">
             <a href="palaas.html" class="deep-dive-btn" style="color:var(--pink);background:rgba(250,15,156,0.1);">Explore PALaaS &rarr;</a>
@@ -403,7 +393,7 @@
   <div class="container">
     <div style="text-align:center;margin-bottom:40px">
       <div class="section-tag st-blue reveal" style="margin-bottom:12px">Comparison</div>
-      <h2 class="reveal delay-1" style="color:var(--text-primary);margin-bottom:10px; font-size:clamp(32px, 4vw, 44px); font-weight:800; letter-spacing:-0.02em;">Find your exact program fit.</h2>
+      <h2 class="reveal delay-1" style="color:var(--text-primary);margin-bottom:10px;">Find your exact program fit.</h2>
       <p class="reveal delay-2" style="color:var(--text-secondary);max-width:560px;margin:0 auto;font-size:17px;text-align:center">Compare the timeline, focus, and operational outputs of our Solutions.</p>
     </div>
     
@@ -535,7 +525,7 @@
       <div class="faq-body faq-body-dark">Consultants deliver slide decks and advice; we deliver execution. We manage your PRM portals, file the co-sell submissions, run the field alignment sessions, and produce attributable pipeline. The output is revenue mechanics, not recommendations.</div>
     </div>
     
-    <div style="text-align:center;margin-top:var(--sp-6)">
+    <div class="btn-wrapper" style="margin-top:var(--sp-6)">
       <a href="https://calendly.com/jen-saasnova/founder-strategy-session-scale-your-gtm-via-aws?month=2026-03" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book a 30-min Execution Strategy Session</a>
     </div>
   </div>
@@ -546,7 +536,7 @@
   <div class="container-sm">
     <h2 class="reveal" style="margin-bottom:var(--sp-2)">Not sure which solution fits?</h2>
     <p class="reveal delay-1" style="font-size:18px;max-width:480px;margin:0 auto var(--sp-5)">Book a 30-min Execution Strategy Session. Jen Dawson reviews every submission and confirms the right execution framework for your ISV.</p>
-    <div style="display:flex;gap:var(--sp-2);justify-content:center;flex-wrap:wrap" class="reveal delay-2">
+    <div class="btn-wrapper reveal delay-2">
       <a href="https://calendly.com/jen-saasnova/founder-strategy-session-scale-your-gtm-via-aws?month=2026-03" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Book a 30-min Execution Strategy Session</a>
       <a href="contact.html" class="btn btn-outline-white btn-lg">Contact Us</a>
     </div>

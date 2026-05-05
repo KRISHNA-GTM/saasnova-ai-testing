@@ -13,7 +13,11 @@
 })();
 /* ------------------------------------------------- */
 
-/* SaaSNova V5.6, shared.js — Fixed Nav/Banner Overlaps & Smooth Swiping */
+/* SaaSNova V5.7, shared.js — Banner Mobile Optimizations & Home Page Only Constraint */
+
+// Path checking logic moved to the top so we can use it for the banner injection
+const path = window.location.pathname;
+const isHome = path === '/' || path.endsWith('/index') || path.endsWith('/index.html') || path.endsWith('krishna-gtm.github.io/') || path.endsWith('saasnova-ai/');
 
 const CALENDLY = "https://calendly.com/jen-saasnova/founder-strategy-session-scale-your-gtm-via-aws?month=2026-03";
 
@@ -49,13 +53,12 @@ const TOP_BANNER_HTML = `
     top: 0;
     left: 0;
     width: 100%;
-    /* Frosted Glass + Soft Aurora */
     background: rgba(255, 255, 255, 0.6);
     background-image: linear-gradient(90deg, rgba(0,139,248,0.03), rgba(250,15,156,0.03));
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     color: #0F1923;
-    z-index: 10005; /* Keeps it above everything */
+    z-index: 10005;
     display: flex;
     align-items: center;
     height: 48px;
@@ -96,7 +99,6 @@ const TOP_BANNER_HTML = `
     box-sizing: border-box;
   }
 
-  /* Tag Styling */
   .sn-banner-tag {
     padding: 3px 10px;
     border-radius: 6px;
@@ -155,14 +157,19 @@ const TOP_BANNER_HTML = `
   .sn-banner-dot { width: 6px; height: 6px; border-radius: 50%; background: rgba(0,0,0,0.1); transition: all 0.3s; cursor: pointer; border: none; padding:0; }
   .sn-banner-dot.active { background: #008BF8; width: 18px; border-radius: 4px; }
 
-  /* 3. FIX: Ensure Nav doesn't overlap the new Glass Banner */
-  #nav { top: 48px !important; }
-  #nav.is-floating { top: 15px !important; } /* Floats near the top when scrolling */
+  /* 3. FIX: Ensure Nav doesn't overlap the new Glass Banner when banner is injected */
+  #nav:not(.is-floating) { top: 48px !important; }
 
+  /* MOBILE OPTIMIZATIONS (Fixes squished text on small screens) */
+  .sn-show-mob { display: none; }
+  
   @media (max-width: 768px) {
-    .sn-banner-slide { padding: 0 60px 0 16px; justify-content: flex-start; }
+    .sn-hide-mob { display: none !important; }
+    .sn-show-mob { display: inline !important; }
+    .sn-banner-slide { padding: 0 16px; justify-content: center; gap: 12px; }
     .sn-banner-tag { display: none; }
-    .sn-banner-text { font-size: 12px; }
+    .sn-banner-text { font-size: 13px; flex: 0 1 auto; min-width: 0; text-overflow: ellipsis; overflow: hidden; white-space: nowrap; text-align: center; }
+    .sn-banner-link { font-size: 12px; padding: 6px 14px; flex-shrink: 0; }
     .sn-banner-controls { display: none; }
   }
 </style>
@@ -171,13 +178,25 @@ const TOP_BANNER_HTML = `
   <div class="sn-banner-track" id="sn-banner-track">
     <div class="sn-banner-slide">
       <div class="sn-banner-tag sn-tag-orange"><span class="sn-banner-pulse deadline-pulse"></span> Deadline</div>
-      <div class="sn-banner-text"><strong>AWS PRM Compliance:</strong> Required by July 31.</div>
-      <a href="https://calendly.com/jen-saasnova/aws-prm-deadline-july-31-act-now" target="_blank" class="sn-banner-link">Book Implementation</a>
+      <div class="sn-banner-text">
+        <span class="sn-hide-mob"><strong>AWS PRM Compliance:</strong> Required by July 31.</span>
+        <span class="sn-show-mob"><strong>AWS PRM:</strong> Act by Jul 31</span>
+      </div>
+      <a href="https://calendly.com/jen-saasnova/aws-prm-deadline-july-31-act-now" target="_blank" class="sn-banner-link">
+        <span class="sn-hide-mob">Book Implementation</span>
+        <span class="sn-show-mob">Book</span>
+      </a>
     </div>
     <div class="sn-banner-slide">
       <div class="sn-banner-tag sn-tag-blue"><span class="sn-banner-pulse launch-pulse"></span> New Launch</div>
-      <div class="sn-banner-text"><strong>SaaSNova × SaaSify:</strong> First AWS Partner Starter Bundle.</div>
-      <a href="https://www.saasnova.ai/aws-partner-starter-bundle-with-saasify-saasnova/" target="_blank" class="sn-banner-link">View Bundle</a>
+      <div class="sn-banner-text">
+        <span class="sn-hide-mob"><strong>SaaSNova × SaaSify:</strong> First AWS Partner Starter Bundle.</span>
+        <span class="sn-show-mob"><strong>SaaSNova × SaaSify</strong> Bundle</span>
+      </div>
+      <a href="https://www.saasnova.ai/aws-partner-starter-bundle-with-saasify-saasnova/" target="_blank" class="sn-banner-link">
+        <span class="sn-hide-mob">View Bundle</span>
+        <span class="sn-show-mob">View</span>
+      </a>
     </div>
   </div>
   <div class="sn-banner-controls" id="sn-banner-dots">
@@ -194,6 +213,7 @@ const NAV_STYLE_AND_DESKTOP = `
   #nav { 
     transition: all 0.3s ease-in-out; 
     position: absolute; 
+    top: 0;
     left: 0; 
     right: 0; 
     z-index: 9999; 
@@ -201,6 +221,7 @@ const NAV_STYLE_AND_DESKTOP = `
   }
   #nav.is-floating { 
     position: fixed; 
+    top: 15px; /* Floats elegantly off the top edge */
     left: 50%; 
     transform: translateX(-50%); 
     width: 95%; 
@@ -262,11 +283,11 @@ const NAV_STYLE_AND_DESKTOP = `
 
 <nav id="nav">
   <div class="nav-inner">
-    <a href="index.html" class="nav-logo" aria-label="SaaSNova Home">
+    <a href="/" class="nav-logo" aria-label="SaaSNova Home">
       <img src="images/logo-color.png" alt="SaaSNova" style="height:48px;width:auto;object-fit:contain"/>
     </a>
     <nav class="nav-links" aria-label="Main">
-      <a href="index.html" class="nav-link">Home</a>
+      <a href="/" class="nav-link">Home</a>
       
       <!-- SOLUTIONS DROPDOWN -->
       <div class="dropdown">
@@ -274,7 +295,7 @@ const NAV_STYLE_AND_DESKTOP = `
           Solutions ${SVG.chevDown}
         </button>
         <div class="dropdown-menu" role="menu" style="min-width: 290px; padding: 8px;">
-          <a href="services.html" class="premium-dd-item">
+          <a href="/services" class="premium-dd-item">
             <div class="dd-icon-wrap" style="background:rgba(15,25,35,0.05); color:var(--text-primary);">${SVG.srvAll}</div>
             <div>
               <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">All Programs & Services</div>
@@ -294,21 +315,21 @@ const NAV_STYLE_AND_DESKTOP = `
               </div>
             </div>
             <div class="dropdown-menu-sub" style="min-width: 260px; padding: 8px;">
-              <a href="ignite.html" class="premium-dd-item">
+              <a href="/ignite" class="premium-dd-item">
                 <div class="dd-icon-wrap" style="background:rgba(0,139,248,0.1); color:var(--blue);">${SVG.srvIgnite}</div>
                 <div>
                   <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">Ignite</div>
                   <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Cloud GTM Activation</div>
                 </div>
               </a>
-              <a href="supernova.html" class="premium-dd-item">
+              <a href="/supernova" class="premium-dd-item">
                 <div class="dd-icon-wrap" style="background:rgba(241,153,83,0.1); color:var(--orange);">${SVG.srvSuper}</div>
                 <div>
                   <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">SuperNova</div>
                   <div style="font-size:12px; color:var(--text-muted); font-weight:500;">US Market Entry</div>
                 </div>
               </a>
-              <a href="novax.html" class="premium-dd-item">
+              <a href="/novax" class="premium-dd-item">
                 <div class="dd-icon-wrap" style="background:rgba(250,15,156,0.1); color:var(--pink);">${SVG.srvNova}</div>
                 <div>
                   <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">NovaX</div>
@@ -331,7 +352,7 @@ const NAV_STYLE_AND_DESKTOP = `
               </div>
             </div>
             <div class="dropdown-menu-sub" style="min-width: 260px; padding: 8px;">
-              <a href="pdmaas.html" class="premium-dd-item">
+              <a href="/pdmaas" class="premium-dd-item">
                 <div class="dd-icon-wrap" style="background:rgba(0,139,248,0.1); color:var(--blue);">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
                 </div>
@@ -340,7 +361,7 @@ const NAV_STYLE_AND_DESKTOP = `
                   <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Pipeline Execution</div>
                 </div>
               </a>
-              <a href="pmmaas.html" class="premium-dd-item">
+              <a href="/pmmaas" class="premium-dd-item">
                 <div class="dd-icon-wrap" style="background:rgba(241,153,83,0.1); color:var(--orange);">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
                 </div>
@@ -349,7 +370,7 @@ const NAV_STYLE_AND_DESKTOP = `
                   <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Cloud Messaging</div>
                 </div>
               </a>
-              <a href="palaas.html" class="premium-dd-item">
+              <a href="/palaas" class="premium-dd-item">
                 <div class="dd-icon-wrap" style="background:rgba(250,15,156,0.1); color:var(--pink);">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
                 </div>
@@ -363,7 +384,7 @@ const NAV_STYLE_AND_DESKTOP = `
         </div>
       </div>
       
-      <a href="about.html" class="nav-link">About</a>
+      <a href="/about" class="nav-link">About</a>
       
       <!-- PARTNERS DROPDOWN -->
       <div class="dropdown">
@@ -371,7 +392,7 @@ const NAV_STYLE_AND_DESKTOP = `
           Partners ${SVG.chevDown}
         </button>
         <div class="dropdown-menu" role="menu" style="min-width: 290px; padding: 8px;">
-          <a href="partners.html" class="premium-dd-item">
+          <a href="/partners" class="premium-dd-item">
             <div class="dd-icon-wrap" style="background:rgba(0,139,248,0.1); color:var(--blue);">${SVG.partAll}</div>
             <div>
               <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">All Partners</div>
@@ -391,21 +412,21 @@ const NAV_STYLE_AND_DESKTOP = `
               </div>
             </div>
             <div class="dropdown-menu-sub" style="min-width: 260px; padding: 8px;">
-              <a href="partner-aws-gtm.html" class="premium-dd-item">
+              <a href="/partner-aws-gtm" class="premium-dd-item">
                 <div class="dd-icon-wrap" style="background:#FFF8ED; border:1px solid rgba(255,153,0,0.2);"><img src="images/aws-logo.png" style="width:20px;height:20px;object-fit:contain;"/></div>
                 <div>
                   <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">AWS Partner GTM</div>
                   <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Amazonians & SME Registration</div>
                 </div>
               </a>
-              <a href="partner-azure-gtm.html" class="premium-dd-item">
+              <a href="/partner-azure-gtm" class="premium-dd-item">
                 <div class="dd-icon-wrap" style="background:#EEF6FF; border:1px solid rgba(0,120,212,0.2);"><img src="images/azure-logo.png" style="width:20px;height:20px;object-fit:contain;"/></div>
                 <div>
                   <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">Azure Partner GTM</div>
                   <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Microsoft Field & SME Registration</div>
                 </div>
               </a>
-              <a href="partner-gcp-gtm.html" class="premium-dd-item">
+              <a href="/partner-gcp-gtm" class="premium-dd-item">
                 <div class="dd-icon-wrap" style="background:#EDFFF4; border:1px solid rgba(66,133,244,0.2);"><img src="images/gcp-logo.png" style="width:20px;height:20px;object-fit:contain;"/></div>
                 <div>
                   <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">GCP Partner GTM</div>
@@ -426,14 +447,14 @@ const NAV_STYLE_AND_DESKTOP = `
               </div>
             </div>
             <div class="dropdown-menu-sub" style="min-width: 240px; padding: 8px;">
-              <a href="partner-saasify.html" class="premium-dd-item">
+              <a href="/partner-saasify" class="premium-dd-item">
                 <div class="dd-icon-wrap" style="background:#fff; border:1px solid var(--border-light);"><img src="images/saasify-logo.png" style="width:20px;height:20px;object-fit:contain;"/></div>
                 <div>
                   <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">SaaSify</div>
                   <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Listing Infrastructure</div>
                 </div>
               </a>
-              <a href="partner-workspan.html" class="premium-dd-item">
+              <a href="/partner-workspan" class="premium-dd-item">
                 <div class="dd-icon-wrap" style="background:#fff; border:1px solid var(--border-light);"><img src="images/workspan-logo.jpeg" style="width:20px;height:20px;object-fit:contain;border-radius:4px;"/></div>
                 <div>
                   <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">Workspan</div>
@@ -454,7 +475,7 @@ const NAV_STYLE_AND_DESKTOP = `
               </div>
             </div>
             <div class="dropdown-menu-sub" style="min-width: 240px; padding: 8px;">
-              <a href="partner-pronix.html" class="premium-dd-item">
+              <a href="/partner-pronix" class="premium-dd-item">
                 <div class="dd-icon-wrap" style="background:#fff; border:1px solid var(--border-light);"><img src="images/pronix_inc_logo.jpeg" style="width:20px;height:20px;object-fit:contain;border-radius:4px;"/></div>
                 <div>
                   <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">Pronix</div>
@@ -472,7 +493,7 @@ const NAV_STYLE_AND_DESKTOP = `
         <button class="dropdown-trigger">Resources ${SVG.chevDown}</button>
         <div class="dropdown-menu" role="menu" style="min-width: 270px; padding: 8px;">
           
-          <a href="blog.html" class="premium-dd-item">
+          <a href="/blog" class="premium-dd-item">
             <div class="dd-icon-wrap" style="background:rgba(0,139,248,0.1); color:var(--blue);">${SVG.resBlog}</div>
             <div>
               <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">Blog</div>
@@ -480,7 +501,7 @@ const NAV_STYLE_AND_DESKTOP = `
             </div>
           </a>
           
-          <a href="show.html" class="premium-dd-item">
+          <a href="/show" class="premium-dd-item">
             <div class="dd-icon-wrap" style="background:#fff; border:1px solid var(--border-light); width: 42px; height: 42px; padding: 0; overflow:hidden; display: flex; align-items: center; justify-content: center;">
                <img src="images/SAASNOVA LOGO JEN SHOW.png" style="width: 100%; height: 100%; object-fit: cover;" alt="The Jen GTM Show" onerror="this.outerHTML='<span style=\\'color:var(--text-primary);font-size:10px;font-weight:800;\\'>SHOW</span>'"/>
             </div>
@@ -490,7 +511,7 @@ const NAV_STYLE_AND_DESKTOP = `
             </div>
           </a>
           
-          <a href="case-study.html" class="premium-dd-item">
+          <a href="/case-study" class="premium-dd-item">
             <div class="dd-icon-wrap" style="background:rgba(241,153,83,0.1); color:var(--orange);">${SVG.resCase}</div>
             <div>
               <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">Case Studies</div>
@@ -498,7 +519,7 @@ const NAV_STYLE_AND_DESKTOP = `
             </div>
           </a>
           
-          <a href="webinars.html" class="premium-dd-item">
+          <a href="/webinars" class="premium-dd-item">
             <div class="dd-icon-wrap" style="background:rgba(16,185,129,0.1); color:var(--green);">${SVG.resVideo}</div>
             <div>
               <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">Webinars</div>
@@ -508,7 +529,7 @@ const NAV_STYLE_AND_DESKTOP = `
           
           <div style="margin: 8px 0; height: 1px; background: var(--border-light);"></div>
           
-          <a href="newsletter.html" class="premium-dd-item" style="background:linear-gradient(135deg, rgba(250,15,156,0.05), rgba(0,139,248,0.05));">
+          <a href="/newsletter" class="premium-dd-item" style="background:linear-gradient(135deg, rgba(250,15,156,0.05), rgba(0,139,248,0.05));">
             <div class="dd-icon-wrap" style="background:#fff; color:var(--pink); box-shadow:0 2px 8px rgba(0,0,0,0.05);">${SVG.resNews}</div>
             <div>
               <div style="font-weight:700; color:var(--pink); margin-bottom:2px;">The Nova Brief</div>
@@ -519,7 +540,7 @@ const NAV_STYLE_AND_DESKTOP = `
         </div>
       </div>
 
-      <a href="careers.html" class="nav-link">Careers</a>
+      <a href="/careers" class="nav-link">Careers</a>
       
       <!-- CONTACT DROPDOWN -->
       <div class="dropdown">
@@ -527,14 +548,14 @@ const NAV_STYLE_AND_DESKTOP = `
           Contact ${SVG.chevDown}
         </button>
         <div class="dropdown-menu" role="menu" style="min-width: 250px; padding: 8px;">
-          <a href="contact.html" class="premium-dd-item">
+          <a href="/contact" class="premium-dd-item">
             <div class="dd-icon-wrap" style="background:rgba(0,139,248,0.1); color:var(--blue);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
             <div>
               <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">Contact Sales</div>
               <div style="font-size:12px; color:var(--text-muted); font-weight:500;">General & partnerships</div>
             </div>
           </a>
-          <a href="support.html" class="premium-dd-item">
+          <a href="/support" class="premium-dd-item">
             <div class="dd-icon-wrap" style="background:rgba(16,185,129,0.1); color:var(--green);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
             <div>
               <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">Support</div>
@@ -562,21 +583,21 @@ const NAV_STYLE_AND_DESKTOP = `
 // ── MOBILE MENU ──
 const NAV_MOBILE = `
 <div id="sn-mob-menu" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
-  <a href="index.html" class="mob-link" style="padding:18px 20px !important; font-weight:600 !important; text-decoration:none !important; color:#0F1923 !important; border-bottom:1px solid rgba(0,0,0,0.04) !important; display:block !important;">Home</a>
+  <a href="/" class="mob-link" style="padding:18px 20px !important; font-weight:600 !important; text-decoration:none !important; color:#0F1923 !important; border-bottom:1px solid rgba(0,0,0,0.04) !important; display:block !important;">Home</a>
   
   <div class="mob-accordion">
     <button class="mob-accordion-btn">Solutions ${SVG.chevDown}</button>
     <div class="mob-accordion-content">
-      <a href="services.html" class="mob-sub-link" style="color:#008BF8 !important; font-weight:700 !important;">All Programs & Services</a>
+      <a href="/services" class="mob-sub-link" style="color:#008BF8 !important; font-weight:700 !important;">All Programs & Services</a>
       
       <div class="mob-accordion" style="border-bottom:none !important; display:block !important;">
         <button class="mob-accordion-btn" style="padding: 14px 20px 14px 24px !important; font-size:15px !important; color:#3D4E5C !important;">
           <span style="display:flex;align-items:center;gap:8px;color:var(--blue);">${SVG.srvAll} Programs</span> ${SVG.chevDown}
         </button>
         <div class="mob-accordion-content" style="background: #f1f5f9 !important;">
-          <a href="ignite.html" class="mob-sub-link" style="padding-left: 40px !important;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#008BF8; margin-right:12px;"></span> Ignite</a>
-          <a href="supernova.html" class="mob-sub-link" style="padding-left: 40px !important;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#F19953; margin-right:12px;"></span> SuperNova</a>
-          <a href="novax.html" class="mob-sub-link" style="padding-left: 40px !important;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#FA0F9C; margin-right:12px;"></span> NovaX</a>
+          <a href="/ignite" class="mob-sub-link" style="padding-left: 40px !important;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#008BF8; margin-right:12px;"></span> Ignite</a>
+          <a href="/supernova" class="mob-sub-link" style="padding-left: 40px !important;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#F19953; margin-right:12px;"></span> SuperNova</a>
+          <a href="/novax" class="mob-sub-link" style="padding-left: 40px !important;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#FA0F9C; margin-right:12px;"></span> NovaX</a>
         </div>
       </div>
 
@@ -585,29 +606,29 @@ const NAV_MOBILE = `
           <span style="display:flex;align-items:center;gap:8px;color:var(--orange);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Services</span> ${SVG.chevDown}
         </button>
         <div class="mob-accordion-content" style="background: #f1f5f9 !important;">
-          <a href="pdmaas.html" class="mob-sub-link" style="padding-left: 40px !important;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#008BF8; margin-right:12px;"></span> PDMaaS</a>
-          <a href="pmmaas.html" class="mob-sub-link" style="padding-left: 40px !important;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#F19953; margin-right:12px;"></span> PMMaaS</a>
-          <a href="palaas.html" class="mob-sub-link" style="padding-left: 40px !important;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#FA0F9C; margin-right:12px;"></span> PALaaS</a>
+          <a href="/pdmaas" class="mob-sub-link" style="padding-left: 40px !important;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#008BF8; margin-right:12px;"></span> PDMaaS</a>
+          <a href="/pmmaas" class="mob-sub-link" style="padding-left: 40px !important;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#F19953; margin-right:12px;"></span> PMMaaS</a>
+          <a href="/palaas" class="mob-sub-link" style="padding-left: 40px !important;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#FA0F9C; margin-right:12px;"></span> PALaaS</a>
         </div>
       </div>
     </div>
   </div>
   
-  <a href="about.html" class="mob-link" style="padding:18px 20px !important; font-weight:600 !important; text-decoration:none !important; color:#0F1923 !important; border-bottom:1px solid rgba(0,0,0,0.04) !important; display:block !important;">About</a>
+  <a href="/about" class="mob-link" style="padding:18px 20px !important; font-weight:600 !important; text-decoration:none !important; color:#0F1923 !important; border-bottom:1px solid rgba(0,0,0,0.04) !important; display:block !important;">About</a>
   
   <div class="mob-accordion">
     <button class="mob-accordion-btn">Partners ${SVG.chevDown}</button>
     <div class="mob-accordion-content">
-      <a href="partners.html" class="mob-sub-link" style="color:#008BF8 !important; font-weight:700 !important;">All Partners</a>
+      <a href="/partners" class="mob-sub-link" style="color:#008BF8 !important; font-weight:700 !important;">All Partners</a>
       
       <div class="mob-accordion" style="border-bottom:none !important; display:block !important;">
         <button class="mob-accordion-btn" style="padding: 14px 20px 14px 24px !important; font-size:15px !important; color:#3D4E5C !important;">
           <span style="display:flex;align-items:center;gap:8px;color:var(--blue);">${SVG.partCloud} Cloud GTM Partners</span> ${SVG.chevDown}
         </button>
         <div class="mob-accordion-content" style="background: #f1f5f9 !important;">
-          <a href="partner-aws-gtm.html" class="mob-sub-link" style="padding-left: 40px !important;"><img src="images/aws-logo.png" alt="AWS" style="width:18px;height:18px;margin-right:12px;object-fit:contain;"/> AWS Partner GTM</a>
-          <a href="partner-azure-gtm.html" class="mob-sub-link" style="padding-left: 40px !important;"><img src="images/azure-logo.png" alt="Azure" style="width:18px;height:18px;margin-right:12px;object-fit:contain;"/> Azure Partner GTM</a>
-          <a href="partner-gcp-gtm.html" class="mob-sub-link" style="padding-left: 40px !important;"><img src="images/gcp-logo.png" alt="GCP" style="width:18px;height:18px;margin-right:12px;object-fit:contain;"/> GCP Partner GTM</a>
+          <a href="/partner-aws-gtm" class="mob-sub-link" style="padding-left: 40px !important;"><img src="images/aws-logo.png" alt="AWS" style="width:18px;height:18px;margin-right:12px;object-fit:contain;"/> AWS Partner GTM</a>
+          <a href="/partner-azure-gtm" class="mob-sub-link" style="padding-left: 40px !important;"><img src="images/azure-logo.png" alt="Azure" style="width:18px;height:18px;margin-right:12px;object-fit:contain;"/> Azure Partner GTM</a>
+          <a href="/partner-gcp-gtm" class="mob-sub-link" style="padding-left: 40px !important;"><img src="images/gcp-logo.png" alt="GCP" style="width:18px;height:18px;margin-right:12px;object-fit:contain;"/> GCP Partner GTM</a>
         </div>
       </div>
 
@@ -616,8 +637,8 @@ const NAV_MOBILE = `
           <span style="display:flex;align-items:center;gap:8px;color:#64748B;">${SVG.part3PI} 3PI Partners</span> ${SVG.chevDown}
         </button>
         <div class="mob-accordion-content" style="background: #f1f5f9 !important;">
-          <a href="partner-saasify.html" class="mob-sub-link" style="padding-left: 40px !important;"><img src="images/saasify-logo.png" alt="SaaSify" style="width:18px;height:18px;margin-right:12px;object-fit:contain;border-radius:3px;"/> SaaSify</a>
-          <a href="partner-workspan.html" class="mob-sub-link" style="padding-left: 40px !important;"><img src="images/workspan-logo.jpeg" alt="Workspan" style="width:18px;height:18px;margin-right:12px;object-fit:contain;border-radius:3px;"/> Workspan</a>
+          <a href="/partner-saasify" class="mob-sub-link" style="padding-left: 40px !important;"><img src="images/saasify-logo.png" alt="SaaSify" style="width:18px;height:18px;margin-right:12px;object-fit:contain;border-radius:3px;"/> SaaSify</a>
+          <a href="/partner-workspan" class="mob-sub-link" style="padding-left: 40px !important;"><img src="images/workspan-logo.jpeg" alt="Workspan" style="width:18px;height:18px;margin-right:12px;object-fit:contain;border-radius:3px;"/> Workspan</a>
         </div>
       </div>
 
@@ -626,7 +647,7 @@ const NAV_MOBILE = `
           <span style="display:flex;align-items:center;gap:8px;"><img src="images/SI-GSI.png" alt="SI / GSI" style="width:18px;height:18px;object-fit:contain;"/> SI / GSI</span> ${SVG.chevDown}
         </button>
         <div class="mob-accordion-content" style="background: #f1f5f9 !important;">
-          <a href="partner-pronix.html" class="mob-sub-link" style="padding-left: 40px !important;"><img src="images/pronix_inc_logo.jpeg" alt="Pronix" style="width:18px;height:18px;margin-right:12px;object-fit:contain;border-radius:3px;"/> Pronix</a>
+          <a href="/partner-pronix" class="mob-sub-link" style="padding-left: 40px !important;"><img src="images/pronix_inc_logo.jpeg" alt="Pronix" style="width:18px;height:18px;margin-right:12px;object-fit:contain;border-radius:3px;"/> Pronix</a>
         </div>
       </div>
     </div>
@@ -635,21 +656,21 @@ const NAV_MOBILE = `
   <div class="mob-accordion">
     <button class="mob-accordion-btn">Resources ${SVG.chevDown}</button>
     <div class="mob-accordion-content">
-      <a href="blog.html" class="mob-sub-link">Blog</a>
-      <a href="show.html" class="mob-sub-link">The Jen GTM Show</a>
-      <a href="case-study.html" class="mob-sub-link">Case Studies</a>
-      <a href="webinars.html" class="mob-sub-link">Webinars</a>
-      <a href="newsletter.html" class="mob-sub-link" style="color:#FA0F9C !important;">The Nova Brief</a>
+      <a href="/blog" class="mob-sub-link">Blog</a>
+      <a href="/show" class="mob-sub-link">The Jen GTM Show</a>
+      <a href="/case-study" class="mob-sub-link">Case Studies</a>
+      <a href="/webinars" class="mob-sub-link">Webinars</a>
+      <a href="/newsletter" class="mob-sub-link" style="color:#FA0F9C !important;">The Nova Brief</a>
     </div>
   </div>
 
-  <a href="careers.html" class="mob-link" style="padding:18px 20px !important; font-weight:600 !important; text-decoration:none !important; color:#0F1923 !important; border-bottom:1px solid rgba(0,0,0,0.04) !important; display:block !important;">Careers</a>
+  <a href="/careers" class="mob-link" style="padding:18px 20px !important; font-weight:600 !important; text-decoration:none !important; color:#0F1923 !important; border-bottom:1px solid rgba(0,0,0,0.04) !important; display:block !important;">Careers</a>
   
   <div class="mob-accordion">
     <button class="mob-accordion-btn">Contact ${SVG.chevDown}</button>
     <div class="mob-accordion-content">
-      <a href="contact.html" class="mob-sub-link">Contact Sales</a>
-      <a href="support.html" class="mob-sub-link">Support</a>
+      <a href="/contact" class="mob-sub-link">Contact Sales</a>
+      <a href="/support" class="mob-sub-link">Support</a>
     </div>
   </div>
   
@@ -683,7 +704,7 @@ const FOOTER_HTML = `
   <div class="footer-container">
     <div class="footer-grid">
       <div>
-        <a href="index.html" aria-label="SaaSNova Home" style="display:inline-block;margin-bottom:16px;">
+        <a href="/" aria-label="SaaSNova Home" style="display:inline-block;margin-bottom:16px;">
           <img src="images/logo-white.png" alt="SaaSNova" style="height:36px;width:auto;object-fit:contain"/>
         </a>
         <p style="margin-bottom:24px; color: rgba(255,255,255,0.7); font-size: 14px; line-height: 1.6;">The world's first GTM execution engine for SaaS ISVs scaling through AWS, Azure, and GCP Marketplace.</p>
@@ -699,36 +720,38 @@ const FOOTER_HTML = `
           </div>
         </div>
         <div style="display:flex;gap:16px;align-items:center;">
-          <a href="#" style="color:#0A66C2;" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/company/saasnova/" target="_blank" rel="noopener" style="color:#0A66C2;" aria-label="LinkedIn">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
           </a>
-          <a href="#" style="color:#FF0000;" aria-label="YouTube">
-            <svg width="26" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M21.582 6.186c-.23-.86-.908-1.538-1.768-1.768C18.254 4 12 4 12 4s-6.254 0-7.814.418c-.86.23-1.538.908-1.768 1.768C2 7.746 2 12 2 12s0 4.254.418 5.814c.23.86.908 1.538 1.768 1.768 1.56.418 7.814.418 7.814.418s6.254 0 7.814-.418c.86-.23 1.538-.908 1.768-1.768C22 16.254 22 12 22 12s0-4.254-.418-5.814zM9.996 15.005l.005-6 5.207 3.005-5.212 2.995z"/></svg>
+          <a href="https://www.youtube.com/@SaaSNovaGTM" target="_blank" rel="noopener" style="color:#FF0000;" aria-label="YouTube">
+            <svg width="34" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M21.582 6.186c-.23-.86-.908-1.538-1.768-1.768C18.254 4 12 4 12 4s-6.254 0-7.814.418c-.86.23-1.538.908-1.768 1.768C2 7.746 2 12 2 12s0 4.254.418 5.814c.23.86.908 1.538 1.768 1.768 1.56.418 7.814.418 7.814.418s6.254 0 7.814-.418c.86-.23 1.538-.908 1.768-1.768C22 16.254 22 12 22 12s0-4.254-.418-5.814zM9.996 15.005l.005-6 5.207 3.005-5.212 2.995z"/></svg>
           </a>
         </div>
       </div>
       
       <div>
-        <div class="footer-col-title">PROGRAMS</div>
-        <a href="services.html" class="footer-link">All Programs & Services</a>
-        <a href="ignite.html" class="footer-link">Ignite</a>
-        <a href="supernova.html" class="footer-link">SuperNova</a>
-        <a href="novax.html" class="footer-link">NovaX</a>
+        <!-- Fixed Title: Now says SOLUTIONS to match the main menu -->
+        <div class="footer-col-title">SOLUTIONS</div>
+        <a href="/services" class="footer-link">All Programs & Services</a>
+        <div class="footer-col-title" style="margin-top:20px;">PROGRAMS</div>
+        <a href="/ignite" class="footer-link">Ignite</a>
+        <a href="/supernova" class="footer-link">SuperNova</a>
+        <a href="/novax" class="footer-link">NovaX</a>
         <div class="footer-col-title" style="margin-top:20px;">SERVICES</div>
-        <a href="pdmaas.html" class="footer-link">PDMaaS</a>
-        <a href="pmmaas.html" class="footer-link">PMMaaS</a>
-        <a href="palaas.html" class="footer-link">PALaaS</a>
+        <a href="/pdmaas" class="footer-link">PDMaaS</a>
+        <a href="/pmmaas" class="footer-link">PMMaaS</a>
+        <a href="/palaas" class="footer-link">PALaaS</a>
       </div>
       
       <div>
         <div class="footer-col-title">COMPANY</div>
-        <a href="about.html" class="footer-link">About &amp; Team</a>
-        <a href="case-study.html" class="footer-link">Case Studies</a>
-        <a href="show.html" class="footer-link">The Jen GTM Show</a>
-        <a href="partners.html" class="footer-link">Partners</a>
-        <a href="careers.html" class="footer-link">Careers</a>
-        <a href="contact.html" class="footer-link">Contact</a>
-        <a href="support.html" class="footer-link">Support</a>
+        <a href="/about" class="footer-link">About &amp; Team</a>
+        <a href="/case-study" class="footer-link">Case Studies</a>
+        <a href="/show" class="footer-link">The Jen GTM Show</a>
+        <a href="/partners" class="footer-link">Partners</a>
+        <a href="/careers" class="footer-link">Careers</a>
+        <a href="/contact" class="footer-link">Contact</a>
+        <a href="/support" class="footer-link">Support</a>
       </div>
       
       <div>
@@ -741,7 +764,9 @@ const FOOTER_HTML = `
         <div class="footer-col-title" style="margin-top:40px;margin-bottom:20px;">CONTACT</div>
         <a href="mailto:jen@saasnova.ai" class="footer-link" style="text-transform:none;">jen@saasnova.ai</a>
         <a href="tel:+12017555369" class="footer-link" style="text-transform:none;">+1 (201) 755-5369</a>
-        <a href="mailto:operations@saasnova.ai" class="footer-link" style="text-transform:none;">operations@saasnova.ai</a>
+        <a href="mailto:marketing@saasnova.ai" class="footer-link" style="text-transform:none;">marketing@saasnova.ai</a>
+       <a href="mailto:support@saasnova.ai" class="footer-link" style="text-transform:none;">support@saasnova.ai</a>
+
       </div>
     </div>
     
@@ -750,8 +775,8 @@ const FOOTER_HTML = `
     <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px; width: 100%;">
       <span style="font-size:14px;color:rgba(255,255,255,0.45);">&copy; 2026 SaaSNova. All rights reserved.</span>
       <div style="display:flex;gap:24px;flex-wrap:wrap">
-        <a href="privacy.html" style="font-size:14px;color:rgba(255,255,255,0.45);text-decoration:none;">Privacy Policy</a>
-        <a href="terms.html" style="font-size:14px;color:rgba(255,255,255,0.45);text-decoration:none;">Terms of Use</a>
+        <a href="/privacy" style="font-size:14px;color:rgba(255,255,255,0.45);text-decoration:none;">Privacy Policy</a>
+        <a href="/terms" style="font-size:14px;color:rgba(255,255,255,0.45);text-decoration:none;">Terms of Use</a>
       </div>
     </div>
   </div>
@@ -794,80 +819,80 @@ if (!document.getElementById('sn-mob-menu')) {
   document.body.insertAdjacentHTML('beforeend', NAV_MOBILE);
 }
 
-// Inject the new Top Banner right at the start of the body
-document.body.insertAdjacentHTML('afterbegin', TOP_BANNER_HTML);
+// ── BANNER INJECTION (ONLY ON HOME PAGE) ──
+if (isHome) {
+  document.body.insertAdjacentHTML('afterbegin', TOP_BANNER_HTML);
 
+  const track = document.getElementById('sn-banner-track');
+  const dots = document.querySelectorAll('.sn-banner-dot');
+  let currentIdx = 0;
+  let bannerAuto;
 
-// ── BANNER LOGIC ──
-const track = document.getElementById('sn-banner-track');
-const dots = document.querySelectorAll('.sn-banner-dot');
-let currentIdx = 0;
-let bannerAuto;
+  function startAuto() {
+    clearInterval(bannerAuto);
+    bannerAuto = setInterval(() => goToSlide((currentIdx + 1) % 2), 6000);
+  }
 
-function startAuto() {
-  clearInterval(bannerAuto);
-  bannerAuto = setInterval(() => goToSlide((currentIdx + 1) % 2), 6000);
-}
+  function goToSlide(idx) {
+    currentIdx = idx;
+    track.style.transform = `translateX(-${currentIdx * 100}%)`;
+    dots.forEach((d, i) => d.classList.toggle('active', i === currentIdx));
+  }
 
-function goToSlide(idx) {
-  currentIdx = idx;
-  track.style.transform = `translateX(-${currentIdx * 100}%)`;
-  dots.forEach((d, i) => d.classList.toggle('active', i === currentIdx));
-}
-
-if (track && dots.length > 0) {
-  startAuto();
-
-  let startX = 0;
-  let isDragging = false;
-
-  track.addEventListener('mousedown', e => { 
-    e.preventDefault(); // Prevents text selection highlighting
-    startX = e.pageX; 
-    isDragging = true;
-    clearInterval(bannerAuto); 
-    track.style.transition = 'none';
-  });
-  
-  window.addEventListener('mouseup', e => {
-    if(!isDragging) return;
-    isDragging = false;
-    const diff = startX - e.pageX;
-    track.style.transition = 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
-    if (Math.abs(diff) > 40) {
-      goToSlide(diff > 0 ? (currentIdx + 1) % 2 : (currentIdx - 1 + 2) % 2);
-    } else {
-      goToSlide(currentIdx);
-    }
+  if (track && dots.length > 0) {
     startAuto();
-  });
 
-  track.addEventListener('touchstart', e => { 
-    startX = e.touches[0].clientX; 
-    isDragging = true;
-    clearInterval(bannerAuto); 
-    track.style.transition = 'none';
-  }, {passive: true});
+    let startX = 0;
+    let isDragging = false;
 
-  window.addEventListener('touchend', e => {
-    if(!isDragging) return;
-    isDragging = false;
-    const diff = startX - e.changedTouches[0].clientX;
-    track.style.transition = 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
-    if (Math.abs(diff) > 40) {
-      goToSlide(diff > 0 ? (currentIdx + 1) % 2 : (currentIdx - 1 + 2) % 2);
-    } else {
-      goToSlide(currentIdx);
-    }
-    startAuto();
-  });
-
-  dots.forEach((d, i) => {
-    d.addEventListener('click', () => {
-      goToSlide(i);
+    track.addEventListener('mousedown', e => { 
+      e.preventDefault(); 
+      startX = e.pageX; 
+      isDragging = true;
+      clearInterval(bannerAuto); 
+      track.style.transition = 'none';
+    });
+    
+    window.addEventListener('mouseup', e => {
+      if(!isDragging) return;
+      isDragging = false;
+      const diff = startX - e.pageX;
+      track.style.transition = 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
+      if (Math.abs(diff) > 40) {
+        goToSlide(diff > 0 ? (currentIdx + 1) % 2 : (currentIdx - 1 + 2) % 2);
+      } else {
+        goToSlide(currentIdx);
+      }
       startAuto();
     });
-  });
+
+    track.addEventListener('touchstart', e => { 
+      startX = e.touches[0].clientX; 
+      isDragging = true;
+      clearInterval(bannerAuto); 
+      track.style.transition = 'none';
+    }, {passive: true});
+
+    window.addEventListener('touchend', e => {
+      if(!isDragging) return;
+      isDragging = false;
+      const diff = startX - e.changedTouches[0].clientX;
+      track.style.transition = 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1)';
+      if (Math.abs(diff) > 40) {
+        goToSlide(diff > 0 ? (currentIdx + 1) % 2 : (currentIdx - 1 + 2) % 2);
+      } else {
+        goToSlide(currentIdx);
+      }
+      startAuto();
+    });
+
+    dots.forEach((d, i) => {
+      d.addEventListener('click', () => {
+        goToSlide(i);
+        startAuto();
+      });
+    });
+  }
 }
 
 const footerEl = document.getElementById('footer-placeholder');
@@ -910,13 +935,10 @@ document.addEventListener('click', e => {
 });
 
 // Active Link Setup
-const path = window.location.pathname;
-const isHome = path === '/' || path.endsWith('/index.html') || path.endsWith('krishna-gtm.github.io/') || path.endsWith('saasnova-ai/');
-
 document.querySelectorAll('.nav-link').forEach(l => {
   const href = l.getAttribute('href');
   if (!href) return;
-  if (href === 'index.html' || href === '/') {
+  if (href === 'index' || href === '/') {
     if (isHome) l.classList.add('active');
   } else {
     if (path.includes(href)) l.classList.add('active');
