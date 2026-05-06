@@ -763,7 +763,9 @@ const FOOTER_HTML = `
         <div class="footer-col-title" style="margin-top:40px;margin-bottom:20px;">CONTACT</div>
         <a href="mailto:jen@saasnova.ai" class="footer-link" style="text-transform:none;">jen@saasnova.ai</a>
         <a href="tel:+12017555369" class="footer-link" style="text-transform:none;">+1 (201) 755-5369</a>
-        <a href="mailto:operations@saasnova.ai" class="footer-link" style="text-transform:none;">operations@saasnova.ai</a>
+        <a href="mailto:marketing@saasnova.ai" class="footer-link" style="text-transform:none;">marketing@saasnova.ai</a>
+        <a href="mailto:support@saasnova.ai" class="footer-link" style="text-transform:none;">support@saasnova.ai</a>
+
       </div>
     </div>
     
