@@ -83,10 +83,12 @@ h1, h2, h3, h4, h5, h6 {
 
  /* ── MOBILE OVERFLOW & TEXT WRAPPING FIXES ── */
   .card { overflow-wrap: break-word !important; box-sizing: border-box !important; }
-  .check-item { display: flex !important; align-items: flex-start !important; gap: 12px !important; white-space: normal !important; word-break: break-word !important; }
-  .check-dot { flex-shrink: 0 !important; min-width: 16px !important; margin-top: 4px; }
+  .check-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; width: 100%; }
+  .check-item { display: flex !important; align-items: flex-start !important; gap: 12px !important; white-space: normal !important; word-break: break-word !important; font-size: 14px; line-height: 1.5; color: var(--text-secondary); }
+  .check-dot { flex-shrink: 0 !important; width: 20px !important; height: 20px !important; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-top: 2px; }
+  .check-dot svg { width: 12px; height: 12px; display: block; stroke-width: 3px; }
   .cloud-pill-tag { display: inline-block !important; padding: 6px 16px; border-radius: 24px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 20px; line-height: 1.5; text-align: left; white-space: normal !important; word-break: break-word; }
-  .deep-dive-btn { display: inline-flex; align-items: center; justify-content: center; width: 100%; padding: 14px 24px; border-radius: 8px; font-weight: 700; font-size: 15px; text-align: center; white-space: normal !important; word-break: break-word; transition: transform 0.2s ease, opacity 0.2s ease; }
+  .deep-dive-btn { display: inline-flex; align-items: center; justify-content: center; width: 100%; padding: 14px 24px; border-radius: 8px; font-weight: 700; font-size: 15px; text-align: center; white-space: normal !important; word-break: break-word; transition: transform 0.2s ease, opacity 0.2s ease; text-decoration: none; }
   .deep-dive-btn:hover { transform: translateY(-2px); opacity: 0.9; }
 
 /* ══════════════════════════════════════════
@@ -152,6 +154,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: -0.035em;
   color: #0F1923;
   margin-bottom: 20px;
+  text-wrap: balance;
 }
 .sn-hl-grad {
   background: linear-gradient(90deg, #008BF8, #FA0F9C);
@@ -720,7 +723,7 @@ gtag('config', 'G-185EJ40PT4');
           Book a 30-min Execution Strategy Session
         </a>
         <a href="services.html" class="cta-secondary">
-          Explore GTM Program & Services <svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M8 4l3 3-3 3"/></svg>
+          Explore GTM Services <svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M8 4l3 3-3 3"/></svg>
         </a>
       </div>
     </div>
@@ -826,13 +829,13 @@ gtag('config', 'G-185EJ40PT4');
     <div class="reveal">
       <div class="sn-hero-eyebrow" style="margin-bottom:20px;">
         <span class="sn-eyebrow-dot"></span>
-        THE EXECUTION GAP
+        THE RESOURCE GAP
       </div>
       <h2 style="font-size:clamp(32px, 4vw, 44px); font-weight:800; line-height:1.15; color:var(--text-primary); margin-bottom:16px; letter-spacing:-0.02em;">
         So, your marketplace listing is live.<br/><span class="sn-hl-grad">But, no pipeline means no revenue.</span>
       </h2>
       <p style="font-size:18px; color:var(--text-secondary); line-height:1.6; max-width:480px; margin-bottom:32px;">
-        We step in as your dedicated cloud GTM operators, activating field relationships, unblocking co-sell motions, and converting your listing into measurable revenue.
+        We step in as your dedicated cloud GTM operators, filling internal resource gaps by activating field relationships, unblocking co-sell motions, and converting your listing into measurable revenue.
       </p>
 
       <div class="sn-cloud-pills" style="justify-content: flex-start; margin-bottom:36px;">
@@ -853,7 +856,7 @@ gtag('config', 'G-185EJ40PT4');
           Book a 30-min Execution Strategy Session
         </a>
         <a href="services.html" class="cta-secondary">
-          Explore GTM Program & Services <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M8 4l3 3-3 3"/></svg>
+          Explore GTM Services <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h8M8 4l3 3-3 3"/></svg>
         </a>
       </div>
     </div>
@@ -988,7 +991,7 @@ gtag('config', 'G-185EJ40PT4');
     <div style="text-align:center;margin-bottom:60px">
       <div class="section-tag st-blue" style="margin-bottom:12px">Programs</div>
       <h2 class="reveal" style="margin-bottom:10px">Pick your stage,<br/>We customize the execution.</h2>
-      <p class="reveal" style="max-width:580px;margin:0 auto;font-size:17px;color:var(--text-secondary)">Start at the stage that matches your GTM maturity. Execution is customized to your cloud mix and revenue targets.</p>
+      <p class="reveal" style="max-width:580px;margin:0 auto;font-size:17px;color:var(--text-secondary)">Start at the stage that matches your GTM maturity. We fill the resource gaps and execute customized multi-cloud strategies to hit your revenue targets.</p>
     </div>
 
     <div class="reveal sn-prog-grid">
@@ -1053,7 +1056,7 @@ gtag('config', 'G-185EJ40PT4');
               <li>First US cloud‑attributable signal</li>
               <li>PRM Implemented & consumption data</li>
               <li>Executive US GTM evidence package</li>
-              <li>US partner + Channel map (CPPO)</li>
+              <li>US partner + Channel map</li>
               <li>ISV Accelerate progression proof</li>
             </ul>
           </div>
@@ -1137,10 +1140,10 @@ gtag('config', 'G-185EJ40PT4');
 <section id="managed-services" style="background:linear-gradient(160deg,#F5EEFF 0%,#FFF8F0 100%);padding:var(--sp-10) 0;border-top:1px solid var(--border-light)">
   <div class="container">
     <div style="text-align:center;margin-bottom:var(--sp-8)">
-      <div class="section-tag st-pink reveal" style="margin-bottom:12px">Embedded GTM Operations</div>
-      <h2 class="reveal delay-1" style="color:var(--text-primary);margin-bottom:10px; font-size:clamp(32px, 4vw, 44px); font-weight:800; letter-spacing:-0.02em;">Managed GTM Services</h2>
+      <div class="section-tag st-pink reveal" style="margin-bottom:12px">Services</div>
+      <h2 class="reveal delay-1" style="color:var(--text-primary);margin-bottom:10px; font-size:clamp(32px, 4vw, 44px); font-weight:800; letter-spacing:-0.02em;">Embedded GTM Operations</h2>
       <p class="reveal delay-2" style="color:var(--text-secondary);max-width:600px;margin:0 auto;font-size:17px;">
-        Flexible execution for ISVs who have a motion but need a <strong>fractional execution team</strong> to run it month-over-month across AWS, Microsoft, and GCP.
+        Flexible execution for ISVs who have a motion but need a <strong>fractional execution team</strong> to bridge their internal resource gaps month-over-month across AWS, Microsoft, and GCP.
       </p>
     </div>
 
@@ -1151,9 +1154,9 @@ gtag('config', 'G-185EJ40PT4');
         <h3 style="font-size:24px;margin-bottom:12px;">PDM as a Service</h3>
         <p style="color:var(--text-secondary);font-size:15px;line-height:1.6;margin-bottom:24px;">Run a consistent, AWS-aligned partner motion without building an in-house PDM team. SaaSNova delivers weekly field engagement, co-sell pipeline management, and funding program execution - so ISVs activate faster and scale without the overhead.</p>
         <ul class="check-list" style="margin-bottom:32px; flex-grow:1;">
-          <li class="check-item"><span class="check-dot" style="background:var(--blue)"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span><div>Weekly AWS field engagement and co-sell pipeline management - executed every sprint, no gaps.</div></li>
-          <li class="check-item"><span class="check-dot" style="background:var(--blue)"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span><div>Funding program workflows (MDF/SDF) tracked and submitted on your behalf.</div></li>
-          <li class="check-item"><span class="check-dot" style="background:var(--blue)"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span><div>Field Readiness Kit and Private Offer readiness included.</div></li>
+          <li class="check-item"><span class="check-dot" style="background:var(--blue)"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div>We own the GTM swimlane, field alignment, pipeline progression, and active co-sell.</div></li>
+          <li class="check-item"><span class="check-dot" style="background:var(--blue)"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div>100% eligible funding capture via managed application workflows.</div></li>
+          <li class="check-item"><span class="check-dot" style="background:var(--blue)"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div>Process-driven execution model installed from week one.</div></li>
         </ul>
         <a href="pdmaas.html" class="deep-dive-btn" style="color:var(--blue);background:rgba(0,139,248,0.08);margin-top:auto;">Explore PDMaaS &rarr;</a>
       </div>
@@ -1162,24 +1165,24 @@ gtag('config', 'G-185EJ40PT4');
       <div class="card reveal delay-2" style="background:#fff;border-radius:var(--r-2xl);padding:32px;border:1px solid rgba(241,153,83,0.2);box-shadow:0 12px 32px rgba(241,153,83,0.04);display:flex;flex-direction:column;height:100%;">
         <div style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:rgba(241,153,83,.1);color:var(--orange);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-bottom:20px;align-self:flex-start;">Cloud Product Marketing Execution</div>
         <h3 style="font-size:24px;margin-bottom:12px;">PMM as a Service</h3>
-        <p style="color:var(--text-secondary);font-size:15px;line-height:1.6;margin-bottom:24px;">Turn your product capabilities into field-ready messaging that AWS sellers and partners actually use. SaaSNova delivers cloud-aligned value propositions, co-sell decks, and marketplace copy - continuously, at scale.</p>
+        <p style="color:var(--text-secondary);font-size:15px;line-height:1.6;margin-bottom:24px;">Turn your product capabilities into field-ready messaging that AWS sellers and partners actually use. SaaSNova delivers cloud-aligned value propositions, co-sell decks, demand generation plans, and marketplace copy continuously.</p>
         <ul class="check-list" style="margin-bottom:32px; flex-grow:1;">
-          <li class="check-item"><span class="check-dot" style="background:var(--orange)"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span><div>Cloud-aligned Better-Together narratives and co-sell decks delivered continuously.</div></li>
-          <li class="check-item"><span class="check-dot" style="background:var(--orange)"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span><div>Field Readiness Kits including battlecards and objection handling.</div></li>
-          <li class="check-item"><span class="check-dot" style="background:var(--orange)"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span><div>Marketplace listing optimization and content calendar management.</div></li>
+          <li class="check-item"><span class="check-dot" style="background:var(--orange)"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div>Cloud-aligned value propositions and Better-Together narratives.</div></li>
+          <li class="check-item"><span class="check-dot" style="background:var(--orange)"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div>Execute multi-cloud demand generation plans to drive partner leads.</div></li>
+          <li class="check-item"><span class="check-dot" style="background:var(--orange)"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div>Marketplace listing optimization and field-tested battlecards.</div></li>
         </ul>
         <a href="pmmaas.html" class="deep-dive-btn" style="color:var(--orange);background:rgba(241,153,83,0.08);margin-top:auto;">Explore PMMaaS &rarr;</a>
       </div>
 
       <!-- PALaaS -->
       <div class="card reveal delay-3" style="background:#fff;border-radius:var(--r-2xl);padding:32px;border:1px solid rgba(250,15,156,0.2);box-shadow:0 12px 32px rgba(250,15,156,0.04);display:flex;flex-direction:column;height:100%;">
-        <div style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:rgba(250,15,156,.1);color:var(--pink);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-bottom:20px;align-self:flex-start;">Alliance Leadership</div>
+        <div style="display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:rgba(250,15,156,.1);color:var(--pink);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;margin-bottom:20px;align-self:flex-start;">Alliance Leadership & Cloud Partner Management</div>
         <h3 style="font-size:24px;margin-bottom:12px;">PAL as a Service</h3>
-        <p style="color:var(--text-secondary);font-size:15px;line-height:1.6;margin-bottom:24px;">Manage your multi-cloud alliance relationships with the operational discipline of a seasoned PAL - without the full-time hire. SaaSNova coordinates hyperscaler engagement, co-sell program navigation, and executive alignment.</p>
+        <p style="color:var(--text-secondary);font-size:15px;line-height:1.6;margin-bottom:24px;">Manage your multi-cloud partnership relationships with the operational discipline of a seasoned PAL - without the full-time hire. SaaSNova coordinates hyperscaler engagement, co-sell program navigation, and executive alignment.</p>
         <ul class="check-list" style="margin-bottom:32px; flex-grow:1;">
-          <li class="check-item"><span class="check-dot" style="background:var(--pink)"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span><div>Multi-cloud alliance coordination across AWS, Azure, and GCP.</div></li>
-          <li class="check-item"><span class="check-dot" style="background:var(--pink)"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span><div>QBR preparation, co-sell program navigation, and funding tracking.</div></li>
-          <li class="check-item"><span class="check-dot" style="background:var(--pink)"><svg width="9" height="7" viewBox="0 0 9 7" fill="none"><path d="M1 3.5l2 2L8 1" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg></span><div>Executive alignment and joint GTM coordination bridging strategy and execution.</div></li>
+          <li class="check-item"><span class="check-dot" style="background:var(--pink)"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div>Build and maintain a multi-cloud partnership plan (AWS, Azure, GCP).</div></li>
+          <li class="check-item"><span class="check-dot" style="background:var(--pink)"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div>Accelerate GenAI Competency attainment and advanced partner tiering.</div></li>
+          <li class="check-item"><span class="check-dot" style="background:var(--pink)"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div>Executive alignment, QBR preparation, and co-sell navigation.</div></li>
         </ul>
         <a href="palaas.html" class="deep-dive-btn" style="color:var(--pink);background:rgba(250,15,156,0.08);margin-top:auto;">Explore PALaaS &rarr;</a>
       </div>

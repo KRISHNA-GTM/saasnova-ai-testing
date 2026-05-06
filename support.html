@@ -147,19 +147,92 @@ gtag('config', 'G-185EJ40PT4');
 <script src="shared.js"></script>
 
 <script>
-// Mock submission UI handler for Support page until backend routing is needed
-function handleSupportSubmit(e) {
+// HubSpot API Submission handler mapped to your native custom UI
+async function handleSupportSubmit(e) {
   e.preventDefault();
   const form = e.target;
   const btn = form.querySelector('[type="submit"]');
   const originalText = btn.textContent;
+  
+  // Show loading state
   btn.textContent = 'Sending…';
   btn.disabled = true;
 
-  // Simulate network request delay
-  setTimeout(() => {
-    form.innerHTML = '<div style="padding:var(--sp-4);text-align:center;background:rgba(52,168,83,.06);border-radius:var(--r-xl);border:1px solid rgba(52,168,83,.2)"><div style="font-size:32px;margin-bottom:8px;color:#34a853;">✓</div><div style="font-weight:700;font-size:18px;color:var(--text-primary);margin-bottom:6px">Ticket submitted successfully.</div><p style="color:var(--text-muted)">Your request has been logged. Our support team will reach out to you within our 24-hour SLA.</p></div>';
-  }, 800);
+  // HubSpot Credentials
+  const portalId = '245317385';
+  const formId = 'd88c0d3b-b8fc-4f69-887b-abf0a72e4d0d';
+  const apiUrl = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`;
+
+  // Map HTML form field values to their internal HubSpot property names
+  const data = {
+    fields: [
+      {
+        name: "firstname",
+        value: form.first_name.value
+      },
+      {
+        name: "lastname",
+        value: form.last_name.value
+      },
+      {
+        name: "email",
+        value: form.email.value
+      },
+      {
+        name: "company",
+        value: form.company.value
+      },
+      {
+        name: "category",
+        value: form.support_category.value
+      },
+      {
+        name: "issue_description",
+        value: form.message.value
+      }
+    ],
+    context: {
+      pageUri: window.location.href,
+      pageName: document.title
+    }
+  };
+
+  try {
+    const response = await fetch(apiUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
+
+    if (response.ok) {
+      // Show success message and remove the form
+      form.innerHTML = `
+        <div style="padding:var(--sp-4);text-align:center;background:rgba(52,168,83,.06);border-radius:var(--r-xl);border:1px solid rgba(52,168,83,.2)">
+          <div style="font-size:32px;margin-bottom:8px;color:#34a853;">✓</div>
+          <div style="font-weight:700;font-size:18px;color:var(--text-primary);margin-bottom:6px">Ticket submitted successfully.</div>
+          <p style="color:var(--text-muted)">Your request has been logged. Our support team will reach out to you within our 24-hour SLA.</p>
+        </div>`;
+    } else {
+      // Handle server validation/errors
+      const errorData = await response.json();
+      console.error('HubSpot Error:', errorData);
+      alert('There was a problem submitting your ticket. Please try again.');
+      
+      // Revert button
+      btn.textContent = originalText;
+      btn.disabled = false;
+    }
+  } catch (error) {
+    // Handle network errors
+    console.error('Network Error:', error);
+    alert('A network error occurred. Please check your connection and try again.');
+    
+    // Revert button
+    btn.textContent = originalText;
+    btn.disabled = false;
+  }
 }
 </script>
 </body>
