@@ -116,21 +116,7 @@ gtag('config', 'G-185EJ40PT4');
               <div class="form-field"><label class="form-label">Company Name<span style="color:var(--pink);margin-left:2px">*</span></label><input type="text" class="form-input" name="company" required placeholder="Acme Corp"/></div>
               
               <div id="form-isv-fields">
-                <div class="form-field">
-                  <label class="form-label">Target cloud marketplace(s)<span style="color:var(--pink);margin-left:2px">*</span></label>
-                  <div style="position:relative">
-                    <select class="form-select" name="target_cloud" id="target_cloud_select" required>
-                      <option value="">Select...</option>
-                      <option value="AWS Marketplace">AWS Marketplace</option>
-                      <option value="Azure Marketplace">Azure Marketplace</option>
-                      <option value="GCP Marketplace">GCP Marketplace</option>
-                      <option value="Multi-Cloud (2 or more)">Multi-Cloud (2 or more)</option>
-                      <option value="Not Yet Decided">Not Yet Decided</option>
-                    </select>
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="position:absolute;right:14px;top:50%;transform:translateY(-50%);pointer-events:none"><path d="M3 4.5l3 3 3-3" stroke="var(--text-muted)" stroke-width="1.5" stroke-linecap="round"/></svg>
-                  </div>
-                </div>
-                <div class="form-field">
+                           <div class="form-field">
                   <label class="form-label">Current marketplace status<span style="color:var(--pink);margin-left:2px">*</span></label>
                   <div style="position:relative">
                     <select class="form-select" name="marketplace_status" id="marketplace_status_select" required>
@@ -138,6 +124,22 @@ gtag('config', 'G-185EJ40PT4');
                       <option value="Listed on Multiple Clouds">Listed on Multiple Clouds</option>
                       <option value="Listing in Progress">Listing in Progress</option>
                       <option value="Not Yet Listed">Not Yet Listed</option>
+                    </select>
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="position:absolute;right:14px;top:50%;transform:translateY(-50%);pointer-events:none"><path d="M3 4.5l3 3 3-3" stroke="var(--text-muted)" stroke-width="1.5" stroke-linecap="round"/></svg>
+                  </div>
+                </div>
+                <div class="form-field">
+                  <label class="form-label">Primary Service of Interest<span style="color:var(--pink);margin-left:2px">*</span></label>
+                  <div style="position:relative">
+                    <select class="form-select" name="service_interest" id="service_interest_select" required>
+                      <option value="">Select...</option>
+                      <option value="PDMaaS (Partner Development)">PDMaaS (Partner Development)</option>
+                      <option value="PMMaaS (Partner Marketing)">PMMaaS (Partner Marketing)</option>
+                      <option value="PALaaS (Alliance Leadership)">PALaaS (Alliance Leadership)</option>
+                      <option value="Ignite (1-Month Sprint)">Ignite (1-Month Sprint)</option>
+                      <option value="SuperNova (4-Month Sprint)">SuperNova (4-Month Sprint)</option>
+                      <option value="NovaX (6-Month Sprint)">NovaX (6-Month Sprint)</option>
+                      <option value="Not Sure / Need Guidance">Not Sure / Need Guidance</option>
                     </select>
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" style="position:absolute;right:14px;top:50%;transform:translateY(-50%);pointer-events:none"><path d="M3 4.5l3 3 3-3" stroke="var(--text-muted)" stroke-width="1.5" stroke-linecap="round"/></svg>
                   </div>
@@ -160,13 +162,13 @@ gtag('config', 'G-185EJ40PT4');
                 <div style="width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:900;font-size:11px;flex-shrink:0;margin-top:1px">01</div>
                 <div><strong style="display:block;margin-bottom:3px">Cloud GTM Readiness Score</strong><span class="text-sm text-muted">Jen assesses your marketplace position across AWS, Azure, and GCP.</span></div>
               </div>
-              <div style="display:flex;gap:12px;align-items:flex-start">
+                 <div style="display:flex;gap:12px;align-items:flex-start">
                 <div style="width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:900;font-size:11px;flex-shrink:0;margin-top:1px">02</div>
                 <div><strong style="display:block;margin-bottom:3px">Execution Gap Analysis</strong><span class="text-sm text-muted">Exactly where your co-sell motion is stalling, and on which cloud(s).</span></div>
               </div>
               <div style="display:flex;gap:12px;align-items:flex-start">
                 <div style="width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:900;font-size:11px;flex-shrink:0;margin-top:1px">03</div>
-                <div><strong style="display:block;margin-bottom:3px">Program Recommendation</strong><span class="text-sm text-muted">Jen recommends the right SaaSNova program for your cloud mix, timeline, and stage.</span></div>
+                <div><strong style="display:block;margin-bottom:3px">Program Recommendation</strong><span class="text-sm text-muted">Jen recommends the right SaaSNova execution program (Ignite, SuperNova, NovaX) or managed service (PDMaaS, PMMaaS, PALaaS) for your cloud mix, timeline, and stage.</span></div>
               </div>
               <div style="display:flex;gap:12px;align-items:flex-start">
                 <div style="width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:900;font-size:11px;flex-shrink:0;margin-top:1px">04</div>
