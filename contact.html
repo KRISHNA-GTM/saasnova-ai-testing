@@ -310,10 +310,23 @@ function handleContactSubmit(e) {
     // Uses company for Service Inquiry
     fields.push({ name: 'company', value: formData.get('company') || '' });
 
+    // Extract values manually to ensure we don't push empty strings to HubSpot
+    const targetCloud = formData.get('target_cloud') || '';
+    const marketplaceStatus = formData.get('marketplace_status') || '';
+    const serviceInterest = formData.get('service_interest') || '';
+
+    // 🔥 STRICT VALIDATION GUARD: Prevents empty submissions hitting HubSpot API
+    if (!targetCloud || !marketplaceStatus || !serviceInterest) {
+      alert("Please ensure all required dropdown menus (Target Cloud, Marketplace Status, Service of Interest) have a selection.");
+      btn.textContent = originalText;
+      btn.disabled = false;
+      return; 
+    }
+
     // FIXED HUB-SPOT FIELDS
-    fields.push({ name: 'target_cloud_marketplace_s_', value: formData.get('target_cloud') || '' });
-    fields.push({ name: 'current_marketplace_status', value: formData.get('marketplace_status') || '' });
-    fields.push({ name: 'primary_service_of_interest', value: formData.get('service_interest') || '' });
+    fields.push({ name: 'target_cloud_marketplace_s_', value: targetCloud });
+    fields.push({ name: 'current_marketplace_status', value: marketplaceStatus });
+    fields.push({ name: 'primary_service_of_interest', value: serviceInterest });
     
     if (formData.get('message') && formData.get('message').trim() !== '') {
       fields.push({ name: 'what_is_your_biggest_cloud_gtm_challenge_', value: formData.get('message') });
