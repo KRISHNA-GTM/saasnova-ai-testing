@@ -543,18 +543,21 @@ function handleApplySubmit(e, roleKey) {
   
   const fd = new FormData(form);
 
-  // Map fields strictly to HubSpot internal property names
+  // Build fields array and explicitly enforce Contact Property Object Types
+  const rawFields = [
+    { objectTypeId: "0-1", name: 'firstname', value: fd.get('first_name') },
+    { objectTypeId: "0-1", name: 'lastname', value: fd.get('last_name') },
+    { objectTypeId: "0-1", name: 'email', value: fd.get('email') },
+    { objectTypeId: "0-1", name: 'city', value: fd.get('location') },
+    { objectTypeId: "0-1", name: 'hs_linkedin_url', value: fd.get('linkedin') },
+    { objectTypeId: "0-1", name: 'role', value: fd.get('role') },
+    { objectTypeId: "0-1", name: 'why_this_role', value: fd.get('why') },
+    { objectTypeId: "0-1", name: 'relevant_background', value: fd.get('background') }
+  ];
+
+  // Filter out any optional fields left completely blank so HubSpot doesn't flag them as empty strings
   const payload = {
-    fields: [
-      { name: 'firstname', value: fd.get('first_name') || '' },
-      { name: 'lastname', value: fd.get('last_name') || '' },
-      { name: 'email', value: fd.get('email') || '' },
-      { name: 'city', value: fd.get('location') || '' },
-      { name: 'hs_linkedin_url', value: fd.get('linkedin') || '' },
-      { name: 'role', value: fd.get('role') || '' },
-      { name: 'why_this_role', value: fd.get('why') || '' },
-      { name: 'relevant_background', value: fd.get('background') || '' }
-    ],
+    fields: rawFields.filter(f => f.value && f.value.trim() !== ''),
     context: { 
       pageUri: window.location.href, 
       pageName: document.title 
@@ -569,18 +572,31 @@ function handleApplySubmit(e, roleKey) {
     body: JSON.stringify(payload)
   }).then(async res => {
     if (!res.ok) { 
-      const t = await res.text(); 
-      throw new Error(t); 
+      // Capture exactly what HubSpot is complaining about
+      let errMessage = "Submission failed.";
+      try {
+        const errJson = await res.json();
+        if (errJson.errors && errJson.errors.length > 0) {
+          errMessage = errJson.errors.map(e => e.message).join('\\n');
+        } else if (errJson.message) {
+          errMessage = errJson.message;
+        }
+      } catch(parseErr) {
+        errMessage = await res.text();
+      }
+      throw new Error(errMessage); 
     }
-    // Only show success if HubSpot returns an OK status
+    // Only display success on strict 200 OK
     form.style.display = 'none';
     document.getElementById('apply-success').style.display = 'block';
   }).catch(err => {
     console.error("HubSpot Submission Error:", err);
-    // Prevent false success, reset button, and alert user
+    // Let the user click submit again
     btn.textContent = 'Submit Application'; 
     btn.disabled = false;
-    alert('There was an error submitting your application. Please check your inputs and try again.');
+    
+    // Alert the detailed HubSpot error string directly to the user
+    alert('HubSpot API Error:\\n\\n' + err.message + '\\n\\n(Please double-check your HubSpot Property Internal Names and Dropdown values.)');
   });
 }
 
