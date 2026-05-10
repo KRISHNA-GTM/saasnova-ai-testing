@@ -499,10 +499,10 @@ function openApplyModal(key) {
         <label class="apply-label">Role *</label>
         <select name="role" class="apply-select" required>
           <option value="">Select...</option>
-          <option value="Partner Pipeline Executive (US) - GTM-PPE-2026-US" ${key==='us'?'selected':''}>Partner Pipeline Executive - US (GTM-PPE-2026-US)</option>
+          <option value="Partner Pipeline Executive - US (GTM-PPE-2026-US)" ${key==='us'?'selected':''}>Partner Pipeline Executive - US (GTM-PPE-2026-US)</option>
           <option value="Partner Pipeline Executive (London) - GTM-PPE-2026-EU" ${key==='london'?'selected':''}>Partner Pipeline Executive - London (GTM-PPE-2026-EU)</option>
-          <option value="HubSpot Associate - GTM-HUB-OPS-2026-IN" ${key==='hubspot'?'selected':''}>HubSpot Associate - India (GTM-HUB-OPS-2026-IN)</option>
-          <option value="Cloud Engineer - TEC-ENG-2026-IN" ${key==='engineer'?'selected':''}>Cloud Engineer - India (TEC-ENG-2026-IN)</option>
+          <option value="HubSpot Associate - India (GTM-HUB-OPS-2026-IN)" ${key==='hubspot'?'selected':''}>HubSpot Associate - India (GTM-HUB-OPS-2026-IN)</option>
+          <option value="Cloud Engineer - India (TEC-ENG-2026-IN)" ${key==='engineer'?'selected':''}>Cloud Engineer - India (TEC-ENG-2026-IN)</option>
           <option value="Open Application" ${!key?'selected':''}>Open Application</option>
         </select>
       </div>
@@ -531,36 +531,56 @@ function handleApplySubmit(e, roleKey) {
   e.preventDefault();
   const form = e.target;
   const btn = form.querySelector('button[type="submit"]');
+  
   if (!document.getElementById('apply-consent').checked) { 
     const label = document.getElementById('apply-consent').nextElementSibling;
     label.style.color = 'var(--orange)'; 
     return; 
   }
-  const originalText = btn.textContent;
-  btn.textContent = 'Submitting\u2026'; btn.disabled = true;
+  
+  btn.textContent = 'Submitting\u2026'; 
+  btn.disabled = true;
+  
   const fd = new FormData(form);
-  const job = JOBS[roleKey];
-  const message = `Role: ${fd.get('role') || roleKey}\nLocation: ${fd.get('location') || 'N/A'}\nLinkedIn: ${fd.get('linkedin') || 'N/A'}\n\nWhy this role:\n${fd.get('why') || 'N/A'}\n\nBackground:\n${fd.get('background') || 'N/A'}\n\nEmail subject: ${job ? job.emailSubject : 'Open Application'}`;
+
+  // Map fields strictly to HubSpot internal property names
+  const payload = {
+    fields: [
+      { name: 'firstname', value: fd.get('first_name') || '' },
+      { name: 'lastname', value: fd.get('last_name') || '' },
+      { name: 'email', value: fd.get('email') || '' },
+      { name: 'city', value: fd.get('location') || '' },
+      { name: 'hs_linkedin_url', value: fd.get('linkedin') || '' },
+      { name: 'role', value: fd.get('role') || '' },
+      { name: 'why_this_role', value: fd.get('why') || '' },
+      { name: 'relevant_background', value: fd.get('background') || '' }
+    ],
+    context: { 
+      pageUri: window.location.href, 
+      pageName: document.title 
+    }
+  };
+
   const url = 'https://api.hsforms.com/submissions/v3/integration/submit/245317385/aa170816-bdf0-44f2-a14c-97dd671d1762';
+  
   fetch(url, {
-    method: 'POST', headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      fields: [
-        { name: 'firstname', value: fd.get('first_name') || '' },
-        { name: 'lastname', value: fd.get('last_name') || '' },
-        { name: 'email', value: fd.get('email') || '' },
-        { name: 'message', value: message }
-      ],
-      context: { pageUri: window.location.href, pageName: document.title }
-    })
+    method: 'POST', 
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload)
   }).then(async res => {
-    if (!res.ok) { const t = await res.text(); throw new Error(t); }
+    if (!res.ok) { 
+      const t = await res.text(); 
+      throw new Error(t); 
+    }
+    // Only show success if HubSpot returns an OK status
     form.style.display = 'none';
     document.getElementById('apply-success').style.display = 'block';
   }).catch(err => {
-    console.error(err);
-    form.style.display = 'none';
-    document.getElementById('apply-success').style.display = 'block';
+    console.error("HubSpot Submission Error:", err);
+    // Prevent false success, reset button, and alert user
+    btn.textContent = 'Submit Application'; 
+    btn.disabled = false;
+    alert('There was an error submitting your application. Please check your inputs and try again.');
   });
 }
 
