@@ -59,6 +59,7 @@
   .st-blue { background: rgba(0,139,248,0.1); color: var(--blue, #008bf8); }
   .st-orange { background: rgba(241,153,83,0.1); color: var(--orange, #f19953); }
   .st-pink { background: rgba(250,15,156,0.1); color: var(--pink, #fa0f9c); }
+  .st-green { background: rgba(16,185,129,0.1); color: var(--green, #10b981); }
   .st-dark { background: #0D2040; color: #fff; }
 
   /* ── COMPARISON MATRIX CSS ── */
@@ -71,6 +72,7 @@
   .matrix-th.col-ignite, .matrix-th.col-pdmaas { width: 26%; color: var(--blue); border-left: 1px solid rgba(0,139,248,0.15); border-right: 1px solid rgba(0,139,248,0.15); background: rgba(0,139,248,0.04); }
   .matrix-th.col-supernova, .matrix-th.col-pmmaas { width: 26%; color: var(--orange); border-right: 1px solid rgba(241,153,83,0.15); background: rgba(241,153,83,0.04); }
   .matrix-th.col-novax, .matrix-th.col-palaas { width: 26%; color: var(--pink); border-right: 1px solid rgba(250,15,156,0.15); background: rgba(250,15,156,0.04); }
+  .matrix-th.col-prmaas, .matrix-th.col-pcmaas { width: 39%; color: var(--green, #10b981); border-left: 1px solid rgba(16,185,129,0.15); border-right: 1px solid rgba(16,185,129,0.15); background: rgba(16,185,129,0.04); }
   
   .matrix-td { padding: 18px 20px; font-size: 14px; color: var(--text-secondary); border-bottom: 1px solid var(--border-light); vertical-align: top; line-height: 1.6; }
   .matrix-tr:last-child .matrix-td { border-bottom: none; }
@@ -78,6 +80,7 @@
   .matrix-td.col-ignite, .matrix-td.col-pdmaas { border-left: 1px solid rgba(0,139,248,0.15); border-right: 1px solid rgba(0,139,248,0.15); background: rgba(0,139,248,0.015); }
   .matrix-td.col-supernova, .matrix-td.col-pmmaas { border-right: 1px solid rgba(241,153,83,0.15); background: rgba(241,153,83,0.015); }
   .matrix-td.col-novax, .matrix-td.col-palaas { border-right: 1px solid rgba(250,15,156,0.15); background: rgba(250,15,156,0.015); }
+  .matrix-td.col-prmaas, .matrix-td.col-pcmaas { border-left: 1px solid rgba(16,185,129,0.15); border-right: 1px solid rgba(16,185,129,0.15); background: rgba(16,185,129,0.015); }
 
   @media (max-width: 768px) {
     /* Mobile Tables to Cards */
@@ -96,8 +99,10 @@
     .matrix-td.col-pdmaas::before { content: "PDMaaS"; font-weight: 700; color: var(--blue); flex-shrink: 0; }
     .matrix-td.col-pmmaas::before { content: "PMMaaS"; font-weight: 700; color: var(--orange); flex-shrink: 0; }
     .matrix-td.col-palaas::before { content: "PALaaS"; font-weight: 700; color: var(--pink); flex-shrink: 0; }
+    .matrix-td.col-prmaas::before { content: "PRMaaS"; font-weight: 700; color: var(--green, #10b981); flex-shrink: 0; }
+    .matrix-td.col-pcmaas::before { content: "PCMaaS"; font-weight: 700; color: var(--green, #10b981); flex-shrink: 0; }
     
-    .matrix-td.col-ignite, .matrix-td.col-supernova, .matrix-td.col-novax, .matrix-td.col-pdmaas, .matrix-td.col-pmmaas, .matrix-td.col-palaas { 
+    .matrix-td.col-ignite, .matrix-td.col-supernova, .matrix-td.col-novax, .matrix-td.col-pdmaas, .matrix-td.col-pmmaas, .matrix-td.col-palaas, .matrix-td.col-prmaas, .matrix-td.col-pcmaas { 
       border-left: none; border-right: none; background: #fff; 
     }
   }
@@ -176,7 +181,7 @@
           <span class="section-tag st-dark">1 Month</span>
         </div>
         <h2 style="margin-bottom:var(--sp-2)">SaaSNova Ignite</h2>
-        <p style="margin-bottom:var(--sp-4);font-size:17px;color:var(--text-secondary);line-height:1.6;">Most startup partners join cloud ecosystems completely unprepared. They have no cloud-aligned messaging, and no one has told them what programs like 'ISVA' or advanced partner tiers require. Ignite fixes exactly that, in 1 month.</p>
+        <p style="margin-bottom:var(--sp-4);font-size:17px;color:var(--text-secondary);line-height:1.6;">Most startup partners join cloud ecosystems completely unprepared. They have no cloud-aligned messaging, and no one has told them what programs like 'ISVA' or advanced partner tiers require. Ignite fixes exactly that &mdash; in 1 month.</p>
         <div class="card card-p" style="border-left: 3px solid var(--blue);background:rgba(255,255,255,0.6);">
           <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--blue);margin-bottom:var(--sp-3)">Ideal Stage &amp; Fit</div>
           <ul class="check-list">
@@ -272,7 +277,7 @@
   </div>
 </section>
 
-<!-- 6.5 DEDICATED SERVICES GATEWAY -->
+<!-- DEDICATED SERVICES GATEWAY -->
 <section id="managed-services" style="background:linear-gradient(160deg,#F5EEFF 0%,#FFF8F0 100%);padding:var(--sp-10) 0;border-top:1px solid var(--border-light)">
   <div class="container">
     <div style="text-align:center;margin-bottom:var(--sp-8)">
@@ -384,6 +389,85 @@
   </div>
 </section>
 
+<!-- GTM OPERATIONS & INFRASTRUCTURE GATEWAY -->
+<section id="gtm-operations" style="background:#fff;padding:var(--sp-10) 0;border-top:1px solid var(--border-light)">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:var(--sp-8)">
+      <div class="section-tag st-green reveal" style="margin-bottom:12px">Readiness</div>
+      <h2 class="reveal delay-1" style="color:var(--text-primary);margin-bottom:10px; font-size:clamp(32px, 4vw, 44px); font-weight:800; letter-spacing:-0.02em;">GTM Operations & Infrastructure</h2>
+      <p class="reveal delay-2" style="color:var(--text-secondary);max-width:600px;margin:0 auto;font-size:17px;">
+        Technical implementations and migration readiness ensuring your infrastructure and partner portals are measurable, compliant, and co-sell ready.
+      </p>
+    </div>
+
+    <!-- PRMaaS Row -->
+    <div id="prmaas" class="program-row">
+      <div class="reveal">
+        <div style="margin-bottom:var(--sp-2)">
+          <span class="section-tag st-dark" style="background:var(--green, #10b981);">Attribution Infrastructure</span>
+        </div>
+        <h2 style="margin-bottom:var(--sp-2)">PRM as a Service</h2>
+        <p style="margin-bottom:var(--sp-4);font-size:17px;color:var(--text-secondary);line-height:1.6;">Partner Revenue Measurement (PRM) implemented end-to-end for ISVs running hyperscaler co-sell motions. We handle resource tagging, IaC integration, attribution validation, and ongoing compliance to ensure accurate revenue attribution across AWS, Azure, and GCP.</p>
+        <div class="card card-p" style="border-left: 3px solid var(--green, #10b981);background:rgba(255,255,255,0.6);">
+          <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--green, #10b981);margin-bottom:var(--sp-3)">Ideal Stage &amp; Fit</div>
+          <ul class="check-list">
+            <li class="check-item"><span class="check-dot" style="background:var(--green, #10b981);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Baseline tagging for localized architecture</li>
+            <li class="check-item"><span class="check-dot" style="background:var(--green, #10b981);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Standard IaC workflows across multiple regions</li>
+            <li class="check-item"><span class="check-dot" style="background:var(--green, #10b981);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Complex hybrid or customer deployment patterns</li>
+          </ul>
+        </div>
+      </div>
+      <div class="reveal delay-2" style="height:100%;">
+        <div style="padding:var(--sp-5);background:#fff;border-radius:var(--r-xl);border:1px solid rgba(16,185,129,0.15);box-shadow:0 12px 32px rgba(16,185,129,0.05);display:flex;flex-direction:column;justify-content:center;height:100%;">
+          <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--green, #10b981);margin-bottom:16px">Execution Focus</div>
+          <h3 style="font-size:20px;margin-bottom:16px;line-height:1.3;color:var(--text-primary);">Infrastructure Tagging & Automation</h3>
+          <ul class="check-list" style="margin-bottom:32px;">
+            <li class="check-item"><span class="check-dot" style="background:var(--green, #10b981);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div><strong>Architecture-Aware:</strong> Mapped precisely to your deployment model (Partner, Customer, Hybrid).</div></li>
+            <li class="check-item"><span class="check-dot" style="background:var(--green, #10b981);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div><strong>IaC Integration:</strong> Native resource tagging and Terraform/CDK integration without engineering disruption.</div></li>
+            <li class="check-item"><span class="check-dot" style="background:var(--green, #10b981);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div><strong>Ongoing Compliance:</strong> Continuous validation ensuring new resources remain attribution-ready.</div></li>
+          </ul>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:auto;">
+            <a href="prmaas.html" class="deep-dive-btn" style="color:var(--green, #10b981);background:rgba(16,185,129,0.1);">Explore PRMaaS &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PCMaaS Row -->
+    <div id="pcmaas" class="program-row">
+      <div class="reveal">
+        <div style="margin-bottom:var(--sp-2)">
+          <span class="section-tag st-dark" style="background:var(--green, #10b981);">Partner Portal Migration</span>
+        </div>
+        <h2 style="margin-bottom:var(--sp-2)">PCM as a Service</h2>
+        <p style="margin-bottom:var(--sp-4);font-size:17px;color:var(--text-secondary);line-height:1.6;">A free readiness engagement for eligible partners transitioning to unified hyperscaler partner portals (AWS Partner Central, etc.). We align your people, workflows, and permissions to ensure zero disruption to your co-sell motion.</p>
+        <div class="card card-p" style="border-left: 3px solid var(--green, #10b981);background:rgba(255,255,255,0.6);">
+          <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--green, #10b981);margin-bottom:var(--sp-3)">Ideal Stage &amp; Fit</div>
+          <ul class="check-list">
+            <li class="check-item"><span class="check-dot" style="background:var(--green, #10b981);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>Legacy portal users requiring transition</li>
+            <li class="check-item"><span class="check-dot" style="background:var(--green, #10b981);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>ISVs with complex legacy account structures</li>
+            <li class="check-item"><span class="check-dot" style="background:var(--green, #10b981);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span>All partner tiers needing minimal internal lift</li>
+          </ul>
+        </div>
+      </div>
+      <div class="reveal delay-2" style="height:100%;">
+        <div style="padding:var(--sp-5);background:#fff;border-radius:var(--r-xl);border:1px solid rgba(16,185,129,0.15);box-shadow:0 12px 32px rgba(16,185,129,0.05);display:flex;flex-direction:column;justify-content:center;height:100%;">
+          <div style="font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:var(--green, #10b981);margin-bottom:16px">Execution Focus</div>
+          <h3 style="font-size:20px;margin-bottom:16px;line-height:1.3;color:var(--text-primary);">Migration Readiness Protocol</h3>
+          <ul class="check-list" style="margin-bottom:32px;">
+            <li class="check-item"><span class="check-dot" style="background:var(--green, #10b981);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div><strong>IAM & SSO Alignment:</strong> Map Entra ID and permission structures for seamless access.</div></li>
+            <li class="check-item"><span class="check-dot" style="background:var(--green, #10b981);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div><strong>Zero Duplicate Risk:</strong> Validate account linking to prevent duplicate business registrations.</div></li>
+            <li class="check-item"><span class="check-dot" style="background:var(--green, #10b981);"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span><div><strong>Workflow Modernization:</strong> Align internal processes to match the updated console lifecycle.</div></li>
+          </ul>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:auto;">
+            <a href="pcmaas.html" class="deep-dive-btn" style="color:var(--green, #10b981);background:rgba(16,185,129,0.1);">Explore PCMaaS &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ══ SOLUTION COMPARISON MATRIX ══ -->
 <section id="compare-matrix" style="background:linear-gradient(160deg,#F8F9FF 0%,#EFF4FF 100%); padding:80px 0; border-top:1px solid var(--border-light); border-bottom:1px solid var(--border-light);">
   <div class="container">
@@ -482,6 +566,42 @@
             <td class="matrix-td col-pdmaas">Weekly Field Syncs</td>
             <td class="matrix-td col-pmmaas">Continuous Asset Creation</td>
             <td class="matrix-td col-palaas">Executive Mapping & Syncs</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Matrix 3: Operations & Infrastructure -->
+    <div class="reveal matrix-wrapper">
+      <h3 style="text-align:center; margin-bottom: 24px; font-size:20px; color:var(--text-primary);">GTM Operations & Infrastructure</h3>
+      <table class="matrix-table">
+        <thead>
+          <tr class="matrix-tr">
+            <th class="matrix-th col-label">Capability / Focus</th>
+            <th class="matrix-th col-prmaas">PRMaaS</th>
+            <th class="matrix-th col-pcmaas">PCMaaS</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="matrix-tr">
+            <td class="matrix-td col-label">Core Focus</td>
+            <td class="matrix-td col-prmaas">Revenue Attribution & IaC Tagging</td>
+            <td class="matrix-td col-pcmaas">Portal Migration & IAM Readiness</td>
+          </tr>
+          <tr class="matrix-tr">
+            <td class="matrix-td col-label">Cloud Mix</td>
+            <td class="matrix-td col-prmaas">AWS, Azure, GCP</td>
+            <td class="matrix-td col-pcmaas">AWS, Azure, GCP</td>
+          </tr>
+          <tr class="matrix-tr">
+            <td class="matrix-td col-label">Primary Output</td>
+            <td class="matrix-td col-prmaas">Compliant PRM Implementation</td>
+            <td class="matrix-td col-pcmaas">Verified Partner Console Access</td>
+          </tr>
+          <tr class="matrix-tr">
+            <td class="matrix-td col-label">Engagement Model</td>
+            <td class="matrix-td col-prmaas">Technical Deployment</td>
+            <td class="matrix-td col-pcmaas">Readiness Validation (Free)</td>
           </tr>
         </tbody>
       </table>
