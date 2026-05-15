@@ -394,10 +394,19 @@ const NAV_STYLE_AND_DESKTOP = `
                 <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px; display:flex; justify-content:space-between; align-items:center;">
                   GTM Operations <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M3 1.5L7 5L3 8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </div>
-                <div style="font-size:12px; color:var(--text-muted); font-weight:500;">PRMaaS, PCMaaS</div>
+                <div style="font-size:12px; color:var(--text-muted); font-weight:500;">PCMaaS, PRMaaS</div>
               </div>
             </div>
             <div class="dropdown-menu-sub" style="min-width: 260px; padding: 8px;">
+              <a href="pcmaas.html" class="premium-dd-item">
+                <div class="dd-icon-wrap" style="background:rgba(16,185,129,0.1); color:var(--green);">
+                  ${SVG.srvPRM}
+                </div>
+                <div>
+                  <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">PCMaaS</div>
+                  <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Partner Central Migration</div>
+                </div>
+              </a>
               <a href="prmaas.html" class="premium-dd-item">
                 <div class="dd-icon-wrap" style="background:rgba(16,185,129,0.1); color:var(--green);">
                   ${SVG.srvPRM}
@@ -405,15 +414,6 @@ const NAV_STYLE_AND_DESKTOP = `
                 <div>
                   <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">PRMaaS</div>
                   <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Revenue Attribution</div>
-                </div>
-              </a>
-              <a href="pcmaas.html" class="premium-dd-item">
-                <div class="dd-icon-wrap" style="background:rgba(16,185,129,0.1); color:var(--green);">
-                  ${SVG.srvPCM}
-                </div>
-                <div>
-                  <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">PCMaaS</div>
-                  <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Partner Central Migration</div>
                 </div>
               </a>
             </div>
