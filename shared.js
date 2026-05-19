@@ -186,7 +186,7 @@ const TOP_BANNER_HTML = `
         <span class="sn-show-mob"><strong>AWS PRM:</strong> Act by Jul 31</span>
       </div>
       <a href="prmaas.html" class="sn-banner-link">
-        <span class="sn-hide-mob">View PRMaaS</span>
+        <span class="sn-hide-mob">View PRM</span>
         <span class="sn-show-mob">View</span>
       </a>
     </div>
