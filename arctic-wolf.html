@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="google-site-verification" content="google960def4cf195e9cf" />
+<meta name="google-site-verification" content="LwLN-rte3Gr-8_iFc-B2XCoqCsiEHGN2MoECtAgx2C8" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" type="image/png" sizes="32x32" href="images/logo-favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/logo-favicon-16x16.png">
+<link rel="apple-touch-icon" href="images/logo-favicon-apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@700;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<title>Arctic Wolf AWS GTM Case Study | SaaSNova</title>
+<meta name="description" content="How SaaSNova's AWS GTM Architecture transformed Arctic Wolf from an unmanaged ISV to an enterprise-ready AWS partner generating 2,000+ PSQLs and a 9X ROI."/>
+<link rel="canonical" href="https://www.saasnova.ai/case-study/arctic-wolf" />
+<meta property="og:title" content="Arctic Wolf Case Study | SaaSNova"/>
+<meta property="og:description" content="From unmanaged to enterprise-ready: Read how SaaSNova's GTM sprint drove a 9X ROI and full AWS alignment for Arctic Wolf."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://www.saasnova.ai/case-study/arctic-wolf"/>
+<meta property="og:image" content="https://www.saasnova.ai/images/logo-color.png"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Arctic Wolf Case Study: A Six-Month GTM Sprint",
+  "description": "How SaaSNova's AWS GTM Architecture Transformed Arctic Wolf's Traction Inside the AWS Ecosystem",
+  "publisher": {
+    "@type": "Organization",
+    "name": "SaaSNova",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.saasnova.ai/images/logo-color.png"
+    }
+  }
+}
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-185EJ40PT4"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-185EJ40PT4');
+</script>
+
+<style>
+  /* Local Case Study Layout Styles */
+  .cs-layout {
+    display: grid;
+    grid-template-columns: 340px 1fr;
+    gap: var(--sp-8);
+    align-items: start;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 0 var(--sp-3);
+  }
+  @media (max-width: 992px) {
+    .cs-layout { grid-template-columns: 1fr; gap: var(--sp-6); }
+    .cs-sidebar { position: static !important; }
+  }
+  .cs-sidebar {
+    position: sticky;
+    top: 100px;
+  }
+  
+  .cs-snapshot-card {
+    background: linear-gradient(135deg, var(--blue) 0%, #6344CC 50%, var(--pink) 100%);
+    color: #fff;
+    border-radius: var(--r-xl);
+    padding: 32px;
+    box-shadow: 0 16px 40px rgba(0, 139, 248, 0.15);
+  }
+
+  /* FIXED LOGO SIZING */
+  .cs-snapshot-logo {
+    background: #fff;
+    padding: 24px;
+    border-radius: 12px;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 120px;
+  }
+  .cs-snapshot-logo img {
+    width: 100% !important;
+    max-width: 200px;
+    max-height: 72px !important;
+    object-fit: contain;
+  }
+  
+  .cs-metric-box {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+  }
+  .cs-metric-box:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .cs-metric-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 6px;
+  }
+  .cs-metric-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.5;
+  }
+  .cs-kpi {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 32px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 4px;
+    color: #fff;
+  }
+
+  .cs-quote-block {
+    background: #F7F9FC;
+    border-left: 4px solid var(--blue);
+    padding: 32px;
+    border-radius: 0 var(--r-xl) var(--r-xl) 0;
+    margin: 40px 0;
+  }
+  .cs-quote-text {
+    font-size: 20px;
+    font-style: italic;
+    color: var(--text-primary);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  .cs-quote-author {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+  .cs-quote-role {
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+
+  /* Typography Overrides for Narrative */
+  .blog-body h2 { font-size: 28px; margin-top: 48px; margin-bottom: 16px; color: var(--text-primary); }
+  .blog-body h3 { font-size: 20px; margin-top: 32px; margin-bottom: 12px; color: var(--text-primary); }
+  .blog-body p { font-size: 16px; line-height: 1.8; color: var(--text-secondary); margin-bottom: 20px; }
+  
+  /* FIXED DOUBLE TICK ISSUE */
+  .blog-body ul.check-list { 
+    margin-bottom: 24px; 
+    margin-top: 16px; 
+    margin-left: 0 !important;
+  }
+  .blog-body ul.check-list li::before {
+    content: none !important;
+    display: none !important;
+  }
+  .blog-body ul.check-list li {
+    padding-left: 0 !important;
+  }
+  
+  .aws-tag {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 6px 12px; border-radius: 8px;
+    background: #FFF8ED; border: 1px solid #FFD89A;
+    font-size: 12px; font-weight: 700; color: #7A4A00;
+    margin-bottom: 24px;
+  }
+</style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<!-- HERO -->
+<section style="margin-top:64px;padding:var(--sp-12) 0;background:linear-gradient(135deg,#0A1628 0%,#0D2040 50%,#0A1628 100%);color:#fff;position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 55% 65% at 75% 25%,rgba(0,139,248,.18) 0%,transparent 55%),radial-gradient(ellipse 40% 50% at 15% 75%,rgba(250,15,156,.1) 0%,transparent 50%)"></div>
+  <div class="container" style="position:relative;z-index:2">
+    <a href="/case-study" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:rgba(255,255,255,.5);margin-bottom:var(--sp-4);text-decoration:none">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 11L5 7l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      Back to Case Studies
+    </a>
+    
+    <div style="max-width: 900px;">
+      <div class="aws-tag">
+        <img loading="lazy" src="images/aws-logo.png" alt="AWS" style="height:14px;width:auto"/> AWS GTM Case Study
+      </div>
+      <h1 class="reveal" style="color:#fff; margin-bottom:24px; font-size:clamp(36px, 4vw, 56px); line-height:1.15;">From Unmanaged to Enterprise-Ready: How SaaSNova's AWS GTM Architecture Transformed Arctic Wolf's Traction.</h1>
+      <p class="reveal delay-1" style="font-size:18px; color:rgba(255,255,255,0.7); line-height:1.7; max-width:700px;">A Six-Month GTM Sprint that established a complete AWS operating system, elevating Arctic Wolf to fully managed status inside AWS Security Demand Generation.</p>
+    </div>
+  </div>
+</section>
+<div class="wave-d2w"><svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:48px;display:block;width:100%"><path d="M0,0 C360,48 1080,48 1440,0 L1440,48 L0,48 Z" fill="#fff"/></svg></div>
+
+<section style="padding: var(--sp-8) 0 var(--sp-12); background: #fff;">
+  <div class="cs-layout">
+    
+    <!-- LEFT SIDEBAR: CUSTOMER SNAPSHOT -->
+    <aside class="cs-sidebar reveal delay-1">
+      <div class="cs-snapshot-card">
+        <div class="cs-snapshot-logo">
+          <img src="images/arcticwolf.png" alt="Arctic Wolf">
+        </div>
+        
+        <div class="cs-metric-box">
+          <div class="cs-metric-label">Industry</div>
+          <div class="cs-metric-value">Cybersecurity (MDR)</div>
+        </div>
+        
+        <div class="cs-metric-box">
+          <div class="cs-metric-label">Target Verticals</div>
+          <div class="cs-metric-value">CPG/Retail, Banking, Insurance, Healthcare</div>
+        </div>
+
+        <div class="cs-metric-box">
+          <div class="cs-metric-label">AWS Programs</div>
+          <div class="cs-metric-value">AWS Marketplace (MPO & CPPO), ACE Co-sell</div>
+        </div>
+        
+        <div class="cs-metric-box">
+          <div class="cs-metric-label">SaaSNova Solution</div>
+          <div class="cs-metric-value">Six-Month GTM Sprint (NovaX Framework)</div>
+        </div>
+        
+        <div class="cs-metric-box">
+          <div class="cs-metric-label">Key Outcomes</div>
+          <div style="margin-top: 12px; display: flex; flex-direction: column; gap: 16px;">
+            <div>
+              <div class="cs-kpi">2,125</div>
+              <div style="font-size: 13px; font-weight: 600; opacity: 0.9;">PSQLs Generated</div>
+            </div>
+            <div>
+              <div class="cs-kpi">300%+</div>
+              <div style="font-size: 13px; font-weight: 600; opacity: 0.9;">Pipeline Goal Met</div>
+            </div>
+            <div>
+              <div class="cs-kpi">9X</div>
+              <div style="font-size: 13px; font-weight: 600; opacity: 0.9;">ROI Validated by AWS</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- RIGHT COLUMN: NARRATIVE (STRICT AWS CASE STUDY FORMAT) -->
+    <article class="blog-body reveal delay-2">
+      
+      <div class="cs-quote-block">
+        <div class="cs-quote-text">"The structure of the pilot program exceeded all expectations. The data-driven full funnel planning model challenged us to think in ways we haven't thought of before."</div>
+        <div class="cs-quote-author">Megan Flanagan</div>
+        <div class="cs-quote-role">VP of Marketing, Arctic Wolf Networks</div>
+      </div>
+
+      <h2>About the Customer</h2>
+      <p>Arctic Wolf is a category-leading Managed Detection and Response (MDR) platform that provides security operations as a concierge service. Serving verticals such as CPG/Retail, Banking, Insurance, and Healthcare, Arctic Wolf delivers 24x7 monitoring, detection, and response capabilities to enterprise organizations. Within the AWS ecosystem, the company focuses on helping customers secure their cloud environments and leverages AWS Marketplace (MPO and CPPO) and APN Customer Engagements (ACE) Co-sell programs to scale their go-to-market efforts.</p>
+
+      <h2>Customer Challenge</h2>
+      <p>Arctic Wolf entered the AWS ecosystem with strong product-market fit and a high-velocity direct sales motion, but they lacked the AWS-specific go-to-market (GTM) architecture required to operate effectively inside the ecosystem's unique rules. Without these structural elements, AWS sellers could not easily engage Arctic Wolf, route deals to the AWS Marketplace, or confidently position the solution in enterprise security conversations.</p>
+      
+      <p>Specifically, the company lacked a unified AWS GTM Plan with joint messaging, clear funnel definitions mapped to Partner Sales Qualified Leads (PSQLs), and a forecasting model aligned to standard AWS progression metrics. They also needed to operationalize Marketplace listings for key products and provide AWS sellers with reliable talk tracks and reference architectures. Without addressing these critical gaps, Arctic Wolf faced the risk of failing to capitalize on their AWS partnership, missing out on co-sell momentum, and stalling their potential enterprise growth within the highly competitive cloud security landscape.</p>
+
+      <h2>Partner Solution</h2>
+      <p>During her tenure as Global GTM Lead at AWS, Jen Dawson (founder of SaaSNova) deployed the Six-Month GTM Sprint - a structured acceleration model that later became a core pillar of the broader SaaSNova GTM Architecture. Working directly with Arctic Wolf's leadership team, SaaSNova deployed a comprehensive architecture focusing on co-sell discipline, Marketplace readiness, a field enablement engine, and a three-way channel GTM motion.</p>
+      
+      <p>The engagement began with an intensive 4-hour live GTM Sprint at Arctic Wolf's Minnesota office. This session brought together AWS Partner Development Managers (PDMs) alongside Arctic Wolf's alliances, field marketing, channel, demand generation, creative, and product marketing teams to establish a baseline and set a six-month accountability structure. The resulting GTM Plan became the operating contract for the engagement, defining target segments, pipeline targets, ownership, and a bi-monthly QBR cadence.</p>
+
+      <p>To solve the customer challenges, SaaSNova prioritized Marketplace readiness as a structural requirement, making Managed Private Offers (MPO) and Channel Partner Private Offers (CPPO) fully operational within 90 days. Furthermore, field enablement was rebuilt from the ground up. SaaSNova developed AWS-aligned value propositions and reference architectures illustrating exactly how Arctic Wolf integrates with key AWS services such as Amazon EC2, Amazon S3, Amazon EKS, and AWS Lambda. A purpose-built ACE-to-Marketplace Workflow was also created to eliminate procurement friction for joint enterprise clients.</p>
+
+      <div class="cs-quote-block" style="border-left-color: var(--pink); background: rgba(250,15,156,0.04);">
+        <div class="cs-quote-text">"Jen's GTM architecture fundamentally changed how Arctic Wolf engaged with AWS. The structure, clarity, and discipline she brought created a level of alignment we rarely see with security partners."</div>
+        <div class="cs-quote-author">John McElhone</div>
+        <div class="cs-quote-role">Partner Development Manager, AWS</div>
+      </div>
+
+      <h2>Results and Benefits</h2>
+      <p>The SaaSNova GTM Sprint delivered measurable, AWS-validated impact that successfully elevated Arctic Wolf from an unmanaged ISV to fully managed status inside AWS Security Demand Generation - a shift achieved by fewer than 5% of security ISVs at the time.</p>
+      
+      <p>Operationally, the engagement generated over 2,125 Partner Sales Qualified Leads (PSQLs) through structured pipeline mechanics and delivered 168 SQLs directly from AWS-aligned campaigns (including 3,300 MQLs from the Big Business of Cybercrime series). Financially, the program validated a 9X ROI and allowed Arctic Wolf to meet and exceed their pipeline goals by over 300%. The establishment of full MPPO and CPPO Marketplace readiness further streamlined procurement, ensuring a highly repeatable and scalable revenue channel.</p>
+
+      <div class="cs-quote-block" style="border-left-color: var(--orange); background: rgba(241,153,83,0.06);">
+        <div class="cs-quote-text">"It was great to hear what has been done well with an AWS best ISV. The co-sell scoring discussion was eye-opening to us."</div>
+        <div class="cs-quote-author">Odin Olson</div>
+        <div class="cs-quote-role">VP of Partnerships and Alliances, Arctic Wolf Networks</div>
+      </div>
+
+      <h2>About the Partner</h2>
+      <p>SaaSNova is an operator-led cloud go-to-market execution engine that bridges the gap between independent software vendors (ISVs) and the hyperscaler revenue their investments demand. Led by founder Jen Dawson, SaaSNova specializes in the AWS, Azure, and GCP ecosystems. Through structured execution programs like Ignite, SuperNova, and NovaX, SaaSNova activates field relationships, drives marketplace momentum, and delivers board-ready pipeline evidence, transforming dormant cloud listings into active, measurable revenue channels.</p>
+
+      <div style="padding: 32px; background: var(--light-100); border-radius: var(--r-xl); text-align: center; border: 1px solid var(--border-light); margin-top: 48px;">
+        <h3 style="margin-top: 0; margin-bottom: 16px;">Ready to build a repeatable AWS motion?</h3>
+        <p style="margin-bottom: 24px;">SaaSNova's execution programs are built on the exact methodology that transformed Arctic Wolf's AWS presence.</p>
+        <a href="https://calendly.com/jen-saasnova/founder-strategy-session-scale-your-gtm-via-aws?month=2026-03" target="_blank" rel="noopener" class="btn btn-primary">Book a 30-min Strategy Session</a>
+      </div>
+
+    </article>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script src="shared.js"></script>
+</body>
+</html>
