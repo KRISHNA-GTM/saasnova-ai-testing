@@ -305,6 +305,13 @@ const NAV_STYLE_AND_DESKTOP = `
               <div style="font-size:12px; color:var(--text-muted); font-weight:500;">View full execution suite</div>
             </div>
           </a>
+          <a href="https://solutions.storefront.saasnova.ai" target="_blank" class="premium-dd-item">
+            <div class="dd-icon-wrap" style="background:#fff; border:1px solid var(--border-light);"><img src="images/Feenix-logo-notext.svg" alt="Storefront" style="width:20px;height:20px;object-fit:contain;"/></div>
+            <div>
+              <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">Storefront</div>
+              <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Marketplace Solutions & SFaaS</div>
+            </div>
+          </a>
           <div style="margin: 4px 0; height: 1px; background: var(--border-light);"></div>
 
           <div class="dropdown-submenu">
@@ -627,6 +634,9 @@ const NAV_MOBILE = `
     <button class="mob-accordion-btn">Solutions ${SVG.chevDown}</button>
     <div class="mob-accordion-content">
       <a href="services.html" class="mob-sub-link" style="color:#008BF8 !important; font-weight:700 !important;">All Solutions</a>
+      <a href="https://solutions.storefront.saasnova.ai" target="_blank" class="mob-sub-link" style="color:#0F1923 !important; font-weight:700 !important;">
+        <img src="images/Feenix-logo-notext.svg" alt="Storefront" style="width:18px;height:18px;margin-right:12px;object-fit:contain;"/> Storefront
+      </a>
       
       <div class="mob-accordion" style="border-bottom:none !important; display:block !important;">
         <button class="mob-accordion-btn" style="padding: 14px 20px 14px 24px !important; font-size:15px !important; color:#3D4E5C !important;">
@@ -780,6 +790,7 @@ const FOOTER_HTML = `
       <div>
         <div class="footer-col-title">SOLUTIONS</div>
         <a href="services.html" class="footer-link">All Solutions</a>
+        <a href="https://solutions.storefront.saasnova.ai" target="_blank" class="footer-link">Storefront</a>
         <div class="footer-col-title" style="margin-top:20px;">PROGRAMS</div>
         <a href="ignite.html" class="footer-link">Ignite</a>
         <a href="supernova.html" class="footer-link">SuperNova</a>
