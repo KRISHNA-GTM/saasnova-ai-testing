@@ -513,7 +513,7 @@ const NAV_STYLE_AND_DESKTOP = `
             </div>
           </a>
 
-          <a href="news-press.html" class="premium-dd-item">
+          <a href="press&media.html" class="premium-dd-item">
             <div class="dd-icon-wrap" style="background:rgba(250,15,156,0.1); color:var(--pink);">${SVG.resNews}</div>
             <div>
               <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">News & Press</div>
@@ -682,7 +682,7 @@ const NAV_MOBILE = `
     <button class="mob-accordion-btn">Resources ${SVG.chevDown}</button>
     <div class="mob-accordion-content">
       <a href="/blog" class="mob-sub-link">Blog</a>
-      <a href="/news-press" class="mob-sub-link">News & Press</a>
+      <a href="/press&media" class="mob-sub-link">News & Press</a>
       <a href="/show" class="mob-sub-link">The Jen GTM Show</a>
       <a href="/case-study" class="mob-sub-link">Case Studies</a>
       <a href="/webinars" class="mob-sub-link">Webinars</a>
@@ -772,7 +772,7 @@ const FOOTER_HTML = `
       <div>
         <div class="footer-col-title">COMPANY</div>
         <a href="/about" class="footer-link">About &amp; Team</a>
-        <a href="news-press" class="footer-link">News &amp; Press</a>
+        <a href="press&media" class="footer-link">News &amp; Press</a>
         <a href="/case-study" class="footer-link">Case Studies</a>
         <a href="/show" class="footer-link">The Jen GTM Show</a>
         <a href="/partners" class="footer-link">Partners</a>

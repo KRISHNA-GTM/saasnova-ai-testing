@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="google-site-verification" content="google960def4cf195e9cf" />
+<meta name="google-site-verification" content="LwLN-rte3Gr-8_iFc-B2XCoqCsiEHGN2MoECtAgx2C8" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" type="image/png" sizes="32x32" href="images/logo-favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/logo-favicon-16x16.png">
+<link rel="apple-touch-icon" href="images/logo-favicon-apple-touch-icon.png">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@700;900&display=swap" rel="stylesheet">
+
+<!-- Link to external stylesheet -->
+<link rel="stylesheet" href="style.css">
+
+<title>News & Press | SaaSNova Announcements</title>
+<meta name="description" content="Company announcements, press releases, and ecosystem updates from SaaSNova."/>
+<link rel="canonical" href="https://www.saasnova.ai/press&media" />
+<meta property="og:url" content="https://www.saasnova.ai/press&media"/>
+<meta property="og:site_name" content="SaaSNova"/>
+<meta property="og:type" content="website"/>
+<meta property="og:image" content="https://www.saasnova.ai/images/logo-color.png"/>
+
+<!-- GOOGLE ANALYTICS (G-185EJ40PT4) INJECTION -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-185EJ40PT4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-185EJ40PT4');
+</script>
+
+<style>
+/* ── MOBILE OVERFLOW & RESPONSIVE FIXES ── */
+body {
+  max-width: 100%;
+  overflow-x: clip; 
+  margin: 0;
+  padding: 0;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ── HERO SECTION ── */
+.news-hero {
+  margin-top: 64px;
+  position: relative;
+  overflow: hidden;
+  padding: 68px 0 56px;
+  background: linear-gradient(135deg, #0A1628 0%, #1A0A2E 50%, #0D2218 100%);
+  color: #fff;
+}
+.news-hero::before {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background:
+    radial-gradient(ellipse 60% 70% at 80% 20%, rgba(52,168,83,.15) 0%, transparent 55%),
+    radial-gradient(ellipse 45% 55% at 10% 70%, rgba(0,139,248,.18) 0%, transparent 50%),
+    radial-gradient(ellipse 35% 40% at 55% 10%, rgba(241,153,83,.1) 0%, transparent 45%);
+}
+.news-hero-inner {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 24px;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+.news-hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 5px 14px; border-radius: 999px;
+  background: rgba(250, 15, 156, 0.15); border: 1px solid rgba(250, 15, 156, 0.25);
+  font-size: 11px; font-weight: 700; color: #FF7BD2;
+  margin-bottom: 16px; text-transform: uppercase; letter-spacing: .1em;
+}
+.news-hero h1 {
+  font-size: clamp(32px, 4.5vw, 52px); font-weight: 800;
+  line-height: 1.08; letter-spacing: -.025em; color: #fff; margin-bottom: 14px;
+}
+.news-hero p {
+  font-size: 17px; color: rgba(255, 255, 255, .62); line-height: 1.8; max-width: 540px; margin: 0 auto;
+}
+
+/* ── CATEGORY FILTERS ── */
+.news-filters {
+  background: #fff; border-bottom: 1px solid var(--border-light);
+  padding: 16px 0; position: sticky; top: 64px; z-index: 50;
+}
+.news-filters-inner {
+  max-width: 1200px; margin: 0 auto; padding: 0 24px;
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+}
+.news-filter-btn {
+  padding: 7px 16px; border-radius: 999px; font-size: 13px; font-weight: 600;
+  border: 1.5px solid var(--border-light); background: #fff; color: var(--text-muted);
+  cursor: pointer; transition: all .15s; font-family: inherit;
+}
+.news-filter-btn:hover, .news-filter-btn.active {
+  border-color: var(--pink); background: rgba(250,15,156,.06); color: var(--pink);
+}
+.news-filter-btn.active { background: var(--pink); color: #fff; border-color: var(--pink); }
+
+/* ── GRID LAYOUT ── */
+.news-grid-section {
+  background: #FAFBFF; padding: 56px 0;
+}
+.news-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--sp-3);
+}
+
+/* ── CARD STYLING ── */
+.news-card {
+  background: #fff; border: 1px solid var(--border-light); border-radius: var(--r-xl);
+  overflow: hidden; transition: all .22s; display: flex; flex-direction: column;
+  text-decoration: none; color: inherit;
+}
+.news-card:hover {
+  transform: translateY(-3px); box-shadow: 0 12px 40px rgba(250,15,156,.1); border-color: rgba(250,15,156,.2);
+}
+.news-card-visual {
+  width: 100%; height: 220px;
+  position: relative; overflow: hidden;
+  background: #ffffff; 
+  display: block;
+  border-bottom: 1px solid var(--border-light);
+}
+.news-card-visual img {
+  width: 100%; height: 100%;
+  object-fit: cover; /* Crops the extra vertical whitespace, zooming in on the logo */
+  object-position: center;
+  display: block;
+}
+.news-card-body {
+  padding: 24px; flex: 1; display: flex; flex-direction: column;
+}
+.news-card-cat {
+  font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .09em; margin-bottom: 8px;
+}
+.news-card-h {
+  font-size: 18px; font-weight: 700; line-height: 1.45; margin-bottom: 12px; flex: 1; color: var(--text-primary);
+}
+.news-card-p {
+  font-size: 14px; color: var(--text-secondary); line-height: 1.65; margin-bottom: 16px;
+}
+.news-card-meta {
+  display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 16px; border-top: 1px solid var(--border-light);
+}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .news-grid { grid-template-columns: 1fr 1fr; }
+}
+@media(max-width:600px){
+  .news-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- Navigation Placeholder -->
+<div id="nav-placeholder"></div>
+
+<section class="news-hero">
+  <div class="news-hero-inner">
+    <div class="news-hero-tag reveal">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      Press Release & Media
+    </div>
+    <h1 class="reveal delay-1">
+      Company Announcements <br/>& Press Releases
+    </h1>
+    <p class="reveal delay-2">
+      Stay up-to-date with SaaSNova's latest ecosystem launches, partnerships, and company news.
+    </p>
+  </div>
+</section>
+
+<div class="news-filters">
+  <div class="news-filters-inner">
+    <button class="news-filter-btn active" onclick="filterNews(this, 'all')">All News</button>
+    <button class="news-filter-btn" onclick="filterNews(this, 'press-release')">Press Releases</button>
+    <button class="news-filter-btn" onclick="filterNews(this, 'partnerships')">Partnerships</button>
+  </div>
+</div>
+
+<section class="news-grid-section">
+  <div class="container">
+    <div class="news-grid">
+
+      <!-- POST 1: AWS Storefront PR -->
+      <a href="saasnova-feenix-pr-aws-marketplace-storefront" class="news-card reveal delay-1" data-cat="press-release partnerships">
+        <div class="news-card-visual">
+          <img loading="lazy" src="images/SaaSNova x Feenix Logo.png" alt="SaaSNova x Feenix Storefront" />
+        </div>
+        <div class="news-card-body">
+          <div class="news-card-cat" style="color:var(--pink)">Press Release &middot; AWS</div>
+          <div class="news-card-h">SaaSNova Selected as Launch Partner for AWS Marketplace Storefront</div>
+          <p class="news-card-p">SaaSNova announced its selection as a launch partner for the new AWS Marketplace Storefront to help AWS ISVs expand their cloud revenue.</p>
+          <div class="news-card-meta">
+            <span style="font-size:12px;color:var(--text-muted)">June 16, 2026 &middot; New York, NY</span>
+            <span style="font-size:13px;font-weight:600;color:var(--pink)">Read Release &rarr;</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- POST 2: SaaSify PR (External Link) -->
+      <a href="https://www.einpresswire.com/article/908400568/saasify-and-saasnova-launch-the-first-aws-partner-starter-bundle-to-help-isvs-go-marketplace-co-sell-ready-in-weeks" target="_blank" rel="noopener" class="news-card reveal delay-2" data-cat="partnerships">
+        <div class="news-card-visual">
+          <img loading="lazy" src="images/SaaSNova-SaaSify-Starter-bundle-logo.png" alt="SaaSNova x SaaSify" />
+        </div>
+        <div class="news-card-body">
+          <div class="news-card-cat" style="color:var(--blue)">Partnership &middot; Joint Bundle</div>
+          <div class="news-card-h">SaaSify and SaaSNova Launch the First AWS Partner Starter Bundle to Help ISVs Go Marketplace &amp; Co-Sell Ready in Weeks</div>
+          <p class="news-card-p">The joint offering delivers GTM execution, Partner Central readiness, and Marketplace activation in parallel - structured, sequenced, and ready in weeks.</p>
+          <div class="news-card-meta">
+            <span style="font-size:12px;color:var(--text-muted)">May 10, 2026 &middot; New York, NY</span>
+            <span style="font-size:13px;font-weight:600;color:var(--pink)">Read Release &rarr;</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- Footer Placeholder -->
+<div id="footer-placeholder"></div>
+
+<script src="shared.js"></script>
+<script>
+// Filter News logic (similar to Blog filter)
+function filterNews(btn, cat) {
+  // Update active state on buttons
+  document.querySelectorAll('.news-filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  
+  // Filter Grid items based on data-cat attributes
+  document.querySelectorAll('.news-card[data-cat]').forEach(card => {
+    const cats = card.dataset.cat ? card.dataset.cat.split(' ') : [];
+    if (cat === 'all' || cats.includes(cat)) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+// Check URL parameters for active tags (e.g. press&media.html?tag=partnerships)
+document.addEventListener('DOMContentLoaded', () => {
+  const params = new URLSearchParams(window.location.search);
+  const tag = params.get('tag');
+  if (tag) {
+    const btn = document.querySelector(`.news-filter-btn[onclick*="'${tag}'"]`);
+    if (btn) btn.click();
+  }
+});
+</script>
+
+</body>
+</html>
