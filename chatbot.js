@@ -80,11 +80,12 @@
     
     .sn-chat-avatar {
       width: 48px; height: 48px; border-radius: 50%; flex-shrink: 0; position: relative; z-index: 1;
-      background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1);
+      background: #0F1923; border: 2px solid rgba(255, 255, 255, 0.15);
       display: flex; align-items: center; justify-content: center;
+      overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
     .sn-chat-avatar img {
-      width: 36px; height: 36px; object-fit: contain;
+      width: 100%; height: 100%; object-fit: cover;
     }
     .sn-chat-head-text { flex: 1; min-width: 0; position: relative; z-index: 1; }
     .sn-chat-head-name { font-weight: 800; font-size: 16px; display: flex; align-items: center; gap: 6px; }
@@ -385,7 +386,7 @@
     container.innerHTML = `
       <div class="sn-chat-head">
         <div class="sn-chat-avatar">
-          <img src="images/SaaSNova white square.png" alt="SaaSNova AI" />
+          <img src="images/logo-favicon.png" alt="SaaSNova AI" />
         </div>
         <div class="sn-chat-head-text">
           <div class="sn-chat-head-name">SaaSNova AI Assistant</div>
