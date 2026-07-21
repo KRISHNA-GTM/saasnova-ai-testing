@@ -13,7 +13,7 @@
 })();
 /* ------------------------------------------------- */
 
-/* SaaSNova V5.9, shared.js — Updated with Clean Links (Removed .html) */
+/* SaaSNova V5.9, shared.js — Updated with Clean Links & FAB Alignment */
 
 // Path checking logic moved to the top so we can use it for the banner injection
 const path = window.location.pathname;
@@ -393,6 +393,40 @@ const NAV_STYLE_AND_DESKTOP = `
               </a>
             </div>
           </div>
+
+          <div class="dropdown-submenu">
+            <div class="premium-dd-item" style="cursor:default;">
+              <div class="dd-icon-wrap" style="background:rgba(16,185,129,0.08); color:var(--green, #10b981);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+              </div>
+              <div style="flex:1;">
+                <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px; display:flex; justify-content:space-between; align-items:center;">
+                  GTM Ops & Infra <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M3 1.5L7 5L3 8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </div>
+                <div style="font-size:12px; color:var(--text-muted); font-weight:500;">PRMaaS, PCMaaS</div>
+              </div>
+            </div>
+            <div class="dropdown-menu-sub" style="min-width: 260px; padding: 8px;">
+              <a href="prmaas" class="premium-dd-item">
+                <div class="dd-icon-wrap" style="background:rgba(16,185,129,0.1); color:var(--green, #10b981);">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                </div>
+                <div>
+                  <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">PRMaaS</div>
+                  <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Attribution Infrastructure</div>
+                </div>
+              </a>
+              <a href="pcmaas" class="premium-dd-item">
+                <div class="dd-icon-wrap" style="background:rgba(16,185,129,0.1); color:var(--green, #10b981);">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+                </div>
+                <div>
+                  <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">PCMaaS</div>
+                  <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Portal Migration Readiness</div>
+                </div>
+              </a>
+            </div>
+          </div>
         </div>
       </div>
       
@@ -513,7 +547,7 @@ const NAV_STYLE_AND_DESKTOP = `
             </div>
           </a>
 
-          <a href="press&media.html" class="premium-dd-item">
+          <a href="news-press.html" class="premium-dd-item">
             <div class="dd-icon-wrap" style="background:rgba(250,15,156,0.1); color:var(--pink);">${SVG.resNews}</div>
             <div>
               <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">News & Press</div>
@@ -636,6 +670,16 @@ const NAV_MOBILE = `
           <a href="/palaas" class="mob-sub-link" style="padding-left: 40px !important;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#FA0F9C; margin-right:12px;"></span> PALaaS</a>
         </div>
       </div>
+
+      <div class="mob-accordion" style="border-bottom:none !important; display:block !important;">
+        <button class="mob-accordion-btn" style="padding: 14px 20px 14px 24px !important; font-size:15px !important; color:#3D4E5C !important;">
+          <span style="display:flex;align-items:center;gap:8px;color:var(--green, #10b981);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg> GTM Ops & Infra</span> ${SVG.chevDown}
+        </button>
+        <div class="mob-accordion-content" style="background: #f1f5f9 !important;">
+          <a href="prmaas" class="mob-sub-link" style="padding-left: 40px !important;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#10b981; margin-right:12px;"></span> PRMaaS</a>
+          <a href="pcmaas" class="mob-sub-link" style="padding-left: 40px !important;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#10b981; margin-right:12px;"></span> PCMaaS</a>
+        </div>
+      </div>
     </div>
   </div>
   
@@ -682,7 +726,7 @@ const NAV_MOBILE = `
     <button class="mob-accordion-btn">Resources ${SVG.chevDown}</button>
     <div class="mob-accordion-content">
       <a href="/blog" class="mob-sub-link">Blog</a>
-      <a href="/press&media" class="mob-sub-link">News & Press</a>
+      <a href="/news-press" class="mob-sub-link">News & Press</a>
       <a href="/show" class="mob-sub-link">The Jen GTM Show</a>
       <a href="/case-study" class="mob-sub-link">Case Studies</a>
       <a href="/webinars" class="mob-sub-link">Webinars</a>
@@ -772,7 +816,7 @@ const FOOTER_HTML = `
       <div>
         <div class="footer-col-title">COMPANY</div>
         <a href="/about" class="footer-link">About &amp; Team</a>
-        <a href="press&media" class="footer-link">News &amp; Press</a>
+        <a href="news-press" class="footer-link">News &amp; Press</a>
         <a href="/case-study" class="footer-link">Case Studies</a>
         <a href="/show" class="footer-link">The Jen GTM Show</a>
         <a href="/partners" class="footer-link">Partners</a>
@@ -808,6 +852,14 @@ const FOOTER_HTML = `
     </div>
   </div>
 </footer>
+`;
+
+// ── CHATBOT WIDGET ROOT (fab + empty panel; content/CSS built by chatbot.js) ──
+// Skipped entirely if the current page already provides its own full-page
+// chat container (see chatbot.html, which uses #sn-chatbot-fullpage).
+const CHATBOT_ROOT_HTML = `
+<button id="chatbot-fab" aria-label="Open SaaSNova GTM Assistant" aria-haspopup="dialog" aria-expanded="false" aria-controls="sn-chatbot-panel"></button>
+<div id="sn-chatbot-panel" role="dialog" aria-modal="true" aria-label="SaaSNova GTM Assistant chat window" aria-hidden="true"></div>
 `;
 
 // HubSpot Footer Form
@@ -925,6 +977,13 @@ if (isHome) {
 const footerEl = document.getElementById('footer-placeholder');
 if(footerEl) footerEl.innerHTML = FOOTER_HTML;
 
+// ── CHATBOT WIDGET INJECTION ──
+// If this page already has its own full-page chat container (chatbot.html),
+// skip the floating fab/panel entirely and just load the logic script.
+if (!document.getElementById('sn-chatbot-fullpage') && !document.getElementById('chatbot-fab')) {
+  document.body.insertAdjacentHTML('beforeend', CHATBOT_ROOT_HTML);
+}
+
 // Navigation Floating / Scroll Effect
 window.addEventListener('scroll', () => {
   const navHeader = document.getElementById('nav');
@@ -985,15 +1044,15 @@ const revObs = new IntersectionObserver(entries => {
 function initScrollFab() {
   const fabHTML = `
     <style>
-      .sn-scroll-fab { position: fixed; bottom: 30px; right: 30px; z-index: 99; display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.75); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(0,0,0,0.05); padding: 8px 16px 8px 8px; border-radius: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); cursor: pointer; transition: all 0.3s cubic-bezier(0.4,0,0.2,1); color: var(--text-primary); text-decoration: none; }
+      .sn-scroll-fab { position: fixed; bottom: 30px; right: 105px; z-index: 99; display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.75); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(0,0,0,0.05); padding: 8px 16px 8px 8px; border-radius: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); cursor: pointer; transition: all 0.3s cubic-bezier(0.4,0,0.2,1); color: var(--text-primary); text-decoration: none; }
       .sn-scroll-fab:hover { transform: translateY(-4px); box-shadow: 0 14px 40px rgba(0,0,0,0.12); background: rgba(255,255,255,0.95); }
       .sn-fab-icon { display: flex; align-items: center; justify-content: center; width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--blue, #008BF8), var(--pink, #FA0F9C)); color: white; transition: transform 0.4s ease; }
       .sn-fab-label { font-size: 14px; font-weight: 600; white-space: nowrap; }
       .sn-fab-up .sn-fab-icon { transform: rotate(180deg); }
-      @media (max-width: 1024px) { #sn-scroll-fab { width: 50px !important; height: 50px !important; padding: 0 !important; border-radius: 50% !important; justify-content: center !important; bottom: 24px !important; right: 24px !important; } #sn-scroll-fab .sn-fab-label { display: none !important; } #sn-scroll-fab .sn-fab-icon { margin: 0 !important; } }
+      @media (max-width: 1024px) { #sn-scroll-fab { width: 50px !important; height: 50px !important; padding: 0 !important; border-radius: 50% !important; justify-content: center !important; bottom: 24px !important; right: 90px !important; } #sn-scroll-fab .sn-fab-label { display: none !important; } #sn-scroll-fab .sn-fab-icon { margin: 0 !important; } }
     </style>
     <button id="sn-scroll-fab" class="sn-scroll-fab" aria-label="Scroll down">
-      <div class="sn-fab-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M3 8l4 4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="sn-fab-icon"><svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 2v10M3 8l4 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       <span class="sn-fab-label">Scroll Down</span>
     </button>
   `;
@@ -1023,6 +1082,16 @@ function initScrollFab() {
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.reveal').forEach(el => revObs.observe(el));
   initScrollFab();
+
+  // Load the chatbot logic AFTER the fab/panel markup exists in the DOM.
+  if (!document.getElementById('sn-chatbot-loaded')) {
+    const chatScript = document.createElement('script');
+    chatScript.id = 'sn-chatbot-loaded';
+    chatScript.src = 'chatbot.js';
+    chatScript.defer = true;
+    document.body.appendChild(chatScript);
+  }
+
   if (!localStorage.getItem('sn_popup_dismissed')) {
     const popupScript = document.createElement('script');
     popupScript.src = 'popup.js';
