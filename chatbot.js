@@ -263,7 +263,7 @@
     {
       id: 'case_studies',
       patterns: ['case studies', 'case study', 'results', 'roi', 'proof', 'success stories', 'testimonials'],
-      response: `<p>Real, attributable results:</p><ul><li><strong>Arctic Wolf</strong> — 2,125 PSQLs generated, 9X validated ROI, 300%+ of pipeline goal, elevated to fully managed AWS status</li><li><strong>Dataminr</strong> — Graduated AWS Rising Star in under 12 months, $300K in MDF secured, Public Sector Marketplace wins</li></ul>${linkRow(linkBtn('case-study.html', 'Read Full Case Studies', true))}`,
+      response: `<p>Real, attributable results:</p><ul><li><strong>Arctic Wolf</strong> — 2K+ PSQLs generated, 9X validated ROI, 300%+ of pipeline goal, elevated to fully managed AWS status</li><li><strong>Dataminr</strong> — Graduated AWS Rising Star in under 12 months, $300K in MDF secured, Public Sector Marketplace wins</li></ul>${linkRow(linkBtn('case-study.html', 'Read Full Case Studies', true))}`,
       quickReplies: [{ label: 'Book a Call', msg: 'book a call' }]
     },
     {
