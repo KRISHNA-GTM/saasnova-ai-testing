@@ -283,11 +283,11 @@ const NAV_STYLE_AND_DESKTOP = `
 
 <nav id="nav">
   <div class="nav-inner">
-    <a href="/" class="nav-logo" aria-label="SaaSNova Home">
+    <a href="index.html" class="nav-logo" aria-label="SaaSNova Home">
       <img src="images/logo-color.png" alt="SaaSNova" style="height:48px;width:auto;object-fit:contain"/>
     </a>
     <nav class="nav-links" aria-label="Main">
-      <a href="/" class="nav-link">Home</a>
+      <a href="index.html" class="nav-link">Home</a>
       
       <!-- SOLUTIONS DROPDOWN -->
       <div class="dropdown">
@@ -637,7 +637,7 @@ const NAV_STYLE_AND_DESKTOP = `
 // ── MOBILE MENU ──
 const NAV_MOBILE = `
 <div id="sn-mob-menu" role="dialog" aria-label="Mobile navigation" aria-hidden="true">
-  <a href="/" class="mob-link" style="padding:18px 20px !important; font-weight:600 !important; text-decoration:none !important; color:#0F1923 !important; border-bottom:1px solid rgba(0,0,0,0.04) !important; display:block !important;">Home</a>
+  <a href="index.html" class="mob-link" style="padding:18px 20px !important; font-weight:600 !important; text-decoration:none !important; color:#0F1923 !important; border-bottom:1px solid rgba(0,0,0,0.04) !important; display:block !important;">Home</a>
   
   <div class="mob-accordion">
     <button class="mob-accordion-btn">Solutions ${SVG.chevDown}</button>
@@ -668,17 +668,6 @@ const NAV_MOBILE = `
           <a href="pdmaas.html" class="mob-sub-link" style="padding-left: 40px !important;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#008BF8; margin-right:12px;"></span> PDMaaS</a>
           <a href="pmmaas.html" class="mob-sub-link" style="padding-left: 40px !important;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#F19953; margin-right:12px;"></span> PMMaaS</a>
           <a href="palaas.html" class="mob-sub-link" style="padding-left: 40px !important;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#FA0F9C; margin-right:12px;"></span> PALaaS</a>
-        </div>
-      </div>
-
-      <div class="mob-accordion" style="border-bottom:none !important; display:block !important;">
-        <button class="mob-accordion-btn" style="padding: 14px 20px 14px 24px !important; font-size:15px !important; color:#3D4E5C !important;">
-          <span style="display:flex;align-items:center;gap:8px;color:var(--orange);"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> Services</span> ${SVG.chevDown}
-        </button>
-        <div class="mob-accordion-content" style="background: #f1f5f9 !important;">
-          <a href="/pdmaas" class="mob-sub-link" style="padding-left: 40px !important;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#008BF8; margin-right:12px;"></span> PDMaaS</a>
-          <a href="/pmmaas" class="mob-sub-link" style="padding-left: 40px !important;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#F19953; margin-right:12px;"></span> PMMaaS</a>
-          <a href="/palaas" class="mob-sub-link" style="padding-left: 40px !important;"><span style="display:inline-block; width:6px; height:6px; border-radius:50%; background:#FA0F9C; margin-right:12px;"></span> PALaaS</a>
         </div>
       </div>
 
@@ -755,67 +744,6 @@ const NAV_MOBILE = `
     </div>
   </div>
   
-  <a href="/about" class="mob-link" style="padding:18px 20px !important; font-weight:600 !important; text-decoration:none !important; color:#0F1923 !important; border-bottom:1px solid rgba(0,0,0,0.04) !important; display:block !important;">About</a>
-  
-  <div class="mob-accordion">
-    <button class="mob-accordion-btn">Partners ${SVG.chevDown}</button>
-    <div class="mob-accordion-content">
-      <a href="/partners" class="mob-sub-link" style="color:#008BF8 !important; font-weight:700 !important;">All Partners</a>
-      
-      <div class="mob-accordion" style="border-bottom:none !important; display:block !important;">
-        <button class="mob-accordion-btn" style="padding: 14px 20px 14px 24px !important; font-size:15px !important; color:#3D4E5C !important;">
-          <span style="display:flex;align-items:center;gap:8px;color:var(--blue);">${SVG.partCloud} Cloud GTM Partners</span> ${SVG.chevDown}
-        </button>
-        <div class="mob-accordion-content" style="background: #f1f5f9 !important;">
-          <a href="/partner-aws-gtm" class="mob-sub-link" style="padding-left: 40px !important;"><img src="images/aws-logo.png" alt="AWS" style="width:18px;height:18px;margin-right:12px;object-fit:contain;"/> AWS Partner GTM</a>
-          <a href="/partner-azure-gtm" class="mob-sub-link" style="padding-left: 40px !important;"><img src="images/azure-logo.png" alt="Azure" style="width:18px;height:18px;margin-right:12px;object-fit:contain;"/> Azure Partner GTM</a>
-          <a href="/partner-gcp-gtm" class="mob-sub-link" style="padding-left: 40px !important;"><img src="images/gcp-logo.png" alt="GCP" style="width:18px;height:18px;margin-right:12px;object-fit:contain;"/> GCP Partner GTM</a>
-        </div>
-      </div>
-
-      <div class="mob-accordion" style="border-bottom:none !important; display:block !important;">
-        <button class="mob-accordion-btn" style="padding: 14px 20px 14px 24px !important; font-size:15px !important; color:#3D4E5C !important;">
-          <span style="display:flex;align-items:center;gap:8px;color:#64748B;">${SVG.part3PI} 3PI Partners</span> ${SVG.chevDown}
-        </button>
-        <div class="mob-accordion-content" style="background: #f1f5f9 !important;">
-          <a href="/partner-saasify" class="mob-sub-link" style="padding-left: 40px !important;"><img src="images/saasify-logo.png" alt="SaaSify" style="width:18px;height:18px;margin-right:12px;object-fit:contain;border-radius:3px;"/> SaaSify</a>
-          <a href="/partner-workspan" class="mob-sub-link" style="padding-left: 40px !important;"><img src="images/workspan-logo.jpeg" alt="Workspan" style="width:18px;height:18px;margin-right:12px;object-fit:contain;border-radius:3px;"/> Workspan</a>
-        </div>
-      </div>
-
-      <div class="mob-accordion" style="border-bottom:none !important; display:block !important;">
-        <button class="mob-accordion-btn" style="padding: 14px 20px 14px 24px !important; font-size:15px !important; color:#3D4E5C !important;">
-          <span style="display:flex;align-items:center;gap:8px;"><img src="images/SI-GSI.png" alt="SI / GSI" style="width:18px;height:18px;object-fit:contain;"/> SI / GSI</span> ${SVG.chevDown}
-        </button>
-        <div class="mob-accordion-content" style="background: #f1f5f9 !important;">
-          <a href="/partner-pronix" class="mob-sub-link" style="padding-left: 40px !important;"><img src="images/pronix_inc_logo.jpeg" alt="Pronix" style="width:18px;height:18px;margin-right:12px;object-fit:contain;border-radius:3px;"/> Pronix</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="mob-accordion">
-    <button class="mob-accordion-btn">Resources ${SVG.chevDown}</button>
-    <div class="mob-accordion-content">
-      <a href="/blog" class="mob-sub-link">Blog</a>
-      <a href="/news-press" class="mob-sub-link">News & Press</a>
-      <a href="/show" class="mob-sub-link">The Jen GTM Show</a>
-      <a href="/case-study" class="mob-sub-link">Case Studies</a>
-      <a href="/webinars" class="mob-sub-link">Webinars</a>
-      <a href="/newsletter" class="mob-sub-link" style="color:#FA0F9C !important;">The Nova Brief</a>
-    </div>
-  </div>
-
-  <a href="/careers" class="mob-link" style="padding:18px 20px !important; font-weight:600 !important; text-decoration:none !important; color:#0F1923 !important; border-bottom:1px solid rgba(0,0,0,0.04) !important; display:block !important;">Careers</a>
-  
-  <div class="mob-accordion">
-    <button class="mob-accordion-btn">Contact ${SVG.chevDown}</button>
-    <div class="mob-accordion-content">
-      <a href="/contact" class="mob-sub-link">Contact Sales</a>
-      <a href="/support" class="mob-sub-link">Support</a>
-    </div>
-  </div>
-  
   <div style="padding:24px 20px 80px !important; display:block !important;">
     <a href="${CALENDLY}" target="_blank" rel="noopener"
        class="btn btn-primary w-full"
@@ -846,7 +774,7 @@ const FOOTER_HTML = `
   <div class="footer-container">
     <div class="footer-grid">
       <div>
-        <a href="/" aria-label="SaaSNova Home" style="display:inline-block;margin-bottom:16px;">
+        <a href="index.html" aria-label="SaaSNova Home" style="display:inline-block;margin-bottom:16px;">
           <img src="images/logo-white.png" alt="SaaSNova" style="height:36px;width:auto;object-fit:contain"/>
         </a>
         <p style="margin-bottom:24px; color: rgba(255,255,255,0.7); font-size: 14px; line-height: 1.6;">The world's first GTM execution engine for SaaS ISVs scaling through AWS, Azure, and GCP Marketplace.</p>
@@ -895,18 +823,6 @@ const FOOTER_HTML = `
         <a href="careers.html" class="footer-link">Careers</a>
         <a href="contact.html" class="footer-link">Contact</a>
         <a href="support.html" class="footer-link">Support</a>
-      </div>
-      
-      <div>
-        <div class="footer-col-title">COMPANY</div>
-        <a href="/about" class="footer-link">About &amp; Team</a>
-        <a href="news-press" class="footer-link">News &amp; Press</a>
-        <a href="/case-study" class="footer-link">Case Studies</a>
-        <a href="/show" class="footer-link">The Jen GTM Show</a>
-        <a href="/partners" class="footer-link">Partners</a>
-        <a href="/careers" class="footer-link">Careers</a>
-        <a href="/contact" class="footer-link">Contact</a>
-        <a href="/support" class="footer-link">Support</a>
       </div>
       
       <div>
@@ -1104,16 +1020,20 @@ document.addEventListener('click', e => {
   }
 });
 
-// Active Link Setup
+// Active Link Setup (Updated to robustly handle .html extensions)
 document.querySelectorAll('.nav-link').forEach(l => {
   const href = l.getAttribute('href');
   if (!href) return;
-  // Updated condition since home is now just '/'
-  if (href === '/') {
+  
+  const isHomeLink = href === '/' || href === 'index.html';
+  
+  if (isHomeLink) {
     if (isHome) l.classList.add('active');
   } else {
-    // Correctly matches clean paths like /about and /services
-    if (path.includes(href)) l.classList.add('active');
+    // Strip .html for comparison to make it robust against explicit file paths on GH Pages
+    const cleanPath = path.replace('.html', '').replace(/\/$/, '');
+    const cleanHref = href.replace('.html', '').replace(/^\//, '');
+    if (cleanPath.endsWith(cleanHref)) l.classList.add('active');
   }
 });
 
