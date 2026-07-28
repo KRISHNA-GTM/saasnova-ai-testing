@@ -304,9 +304,9 @@ const NAV_STYLE_AND_DESKTOP = `
           </a>
           
           <!-- NEW STOREFRONT TILE (Moved below All Solutions) -->
-          <a href="https://solutions.storefront.saasnova.ai" target="_blank" rel="noopener" class="premium-dd-item" style="background: linear-gradient(135deg, rgba(0,139,248,0.05), rgba(250,15,156,0.04)); margin-top: 4px;">
-            <div class="dd-icon-wrap" style="background:#fff; border:1px solid var(--border-light); box-shadow:0 2px 8px rgba(0,0,0,0.05);">
-              <img src="images/Feenix-logo-notext.svg" alt="Storefront" style="width:20px;height:20px;object-fit:contain;"/>
+          <a href="storefront-saasnova.html" class="premium-dd-item" style="background: linear-gradient(135deg, rgba(0,139,248,0.05), rgba(250,15,156,0.04)); margin-top: 4px;">
+            <div class="dd-icon-wrap" style="padding:0; overflow:hidden; border:1px solid rgba(0,0,0,0.05); box-shadow:0 2px 8px rgba(0,0,0,0.05);">
+              <img src="images/logo-favicon.png" alt="Storefront" style="width:100%;height:100%;object-fit:cover;"/>
             </div>
             <div>
               <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">Storefront</div>
@@ -645,8 +645,8 @@ const NAV_MOBILE = `
       <a href="services.html" class="mob-sub-link" style="color:#008BF8 !important; font-weight:700 !important;">All Solutions</a>
       
       <!-- NEW STOREFRONT MOBILE TILE -->
-      <a href="https://solutions.storefront.saasnova.ai" target="_blank" rel="noopener" class="mob-sub-link" style="color:#0F1923 !important; font-weight:700 !important; background: linear-gradient(90deg, rgba(0,139,248,0.05), transparent);">
-        <img src="images/Feenix-logo-notext.svg" alt="Storefront" style="width:18px;height:18px;margin-right:12px;object-fit:contain;"/> Storefront
+      <a href="storefront-saasnova.html" class="mob-sub-link" style="color:#0F1923 !important; font-weight:700 !important; background: linear-gradient(90deg, rgba(0,139,248,0.05), transparent);">
+        <img src="images/logo-favicon.png" alt="Storefront" style="width:20px;height:20px;margin-right:12px;object-fit:cover;border-radius:4px;"/> Storefront
       </a>
 
       <div class="mob-accordion" style="border-bottom:none !important; display:block !important;">
@@ -802,7 +802,7 @@ const FOOTER_HTML = `
       <div>
         <div class="footer-col-title">SOLUTIONS</div>
         <a href="services.html" class="footer-link">All Solutions</a>
-        <a href="https://solutions.storefront.saasnova.ai" target="_blank" class="footer-link">Storefront</a>
+        <a href="storefront-saasnova.html" class="footer-link">Storefront</a>
         <div class="footer-col-title" style="margin-top:20px;">PROGRAMS</div>
         <a href="ignite.html" class="footer-link">Ignite</a>
         <a href="supernova.html" class="footer-link">SuperNova</a>
