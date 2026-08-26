@@ -517,7 +517,7 @@ const NAV_STYLE_AND_DESKTOP = `
                 <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px; display:flex; justify-content:space-between; align-items:center;">
                   SI / GSI <svg width="10" height="10" viewBox="0 10 10" fill="none"><path d="M3 1.5L7 5L3 8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
                 </div>
-                <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Pronix</div>
+                <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Pronix, Carahsoft</div>
               </div>
             </div>
             <div class="dropdown-menu-sub" style="min-width: 240px; padding: 8px;">
@@ -526,6 +526,14 @@ const NAV_STYLE_AND_DESKTOP = `
                 <div>
                   <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">Pronix</div>
                   <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Enterprise Deployment</div>
+                </div>
+              </a>
+              <!-- CARAHSOFT ADDED HERE -->
+              <a href="partner-carahsoft.html" class="premium-dd-item">
+                <div class="dd-icon-wrap" style="background:#fff; border:1px solid var(--border-light);"><img src="images/carahsoft.svg" style="width:20px;height:20px;object-fit:contain;border-radius:4px;"/></div>
+                <div>
+                  <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">Carahsoft</div>
+                  <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Distribution & Public Sector</div>
                 </div>
               </a>
             </div>
@@ -717,6 +725,8 @@ const NAV_MOBILE = `
         </button>
         <div class="mob-accordion-content" style="background: #f1f5f9 !important;">
           <a href="partner-pronix.html" class="mob-sub-link" style="padding-left: 40px !important;"><img src="images/pronix_inc_logo.jpeg" alt="Pronix" style="width:18px;height:18px;margin-right:12px;object-fit:contain;border-radius:3px;"/> Pronix</a>
+          <!-- CARAHSOFT MOBILE ADDED -->
+          <a href="partner-carahsoft.html" class="mob-sub-link" style="padding-left: 40px !important;"><img src="images/carahsoft.svg" alt="Carahsoft" style="width:18px;height:18px;margin-right:12px;object-fit:contain;border-radius:3px;"/> Carahsoft</a>
         </div>
       </div>
     </div>
