@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="google-site-verification" content="google960def4cf195e9cf" />
+<meta name="google-site-verification" content="LwLN-rte3Gr-8_iFc-B2XCoqCsiEHGN2MoECtAgx2C8" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" type="image/png" sizes="32x32" href="images/logo-favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/logo-favicon-16x16.png">
+<link rel="apple-touch-icon" href="images/logo-favicon-apple-touch-icon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@700;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<title>SaaSNova Achieves AWS Advanced Tier Services Partner Status</title>
+<meta name="description" content="Milestone strengthens SaaSNova’s position in the AWS Partner Network and expands its ability to execute AWS Marketplace and cloud go-to-market programs for SaaS ISVs."/>
+
+<!-- Open Graph -->
+<meta property="og:title" content="SaaSNova Achieves AWS Advanced Tier Services Partner Status"/>
+<meta property="og:description" content="Milestone strengthens SaaSNova’s position in the AWS Partner Network and expands its ability to execute AWS Marketplace and cloud go-to-market programs for SaaS ISVs."/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="https://www.saasnova.ai/saasnova-achieves-aws-advanced-tier-partner-status"/>
+<meta property="og:image" content="https://www.saasnova.ai/images/SaaSNova-AWS-Advanced-Tier.png"/>
+
+<style>
+/* ── MOBILE OVERFLOW & RESPONSIVE FIXES ── */
+body {
+  max-width: 100%;
+  overflow-x: clip; 
+  margin: 0;
+  padding: 0;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.blog-hero h1, .blog-post-wrap h1, .blog-post-wrap h2, .blog-post-wrap h3, p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+.blog-main, .blog-sidebar {
+  min-width: 0; 
+}
+
+/* ── BLOG POST LAYOUT ── */
+.blog-post-wrap {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: var(--sp-8);
+  align-items: start;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--sp-3);
+}
+
+/* ── SIDEBAR ── */
+.blog-sidebar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 88px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  align-self: start;
+  width: 100%;
+}
+.sidebar-card {
+  background: #fff;
+  border: 1px solid var(--border-light);
+  border-radius: var(--r-xl);
+  padding: var(--sp-3);
+}
+.toc-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: var(--sp-2);
+}
+.toc-list li a {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  display: block;
+  padding: 5px 10px;
+  border-radius: var(--r-md);
+  border-left: 2px solid var(--border-light);
+  transition: all .15s;
+  text-decoration: none;
+}
+.toc-list li a:hover {
+  color: var(--blue);
+  border-left-color: var(--blue);
+  background: rgba(0,139,248,.04);
+}
+.toc-list li.toc-h3 a {
+  padding-left: 20px;
+  font-size: 12px;
+}
+
+/* ── SIDEBAR NEWSLETTER ── */
+.sidebar-nl {
+  background: linear-gradient(135deg, #0A1628, #0D1F45);
+  border: none;
+  text-align: center;
+}
+.sidebar-nl h4 { color: #fff; font-size: 15px; margin-bottom: 8px; }
+.sidebar-nl p { font-size: 13px; color: rgba(255,255,255,.6); margin-bottom: var(--sp-2); line-height: 1.6; }
+.sidebar-nl input[type="email"] {
+  width: 100%; padding: 10px 12px; border: 1px solid rgba(255,255,255,.15);
+  border-radius: var(--r-md); font-size: 13px; font-family: inherit;
+  background: rgba(255,255,255,.08); color: #fff; outline: none; margin-bottom: 8px;
+}
+.sidebar-nl input[type="email"]::placeholder { color: rgba(255,255,255,.35); }
+
+/* ── HERO IMAGE ── */
+.blog-hero-img {
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  border-radius: var(--r-2xl);
+  overflow: hidden;
+  margin-bottom: var(--sp-5);
+  background: #ffffff; 
+  border: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.blog-hero-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ── TAG PILLS ── */
+.blog-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: var(--r-full);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+/* ── PR CONTENT STYLES ── */
+.blog-body .blog-lead {
+  font-size: 18px;
+  line-height: 1.8;
+  color: var(--text-primary);
+  font-weight: 500;
+  margin-bottom: var(--sp-4);
+}
+.blog-body h2 { font-size: 28px; margin-top: 48px; margin-bottom: 16px; color: var(--text-primary); }
+.blog-body h3 { font-size: 20px; margin-top: 32px; margin-bottom: 12px; color: var(--text-primary); }
+.blog-body p { font-size: 16px; line-height: 1.8; color: var(--text-secondary); margin-bottom: 20px; }
+
+/* Custom list styling for PR body */
+.blog-body ul { 
+  margin: 0 0 24px 20px; 
+  padding: 0; 
+  color: var(--text-secondary); 
+  font-size: 16px; 
+  line-height: 1.8; 
+}
+.blog-body ul li { margin-bottom: 8px; }
+
+/* ── QUOTE BLOCKS ── */
+.cs-quote-block {
+  background: #F7F9FC;
+  border-left: 4px solid var(--blue);
+  padding: 32px;
+  border-radius: 0 var(--r-xl) var(--r-xl) 0;
+  margin: 40px 0;
+}
+.cs-quote-text {
+  font-size: 20px;
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+.cs-quote-author { font-size: 15px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+.cs-quote-role { font-size: 13px; color: var(--text-muted); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .blog-post-wrap { display: flex; flex-direction: column; gap: var(--sp-6); }
+  .blog-main { order: 2; }
+  .blog-sidebar { display: contents; }
+  .sidebar-toc { order: 1; margin-bottom: 0; }
+  .sidebar-nl { order: 3; margin-top: var(--sp-4); }
+}
+@media (max-width: 640px) {
+  .blog-post-wrap { padding: 0 16px; }
+  .blog-hero-img { aspect-ratio: 16 / 9; }
+}
+</style>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-185EJ40PT4"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-185EJ40PT4');
+</script>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<section style="margin-top:64px;padding:var(--sp-12) 0;background:linear-gradient(135deg,#0A1628 0%,#1A0F00 50%,#0A1628 100%);position:relative;overflow:hidden;color:#fff">
+  <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 55% 65% at 75% 25%,rgba(241,153,83,.15) 0%,transparent 55%),radial-gradient(ellipse 40% 50% at 15% 75%,rgba(250,15,156,.1) 0%,transparent 50%)"></div>
+  <div class="container-sm" style="position:relative;z-index:2">
+    <a href="news-press.html" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:rgba(255,255,255,.5);margin-bottom:var(--sp-4);text-decoration:none">
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 11L5 7l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      Back to News & Press
+    </a>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:var(--sp-3)">
+      <span class="blog-tag reveal" style="background:rgba(250,15,156,.15);color:rgba(255,120,200,.95);border:1px solid rgba(250,15,156,.3)">Press Release</span>
+      <span class="blog-tag reveal delay-1" style="background:rgba(0,139,248,.15);color:rgba(120,200,255,.95);border:1px solid rgba(0,139,248,.3)">AWS Partner Network</span>
+    </div>
+    <h1 class="blog-hero-title reveal delay-1" style="margin-bottom:var(--sp-3);color:#fff;max-width:860px; font-size: clamp(28px, 5vw, 48px); line-height: 1.2;">
+      SaaSNova Achieves AWS Advanced Tier Services Partner Status
+    </h1>
+    <div class="reveal delay-2" style="display:flex;align-items:center;gap:var(--sp-2);flex-wrap:wrap">
+      <span style="font-size:14px;color:rgba(255,255,255,.7);font-family:'JetBrains Mono', monospace;">September 5, 2026</span>
+      <span style="width:4px;height:4px;border-radius:50%;background:rgba(255,255,255,.25)"></span>
+      <span style="font-size:14px;color:rgba(255,255,255,.7);font-family:'JetBrains Mono', monospace;">New York, NY</span>
+    </div>
+  </div>
+</section>
+<div class="wave-d2w"><svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:48px;display:block;width:100%"><path d="M0,0 C360,48 1080,48 1440,0 L1440,48 L0,48 Z" fill="#fff"/></svg></div>
+
+<section style="background:linear-gradient(180deg,#FAFBFF 0%,#fff 20%);padding:var(--sp-8) 0 var(--sp-10)">
+  <div class="blog-post-wrap">
+
+    <!-- MAIN CONTENT -->
+    <div class="blog-main">
+
+      <!-- Hero Image -->
+      <div class="blog-hero-img reveal">
+        <img loading="lazy" src="images/SaaSNova-AWS-Advanced-Tier.png" alt="SaaSNova Achieves AWS Advanced Tier Services Partner Status" onerror="this.src='images/logo-color.png'" />
+      </div>
+
+      <div class="blog-body reveal delay-1">
+
+        <p class="blog-lead"><strong>NEW YORK, NY – September 5, 2026</strong> – SaaSNova, an operator-led cloud go-to-market execution firm focused on AWS Marketplace and co-sell, today announced it has achieved AWS Advanced Tier Services Partner status within the AWS Partner Network (APN).</p>
+
+        <p>The designation validates SaaSNova’s proven track record of implementing and deploying cloud go-to-market programs that drive measurable pipeline and revenue for SaaS ISVs. It recognizes the company's sustained investment in AWS expertise, customer execution, and marketplace operations.</p>
+        
+        <div class="cs-quote-block">
+          <div class="cs-quote-text">"Achieving AWS Advanced Tier Services Partner status directly impacts the speed and scale at which we execute for our clients. We built SaaSNova to close the execution gap for SaaS companies. Our customers need the Marketplace, partner, and co-sell work done. This milestone unlocks deeper AWS alignment, giving us an even stronger foundation to deploy revenue-generating programs for the companies we serve."</div>
+          <div class="cs-quote-author">Jen Dawson</div>
+          <div class="cs-quote-role">Founder & CEO, SaaSNova</div>
+        </div>
+
+        <h2 id="accelerating-execution">Accelerating Marketplace Execution</h2>
+
+        <p>The AWS Advanced Tier is awarded to partners who demonstrate real-world deployment experience, maintain certified technical professionals, and establish a track record of measurable customer outcomes. For SaaSNova's customers, this elevated partner status unlocks immediate, tangible advantages:</p>
+        
+        <ul>
+            <li><strong>Accelerated Co-Sell Engagement:</strong> Direct access to AWS account teams and ACE collaboration to drive joint pipeline opportunities and align field sellers earlier in the deal cycle.</li>
+            <li><strong>Enhanced Funding Programs:</strong> Eligibility for AWS investment programs like the Migration Acceleration Program (MAP) and POC funding to de-risk cloud commitments and accelerate time-to-value.</li>
+            <li><strong>Priority Enablement:</strong> Early visibility into AWS go-to-market motions, accelerating SaaSNova's ability to deploy new marketplace features for ISVs.</li>
+        </ul>
+
+        <p>For many SaaS companies, getting listed on AWS Marketplace is only the beginning. Turning that presence into pipeline requires ongoing execution across Marketplace operations, AWS field engagement, and opportunity progression. SaaSNova operates as an embedded GTM execution team, actively deploying these motions to ensure ISVs are marketplace and co-sell ready in weeks.</p>
+
+        <hr style="margin: 48px 0; border: none; border-top: 1px solid var(--border-light);">
+
+        <h2 id="about-saasnova">About SaaSNova</h2>
+        <p>SaaSNova is an operator-led cloud GTM execution engine for B2B SaaS companies. The company executes partner development, partner marketing, alliance operations, co-sell, and Marketplace motions across AWS, Microsoft Azure, and Google Cloud.</p>
+        <p>SaaSNova focuses on implementation, deployment, field activation, and revenue execution, helping SaaS companies close the gap between cloud Marketplace presence and measurable pipeline.</p>
+        <p>Learn more: <a href="https://saasnova.ai" style="color: var(--blue); text-decoration: none; font-weight: 600;">saasnova.ai</a></p>
+
+        <div style="margin-top: 40px; padding: 24px; background: var(--light-50); border-radius: 12px; border: 1px solid var(--border-light);">
+          <h4 style="margin: 0 0 8px 0; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted);">Media Contact & Seller Info</h4>
+          <a href="mailto:marketing@saasnova.ai" style="color: var(--text-primary); text-decoration: none; font-weight: 600; font-size: 16px; display: block; margin-bottom: 8px;">marketing@saasnova.ai</a>
+          <a href="https://aws.amazon.com/marketplace/seller-profile?id=seller-spip3v3ebghaq" target="_blank" rel="noopener" style="color: var(--pink); text-decoration: none; font-weight: 600; font-size: 14px; display: inline-flex; align-items: center; gap: 4px;">
+            View AWS Seller Profile 
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+        </div>
+
+      </div><!-- /.blog-body -->
+    </div><!-- /.blog-main -->
+
+    <!-- SIDEBAR -->
+    <aside class="blog-sidebar">
+
+      <!-- Table of Contents -->
+      <div class="sidebar-card sidebar-toc reveal delay-2">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:var(--sp-1)">In This Announcement</div>
+        <ul class="toc-list">
+          <li><a href="#accelerating-execution">Accelerating Execution</a></li>
+          <li><a href="#about-saasnova">About SaaSNova</a></li>
+        </ul>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="sidebar-card sidebar-nl reveal delay-3">
+        <div style="width:36px;height:36px;border-radius:var(--r-md);background:rgba(250,15,156,.2);border:1px solid rgba(250,15,156,.3);display:flex;align-items:center;justify-content:center;margin:0 auto var(--sp-2)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#FF7BD2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        </div>
+        <h4>The Nova Brief</h4>
+        <p>Company announcements, Marketplace updates, and GTM intelligence delivered directly to you.</p>
+        <form id="sidebar-hs-form" onsubmit="handleSidebarNL(event)">
+          <input type="email" name="email" placeholder="Your work email" required/>
+          <button type="submit" class="btn btn-primary w-full" style="font-size:13px;padding:10px 16px;background:var(--pink);border:none;">Subscribe Free</button>
+        </form>
+        <div id="sidebar-nl-success" style="display:none;font-size:13px;color:rgba(100,220,130,.9);font-weight:600;margin-top:8px;text-align:center">Subscribed. Thank you!</div>
+      </div>
+
+    </aside>
+
+  </div><!-- /.blog-post-wrap -->
+</section>
+
+<!-- Footer Placeholder -->
+<div id="footer-placeholder"></div>
+
+<script src="shared.js"></script>
+<script>
+function handleSidebarNL(e) {
+  e.preventDefault();
+  const form = e.target;
+  const btn = form.querySelector('button[type="submit"]');
+  const emailInput = form.querySelector('input[name="email"]').value;
+  const originalText = btn.textContent;
+  btn.textContent = 'Joining...';
+  btn.disabled = true;
+  
+  const portalId = '245317385';
+  const formId = '80375307-028c-4c4f-819c-96dc9e0f6727';
+  const url = `https://api.hsforms.com/submissions/v3/integration/submit/${portalId}/${formId}`;
+  
+  fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      fields: [{ name: 'email', value: emailInput }],
+      context: { pageUri: window.location.href, pageName: document.title }
+    })
+  }).then(async (response) => {
+    if (!response.ok) { const errTxt = await response.text(); throw new Error(errTxt); }
+    form.style.display = 'none';
+    document.getElementById('sidebar-nl-success').style.display = 'block';
+  }).catch(err => {
+    btn.textContent = originalText; btn.disabled = false; console.error(err);
+    alert('HubSpot blocked the submission. Please make sure reCAPTCHA is turned off in your HubSpot form settings.');
+  });
+}
+</script>
+</body>
+</html>
