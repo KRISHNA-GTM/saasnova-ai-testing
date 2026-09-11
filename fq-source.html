@@ -86,8 +86,9 @@ gtag('config', 'G-185EJ40PT4');
 
 .fqs-partner{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;
   padding:var(--sp-4) var(--sp-3)}
-.fqs-partner-mark{height:34px;display:flex;align-items:center;justify-content:center}
-.fqs-partner-mark img{height:28px;width:auto}
+.fqs-partner-mark{height:66px;display:flex;align-items:center;justify-content:center}
+.fqs-partner-mark img{height:54px;max-width:180px;width:auto;object-fit:contain;
+}
 .fqs-wordmark{font-weight:800;font-size:21px;letter-spacing:-.02em;color:var(--text-primary)}
 
 .fqs-form-card{background:#fff;border:1px solid var(--border-light);border-radius:var(--r-2xl);
@@ -309,7 +310,7 @@ gtag('config', 'G-185EJ40PT4');
         <span class="eyebrow reveal">Register</span>
         <h2 class="reveal delay-1" style="margin-top:10px;margin-bottom:18px">Register for FQ Source.</h2>
         <p class="reveal delay-1" style="margin-bottom:var(--sp-4)">
-          Five fields. No AWS account or Marketplace experience required.
+          Tell us about your company. No AWS account or Marketplace experience required.
         </p>
 
         <h4 class="reveal delay-2" style="margin-bottom:16px">What happens after you register</h4>
@@ -364,18 +365,15 @@ gtag('config', 'G-185EJ40PT4');
           <div class="form-field">
             <label class="form-label" for="fqs-partner">AWS Partner status <span class="fqs-req">*</span></label>
             <select class="form-select" id="fqs-partner" name="aws_partner_status" required>
-              <option value="">Select one</option>
               <option value="Not an AWS Partner">Not an AWS Partner</option>
               <option value="Registered AWS Partner">Registered AWS Partner</option>
               <option value="Validated or Differentiated Tier">Validated or Differentiated Tier</option>
-              <option value="Not sure">Not sure</option>
             </select>
           </div>
 
           <div class="form-field" style="margin-bottom:var(--sp-3)">
             <label class="form-label" for="fqs-marketplace">AWS Marketplace status <span class="fqs-req">*</span></label>
-            <select class="form-select" id="fqs-marketplace" name="marketplace_status" required>
-              <option value="">Select one</option>
+            <select class="form-select" id="fqs-marketplace" name="aws_marketplace_status" required>
               <option value="Not Listed">Not Listed</option>
               <option value="In Progress">In Progress</option>
               <option value="Listed">Listed</option>
@@ -430,17 +428,6 @@ gtag('config', 'G-185EJ40PT4');
       <p>TKTK — confirm session cadence and expected hours per participant once the Q4 schedule is set.</p>
     </details>
 
-    <!-- ⚠️ TKTK — replace the two placeholders below with the two questions FQ asked -->
-    <details class="fqs-faq reveal delay-3">
-      <summary>TKTK — FQ question 1</summary>
-      <p>TKTK — awaiting the two questions FQ raised.</p>
-    </details>
-
-    <details class="fqs-faq reveal delay-3">
-      <summary>TKTK — FQ question 2</summary>
-      <p>TKTK — awaiting the two questions FQ raised.</p>
-    </details>
-
     <p class="reveal delay-3" style="margin-top:var(--sp-4);font-size:15px;text-align:center;color:var(--text-muted)">
       Still have a question? Email <a href="mailto:marketing@saasnova.ai?subject=FQ%20Source%20enquiry" style="color:var(--blue);font-weight:600">marketing@saasnova.ai</a>.
     </p>
@@ -469,7 +456,7 @@ gtag('config', 'G-185EJ40PT4');
    Same client-side Forms API pattern as contact.html. */
 
 const FQS_PORTAL_ID = '245317385';
-const FQS_FORM_ID   = 'REPLACE_WITH_FQ_SOURCE_FORM_GUID'; // ⚠️ create the form in HubSpot, paste GUID here
+const FQS_FORM_ID   = '23f93682-eb5a-4e14-a2bc-61813dae92ed';
 
 document.getElementById('fqSourceForm').addEventListener('submit', function(e){
   e.preventDefault();
@@ -488,7 +475,7 @@ document.getElementById('fqSourceForm').addEventListener('submit', function(e){
   const company = (d.get('company')||'').trim();
   const email = (d.get('email')||'').trim();
   const partner = d.get('aws_partner_status')||'';
-  const marketplace = d.get('marketplace_status')||'';
+  const marketplace = d.get('aws_marketplace_status')||'';
 
   if (!first || !last || !company || !email || !partner || !marketplace) {
     alert('Please complete every field, including both dropdowns.');
@@ -504,7 +491,7 @@ document.getElementById('fqSourceForm').addEventListener('submit', function(e){
     { name:'email',     value:email },
     { name:'company',   value:company },
     { name:'aws_partner_status', value:partner },
-    { name:'current_marketplace_status', value:marketplace }
+    { name:'aws_marketplace_status', value:marketplace }
   ];
 
   fetch(`https://api.hsforms.com/submissions/v3/integration/submit/${FQS_PORTAL_ID}/${FQS_FORM_ID}`, {
