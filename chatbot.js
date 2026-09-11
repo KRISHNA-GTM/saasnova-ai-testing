@@ -182,6 +182,7 @@
     { label: '🚀 Programs & Services', msg: 'services' },
     { label: '📊 Case Studies', msg: 'case studies' },
     { label: '🏢 About SaaSNova', msg: 'about saasnova' },
+    { label: '✨ FQ Source', msg: 'fq source' },
     { label: '🤝 Partners', msg: 'partners' },
     { label: '📰 Blog', msg: 'blog' },
     { label: '💬 Book a Call', msg: 'book a call' }
@@ -331,7 +332,36 @@
       response: `<p><strong>Jen Dawson</strong> is the Founder and CEO of SaaSNova. She is a 25-year cloud GTM practitioner who previously served as a Global GTM Lead at AWS. She has directed the marketplace activation for over 100 ISVs.</p>${linkRow(linkBtn('about.html', 'Read Bio', true))}`
     },
     {
-      id: 'thanks',
+      id: 'storefront',
+      patterns: ['storefront', 'aws marketplace storefront', 'saasnova storefront', 'branded storefront', 'launch partner'],
+      response: `<p><strong>SaaSNova Storefront</strong> is our branded seller storefront on AWS Marketplace. Ignite, SuperNova, NovaX and our managed services are listed as pre-scoped engagements.</p><p>You procure through your existing AWS account and draw down against your existing AWS commit, so there is no separate procurement process and no new budget line.</p><p>SaaSNova is an official launch partner for AWS Marketplace Storefront.</p>${linkRow(linkBtn('https://solutions.storefront.saasnova.ai/', 'Explore the Storefront', true), linkBtn('storefront-saasnova.html', 'How it works'))}`,
+      quickReplies: [{ label: 'Storefront as a Service', msg: 'sfaas' }, { label: 'Pricing', msg: 'pricing' }, { label: 'Book a Call', msg: 'book a call' }]
+    },
+    {
+      id: 'sfaas',
+      patterns: ['sfaas', 'storefront as a service', 'build my storefront', 'build our storefront', 'build a storefront', 'build us a storefront', 'create a storefront', 'need a storefront', 'want a storefront', 'own storefront', 'storefront setup', 'set up a storefront', 'storefront deployment', 'storefront for us'],
+      response: `<p><strong>Storefront as a Service (SFaaS)</strong> is how we deploy and operate branded AWS Marketplace storefronts for other companies.</p><p>Scope covers listing build, catalog and product setup, storefront configuration and branding, private offer setup, and ongoing operation once it is live.</p><p>We built and operate the Women-Owned Cloud Innovation Storefront with AWS and The Female Quotient this way.</p>${linkRow(linkBtn('services.html', 'See SFaaS', true), linkBtn('storefront-saasnova.html', 'Our own Storefront'))}`,
+      quickReplies: [{ label: 'FQ Source', msg: 'fq source' }, { label: 'Pricing', msg: 'pricing' }, { label: 'Book a Call', msg: 'book a call' }]
+    },
+    {
+      id: 'fq_source',
+      patterns: ['fq source', 'fq', 'female quotient', 'the fq', 'fq program', 'women owned cloud innovation storefront', 'b20', 'shelley zalis'],
+      response: `<p><strong>FQ Source</strong> is a joint initiative by AWS, SaaSNova and The Female Quotient. It helps women-owned technology companies become enterprise-ready and grow through AWS Marketplace.</p><p>Participants come away with four things:</p><ul><li>A live AWS Marketplace listing</li><li>A deployed, branded storefront</li><li>Co-sell opportunities registered in AWS ACE</li><li>Private offers ready to send to buyers</li></ul><p>No AWS Marketplace experience is required. Registration is open ahead of the November 9 launch at the B20 USA Summit in Washington, D.C.</p>${linkRow(linkBtn('fq-source.html', 'Register for FQ Source', true))}`,
+      quickReplies: [{ label: 'Am I eligible?', msg: 'women owned business' }, { label: 'The FQ Storefront', msg: 'storefront' }, { label: 'Contact Us', msg: 'contact' }]
+    },
+    {
+      id: 'women_owned',
+      patterns: ['women owned business', 'women owned', 'woman owned', 'women led', 'female founder', 'female founded', 'diverse supplier', 'diversity certification', 'wbenc', 'am i eligible', 'eligibility'],
+      response: `<p>SaaSNova is itself a women-owned business, and we run <strong>FQ Source</strong> with AWS and The Female Quotient specifically for women-owned and women-led technology companies.</p><p>It is built for SaaS, cloud and innovation suppliers seeking procurement access and enterprise buyers. You do not need an existing AWS Marketplace listing or AWS Partner registration to take part.</p>${linkRow(linkBtn('fq-source.html', 'See FQ Source', true), linkBtn('contact.html', 'Ask a Question'))}`,
+      quickReplies: [{ label: 'What do I get?', msg: 'fq source' }, { label: 'Book a Call', msg: 'book a call' }]
+    },
+    {
+      id: 'getting_started',
+      patterns: ['where do i start', 'how do i start', 'not listed yet', 'no listing', 'never listed', 'first step', 'what is the first step', 'brand new to marketplace', 'new to aws marketplace', 'from scratch', 'zero traction', 'just getting started'],
+      response: `<p>Start with where you are today:</p><ul><li><strong>No listing yet:</strong> <strong>Ignite</strong> delivers a published AWS Marketplace listing in one month.</li><li><strong>Listed but no pipeline:</strong> Ignite also covers listing optimization and initial co-sell execution.</li><li><strong>Women-owned technology company:</strong> <strong>FQ Source</strong> covers listing, storefront, co-sell and procurement pathways.</li><li><strong>Already scaling on one cloud:</strong> <strong>SuperNova</strong> for US market entry, <strong>NovaX</strong> for multi-cloud.</li></ul>${linkRow(linkBtn('ignite.html', 'Explore Ignite', true), linkBtn('services.html', 'Compare Everything'))}`,
+      quickReplies: [{ label: 'Ignite', msg: 'ignite' }, { label: 'FQ Source', msg: 'fq source' }, { label: 'Pricing', msg: 'pricing' }]
+    },
+    {      id: 'thanks',
       patterns: ['thanks', 'thank you', 'appreciate it', 'awesome', 'great', 'cool thanks', 'ok', 'okay'],
       response: `<p>Understood. Let me know what else you need to verify, or book a strategy session with the team when you are ready.</p>`,
       quickReplies: [{ label: 'Book a Call', msg: 'book a call' }, { label: 'Main Menu', msg: 'menu' }]
@@ -349,31 +379,172 @@
     }
   ];
 
-  const FALLBACK_RESPONSE = `<p>I do not have a defined answer for that query. I recommend reviewing our execution programs or booking time to speak directly with Jen Dawson.</p>${linkRow(linkBtn(CALENDLY_URL, 'Book a Strategy Session', true), linkBtn('contact.html', 'Contact Us'))}`;
+  const FALLBACK_RESPONSE = `<p>I could not match that to anything I hold. I cover our programs (Ignite, SuperNova, NovaX), managed services, AWS Marketplace Storefront, FQ Source, pricing and partners.</p><p>Try naming one of those, or pick a topic below.</p>`;
+
+  function suggestionResponse(suggestions) {
+    const names = suggestions.map(function (s) { return '<strong>' + s.label + '</strong>'; });
+    const list = names.length > 1
+      ? names.slice(0, -1).join(', ') + ' or ' + names[names.length - 1]
+      : names[0];
+    return '<p>I am not certain I follow. Did you mean ' + list + '?</p>';
+  }
 
   /* ── 3. MATCHING ENGINE ────────────────────────── */
+  // Words that carry no intent signal. Removed before token scoring so
+  // "what do you charge for" scores on "charge", not on "what do you".
+  const STOPWORDS = new Set([
+    'a','an','the','is','are','was','were','be','been','am','do','does','did','can','could',
+    'will','would','should','shall','may','might','have','has','had','i','me','my','we','our',
+    'us','you','your','it','its','they','them','their','this','that','these','those','to','for',
+    'of','in','on','at','by','with','from','about','into','and','or','but','if','so','as','than',
+    'then','there','here','what','which','who','whom','how','when','where','why','any','some',
+    'no','not','yes','ok','okay','just','also','very','more','most','much','get','got','need',
+    'want','like','know','tell','show','give','looking','please','thanks','hi','hello','hey'
+  ]);
+
+  // alias -> canonical token. Applied to both the query and the intent patterns,
+  // so "expensive", "fees" and "how much" all collapse onto "price".
+  const SYNONYMS = {
+    price:['pricing','prices','cost','costs','costing','fee','fees','rate','rates','budget','charge','charges','expensive','cheap','afford','quote','invoice','spend','spends','dollar','dollars','usd'],
+    listing:['list','listed','listings','publish','published','publishing','sku','skus','catalog','catalogue'],
+    marketplace:['mp','marketplaces'],
+    storefront:['store','shop','shopfront'],
+    start:['started','starting','begin','beginning','onboard','onboarding','kickoff','first','new','newbie','beginner','scratch','zero'],
+    program:['programs','programme','programmes','offering','offerings','package','packages','engagement','engagements','service','services','solution','solutions'],
+    demo:['demos','walkthrough','trial'],
+    call:['calls','meeting','meet','chat','session','sessions','consult','consultation','appointment','schedule','scheduling','booking','book','calendly'],
+    proof:['results','result','roi','evidence','outcome','outcomes','metrics','testimonial','testimonials','reference','references','casestudy'],
+    cosell:['co','sell','selling','ace','opportunity','opportunities'],
+    woman:['women','womens','woman','female','femaleowned','womenowned','diverse','diversity','minority','wbenc','supplier','suppliers'],
+    fq:['fqsource','femalequotient','quotient'],
+    partner:['partners','partnership','partnerships','ecosystem','alliance','alliances','reseller','resellers','distributor','distributors'],
+    cloud:['clouds','hyperscaler','hyperscalers','aws','amazon','azure','microsoft','gcp','google'],
+    contact:['email','mail','phone','reach','touch','human','person','someone','speak','talk'],
+    help:['support','assist','stuck','confused','lost','guide']
+  };
+
+  // Flattened for O(1) lookup.
+  const ALIAS = (function () {
+    const m = Object.create(null);
+    Object.keys(SYNONYMS).forEach(function (canon) {
+      m[canon] = canon;
+      SYNONYMS[canon].forEach(function (a) { m[a] = canon; });
+    });
+    return m;
+  })();
+
+  // Human-readable names, used by the "did you mean" suggestions.
+  const INTENT_LABELS = {
+    greeting:'Start over', about:'About SaaSNova', services_overview:'Programs & services',
+    ignite:'Ignite', supernova:'SuperNova', novax:'NovaX', compare_programs:'Compare programs',
+    managed_services:'Managed services', pdmaas:'PDMaaS', pmmaas:'PMMaaS', palaas:'PALaaS',
+    prmaas:'PRMaaS', case_studies:'Case studies', pricing:'Pricing', book_call:'Book a call',
+    contact:'Contact us', partners:'Partners', carahsoft:'Carahsoft', saasify:'SaaSify',
+    pronix:'Pronix', blog:'Blog', newsletter:'Newsletter', clouds:'Which clouds',
+    jen:'Jen Dawson', menu:'Main menu', thanks:'Anything else', bye:'Goodbye',
+    storefront:'AWS Marketplace Storefront',
+    sfaas:'Storefront as a Service', fq_source:'FQ Source', getting_started:'Where to start',
+    women_owned:'Women-owned businesses'
+  };
+
   function normalize(s) {
     return (s || '').toLowerCase().replace(/[^\w\s]/g, ' ').replace(/\s+/g, ' ').trim();
   }
-  
-  function findIntent(rawText) {
-    const t = normalize(rawText);
-    if (!t) return null;
-    let best = null, bestScore = 0;
-    INTENTS.forEach(intent => {
-      let score = 0;
-      intent.patterns.forEach(p => {
-        const np = normalize(p);
-        if (!np) return;
-        if (t === np) score += np.split(' ').length * 3;
-        else if (t.includes(np)) score += np.split(' ').length * 2;
-        else if (np.includes(t) && t.length > 2) score += 1;
-      });
-      if (score > bestScore) { bestScore = score; best = intent; }
+
+  // Normalized text -> array of canonical, de-stopworded tokens.
+  function tokenize(s) {
+    const out = [];
+    normalize(s).split(' ').forEach(function (w) {
+      if (!w || STOPWORDS.has(w)) return;
+      const canon = ALIAS[w] || w;
+      if (out.indexOf(canon) === -1) out.push(canon);
     });
-    return bestScore > 0 ? best : null;
+    return out;
   }
 
+  // Cache each intent's token set once, on first use.
+  function intentTokens(intent) {
+    if (!intent._tokens) {
+      const set = [];
+      intent.patterns.forEach(function (p) {
+        tokenize(p).forEach(function (t) { if (set.indexOf(t) === -1) set.push(t); });
+      });
+      tokenize(intent.id.replace(/_/g, ' ')).forEach(function (t) {
+        if (set.indexOf(t) === -1) set.push(t);
+      });
+      intent._tokens = set;
+    }
+    return intent._tokens;
+  }
+
+  // Whole-word phrase containment. normalize() collapses runs of whitespace,
+  // so padding both sides with a space makes indexOf word-exact: ' yo ' no
+  // longer matches inside 'you'.
+  function hasPhrase(haystack, needle) {
+    return (' ' + haystack + ' ').indexOf(' ' + needle + ' ') !== -1;
+  }
+
+  // A phrase hit outweighs any number of loose token hits, so every pattern
+  // that matched before still matches. W_COVERAGE rewards matching a high
+  // proportion of the query's meaningful tokens, which is what lets a single
+  // decisive synonym ("expensive" -> price) answer confidently.
+  const W_EXACT    = 120;  // query === pattern
+  const W_PHRASE   = 40;   // query contains a pattern, per pattern word
+  const W_PARTIAL  = 14;   // pattern contains the whole (short) query
+  const W_TOKEN    = 13;   // per shared canonical token
+  const W_COVERAGE = 30;   // scaled by share of query tokens matched
+
+  const CONFIDENT_MIN = 26;  // answer directly
+  const SUGGEST_MIN   = 12;  // offer "did you mean"; below this, fall back
+
+  function scoreIntent(intent, qNorm, qTokens) {
+    let score = 0;
+    intent.patterns.forEach(function (p) {
+      const np = normalize(p);
+      if (!np) return;
+      if (qNorm === np) { score += W_EXACT; return; }
+      if (hasPhrase(qNorm, np)) { score += W_PHRASE * np.split(' ').length; return; }
+      if (qNorm.length > 2 && hasPhrase(np, qNorm)) score += W_PARTIAL;
+    });
+    const iTokens = intentTokens(intent);
+    let matched = 0;
+    qTokens.forEach(function (t) {
+      if (iTokens.indexOf(t) !== -1) matched++;
+    });
+    if (matched) {
+      score += W_TOKEN * matched;
+      score += W_COVERAGE * (matched / qTokens.length);
+    }
+    return Math.round(score);
+  }
+
+  // Returns { intent, score, suggestions } — suggestions populated only when
+  // the top score sits in the ambiguous band.
+  function findIntent(rawText) {
+    const qNorm = normalize(rawText);
+    if (!qNorm) return { intent: null, score: 0, suggestions: [] };
+    const qTokens = tokenize(rawText);
+
+    const ranked = INTENTS
+      .map(function (i) { return { intent: i, score: scoreIntent(i, qNorm, qTokens) }; })
+      .filter(function (r) { return r.score > 0; })
+      .sort(function (a, b) { return b.score - a.score; });
+
+    if (!ranked.length) return { intent: null, score: 0, suggestions: [] };
+
+    const top = ranked[0];
+    if (top.score >= CONFIDENT_MIN) return { intent: top.intent, score: top.score, suggestions: [] };
+    if (top.score >= SUGGEST_MIN) {
+      return {
+        intent: null,
+        score: top.score,
+        suggestions: ranked.slice(0, 3).map(function (r) {
+          return { label: INTENT_LABELS[r.intent.id] || r.intent.id, msg: r.intent.patterns[0] };
+        })
+      };
+    }
+    return { intent: null, score: top.score, suggestions: [] };
+  }
   /* ── 4. STATE ──────────────────────────────────── */
   let history = [];
   let els = {};
@@ -493,19 +664,21 @@
   }
 
   function respondTo(displayLabel, rawInput) {
-    const intent = findIntent(rawInput);
+    const match = findIntent(rawInput);
     showTyping();
     const delay = 420 + Math.random() * 380;
     setTimeout(() => {
       hideTyping();
-      if (intent) {
-        addBotMessage(intent.response, intent.quickReplies);
+      if (match.intent) {
+        addBotMessage(match.intent.response, match.intent.quickReplies);
+      } else if (match.suggestions.length) {
+        addBotMessage(suggestionResponse(match.suggestions),
+          match.suggestions.concat([{ label: 'Something else', msg: 'menu' }]));
       } else {
         addBotMessage(FALLBACK_RESPONSE, MAIN_MENU_QR.slice(0, 4));
       }
     }, delay);
   }
-
   function sendUserMessage(rawInput, displayLabel) {
     addUserMessage(displayLabel || rawInput);
     respondTo(displayLabel, rawInput);

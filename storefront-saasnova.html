@@ -15,12 +15,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@700;900&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
-<title>SaaSNova Storefront | Powered by AWS Marketplace</title>
-<meta name="description" content="Explore and procure SaaSNova's cloud GTM execution programs, Ignite, SuperNova, NovaX, and our managed services, directly through AWS Marketplace via the SaaSNova Storefront."/>
+<title>SaaSNova Storefront | Launch Partner for AWS Marketplace Storefront</title>
+<meta name="description" content="SaaSNova is an official launch partner for AWS Marketplace Storefront. Procure Ignite, SuperNova, NovaX and our managed services directly through AWS Marketplace using your existing AWS commit."/>
 <meta name="robots" content="index, follow"/>
 <link rel="canonical" href="https://www.saasnova.ai/storefront-saasnova" />
-<meta property="og:title" content="SaaSNova Storefront | Powered by AWS Marketplace"/>
-<meta property="og:description" content="Procure SaaSNova's cloud GTM execution programs and managed services directly through AWS Marketplace, using your existing AWS commit."/>
+<meta property="og:title" content="SaaSNova Storefront | Launch Partner for AWS Marketplace Storefront"/>
+<meta property="og:description" content="Procure SaaSNova's cloud GTM execution through AWS Marketplace, using your existing AWS commit."/>
 <meta property="og:url" content="https://www.saasnova.ai/storefront-saasnova"/>
 <meta property="og:site_name" content="SaaSNova"/>
 <meta property="og:type" content="website"/>
@@ -36,211 +36,318 @@ gtag('config', 'G-185EJ40PT4');
 
 <style>
 .sf-badge-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.sf-step-num{width:32px;height:32px;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:900;font-size:13px;flex-shrink:0;margin-top:1px}
+.sf-step-num{width:34px;height:34px;border-radius:50%;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'JetBrains Mono',monospace;font-weight:900;font-size:13px;flex-shrink:0;margin-top:1px}
 .sf-cta-box{display:flex;align-items:center;gap:28px;flex-wrap:wrap;background:#fff;border:1px solid var(--border-light);border-radius:var(--r-2xl);padding:var(--sp-5);box-shadow:0 12px 40px rgba(0,139,248,.08)}
 
-/* Trust Strip & Marquee Styles */
-.sn-trust-inner{max-width:1200px;margin:0 auto;padding:0 24px}
-.sn-trust-num{font-family:'JetBrains Mono',monospace;font-weight:900;font-size:15px;background:linear-gradient(90deg,#008BF8,#FA0F9C);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.marquee-wrap { display: flex; width: 100%; overflow: hidden; white-space: nowrap; }
-.marquee-track { display: flex; animation: scroll-left 30s linear infinite; gap: 3rem; align-items: center; }
-.marquee-logo-item img { height: 32px; width: auto; opacity: 0.9; transition: all 0.3s ease; }
-.marquee-logo-item img:hover { opacity: 1; transform: scale(1.05); }
-@keyframes scroll-left { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+/* ── Logo marquee: two rows, opposing directions ── */
+.sf-marquee{overflow:hidden;display:flex;width:100%;white-space:nowrap;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.sf-track{display:flex;gap:56px;align-items:center;flex-shrink:0;padding-right:56px;animation:sf-scroll 64s linear infinite}
+.sf-track.rev{animation-direction:reverse;animation-duration:76s}
+.sf-logo{display:flex;align-items:center;justify-content:center;height:40px;flex-shrink:0}
+.sf-logo img{height:100%;width:auto;max-width:150px;object-fit:contain;opacity:.62;filter:grayscale(100%);transition:opacity .25s ease,filter .25s ease}
+.sf-logo img:hover{opacity:1;filter:grayscale(0)}
+@keyframes sf-scroll{from{transform:translateX(0)}to{transform:translateX(-100%)}}
+@media(prefers-reduced-motion:reduce){.sf-track{animation:none}.sf-marquee{overflow-x:auto}}
 
-@media(max-width:768px){.sf-cta-box{flex-direction:column;text-align:center}}
-@media(max-width:480px){.sn-trust-divider{display:none}}
+/* ── FQ section ── */
+.sf-fq{background:linear-gradient(150deg,#14100F 0%,#241A1C 62%,#2C1C24 100%);color:#FAF7F2}
+.sf-fq h2,.sf-fq h4{color:#FAF7F2}
+.sf-fq p{color:rgba(250,247,242,.70)}
+.sf-fq-mark{background:#FAF7F2;border-radius:var(--r-lg);padding:16px 22px;display:inline-flex;align-items:center}
+.sf-fq-mark img{height:40px;width:auto}
+.sf-btn-champagne{background:#E4C79B;color:#14100F}
+.sf-btn-champagne:hover{background:#F0D7B2;transform:translateY(-1px);box-shadow:0 6px 20px rgba(228,199,155,.28)}
+
+.sf-quote{border-left:3px solid var(--blue);padding:22px 26px;background:#F6FAFF;border-radius:0 var(--r-md) var(--r-md) 0}
+.sf-quote-pink{border-left-color:var(--pink);background:#FFF8FB}
+.sf-quote-orange{border-left-color:var(--aws);background:#FFFAF2}
+.sf-quote p{font-size:18px;font-style:italic;color:var(--text-primary);line-height:1.75}
+.sf-quote cite{display:block;font-size:13px;color:var(--text-muted);margin-top:12px;font-weight:600;font-style:normal}
+
+@media(max-width:768px){
+  .sf-cta-box{flex-direction:column;text-align:center}
+  .sf-track{gap:40px;padding-right:40px}
+  .sf-logo{height:32px}
+}
 </style>
 </head>
 <body>
 <div id="nav-placeholder"></div>
 
+<!-- ═══ HERO ═══ -->
 <section style="margin-top:64px;padding:var(--sp-12) 0;text-align:left;position:relative;overflow:hidden;background:linear-gradient(135deg,#0A1628 0%,#0D2040 50%,#1A0A2E 100%);color:#fff">
   <div style="position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 55% 65% at 80% 20%,rgba(255,153,0,.16) 0%,transparent 55%),radial-gradient(ellipse 45% 55% at 10% 80%,rgba(0,139,248,.16) 0%,transparent 50%)"></div>
   <div class="container" style="position:relative">
     <a href="partners.html" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:rgba(255,255,255,.45);margin-bottom:var(--sp-4);text-decoration:none">
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M9 11L5 7l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+      <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M9 11L5 7l4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
       Back to Partners
     </a>
-    <div style="max-width:760px">
-      <div class="sf-badge-row" style="margin-bottom:20px">
+    <div style="max-width:780px">
+      <div class="sf-badge-row" style="margin-bottom:22px">
         <span style="display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:rgba(255,153,0,.15);border:1px solid rgba(255,153,0,.3);font-size:11px;font-weight:700;color:rgba(255,185,100,.95);text-transform:uppercase;letter-spacing:.1em">
           <img loading="lazy" src="images/aws-logo.png" alt="AWS" style="height:13px;width:auto;filter:brightness(0) invert(1);opacity:.9"/>
-          AWS Marketplace Storefront
+          Official Launch Partner
         </span>
       </div>
-      <h1 class="reveal" style="color:#fff;margin-bottom:20px;font-size:clamp(32px,4.5vw,54px);line-height:1.15">SaaSNova Storefront, our branded storefront on AWS Marketplace.</h1>
-      <p class="reveal delay-1" style="font-size:18px;color:rgba(255,255,255,.68);line-height:1.8;margin-bottom:32px">Storefront is SaaSNova's branded seller storefront on AWS Marketplace, featuring our Ignite, SuperNova, and NovaX programs alongside our PDMaaS, PMMaaS, PALaaS, PRMaaS, and PCMaaS services. It lets ISVs and enterprises find and procure SaaSNova's cloud GTM execution using their existing AWS buying relationship, reducing procurement friction and accelerating time-to-value.</p>
+      <h1 class="reveal" style="color:#fff;margin-bottom:20px;font-size:clamp(32px,4.5vw,54px);line-height:1.14">Buy cloud GTM execution the way you already buy AWS.</h1>
+      <p class="reveal delay-1" style="font-size:19px;color:rgba(255,255,255,.70);line-height:1.8;margin-bottom:32px;max-width:680px">SaaSNova Storefront is our branded seller storefront on AWS Marketplace. Ignite, SuperNova, NovaX and our managed services, listed as pre-scoped engagements you can procure through your existing AWS account and draw down against your existing commit.</p>
       <div class="reveal delay-2" style="display:flex;gap:12px;flex-wrap:wrap">
-        <a href="https://solutions.storefront.saasnova.ai/" class="btn btn-primary btn-lg">Explore SaaSNova's Storefront</a>
-        <a href="https://calendly.com/jen-saasnova/founder-strategy-session-scale-your-gtm-via-aws?month=2026-03" target="_blank" rel="noopener" class="btn btn-outline-white btn-lg">Book a 30-min Strategy Session</a>
+        <a href="https://solutions.storefront.saasnova.ai/" target="_blank" rel="noopener" class="btn btn-primary btn-lg">Explore the Storefront</a>
+        <a href="https://calendly.com/jen-saasnova/founder-strategy-session-scale-your-gtm-via-aws" target="_blank" rel="noopener" class="btn btn-outline-white btn-lg">Book a 30-min Session</a>
       </div>
     </div>
   </div>
 </section>
 <div class="wave-d2w"><svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:48px;display:block;width:100%"><path d="M0,0 C360,48 1080,48 1440,0 L1440,48 L0,48 Z" fill="#fff"/></svg></div>
 
-<div class="sn-trust" style="background:#fff;padding:24px 0 16px">
-  <div class="sn-trust-inner">
-    <div class="reveal" style="font-size:11px;font-weight:700;text-align:center;color:var(--text-muted, #64748B);text-transform:uppercase;letter-spacing:.1em;margin-bottom:12px">SaaSNova is an official Launch Partner for AWS Marketplace Storefront</div>
+<!-- ═══ LOGO MARQUEE ═══
+     Row A / Row B each duplicated once for seamless infinite scroll.
+     Order runs highest-recognition ISV → emerging. Add new logos to the
+     END of Row B, and to BOTH copies of that row. -->
+<div style="background:#fff;padding:28px 0 10px">
+  <div class="container">
+    <div class="reveal" style="font-size:11px;font-weight:700;text-align:center;color:var(--text-muted);text-transform:uppercase;letter-spacing:.1em">SaaSNova is an official Launch Partner for AWS Marketplace Storefront</div>
   </div>
 </div>
-<div class="reveal delay-2" style="background:var(--light-50, #F8FAFC);border-bottom:1px solid var(--border-light, rgba(0,0,0,0.08));overflow:hidden;padding:12px 0 14px">
-  <div class="marquee-wrap">
-    <div class="marquee-track" style="animation-direction:reverse">
-      <!-- Original Set -->
-      <span class="marquee-logo-item"><img loading="lazy" src="images/newrelic.svg" alt="New Relic"/></span>
-      <span class="marquee-logo-item"><img loading="lazy" src="images/Druva_Logo_tagline_Color.svg" alt="Druva"/></span>
-      <span class="marquee-logo-item"><img loading="lazy" src="images/freshworks-logo-png.png" alt="Freshworks"/></span>
-      <span class="marquee-logo-item"><img loading="lazy" src="images/Postman--Streamline-Svg-Logos.svg" alt="Postman"/></span>
-      <span class="marquee-logo-item"><img loading="lazy" src="images/hashicorp-ar21.svg" alt="HashiCorp"/></span>
-      <span class="marquee-logo-item"><img loading="lazy" src="images/arcticwolf.png" alt="Arctic Wolf"/></span>
-      <span class="marquee-logo-item"><img loading="lazy" src="images/kore-ai-logo-png_seeklogo-504534.png" alt="Kore.ai"/></span>
-      <span class="marquee-logo-item"><img loading="lazy" src="images/Fastly--Streamline-Svg-Logos.svg" alt="Fastly"/></span>
-      <span class="marquee-logo-item"><img loading="lazy" src="images/beyondtrust.svg" alt="BeyondTrust"/></span>
-      <span class="marquee-logo-item"><img loading="lazy" src="images/Jamf color dark.png" alt="Jamf"/></span>
-      <span class="marquee-logo-item"><img loading="lazy" src="images/clickhouse-1.svg" alt="ClickHouse"/></span>
-      <span class="marquee-logo-item"><img loading="lazy" src="images/ZI logo_light.svg" alt="ZoomInfo"/></span>
-      <span class="marquee-logo-item"><img loading="lazy" src="images/denodo.svg" alt="Denodo"/></span>
-      <span class="marquee-logo-item"><img loading="lazy" src="images/Safe one Light-logo.svg" alt="safe.security"/></span>
-      <span class="marquee-logo-item"><img loading="lazy" src="images/pharmocoevidence-logo.png" alt="Pharmacoevidence"/></span>
-      
-      <!-- Duplicate Set for Smooth Infinite Scroll -->
-      <span class="marquee-logo-item"><img loading="lazy" src="images/newrelic.svg" alt="New Relic"/></span>
-      <span class="marquee-logo-item"><img loading="lazy" src="images/Druva_Logo_tagline_Color.svg" alt="Druva"/></span>
-      <span class="marquee-logo-item"><img loading="lazy" src="images/freshworks-logo-png.png" alt="Freshworks"/></span>
-      <span class="marquee-logo-item"><img loading="lazy" src="images/Postman--Streamline-Svg-Logos.svg" alt="Postman"/></span>
-      <span class="marquee-logo-item"><img loading="lazy" src="images/hashicorp-ar21.svg" alt="HashiCorp"/></span>
-      <span class="marquee-logo-item"><img loading="lazy" src="images/arcticwolf.png" alt="Arctic Wolf"/></span>
-      <span class="marquee-logo-item"><img loading="lazy" src="images/kore-ai-logo-png_seeklogo-504534.png" alt="Kore.ai"/></span>
-      <span class="marquee-logo-item"><img loading="lazy" src="images/Fastly--Streamline-Svg-Logos.svg" alt="Fastly"/></span>
-      <span class="marquee-logo-item"><img loading="lazy" src="images/beyondtrust.svg" alt="BeyondTrust"/></span>
-      <span class="marquee-logo-item"><img loading="lazy" src="images/Jamf color dark.png" alt="Jamf"/></span>
-      <span class="marquee-logo-item"><img loading="lazy" src="images/clickhouse-1.svg" alt="ClickHouse"/></span>
-      <span class="marquee-logo-item"><img loading="lazy" src="images/ZI logo_light.svg" alt="ZoomInfo"/></span>
-      <span class="marquee-logo-item"><img loading="lazy" src="images/denodo.svg" alt="Denodo"/></span>
-      <span class="marquee-logo-item"><img loading="lazy" src="images/Safe one Light-logo.svg" alt="safe.security"/></span>
-      <span class="marquee-logo-item"><img loading="lazy" src="images/pharmocoevidence-logo.png" alt="Pharmacoevidence"/></span>
+<div style="background:var(--light-50);border-bottom:1px solid var(--border-light);padding:18px 0 26px">
+
+  <div class="sf-marquee" style="margin-bottom:18px">
+    <div class="sf-track">
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/snyk-logo.png" alt="Snyk"/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/TENABLE-logo.png" alt="Tenable"/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/Postman--Streamline-Svg-Logos.svg" alt="Postman"/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/Canonical-Logo.png" alt="Canonical"/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/suse-logo.png" alt="SUSE"/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/sage-logo.png" alt="Sage"/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/Apptio-Logo.svg" alt="Apptio"/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/Jamf%20color%20dark.png" alt="Jamf"/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/carahsoft.svg" alt="Carahsoft"/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/kore-ai-logo-png_seeklogo-504534.png" alt="Kore.ai"/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/nexla-logo.png" alt="Nexla"/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/hydrolix-logo.png" alt="Hydrolix"/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/workspan-logo.jpeg" alt="Workspan"/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/saasify-logo.png" alt="SaaSify"/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/fractal-logo.png" alt="Fractal"/></span>
+    </div>
+    <div class="sf-track" aria-hidden="true">
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/snyk-logo.png" alt=""/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/TENABLE-logo.png" alt=""/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/Postman--Streamline-Svg-Logos.svg" alt=""/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/Canonical-Logo.png" alt=""/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/suse-logo.png" alt=""/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/sage-logo.png" alt=""/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/Apptio-Logo.svg" alt=""/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/Jamf%20color%20dark.png" alt=""/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/carahsoft.svg" alt=""/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/kore-ai-logo-png_seeklogo-504534.png" alt=""/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/nexla-logo.png" alt=""/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/hydrolix-logo.png" alt=""/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/workspan-logo.jpeg" alt=""/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/saasify-logo.png" alt=""/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/fractal-logo.png" alt=""/></span>
     </div>
   </div>
+
+  <div class="sf-marquee">
+    <div class="sf-track rev">
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/RelevanceLab_logo.png" alt="Relevance Lab"/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/TrackIt-logo.png" alt="TrackIt"/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/pronix_inc_logo.jpeg" alt="Pronix"/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/pentasecurity-logo.png" alt="Penta Security"/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/Safe%20one%20Light-logo.svg" alt="Safe Security"/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/guarddog-logo.png" alt="GuardDog"/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/Rysun-Logo.png" alt="Rysun"/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/netcomlearning-logo.png" alt="NetCom Learning"/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/asirtech-logo.png" alt="AsirTech"/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/cstream-logo.png" alt="C-Stream"/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/simplesense-logo.png" alt="SimpleSense"/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/pharmocoevidence-logo.png" alt="PharmacoEvidence"/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/aivar-logo.png" alt="Aivar"/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/Alertd-logo.png" alt="Alertd"/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/bigcheese-logo.png" alt="Big Cheese"/></span>
+    </div>
+    <div class="sf-track rev" aria-hidden="true">
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/RelevanceLab_logo.png" alt=""/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/TrackIt-logo.png" alt=""/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/pronix_inc_logo.jpeg" alt=""/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/pentasecurity-logo.png" alt=""/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/Safe%20one%20Light-logo.svg" alt=""/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/guarddog-logo.png" alt=""/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/Rysun-Logo.png" alt=""/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/netcomlearning-logo.png" alt=""/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/asirtech-logo.png" alt=""/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/cstream-logo.png" alt=""/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/simplesense-logo.png" alt=""/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/pharmocoevidence-logo.png" alt=""/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/aivar-logo.png" alt=""/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/Alertd-logo.png" alt=""/></span>
+      <span class="sf-logo"><img loading="lazy" src="images/storefront/bigcheese-logo.png" alt=""/></span>
+    </div>
+  </div>
+
 </div>
 
+<!-- ═══ WHAT IT IS ═══ -->
 <section style="background:#fff;padding:var(--sp-10) 0">
   <div class="container-sm">
-    <span class="eyebrow">About SaaSNova's Storefront</span>
+    <span class="eyebrow reveal">About SaaSNova Storefront</span>
     <h2 class="reveal" style="margin-top:8px;margin-bottom:20px">A familiar, auditable way to procure cloud GTM execution.</h2>
-    <p class="reveal delay-1" style="font-size:17px;line-height:1.85;color:var(--text-secondary);margin-bottom:var(--sp-3)">Storefront gives ISVs and enterprise buyers a simple, AWS-native way to discover and purchase SaaSNova's execution programs and managed services. Instead of a separate procurement process, buyers transact through AWS Marketplace, drawing down against their existing AWS commit and using the vendor onboarding, billing, and governance they already trust.</p>
-    <p class="reveal delay-2" style="font-size:17px;line-height:1.85;color:var(--text-secondary)">This marks a further step in SaaSNova's strategic relationship with AWS. As announced when SaaSNova was <a href="saasnova-feenix-pr-aws-marketplace-storefront.html" style="color:var(--blue);font-weight:600">selected as a launch partner for AWS Marketplace Storefront</a>, we're proud to bring our own branded storefront online, giving buyers a direct, board-ready path from "we need cloud GTM execution" to "it's procured and underway."</p>
+    <p class="reveal delay-1" style="font-size:17px;line-height:1.85;margin-bottom:var(--sp-3)">Storefront gives ISVs and enterprise buyers an AWS-native way to find and purchase SaaSNova's execution programs and managed services. Instead of running a separate procurement process, buyers transact through AWS Marketplace, draw down against their existing AWS commit, and use the vendor onboarding, billing and governance they already have in place.</p>
+    <p class="reveal delay-2" style="font-size:17px;line-height:1.85">This builds on SaaSNova's <a href="saasnova-feenix-pr-aws-marketplace-storefront.html" style="color:var(--blue);font-weight:600">selection as a launch partner for AWS Marketplace Storefront</a>. Every listed engagement is pre-scoped, so the path from "we need cloud GTM execution" to "it's procured and underway" is measured in days, not quarters.</p>
   </div>
 </section>
 
+<!-- ═══ AWS QUOTE ═══ -->
+<section style="background:#fff;padding:0 0 var(--sp-8)">
+  <div class="container-sm">
+    <blockquote class="sf-quote sf-quote-orange reveal">
+      <p>"We're excited to have SaaSNova as a launch partner for AWS Marketplace Storefront. Their hands-on experience supporting ISVs and channel partners, combined with their ability to operationalize cloud GTM motions, makes them a strong partner for helping organizations adopt Storefront quickly and effectively."</p>
+      <cite>Hussein Khazaal, Sr. Manager of Product, AWS Marketplace Storefront, Amazon Web Services</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ═══ WHY BUY HERE ═══ -->
 <section style="background:linear-gradient(160deg,#F0F7FF 0%,#FFF8F5 100%);padding:var(--sp-10) 0">
   <div class="container">
-    <div style="text-align:center;margin-bottom:var(--sp-7)">
-      <span class="eyebrow reveal">How Storefront Helps</span>
-      <h2 class="reveal delay-1" style="margin-top:10px">Complements our sales motion, it doesn't replace it.</h2>
-      <p class="reveal delay-2" style="max-width:600px;margin:14px auto 0;font-size:17px;color:var(--text-secondary)">Storefront adds a route to market that simplifies purchasing for buyers and reduces complexity for internal teams. Every listed program follows AWS's Marketplace governance and co-sell frameworks.</p>
+    <div style="text-align:center;margin-bottom:var(--sp-7);max-width:640px;margin-left:auto;margin-right:auto">
+      <span class="eyebrow reveal">Why buy through Storefront</span>
+      <h2 class="reveal delay-1" style="margin-top:10px">It complements our sales motion. It doesn't replace it.</h2>
+      <p class="reveal delay-2" style="margin-top:14px;font-size:17px">Storefront adds a route to market that simplifies purchasing for buyers and cuts complexity for internal teams. Every listed program follows AWS Marketplace governance and co-sell frameworks.</p>
     </div>
     <div class="grid-3">
       <div class="card card-p reveal delay-1">
-        <div class="icon-wrap icon-blue mb-3"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="2" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h4 style="margin-bottom:8px">Simple &amp; Auditable</h4>
-        <p class="text-sm">A familiar, auditable channel with clear visibility into every SaaSNova program and managed service available to purchase.</p>
+        <div class="icon-wrap icon-blue mb-3"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="2" y="2" width="16" height="16" rx="3" stroke="currentColor" stroke-width="1.6"/><path d="M7 10l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h4 style="margin-bottom:8px">Simple and auditable</h4>
+        <p class="text-sm">A familiar procurement channel with clear visibility into every SaaSNova program and managed service available to purchase.</p>
       </div>
       <div class="card card-p reveal delay-2">
-        <div class="icon-wrap icon-orange mb-3"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 3v14M3 10h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
-        <h4 style="margin-bottom:8px">Faster Time-to-Value</h4>
-        <p class="text-sm">Quicker access to pre-scoped, ready-to-start engagements, streamlining contract review and internal approvals.</p>
+        <div class="icon-wrap icon-orange mb-3"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+        <h4 style="margin-bottom:8px">Faster time to value</h4>
+        <p class="text-sm">Pre-scoped, ready-to-start engagements. Contract review and internal approvals move through a process your team has already run.</p>
       </div>
       <div class="card card-p reveal delay-3">
-        <div class="icon-wrap icon-pink mb-3"><svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></div>
-        <h4 style="margin-bottom:8px">Existing AWS Commit</h4>
-        <p class="text-sm">Apply your existing AWS spend commitment toward SaaSNova engagements instead of competing for a separate budget line.</p>
+        <div class="icon-wrap icon-pink mb-3"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+        <h4 style="margin-bottom:8px">Use your existing AWS commit</h4>
+        <p class="text-sm">Apply committed AWS spend toward SaaSNova engagements instead of competing for a separate budget line.</p>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ═══ CUSTOMER QUOTE ═══ -->
 <section style="background:#fff;padding:var(--sp-8) 0">
   <div class="container-sm">
-    <div style="border-left:3px solid var(--pink);padding:20px 24px;background:#FFF8FB;border-radius:0 var(--r-md) var(--r-md) 0" class="reveal">
-      <p style="font-size:19px;font-style:italic;color:var(--text-primary);line-height:1.75">"By simplifying marketplace operations and reducing procurement friction, we enable ISVs and channel partners to focus on what matters most: executing high‑velocity GTM motions and building repeatable revenue engines with AWS."</p>
-      <p style="font-size:13px;color:var(--text-muted);margin-top:10px;font-weight:600">Jen Dawson, Founder &amp; CEO, SaaSNova</p>
-    </div>
+    <blockquote class="sf-quote sf-quote-pink reveal">
+      <p>"As a global ISV organization, having a partner like SaaSNova gives us a strategic advantage in how we continue to grow our customer reach through new features such as the AWS Marketplace Storefront. Their operator-level understanding of cloud GTM helped us move faster, simplify Marketplace operations, and unlock new revenue pathways with AWS."</p>
+      <cite>Barinder Singh, CEO, PharmacoEvidence</cite>
+    </blockquote>
   </div>
 </section>
 
+<!-- ═══ HOW IT WORKS ═══ -->
 <section style="background:linear-gradient(160deg,#FFF8F0 0%,#F5F0FF 100%);padding:var(--sp-10) 0">
   <div class="container">
     <div style="text-align:center;margin-bottom:var(--sp-7)">
-      <span class="eyebrow reveal">How It Works</span>
+      <span class="eyebrow reveal">How it works</span>
       <h2 class="reveal delay-1" style="margin-top:10px">From Storefront to execution, in two steps.</h2>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;max-width:920px;margin:0 auto">
       <div class="card card-p reveal delay-1" style="display:flex;gap:16px;align-items:flex-start">
         <div class="sf-step-num" style="background:var(--blue)">01</div>
         <div>
-          <h4 style="margin-bottom:8px">Explore &amp; Transact on AWS Marketplace</h4>
-          <p class="text-sm">Browse SaaSNova's programs and services in Storefront and transact using standard AWS Marketplace purchasing, public listings or Private Offers, whichever fits your procurement path.</p>
+          <h4 style="margin-bottom:8px">Explore and transact on AWS Marketplace</h4>
+          <p class="text-sm">Browse SaaSNova's programs and services in Storefront, then transact using standard AWS Marketplace purchasing, public listings or private offers, whichever fits your procurement path.</p>
         </div>
       </div>
       <div class="card card-p reveal delay-2" style="display:flex;gap:16px;align-items:flex-start">
         <div class="sf-step-num" style="background:var(--pink)">02</div>
         <div>
-          <h4 style="margin-bottom:8px">SaaSNova Executes Directly</h4>
-          <p class="text-sm">Once procured through AWS Marketplace, our team engages you directly to kick off delivery, maintaining the same operator-led execution and single point of contact across the engagement.</p>
+          <h4 style="margin-bottom:8px">SaaSNova executes directly</h4>
+          <p class="text-sm">Once procured, our team engages you directly to start delivery, with the same operator-led execution and single point of contact across the engagement.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MID-PAGE CTA -->
+<!-- ═══ FQ / WOMEN-OWNED CLOUD INNOVATION STOREFRONT ═══ -->
+<section class="sf-fq" style="padding:var(--sp-12) 0">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:48px;align-items:center">
+      <div>
+        <span class="eyebrow reveal" style="color:#E4C79B">With The Female Quotient</span>
+        <h2 class="reveal delay-1" style="margin-top:10px;margin-bottom:18px">We also build storefronts for other people.</h2>
+        <p class="reveal delay-1" style="font-size:17px;line-height:1.85;margin-bottom:20px">SaaSNova deployed and operates the Women-Owned Cloud Innovation Storefront with AWS and The Female Quotient, giving women-owned technology companies visibility across the AWS Marketplace ecosystem.</p>
+        <p class="reveal delay-2" style="font-size:17px;line-height:1.85;margin-bottom:var(--sp-4)">That work now extends into <strong style="color:#E4C79B;font-weight:700">FQ Source</strong>, a joint initiative with AWS and The FQ that takes women-owned technology companies from no listing to a live listing, a deployed storefront, registered co-sell opportunities and buyer-ready private offers.</p>
+        <div class="reveal delay-2" style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="fq-source.html" class="btn sf-btn-champagne btn-lg">Explore FQ Source</a>
+          <a href="https://thefemalequotient.storefront.marketplace.aws.com/" target="_blank" rel="noopener" class="btn btn-outline-white btn-lg">See the FQ Storefront</a>
+        </div>
+      </div>
+      <div class="reveal delay-3" style="display:flex;flex-direction:column;gap:20px;align-items:flex-start">
+        <!-- FQ logo featured here rather than in the ISV marquee: The FQ is a
+             delivery partner, not a listed ISV. Swap path if the file moves. -->
+        <div class="sf-fq-mark"><img loading="lazy" src="images/storefront/FQ-logo.jpeg" alt="The Female Quotient"/></div>
+        <p style="font-size:15px;line-height:1.8;margin:0">The Female Quotient reaches more than 8.5 million professionals across 30 industries. Registration for FQ Source is open ahead of the November 9 launch at the B20 USA Summit in Washington, D.C.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ JEN QUOTE ═══ -->
 <section style="background:#fff;padding:var(--sp-10) 0">
+  <div class="container-sm">
+    <blockquote class="sf-quote reveal">
+      <p>"SaaSNova is proud to support the launch of AWS Marketplace Storefront and help partners unlock faster, more predictable cloud revenue. By simplifying marketplace operations and reducing procurement friction, we enable ISVs and channel partners to focus on what matters most: executing high-velocity GTM motions and building repeatable revenue engines with AWS."</p>
+      <cite>Jen Dawson, Founder &amp; CEO, SaaSNova</cite>
+    </blockquote>
+  </div>
+</section>
+
+<!-- ═══ MID CTA ═══ -->
+<section style="background:#fff;padding:0 0 var(--sp-10)">
   <div class="container">
     <div class="sf-cta-box reveal">
       <div class="icon-wrap" style="width:64px;height:64px;flex-shrink:0;background:rgba(255,153,0,.1);color:#C87000">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2l2 6-2 6h12l-2-6 2-6z"/><path d="M6 14v6a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-6"/></svg>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 2l2 6-2 6h12l-2-6 2-6z"/><path d="M6 14v6a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-6"/></svg>
       </div>
       <div style="flex:1;min-width:220px">
-        <h3 style="margin-bottom:6px">Explore SaaSNova's Storefront on AWS Marketplace</h3>
-        <p class="text-sm" style="color:var(--text-muted);margin:0">Browse Ignite, SuperNova, NovaX, and our managed services, and procure directly through your AWS account.</p>
+        <h3 style="margin-bottom:6px">Need your own storefront on AWS Marketplace?</h3>
+        <p class="text-sm" style="color:var(--text-muted);margin:0">We deploy and operate branded Marketplace storefronts as a service, including listing build, catalog setup and private offer configuration.</p>
       </div>
-      <a href="storefront-saasnova.html" class="btn btn-primary">Visit the Storefront</a>
+      <a href="https://solutions.storefront.saasnova.ai/listing_summary/56590/saasnova-storefront-as-a-service-for-aws-marketplace-sfaas" class="btn btn-primary">See SFaaS</a>
     </div>
   </div>
 </section>
 
+<!-- ═══ RELATED ═══ -->
 <section style="background:var(--light-100);padding:var(--sp-10) 0">
   <div class="container">
-    <h2 class="reveal" style="margin-bottom:var(--sp-4);text-align:center">Related Reading</h2>
+    <h2 class="reveal" style="margin-bottom:var(--sp-4);text-align:center">Related reading</h2>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px">
       <a href="saasnova-feenix-pr-aws-marketplace-storefront.html" class="card card-p reveal delay-1" style="text-decoration:none;color:inherit">
         <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--pink);display:block;margin-bottom:8px">Press Release</span>
-        <div style="font-weight:700;font-size:16px;margin-bottom:8px;line-height:1.4">SaaSNova Selected as Launch Partner for AWS Marketplace Storefront</div>
-        <p class="text-sm text-muted">The announcement that set the stage for SaaSNova's own branded Storefront.</p>
+        <div style="font-weight:700;font-size:16px;margin-bottom:8px;line-height:1.4">SaaSNova selected as launch partner for AWS Marketplace Storefront</div>
+        <p class="text-sm text-muted">The announcement that set the stage for our own branded Storefront.</p>
       </a>
-      <a href="case-study.html" class="card card-p reveal delay-2" style="text-decoration:none;color:inherit">
-        <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--blue);display:block;margin-bottom:8px">Case Studies</span>
-        <div style="font-weight:700;font-size:16px;margin-bottom:8px;line-height:1.4">Board-visible pipeline evidence from real ISV engagements</div>
-        <p class="text-sm text-muted">See the outcomes behind the programs available in Storefront.</p>
-      </a>
-      <a href="blog-aws-prm-deadline.html" class="card card-p reveal delay-3" style="text-decoration:none;color:inherit">
-        <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#C87000;display:block;margin-bottom:8px">AWS APN Compliance</span>
-        <div style="font-weight:700;font-size:16px;margin-bottom:8px;line-height:1.4">The July 31 AWS PRM Deadline: What ISVs Need to Know</div>
-        <p class="text-sm text-muted">Why AWS visibility, the same principle behind Storefront, is now a compliance requirement too.</p>
+      <a href="fq-source.html" class="card card-p reveal delay-2" style="text-decoration:none;color:inherit">
+        <span style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#B58A4C;display:block;margin-bottom:8px">Program</span>
+        <div style="font-weight:700;font-size:16px;margin-bottom:8px;line-height:1.4">FQ Source: AWS, SaaSNova and The Female Quotient</div>
+        <p class="text-sm text-muted">Accelerating women-owned technology companies through AWS Marketplace.</p>
       </a>
     </div>
   </div>
 </section>
 
+<!-- ═══ FINAL CTA ═══ -->
 <section class="s-gradient" style="padding:var(--sp-12) 0;text-align:center">
   <div class="container-sm">
     <h2 class="reveal" style="margin-bottom:12px">Procure cloud GTM execution the way you already buy AWS.</h2>
-    <p class="reveal delay-1" style="font-size:18px;max-width:480px;margin:0 auto var(--sp-5)">Explore SaaSNova's Storefront, or talk to Jen Dawson about which program fits your stage first.</p>
+    <p class="reveal delay-1" style="font-size:18px;max-width:500px;margin:0 auto var(--sp-5)">Explore the Storefront, or talk to Jen Dawson about which program fits your stage first.</p>
     <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap" class="reveal delay-2">
-      <a href="https://solutions.storefront.saasnova.ai/" class="btn btn-white btn-lg" style="background:#fff;color:#0F1923">Explore the Storefront</a>
-      <a href="https://calendly.com/jen-saasnova/founder-strategy-session-scale-your-gtm-via-aws?month=2026-03" target="_blank" rel="noopener" class="btn btn-outline-white btn-lg">Book a 30-min Strategy Session</a>
+      <a href="https://solutions.storefront.saasnova.ai/" target="_blank" rel="noopener" class="btn btn-lg" style="background:#fff;color:#0F1923">Explore the Storefront</a>
+      <a href="https://calendly.com/jen-saasnova/founder-strategy-session-scale-your-gtm-via-aws" target="_blank" rel="noopener" class="btn btn-outline-white btn-lg">Book a 30-min Session</a>
     </div>
   </div>
 </section>

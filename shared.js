@@ -314,6 +314,17 @@ const NAV_STYLE_AND_DESKTOP = `
             </div>
           </a>
 
+          <!-- FQ SOURCE TILE (AWS x The FQ x SaaSNova program) -->
+          <a href="fq-source.html" class="premium-dd-item" style="background: linear-gradient(135deg, rgba(228,199,155,0.14), rgba(192,138,125,0.07)); margin-top: 4px;">
+            <div class="dd-icon-wrap" style="padding:0; overflow:hidden; border:1px solid rgba(0,0,0,0.05); box-shadow:0 2px 8px rgba(0,0,0,0.05); background:#14100F; display:flex; align-items:center; justify-content:center;">
+              <span style="font-weight:800; font-size:13px; color:#E4C79B; letter-spacing:-0.02em;">FQ</span>
+            </div>
+            <div>
+              <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">FQ Source</div>
+              <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Women-Owned Marketplace Program</div>
+            </div>
+          </a>
+
           <div style="margin: 4px 0; height: 1px; background: var(--border-light);"></div>
 
           <div class="dropdown-submenu">
@@ -657,6 +668,11 @@ const NAV_MOBILE = `
         <img src="images/logo-favicon.png" alt="Storefront" style="width:20px;height:20px;margin-right:12px;object-fit:cover;border-radius:4px;"/> Storefront
       </a>
 
+      <!-- FQ SOURCE MOBILE TILE -->
+      <a href="fq-source.html" class="mob-sub-link" style="color:#0F1923 !important; font-weight:700 !important; background: linear-gradient(90deg, rgba(228,199,155,0.16), transparent);">
+        <span style="display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;margin-right:12px;border-radius:4px;background:#14100F;color:#E4C79B;font-size:10px;font-weight:800;">FQ</span> FQ Source
+      </a>
+
       <div class="mob-accordion" style="border-bottom:none !important; display:block !important;">
         <button class="mob-accordion-btn" style="padding: 14px 20px 14px 24px !important; font-size:15px !important; color:#3D4E5C !important;">
           <span style="display:flex;align-items:center;gap:8px;color:var(--blue);">${SVG.srvAll} Programs</span> ${SVG.chevDown}
@@ -813,6 +829,7 @@ const FOOTER_HTML = `
         <div class="footer-col-title">SOLUTIONS</div>
         <a href="services.html" class="footer-link">All Solutions</a>
         <a href="storefront-saasnova.html" class="footer-link">Storefront</a>
+        <a href="fq-source.html" class="footer-link">FQ Source</a>
         <div class="footer-col-title" style="margin-top:20px;">PROGRAMS</div>
         <a href="ignite.html" class="footer-link">Ignite</a>
         <a href="supernova.html" class="footer-link">SuperNova</a>
