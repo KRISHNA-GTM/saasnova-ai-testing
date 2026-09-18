@@ -3,7 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FQ Source | AWS, The Female Quotient &amp; SaaSNova</title>
+<meta name="description" content="FQ Source helps women-owned technology companies become enterprise-ready and grow through AWS Marketplace. A joint initiative by AWS, The Female Quotient and SaaSNova. Registration is open."/>
 
+<!-- LAUNCH GATE: noindex until AWS Comms confirms alignment on the announcement.
+     Flip to "index, follow" on the day the press release publishes. -->
+<meta name="robots" content="noindex, nofollow"/>
+
+<meta property="og:title" content="FQ Source | AWS, The Female Quotient &amp; SaaSNova"/>
+<meta property="og:description" content="Accelerating women-owned technology companies through AWS Marketplace. Registration is open ahead of the November 9 launch at the B20 USA Summit."/>
+<meta property="og:type" content="website"/>
+<meta property="og:site_name" content="FQ Source"/>
 
 <meta name="google-site-verification" content="google960def4cf195e9cf" />
 <meta name="google-site-verification" content="LwLN-rte3Gr-8_iFc-B2XCoqCsiEHGN2MoECtAgx2C8" />
@@ -12,26 +22,14 @@
 <link rel="icon" type="image/png" sizes="16x16" href="images/logo-favicon-16x16.png">
 <link rel="apple-touch-icon" href="images/logo-favicon-apple-touch-icon.png">
 
+<link rel="canonical" href="https://www.saasnova.ai/fq-source/" />
+<meta property="og:url" content="https://www.saasnova.ai/fq-source/"/>
+<meta property="og:image" content="https://www.saasnova.ai/images/logo-color.png"/>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@700;900&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
-<title>FQ Source | AWS, SaaSNova &amp; The Female Quotient</title>
-<meta name="description" content="FQ Source helps women-owned technology companies become enterprise-ready and grow through AWS Marketplace. A joint initiative by AWS, SaaSNova and The Female Quotient. Registration is open."/>
-
-<!-- ⚠️ LAUNCH GATE: noindex until AWS Comms confirms alignment on the announcement.
-     Flip to "index, follow" on the day the press release publishes. -->
-<meta name="robots" content="noindex, nofollow"/>
-
-<link rel="canonical" href="https://www.saasnova.ai/fq-source/" />
-<meta property="og:title" content="FQ Source | AWS, SaaSNova &amp; The Female Quotient"/>
-<meta property="og:description" content="Accelerating women-owned technology companies through AWS Marketplace. Registration is open ahead of the November 9 launch at the B20 USA Summit."/>
-<meta property="og:url" content="https://www.saasnova.ai/fq-source/"/>
-<meta property="og:site_name" content="SaaSNova"/>
-<meta property="og:type" content="website"/>
-<meta property="og:image" content="https://www.saasnova.ai/images/logo-color.png"/>
-
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-185EJ40PT4"></script>
 <script>
 window.dataLayer = window.dataLayer || [];
@@ -39,342 +37,410 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-185EJ40PT4');
 </script>
-
 <style>
-/* ═══ FQ SOURCE — page-scoped only. style.css is untouched. ═══
-   Palette nods to FQ's identity (warm near-black, ivory, champagne/rose-gold)
-   while keeping SaaSNova structure, type and components. */
-:root{
-  --fqs-ink:#14100F;
-  --fqs-ink-2:#221A18;
-  --fqs-ivory:#FAF7F2;
-  --fqs-champagne:#E4C79B;
-  --fqs-rose:#C08A7D;
+
+/* FQ SOURCE · page design system. Namespaced under .fqx so it never
+   collides with a host stylesheet (SaaSNova style.css or FQ's own). */
+
+.fqx{
+  --ink:#1C1A1D;
+  --ink-2:#242125;
+  --ink-3:#2E2A2E;
+  --ivory:#F7F4F0;
+  --ivory-2:rgba(247,244,240,.80);
+  --ivory-3:rgba(247,244,240,.72);
+  --champ:#FA0F9C;            /* SaaSNova pink · dark label = 5.3:1 */
+  --champ-hi:#FF35AE;
+  --rose:#8F5530;             /* accent TEXT on light · 5.5:1 */
+  --rose-lite:#C9A063;        /* metallic FILL only, never text */
+  --rose-pale:#E8CDB4;        /* accent text on dark bands */
+  --aws:#FF9900;
+  --paper:#FFFFFF;
+  --paper-2:#F7F4F0;
+  --ink-text:#1A1A1F;
+  --ink-text-2:#5F5F69;
+  --ink-text-3:#6E6E78;
+  --rule:#E3DCD4;
+  --rule-dark:rgba(247,244,240,.18);
+  --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  --sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --pad:clamp(38px,4vw,62px);
+  font-family:var(--sans);
+  color:var(--ink-text);
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
 }
-.fqs-hero{margin-top:64px;padding:var(--sp-12) 0 var(--sp-10);position:relative;overflow:hidden;
-  background:linear-gradient(150deg,var(--fqs-ink) 0%,var(--fqs-ink-2) 58%,#2A1B22 100%);color:var(--fqs-ivory)}
-.fqs-hero::after{content:'';position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(ellipse 50% 60% at 82% 18%,rgba(228,199,155,.16) 0%,transparent 58%),
-             radial-gradient(ellipse 45% 55% at 8% 88%,rgba(192,138,125,.14) 0%,transparent 55%)}
-.fqs-hero-inner{position:relative;max-width:780px}
-.fqs-hero h1{color:var(--fqs-ivory);font-size:clamp(34px,5vw,60px);line-height:1.1;margin-bottom:20px}
-.fqs-hero p{color:rgba(250,247,242,.72)}
-.fqs-badge{display:inline-flex;align-items:center;gap:10px;padding:7px 16px;border-radius:var(--r-full);
-  background:rgba(228,199,155,.12);border:1px solid rgba(228,199,155,.32);
-  font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--fqs-champagne)}
-.fqs-btn-champagne{background:var(--fqs-champagne);color:var(--fqs-ink)}
-.fqs-btn-champagne:hover{background:#F0D7B2;transform:translateY(-1px);box-shadow:0 6px 20px rgba(228,199,155,.28)}
+.fqx *,.fqx *::before,.fqx *::after{box-sizing:border-box;margin:0;padding:0}
+.fqx img{max-width:100%;display:block;height:auto}
+.fqx a{color:inherit;text-decoration:none}
+.fqx ul{list-style:none}
+.fqx button,.fqx input,.fqx select{font-family:inherit;font-size:inherit}
 
-.fqs-grid{display:grid;gap:24px}
-.fqs-grid-2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-.fqs-grid-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-.fqs-grid-4{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+/* ── layout ── */
+.fqx-sec{padding:var(--pad) 0;position:relative}
+.fqx-wrap{width:100%;max-width:1160px;margin:0 auto;padding:0 clamp(20px,4vw,40px)}
+.fqx-narrow{max-width:760px}
+.fqx-dark{background:var(--ink);color:var(--ivory)}
+.fqx-dark-2{background:var(--ink-2);color:var(--ivory)}
+.fqx-paper{background:var(--paper)}
+.fqx-paper-2{background:var(--paper-2)}
 
-.fqs-deliverable{font-size:13px;font-weight:700;color:var(--text-primary);
-  padding-top:12px;margin-top:14px;border-top:1px dashed var(--border)}
-.fqs-deliverable span{display:block;font-weight:600;color:var(--text-muted);
-  font-size:11px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:5px}
+/* fine technical grid, the only "high tech" texture on the page */
+.fqx-mesh{position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:linear-gradient(rgba(250,247,242,.055) 1px,transparent 1px),
+                   linear-gradient(90deg,rgba(250,247,242,.055) 1px,transparent 1px);
+  background-size:72px 72px;
+  -webkit-mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,#000 0%,transparent 78%);
+          mask-image:radial-gradient(ellipse 80% 70% at 50% 40%,#000 0%,transparent 78%)}
 
-.fqs-step{display:flex;gap:18px;align-items:flex-start}
-.fqs-step-num{width:34px;height:34px;border-radius:50%;flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;
-  font-family:'JetBrains Mono',monospace;font-weight:900;font-size:12px;
-  background:var(--fqs-ink);color:var(--fqs-champagne)}
-.fqs-eligible li{display:flex;gap:12px;align-items:flex-start;margin-bottom:14px;
-  font-size:16px;color:var(--text-secondary);line-height:1.6}
-.fqs-tick{flex-shrink:0;margin-top:4px;color:var(--green)}
+/* ── type ── */
+.fqx-kick{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--rose-pale)}
+.fqx-kick-ink{color:var(--rose)}
+.fqx h1,.fqx h2,.fqx h3,.fqx h4{font-family:var(--sans);font-weight:800;
+  letter-spacing:-.03em;line-height:1.06;color:inherit}
+.fqx h1{font-size:clamp(38px,5.6vw,68px);letter-spacing:-.045em}
+.fqx h2{font-size:clamp(28px,4.2vw,50px)}
+.fqx h3{font-size:clamp(20px,2.6vw,28px);letter-spacing:-.02em}
+.fqx h4{font-size:17px;letter-spacing:-.015em;line-height:1.25}
+.fqx p{line-height:1.7;color:var(--ink-text-2)}
+.fqx-dark p,.fqx-dark-2 p{color:var(--ivory-2)}
+.fqx-dark p.fqx-lead,.fqx-dark-2 p.fqx-lead,
+.fqx-dark p.fqx-quote-t,.fqx-dark-2 p.fqx-quote-t{color:var(--ivory)}
+.fqx-dark .fqx-del p,.fqx-dark .fqx-stat-cap{color:rgba(247,244,240,.86)}
+.fqx p.fqx-lead,.fqx-lead{font-size:clamp(17px,1.9vw,21px);line-height:1.62}
+.fqx p.fqx-sm,.fqx-sm{font-size:14.5px;line-height:1.65}
+.fqx p.fqx-xs,.fqx-xs{font-size:12.5px;line-height:1.55;color:var(--ink-text-3)}
+.fqx-rule{height:1px;background:var(--rule);border:0}
+.fqx-dark .fqx-rule,.fqx-dark-2 .fqx-rule{background:var(--rule-dark)}
 
-.fqs-partner{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px;
-  padding:var(--sp-4) var(--sp-3)}
-.fqs-partner-mark{height:66px;display:flex;align-items:center;justify-content:center}
-.fqs-partner-mark img{height:54px;max-width:180px;width:auto;object-fit:contain;
+/* ── buttons ── */
+.fqx-btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;
+  padding:15px 28px;border-radius:2px;border:1px solid transparent;
+  font-size:14.5px;font-weight:700;letter-spacing:-.01em;cursor:pointer;
+  transition:background .18s,color .18s,border-color .18s,transform .18s}
+.fqx-btn-primary{background:var(--champ);color:#fff;border-color:var(--champ);border-radius:12px;font-weight:800;font-size:15px;box-shadow:0 8px 24px rgba(0,139,248,.28),0 4px 12px rgba(250,15,156,.30)}
+.fqx-btn-primary:hover{background:var(--champ-hi);border-color:var(--champ-hi);transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,139,248,.32),0 6px 16px rgba(250,15,156,.36)}
+.fqx-btn-ghost{background:transparent;color:var(--ivory);border-color:rgba(250,247,242,.34)}
+.fqx-btn-ghost:hover{border-color:var(--ivory);background:rgba(250,247,242,.07)}
+.fqx-btn-ink{background:var(--ink);color:var(--ivory);border-color:var(--ink)}
+.fqx-btn-ink:hover{background:var(--ink-3);border-color:var(--ink-3);transform:translateY(-2px)}
+.fqx-btn-block{width:100%}
+.fqx-btn:focus-visible{outline:2px solid var(--rose);outline-offset:3px}
+
+/* ── hero ── */
+.fqx-hero{position:relative;overflow:hidden;color:var(--ink-text);
+  padding:clamp(28px,3vw,44px) 0 clamp(30px,3.4vw,46px)}
+.fqx-hero::after{content:'';position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(180deg,rgba(255,255,255,.22) 0%,transparent 40%,rgba(28,26,29,.10) 100%)}
+.fqx-hero>*{position:relative;z-index:2}
+.fqx-hero-inner{max-width:none}
+.fqx-lockup{display:inline-flex;align-items:center;gap:24px;padding:14px 24px;border-radius:2px;
+  background:rgba(255,255,255,.72);border:1px solid rgba(74,42,18,.22)}
+.fqx-lockup img{height:34px;width:auto;max-width:158px;object-fit:contain;display:block}
+.fqx-lockup i{width:1px;height:30px;background:rgba(23,18,26,.20);flex-shrink:0}
+@media(max-width:560px){.fqx-lockup{gap:13px;padding:10px 14px}.fqx-lockup img{height:24px;max-width:104px}}
+.fqx-badge{display:inline-flex;align-items:center;gap:12px;padding:8px 16px;
+  border:1px solid rgba(74,42,18,.26);border-radius:2px;background:rgba(228,199,155,.08);
+  font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.17em;
+  text-transform:uppercase;color:var(--champ)}
+.fqx-hero h1{margin:14px 0 14px;color:#241207}
+.fqx-hero h1 em{font-style:normal;color:#241207;font-weight:400}
+
+.fqx p.fqx-hero-sub,.fqx-hero-sub{font-size:clamp(17px,1.8vw,21px);line-height:1.4;color:#241207;
+  font-weight:600;letter-spacing:-.02em;max-width:520px;margin-bottom:14px}
+.fqx p.fqx-hero-note,.fqx-hero-note{font-size:15px;max-width:460px;margin-bottom:18px;color:#3E2A1A}
+.fqx-cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:clamp(38px,4.5vw,56px)}
+
+/* hero stat bar */
+.fqx-bar{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(28px,3vw,40px);
+  border-top:1px solid rgba(74,42,18,.24);position:relative;z-index:2}
+.fqx-bar-item{padding:16px 26px 18px;border-right:1px solid rgba(74,42,18,.24)}
+.fqx-bar-item:last-child{border-right:0}
+.fqx-bar-item:first-child{padding-left:0}
+.fqx-bar-n{font-family:var(--mono);font-weight:900;font-size:clamp(28px,3.2vw,38px);
+  color:#3A1E0C;letter-spacing:-.03em;line-height:1;margin-bottom:10px}
+.fqx p.fqx-bar-l,.fqx-bar-l{font-size:13px;color:#4A3322;line-height:1.5;max-width:230px}
+
+/* ── stake / big stat ── */
+.fqx-stake{display:grid;grid-template-columns:1fr 1fr;gap:clamp(36px,5vw,72px);align-items:center}
+.fqx-stat-huge{font-family:var(--mono);font-weight:900;color:var(--rose-pale);
+  font-size:clamp(76px,13vw,168px);line-height:.82;letter-spacing:-.06em}
+.fqx p.fqx-stat-cap,.fqx-stat-cap{font-size:clamp(16px,1.8vw,19px);color:var(--ivory-2);line-height:1.6;
+  margin-top:26px;padding-top:26px;border-top:1px solid var(--rule-dark);max-width:400px}
+
+/* ── quote ── */
+.fqx-quote{border-left:2px solid var(--rose-lite);padding-left:clamp(20px,3vw,32px)}
+.fqx p.fqx-quote-t,.fqx-quote-t{font-size:clamp(18px,2.1vw,24px);line-height:1.5;font-weight:500;
+  letter-spacing:-.017em;color:var(--ivory)}
+.fqx .fqx-quote-ink p.fqx-quote-t,.fqx .fqx-quote-ink .fqx-quote-t{color:var(--ink-text)}
+.fqx-quote-ink{border-left-color:var(--rose)}
+.fqx-quote-a{margin-top:20px;font-family:var(--mono);font-size:11px;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--rose-pale);line-height:1.8}
+.fqx .fqx-quote-ink .fqx-quote-a{color:var(--rose)}
+.fqx-quote-a span{display:block;color:var(--ivory-3);font-weight:700}
+.fqx .fqx-quote-ink .fqx-quote-a span{color:var(--ink-text-3)}
+
+/* ── generic grids ── */
+.fqx-g{display:grid;gap:clamp(16px,1.8vw,22px)}
+.fqx-g2{grid-template-columns:repeat(2,1fr)}
+.fqx-g3{grid-template-columns:repeat(3,1fr)}
+.fqx-g4{grid-template-columns:repeat(4,1fr)}
+.fqx-split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.08fr);
+  gap:clamp(36px,5vw,72px);align-items:start}
+
+/* ── plain cards ── */
+.fqx-card{background:var(--paper);border:1px solid var(--rule);border-radius:3px;
+  padding:clamp(24px,2.6vw,32px);display:flex;flex-direction:column;height:100%;
+  transition:border-color .2s,transform .2s}
+.fqx-card:hover{border-color:var(--rose);transform:translateY(-3px)}
+.fqx-card h4{margin-bottom:10px}
+.fqx-card-n{font-family:var(--mono);font-size:11px;font-weight:900;letter-spacing:.14em;
+  color:var(--rose);margin-bottom:16px}
+
+/* ── deliverables (dark, numbered, equal height, outcome pinned to base) ── */
+.fqx-del{background:rgba(250,247,242,.028);border:1px solid var(--rule-dark);border-radius:3px;
+  padding:clamp(26px,2.8vw,34px);display:flex;flex-direction:column;height:100%;
+  transition:border-color .2s,background .2s,transform .2s}
+.fqx-del:hover{border-color:rgba(228,199,155,.45);background:rgba(250,247,242,.05);transform:translateY(-3px)}
+.fqx-del-n{font-family:var(--mono);font-weight:900;font-size:clamp(34px,3.8vw,46px);
+  color:var(--rose-pale);line-height:1;letter-spacing:-.04em;margin-bottom:22px;
+  padding-bottom:20px;border-bottom:1px solid var(--rule-dark)}
+.fqx-del h4{color:var(--ivory);margin-bottom:12px;font-size:19px}
+.fqx-del p{font-size:14.5px;line-height:1.68;color:var(--ivory-2);margin-bottom:26px}
+.fqx-del-out{margin-top:auto;padding-top:20px;border-top:1px solid var(--rule-dark)}
+.fqx-del-out span{display:block;font-family:var(--mono);font-size:10px;font-weight:700;
+  letter-spacing:.17em;text-transform:uppercase;color:var(--ivory-3);margin-bottom:8px}
+.fqx-del-out strong{display:block;font-size:14.5px;font-weight:700;color:var(--rose-pale);line-height:1.4}
+
+/* ── starting point chips ── */
+.fqx-chips{display:flex;flex-wrap:wrap;gap:9px;margin-top:14px}
+.fqx-chip{display:inline-flex;align-items:center;gap:9px;padding:10px 15px;
+  border:1px solid var(--rule);border-radius:2px;background:var(--paper);
+  font-size:13.5px;font-weight:600;color:var(--ink-text)}
+.fqx-chip i{width:5px;height:5px;border-radius:50%;background:var(--rose);flex-shrink:0}
+.fqx-chip-label{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--ink-text-3);margin-bottom:2px;display:block}
+
+/* ── eligibility list ── */
+.fqx-list li{display:flex;gap:14px;align-items:flex-start;padding:15px 0;
+  border-bottom:1px solid var(--rule);font-size:16px;line-height:1.55;color:var(--ink-text)}
+.fqx-list li:first-child{padding-top:0}
+.fqx-list li:last-child{border-bottom:0}
+.fqx-list b{font-family:var(--mono);font-size:11px;font-weight:900;color:var(--rose);
+  flex-shrink:0;margin-top:4px;letter-spacing:.06em}
+
+/* ── journey ── */
+.fqx-phase{display:grid;grid-template-columns:78px 1fr 200px;gap:clamp(18px,3vw,40px);
+  align-items:start;padding:clamp(18px,2.2vw,26px) 0;border-top:1px solid var(--rule)}
+.fqx-phase:last-child{border-bottom:1px solid var(--rule)}
+.fqx-phase:first-child{border-top:0}
+.fqx-phase-n{font-family:var(--mono);font-weight:900;font-size:clamp(26px,3vw,34px);
+  color:var(--rose);line-height:1;letter-spacing:-.04em}
+.fqx-phase h4{margin-bottom:9px;font-size:19px}
+.fqx-phase p{font-size:14.5px}
+.fqx-phase-when{font-family:var(--mono);font-size:11.5px;font-weight:700;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--ink-text-3);line-height:1.7;padding-top:5px}
+.fqx-phase-when b{display:block;color:var(--ink-text);font-weight:900}
+
+/* ── partners ── */
+.fqx-partner{background:var(--paper);border:1px solid var(--rule);border-radius:3px;
+  padding:clamp(26px,2.8vw,34px);display:flex;flex-direction:column;height:100%}
+.fqx-partner-mark{height:52px;display:flex;align-items:center;margin-bottom:24px;
+  padding-bottom:24px;border-bottom:1px solid var(--rule);width:100%}
+.fqx-partner-mark img{max-height:38px;max-width:170px;width:auto;object-fit:contain}
+.fqx p.fqx-partner-role,.fqx-partner-role{font-size:14.5px;line-height:1.65;color:var(--ink-text-2);margin-bottom:26px}
+.fqx-partner .fqx-quote{margin-top:auto}
+
+/* ── form ── */
+.fqx-form{background:var(--paper);border:1px solid var(--rule);border-radius:3px;
+  padding:clamp(26px,3vw,38px)}
+.fqx-field{margin-bottom:14px}
+.fqx-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.fqx-label{display:block;font-family:var(--mono);font-size:10.5px;font-weight:700;
+  letter-spacing:.15em;text-transform:uppercase;color:var(--ink-text-3);margin-bottom:8px}
+.fqx-label i{color:var(--rose);font-style:normal}
+.fqx-input,.fqx-select{width:100%;padding:11px 14px;border:1px solid var(--rule);
+  border-radius:2px;background:var(--paper);font-size:15px;color:var(--ink-text);
+  transition:border-color .16s,box-shadow .16s}
+.fqx-input:focus,.fqx-select:focus{outline:none;border-color:var(--rose);
+  box-shadow:0 0 0 3px rgba(192,138,125,.14)}
+.fqx-select{appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml;charset=UTF-8,%3Csvg width='11' height='7' viewBox='0 0 11 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4.5 4.5L10 1' stroke='%238B807A' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 15px center;padding-right:40px}
+
+/* ── closing ── */
+.fqx-close{text-align:center}
+.fqx-close h2{color:var(--ivory);margin-bottom:14px}
+.fqx-close p{max-width:540px;margin:0 auto 26px}
+.fqx-close .fqx-cta-row{justify-content:center;margin-bottom:0}
+.fqx-contact{margin-top:42px;font-size:14.5px;color:var(--ivory-3)}
+.fqx-contact a{color:var(--rose-pale);font-weight:700;border-bottom:1px solid rgba(232,205,180,.45)}
+
+/* ── reveal ── */
+.fqx-fx{opacity:0;transform:translateY(16px);transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1)}
+.fqx-fx.in{opacity:1;transform:none}
+.fqx-d1{transition-delay:.07s}.fqx-d2{transition-delay:.14s}
+.fqx-d3{transition-delay:.21s}.fqx-d4{transition-delay:.28s}
+
+/* ── responsive ── */
+@media(max-width:1000px){
+  .fqx-g4{grid-template-columns:repeat(2,1fr)}
+  .fqx-g3{grid-template-columns:1fr}
+  .fqx-split,.fqx-stake{grid-template-columns:1fr}
+  .fqx-bar{grid-template-columns:1fr}
+  .fqx-bar-item{border-right:0;border-bottom:1px solid rgba(74,42,18,.24);padding-left:0}
+  .fqx-bar-item:last-child{border-bottom:0}
+  .fqx p.fqx-bar-l,.fqx-bar-l{max-width:none}
+  .fqx-phase{grid-template-columns:56px 1fr}
+  .fqx-phase-when{grid-column:2;padding-top:12px}
 }
-.fqs-wordmark{font-weight:800;font-size:21px;letter-spacing:-.02em;color:var(--text-primary)}
-
-.fqs-form-card{background:#fff;border:1px solid var(--border-light);border-radius:var(--r-2xl);
-  padding:var(--sp-5);box-shadow:0 16px 48px rgba(20,16,15,.10)}
-.fqs-form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.fqs-req{color:var(--pink)}
-
-.fqs-faq{border:1px solid var(--border-light);border-radius:var(--r-lg);background:#fff;
-  margin-bottom:12px;overflow:hidden}
-.fqs-faq summary{padding:18px var(--sp-3);font-weight:700;font-size:16px;cursor:pointer;
-  list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
-.fqs-faq summary::-webkit-details-marker{display:none}
-.fqs-faq summary::after{content:'+';font-family:'JetBrains Mono',monospace;font-weight:900;
-  font-size:19px;color:var(--text-muted);flex-shrink:0;transition:transform .18s}
-.fqs-faq[open] summary::after{transform:rotate(45deg)}
-.fqs-faq p{padding:0 var(--sp-3) 20px;font-size:15px;margin:0}
-.fqs-faq summary:focus-visible{outline:2px solid var(--blue);outline-offset:-2px}
-
-@media(max-width:560px){
-  .fqs-form-row{grid-template-columns:1fr}
-  .fqs-form-card{padding:var(--sp-3)}
+@media(max-width:620px){
+  .fqx-g2,.fqx-g4,.fqx-row{grid-template-columns:1fr}
+  .fqx-cta-row .fqx-btn{width:100%}
 }
 @media(prefers-reduced-motion:reduce){
-  .fqs-btn-champagne:hover{transform:none}
+  .fqx-fx{opacity:1;transform:none;transition:none}
+  .fqx-btn:hover,.fqx-card:hover,.fqx-del:hover{transform:none}
 }
+
+.fqx-metal{
+  background:
+    repeating-linear-gradient(94deg,rgba(255,255,255,.16) 0 1px,transparent 1px 3px,rgba(140,88,58,.07) 3px 4px,transparent 4px 7px),
+    linear-gradient(104deg,#E9C9AE 0%,#D9A985 17%,#F0D7C2 31%,#C98F68 46%,#EBCBB2 60%,#D2A07C 74%,#F2DCC9 88%,#D9AD8A 100%);
+  background-size:auto,200% 100%;
+}
+.fqx-metal-dim::after{content:'';position:absolute;inset:0;background:rgba(28,26,29,.06);pointer-events:none}
+
+/* image slots */
+.fqx-shot{border:1px solid var(--rule);border-radius:3px;overflow:hidden;background:var(--paper);
+  box-shadow:0 18px 44px rgba(28,26,29,.10)}
+.fqx-shot img{width:100%;display:block}
+.fqx p.fqx-figcap,.fqx-figcap{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.15em;
+  text-transform:uppercase;color:var(--ink-text-3);margin-top:12px}
+
+/* asset placeholder · states exactly what image belongs here */
+.fqx-slot{position:relative;border-radius:3px;overflow:hidden;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;padding:26px;min-height:200px;
+  border:1px dashed rgba(143,85,48,.5)}
+.fqx-slot b{position:relative;z-index:2;font-family:var(--mono);font-size:11px;font-weight:900;
+  letter-spacing:.17em;text-transform:uppercase;color:#5E3418;margin-bottom:8px}
+.fqx-slot span{position:relative;z-index:2;font-size:13px;line-height:1.5;color:#6B4426;max-width:260px}
+
+/* hero form card sits on the metal */
+.fqx-hero-grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);
+  gap:clamp(30px,4vw,60px);align-items:start}
+.fqx-hero-form{background:var(--paper);border-radius:3px;padding:clamp(20px,2vw,26px);margin-bottom:8px;
+  box-shadow:0 22px 60px rgba(28,26,29,.20)}
+.fqx-hero-form h3{font-size:21px;margin-bottom:6px}
+.fqx-hero-form>p{font-size:13.5px;color:var(--ink-text-2);margin-bottom:20px}
+@media(max-width:1000px){.fqx-hero-grid{grid-template-columns:1fr}}
+
+.fqx-photo{position:relative;border-radius:3px;overflow:hidden;background:var(--rule);
+  box-shadow:0 18px 44px rgba(28,26,29,.14)}
+.fqx-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.fqx-photo figcaption{position:absolute;left:0;right:0;bottom:0;padding:26px 20px 16px;
+  background:linear-gradient(transparent,rgba(20,16,12,.86));color:#F7F4F0;
+  font-size:12.5px;line-height:1.45}
+
+.fqx-tier{display:inline-flex;align-items:center;gap:12px;margin-top:20px;
+  padding:9px 16px 9px 10px;border-radius:2px;
+  background:rgba(255,255,255,.58);border:1px solid rgba(74,42,18,.20)}
+.fqx-tier img{height:62x;width:auto;flex-shrink:0;display:block}
+.fqx-tier span{font-family:var(--mono);font-size:10px;font-weight:700;
+  letter-spacing:.13em;text-transform:uppercase;color:#4A2A12;line-height:1.55}
+
+.fqx-weeks-shot{margin:clamp(24px,3vw,34px) 0 clamp(20px,2.4vw,28px)}
+.fqx-weeks{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--rule)}
+.fqx-weeks>div{padding:clamp(20px,2.2vw,26px) clamp(18px,2vw,26px) 0;border-right:1px solid var(--rule)}
+.fqx-weeks>div:last-child{border-right:0}
+.fqx-weeks>div:first-child{padding-left:0}
+.fqx-weeks-n{font-family:var(--mono);font-weight:900;font-size:26px;color:var(--rose);
+  line-height:1;letter-spacing:-.04em;margin-bottom:12px}
+.fqx-weeks h4{margin-bottom:8px;font-size:17px}
+@media(max-width:800px){
+  .fqx-weeks{grid-template-columns:1fr}
+  .fqx-weeks>div{border-right:0;border-bottom:1px solid var(--rule);padding-left:0;padding-bottom:20px}
+  .fqx-weeks>div:last-child{border-bottom:0}
+}
+
+/* breathing room between the closing CTAs and the contact line */
+.fqx-close .fqx-cta-row{margin-bottom:0}
+
+
+/* hosted build · clears the fixed SaaSNova nav and stops the
+   site-wide background grid showing through between sections */
+body{background:#F7F4F0}
+body::before{display:none}
+/* the site nav is position:absolute and transparent until scroll, so the hero
+   must start at y=0 and clear it with padding, not sit below a margin */
+.fqx-hero{padding-top:clamp(86px,9vw,112px)}
+
 </style>
 </head>
 <body>
 <div id="nav-placeholder"></div>
 
-<!-- ═══ 1 · HERO ═══ -->
-<section class="fqs-hero">
-  <div class="container">
-    <div class="fqs-hero-inner">
-      <div class="fqs-badge" style="margin-bottom:22px">AWS · SaaSNova · The Female Quotient</div>
-      <h1 class="reveal">FQ Source</h1>
-      <p class="reveal delay-1" style="font-size:21px;line-height:1.6;margin-bottom:14px;max-width:640px">
-        Accelerating women-owned technology companies through AWS Marketplace.
-      </p>
-      <p class="reveal delay-1" style="font-size:16px;line-height:1.75;margin-bottom:32px;max-width:600px">
-        Registration is open ahead of the November 9 launch at the B20 USA Summit in Washington, D.C.
-      </p>
-      <div class="reveal delay-2" style="display:flex;gap:12px;flex-wrap:wrap">
-        <a href="#register" class="btn fqs-btn-champagne btn-lg">Register for FQ Source</a>
-        <a href="https://thefemalequotient.storefront.marketplace.aws.com/" target="_blank" rel="noopener" class="btn btn-outline-white btn-lg">See the Storefront</a>
-      </div>
-    </div>
-  </div>
-</section>
+<main class="fqx">
 
-<!-- ═══ 2 · WHAT FQ SOURCE IS ═══ -->
-<section style="background:#fff;padding:var(--sp-10) 0">
-  <div class="container">
-    <div style="max-width:720px;margin-bottom:var(--sp-6)">
-      <span class="eyebrow reveal">What FQ Source is</span>
-      <h2 class="reveal delay-1" style="margin-top:10px;margin-bottom:20px">A joint initiative to make women-owned technology companies enterprise-ready.</h2>
-      <p class="reveal delay-1" style="font-size:18px">
-        FQ Source is a collaboration between AWS, SaaSNova and The Female Quotient. It builds the capabilities,
-        visibility and enterprise readiness women-owned technology companies need to compete for procurement
-        opportunities and grow through AWS Marketplace.
-      </p>
-    </div>
-    <div class="fqs-grid fqs-grid-3">
-      <div class="card card-p card-accent-blue reveal delay-1">
-        <h4 style="margin-bottom:10px">Marketplace readiness</h4>
-        <p class="text-sm">Get your products and services listed, priced and published on AWS Marketplace.</p>
-      </div>
-      <div class="card card-p card-accent-pink reveal delay-2">
-        <h4 style="margin-bottom:10px">Go-to-market execution</h4>
-        <p class="text-sm">Build the campaign, channel and co-sell motions that turn AWS presence into pipeline.</p>
-      </div>
-      <div class="card card-p card-accent-orange reveal delay-3">
-        <h4 style="margin-bottom:10px">Procurement pathways</h4>
-        <p class="text-sm">Reach enterprise and government buyers through the channels they already purchase in.</p>
-      </div>
-    </div>
-    <p class="reveal delay-3" style="margin-top:var(--sp-5);padding-top:var(--sp-3);border-top:1px solid var(--border-light);font-size:15px;color:var(--text-muted);max-width:760px">
-      FQ Source builds on the <a href="https://thefemalequotient.storefront.marketplace.aws.com/" target="_blank" rel="noopener" style="color:var(--blue);font-weight:600">Women-Owned Cloud Innovation Storefront</a>,
-      which already features 273 women-owned businesses on AWS Marketplace.
-    </p>
-  </div>
-</section>
-
-<!-- ═══ 3 · WHO IT'S FOR ═══ -->
-<section style="background:var(--light-100);padding:var(--sp-10) 0">
-  <div class="container">
-    <div class="fqs-grid fqs-grid-2" style="gap:48px;align-items:start">
+<!-- 1 · HERO -->
+<section class="fqx-hero fqx-metal fqx-metal-dim">
+  <div class="fqx-wrap">
+    <div class="fqx-hero-inner">
+      <div class="fqx-hero-grid">
       <div>
-        <span class="eyebrow reveal">Who it's for</span>
-        <h2 class="reveal delay-1" style="margin-top:10px;margin-bottom:20px">Built for women-owned and women-led technology companies.</h2>
-        <p class="reveal delay-1">
-          You do not need AWS Marketplace experience to join. Most participants start with no listing and
-          no AWS Partner registration.
-        </p>
+      <div class="fqx-lockup fqx-fx">
+        <img src="images/aws-logo.png" alt="Amazon Web Services"><i></i>
+        <img src="images/FQ-logo.jpeg" alt="The Female Quotient"><i></i>
+        <img src="images/logo-color.png" alt="SaaSNova">
       </div>
-      <ul class="fqs-eligible reveal delay-2">
-        <li><svg class="fqs-tick" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Women-owned or women-led technology companies</li>
-        <li><svg class="fqs-tick" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          SaaS, cloud, consulting and innovation suppliers</li>
-        <li><svg class="fqs-tick" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Companies seeking procurement access and enterprise buyers</li>
-        <li><svg class="fqs-tick" width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10.5l4 4 8-9" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          Companies ready to scale through AWS Marketplace</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ 4 · WHAT PARTICIPANTS GET ═══ -->
-<section style="background:#fff;padding:var(--sp-10) 0">
-  <div class="container">
-    <div style="max-width:680px;margin-bottom:var(--sp-6)">
-      <span class="eyebrow reveal">What participants get</span>
-      <h2 class="reveal delay-1" style="margin-top:10px;margin-bottom:16px">Four deliverables, executed with you.</h2>
-      <p class="reveal delay-1">SaaSNova delivers the execution across all four, as the enablement partner between AWS and participating companies.</p>
-    </div>
-    <div class="fqs-grid fqs-grid-4">
-      <div class="card card-p reveal delay-1">
-        <div class="icon-wrap mb-3" style="background:rgba(0,139,248,.1);color:var(--blue)">
-          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16v5H4z"/><path d="M4 13h7v7H4z"/><path d="M15 13h5v7h-5z"/></svg>
-        </div>
-        <h4 style="margin-bottom:8px">Marketplace listing</h4>
-        <p class="text-sm">Product packaging, pricing, EULA and listing build, taken through AWS review to publication.</p>
-        <div class="fqs-deliverable"><span>You walk away with</span>A live AWS Marketplace listing</div>
+      <h1 class="fqx-fx fqx-d1">FQ <em>Source</em></h1>
+      <p class="fqx-hero-sub fqx-fx fqx-d1">Enterprise and government buyers already have budget committed to AWS. FQ Source puts your product where they can spend it.</p>
+      <p class="fqx-hero-note fqx-fx fqx-d2">Built and delivered by AWS, The Female Quotient and SaaSNova. Registration is open. Launch is November 9 at the B20 USA Summit.</p>
+      <p class="fqx-fx fqx-d2" style="font-size:14px;color:#4A3322;margin-bottom:0">
+        Already listed on AWS Marketplace?
+        <a href="https://thefemalequotient.storefront.marketplace.aws.com/" target="_blank" rel="noopener" style="color:#3A1E0C;font-weight:700;border-bottom:1px solid rgba(58,30,12,.4)">See the Storefront</a>
+      </p>
+      <div class="fqx-tier fqx-fx fqx-d2">
+        <img src="images/SaaSNova-AWS-Advanced-Tier-badge.png" alt="AWS Advanced Tier Services Partner">
+        <span>Delivered by SaaSNova<br>Official AWS Advanced Tier Services Partner</span>
       </div>
-      <div class="card card-p reveal delay-2">
-        <div class="icon-wrap mb-3" style="background:rgba(255,153,0,.1);color:#C87000">
-          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l1.5-5h15L21 9"/><path d="M4 9v11h16V9"/><path d="M9 20v-6h6v6"/></svg>
-        </div>
-        <h4 style="margin-bottom:8px">AWS Marketplace Storefront</h4>
-        <p class="text-sm">Branded storefront configured and deployed, plus placement in the Women-Owned Cloud Innovation Storefront.</p>
-        <div class="fqs-deliverable"><span>You walk away with</span>A deployed, branded storefront</div>
-      </div>
-      <div class="card card-p reveal delay-3">
-        <div class="icon-wrap mb-3" style="background:rgba(250,15,156,.1);color:var(--pink)">
-          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>
-        </div>
-        <h4 style="margin-bottom:8px">GTM and co-sell enablement</h4>
-        <p class="text-sm">Positioning, digital campaign build, channel motion and co-sell opportunity registration in AWS ACE.</p>
-        <div class="fqs-deliverable"><span>You walk away with</span>Co-sell opportunities registered in ACE</div>
-      </div>
-      <div class="card card-p reveal delay-3">
-        <div class="icon-wrap mb-3" style="background:rgba(52,168,83,.1);color:var(--green)">
-          <svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 12h7l2-4 3 8 2-4h4"/></svg>
-        </div>
-        <h4 style="margin-bottom:8px">Procurement pathway support</h4>
-        <p class="text-sm">Private offers, buyer-ready collateral and procurement paths configured for enterprise and government buyers.</p>
-        <div class="fqs-deliverable"><span>You walk away with</span>Private offers ready to send to buyers</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ 5 · TIMELINE ═══ -->
-<section style="background:var(--fqs-ink);padding:var(--sp-10) 0;color:var(--fqs-ivory)">
-  <div class="container">
-    <div style="max-width:600px;margin-bottom:var(--sp-6)">
-      <span class="eyebrow eyebrow-dark reveal" style="color:var(--fqs-champagne)">Program timeline</span>
-      <h2 class="reveal delay-1" style="margin-top:10px;color:var(--fqs-ivory)">From registration to launch.</h2>
-    </div>
-    <div class="fqs-grid fqs-grid-3">
-      <div class="card-dark card-p fqs-step reveal delay-1">
-        <div class="fqs-step-num" style="background:var(--fqs-champagne);color:var(--fqs-ink)">01</div>
-        <div>
-          <h4 style="color:var(--fqs-ivory);margin-bottom:8px">Registration open now</h4>
-          <p class="text-sm" style="color:rgba(250,247,242,.62)">Register today and start accessing FQ Source resources ahead of the launch.</p>
-        </div>
-      </div>
-      <div class="card-dark card-p fqs-step reveal delay-2">
-        <div class="fqs-step-num">02</div>
-        <div>
-          <h4 style="color:var(--fqs-ivory);margin-bottom:8px">November 9, 2026 — launch</h4>
-          <p class="text-sm" style="color:rgba(250,247,242,.62)">FQ Source launches at the B20 USA Summit in Washington, D.C.
-            <a href="https://events.thefemalequotient.com/b20usasummit26" target="_blank" rel="noopener" style="color:var(--fqs-champagne);font-weight:600;text-decoration:underline">Summit details</a></p>
-        </div>
-      </div>
-      <div class="card-dark card-p fqs-step reveal delay-3">
-        <div class="fqs-step-num">03</div>
-        <div>
-          <h4 style="color:var(--fqs-ivory);margin-bottom:8px">Q4 2026 onward</h4>
-          <p class="text-sm" style="color:rgba(250,247,242,.62)">Virtual and in-person sessions at AWS Partner Summits and select conferences.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ 6 · PARTNERS ═══ -->
-<section style="background:#fff;padding:var(--sp-10) 0">
-  <div class="container">
-    <div style="text-align:center;max-width:560px;margin:0 auto var(--sp-6)">
-      <span class="eyebrow reveal">Delivered together by</span>
-      <h2 class="reveal delay-1" style="margin-top:10px">Three partners, one pathway.</h2>
-    </div>
-    <div class="fqs-grid fqs-grid-3">
-      <div class="card fqs-partner reveal delay-1">
-        <div class="fqs-partner-mark"><img loading="lazy" src="images/aws-logo.png" alt="Amazon Web Services"/></div>
-        <p class="text-sm">Global cloud reach, AWS Marketplace, and the co-sell and procurement channels enterprise buyers already use.</p>
-      </div>
-      <div class="card fqs-partner reveal delay-2">
-        <div class="fqs-partner-mark"><img loading="lazy" src="images/FQ-logo.jpeg" alt="thefemalequotient"/></div>
-        <p class="text-sm">The Female Quotient reaches more than 8.5 million professionals across 30 industries through live experiences and original programming.</p>
-      </div>
-      <div class="card fqs-partner reveal delay-3">
-        <div class="fqs-partner-mark"><img loading="lazy" src="images/logo-color.png" alt="SaaSNova"/></div>
-        <p class="text-sm">A women-owned business and the operator-led GTM execution engine for technology partners scaling revenue through AWS.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ 7 · REGISTRATION FORM ═══ -->
-<section id="register" style="background:linear-gradient(160deg,#FAF7F2 0%,#F4EEF5 100%);padding:var(--sp-12) 0;scroll-margin-top:80px">
-  <div class="container">
-    <div class="fqs-grid fqs-grid-2" style="gap:48px;align-items:start">
-
-      <div>
-        <span class="eyebrow reveal">Register</span>
-        <h2 class="reveal delay-1" style="margin-top:10px;margin-bottom:18px">Register for FQ Source.</h2>
-        <p class="reveal delay-1" style="margin-bottom:var(--sp-4)">
-          Tell us about your company. No AWS account or Marketplace experience required.
-        </p>
-
-        <h4 class="reveal delay-2" style="margin-bottom:16px">What happens after you register</h4>
-        <div class="reveal delay-2" style="display:flex;flex-direction:column;gap:18px">
-          <div class="fqs-step">
-            <div class="fqs-step-num">01</div>
-            <div>
-              <div class="fw-700" style="font-size:15px;margin-bottom:4px">You get a confirmation email</div>
-              <p class="text-sm" style="margin:0">Sent immediately, with what to expect next.</p>
-            </div>
-          </div>
-          <div class="fqs-step">
-            <div class="fqs-step-num">02</div>
-            <div>
-              <div class="fw-700" style="font-size:15px;margin-bottom:4px">SaaSNova reviews your registration</div>
-              <p class="text-sm" style="margin:0">We confirm fit and reach out within two business days.</p>
-            </div>
-          </div>
-          <div class="fqs-step">
-            <div class="fqs-step-num">03</div>
-            <div>
-              <div class="fw-700" style="font-size:15px;margin-bottom:4px">You receive onboarding details</div>
-              <p class="text-sm" style="margin:0">Program materials and session dates, ahead of the November 9 launch.</p>
-            </div>
-          </div>
-        </div>
       </div>
 
-      <div class="fqs-form-card reveal delay-2">
+      <div class="fqx-hero-form fqx-fx fqx-d1" id="register" style="scroll-margin-top:84px">
+        <h3>Register for FQ Source</h3>
+        <p>Most companies join with no listing and no AWS Partner status. That is what gets built for you.</p>
         <form id="fqSourceForm" novalidate>
-          <div class="fqs-form-row">
-            <div class="form-field">
-              <label class="form-label" for="fqs-first">First name <span class="fqs-req">*</span></label>
-              <input class="form-input" type="text" id="fqs-first" name="first_name" autocomplete="given-name" required>
+          <div class="fqx-row">
+            <div class="fqx-field">
+              <label class="fqx-label" for="fqs-first">First name <i>*</i></label>
+              <input class="fqx-input" type="text" id="fqs-first" name="first_name" autocomplete="given-name" required>
             </div>
-            <div class="form-field">
-              <label class="form-label" for="fqs-last">Last name <span class="fqs-req">*</span></label>
-              <input class="form-input" type="text" id="fqs-last" name="last_name" autocomplete="family-name" required>
+            <div class="fqx-field">
+              <label class="fqx-label" for="fqs-last">Last name <i>*</i></label>
+              <input class="fqx-input" type="text" id="fqs-last" name="last_name" autocomplete="family-name" required>
             </div>
           </div>
-
-          <div class="form-field">
-            <label class="form-label" for="fqs-company">Company <span class="fqs-req">*</span></label>
-            <input class="form-input" type="text" id="fqs-company" name="company" autocomplete="organization" required>
+          <div class="fqx-field">
+            <label class="fqx-label" for="fqs-company">Company <i>*</i></label>
+            <input class="fqx-input" type="text" id="fqs-company" name="company" autocomplete="organization" required>
           </div>
-
-          <div class="form-field">
-            <label class="form-label" for="fqs-email">Work email <span class="fqs-req">*</span></label>
-            <input class="form-input" type="email" id="fqs-email" name="email" autocomplete="email" required>
+          <div class="fqx-field">
+            <label class="fqx-label" for="fqs-email">Work email <i>*</i></label>
+            <input class="fqx-input" type="email" id="fqs-email" name="email" autocomplete="email" required>
           </div>
-
-          <div class="form-field">
-            <label class="form-label" for="fqs-partner">AWS Partner status <span class="fqs-req">*</span></label>
-            <select class="form-select" id="fqs-partner" name="aws_partner_status" required>
-             <option value="">Select one</option>
+          <div class="fqx-field">
+            <label class="fqx-label" for="fqs-partner">AWS Partner status <i>*</i></label>
+            <select class="fqx-select" id="fqs-partner" name="aws_partner_status" required>
+              <option value="">Select one</option>
               <option value="Not an AWS Partner">Not an AWS Partner</option>
               <option value="Registered AWS Partner">Registered AWS Partner</option>
               <option value="Validated or Differentiated Tier">Validated or Differentiated Tier</option>
             </select>
           </div>
-
-          <div class="form-field" style="margin-bottom:var(--sp-3)">
-            <label class="form-label" for="fqs-marketplace">AWS Marketplace status <span class="fqs-req">*</span></label>
-            <select class="form-select" id="fqs-marketplace" name="aws_marketplace_status" required>
+          <div class="fqx-field" style="margin-bottom:26px">
+            <label class="fqx-label" for="fqs-marketplace">AWS Marketplace status <i>*</i></label>
+            <select class="fqx-select" id="fqs-marketplace" name="aws_marketplace_status" required>
               <option value="">Select one</option>
               <option value="Not Listed">Not Listed</option>
               <option value="In Progress">In Progress</option>
@@ -382,157 +448,380 @@ gtag('config', 'G-185EJ40PT4');
               <option value="Listed but Underperforming">Listed but Underperforming</option>
             </select>
           </div>
-
-          <button type="submit" class="btn btn-primary btn-lg" style="width:100%">Register for FQ Source</button>
-
-          <p class="text-xs" style="color:var(--text-muted);margin-top:14px;text-align:center">
-            We use your details to process your FQ Source registration. See our
-            <a href="privacy" style="color:var(--blue);font-weight:600">privacy policy</a>.
-          </p>
+          <button type="submit" class="fqx-btn fqx-btn-primary fqx-btn-block">Register for FQ Source</button>
+          <p class="fqx-xs" style="margin-top:16px;text-align:center">We use your details to process your FQ Source registration. See our <a href="privacy" style="color:var(--rose);font-weight:700">privacy policy</a>.</p>
         </form>
       </div>
-
+      </div>
+    </div>
+  </div>
+  <div class="fqx-wrap">
+    <div class="fqx-bar">
+      <div class="fqx-bar-item fqx-fx"><div class="fqx-bar-n">273+</div><div class="fqx-bar-l">women-owned businesses on the Women-Owned Cloud Innovation Storefront, and growing</div></div>
+      <div class="fqx-bar-item fqx-fx fqx-d1"><div class="fqx-bar-n">NOV 9</div><div class="fqx-bar-l">launch at the B20 USA Summit, Washington, D.C.</div></div>
+      <div class="fqx-bar-item fqx-fx fqx-d2"><div class="fqx-bar-n">48 HRS</div><div class="fqx-bar-l">from registration to a working session with the SaaSNova build team</div></div>
     </div>
   </div>
 </section>
 
-<!-- ═══ 8 · FAQ ═══ -->
-<section style="background:#fff;padding:var(--sp-10) 0">
-  <div class="container-sm">
-    <div style="margin-bottom:var(--sp-5)">
-      <span class="eyebrow reveal">Questions</span>
-      <h2 class="reveal delay-1" style="margin-top:10px">Frequently asked.</h2>
-    </div>
-
-    <!-- ⚠️ TKTK — CONFIRM WITH JEN BEFORE PUBLISHING -->
-    <details class="fqs-faq reveal delay-1">
-      <summary>Is there a cost to participate?</summary>
-      <p>TKTK — confirm with Jen. Every registrant will ask this first; do not publish without an answer.</p>
-    </details>
-
-    <details class="fqs-faq reveal delay-1">
-      <summary>Do I need to be an AWS Partner already?</summary>
-      <p>No. FQ Source is built for companies at any stage of the AWS relationship, including companies with no AWS Partner registration and no Marketplace listing.</p>
-    </details>
-
-    <details class="fqs-faq reveal delay-2">
-      <summary>Do I need technical or cloud expertise?</summary>
-      <p>No. SaaSNova executes the listing build, storefront deployment and co-sell setup with you. You bring the product and the commercial detail.</p>
-    </details>
-
-    <details class="fqs-faq reveal delay-2">
-      <summary>What qualifies as a women-owned or women-led company?</summary>
-      <p>TKTK — confirm the eligibility definition with FQ. Does it require formal WBENC or equivalent certification, or is self-attestation accepted?</p>
-    </details>
-
-    <details class="fqs-faq reveal delay-3">
-      <summary>What is the time commitment?</summary>
-      <p>TKTK — confirm session cadence and expected hours per participant once the Q4 schedule is set.</p>
-    </details>
-
-    <p class="reveal delay-3" style="margin-top:var(--sp-4);font-size:15px;text-align:center;color:var(--text-muted)">
-      Still have a question? Email <a href="mailto:marketing@saasnova.ai?subject=FQ%20Source%20enquiry" style="color:var(--blue);font-weight:600">marketing@saasnova.ai</a>.
-    </p>
-  </div>
-</section>
-
-<!-- ═══ 9 · CLOSING CTA ═══ -->
-<section style="background:var(--fqs-ink);padding:var(--sp-12) 0;text-align:center;color:var(--fqs-ivory)">
-  <div class="container-sm">
-    <h2 class="reveal" style="color:var(--fqs-ivory);margin-bottom:14px">Registration is open.</h2>
-    <p class="reveal delay-1" style="font-size:18px;color:rgba(250,247,242,.72);max-width:480px;margin:0 auto var(--sp-5)">
-      Register now and start accessing FQ Source ahead of the November 9 launch.
-    </p>
-    <div class="reveal delay-2" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
-      <a href="#register" class="btn fqs-btn-champagne btn-lg">Register for FQ Source</a>
-      <a href="https://thefemalequotient.storefront.marketplace.aws.com/" target="_blank" rel="noopener" class="btn btn-outline-white btn-lg">See the Storefront</a>
+<!-- 2 · THE STAKE -->
+<section class="fqx-sec fqx-dark-2">
+  <div class="fqx-wrap">
+    <div class="fqx-stake">
+      <div>
+        <span class="fqx-kick fqx-fx">Why this exists</span>
+        <div class="fqx-stat-huge fqx-fx fqx-d1" style="margin-top:22px">&lt;1%</div>
+        <p class="fqx-stat-cap fqx-fx fqx-d2">of procurement spend by large corporations and governments reaches women-owned and women-led businesses globally.</p>
+      </div>
+      <div class="fqx-quote fqx-fx fqx-d2">
+        <p class="fqx-quote-t">That's not just a gap, it's an enormous economic opportunity. McKinsey estimates that advancing women's economic participation could add as much as $28 trillion to annual global GDP.</p>
+        <div class="fqx-quote-a">Shelley Zalis<span>Founder and CEO, The Female Quotient. U.S. Chair, G20 E*M Power</span></div>
+      </div>
     </div>
   </div>
 </section>
+
+<!-- 3 · WHAT IT IS -->
+<section class="fqx-sec fqx-paper" id="about" style="scroll-margin-top:72px">
+  <div class="fqx-wrap">
+    <div class="fqx-narrow" style="margin-bottom:clamp(40px,5vw,64px)">
+      <span class="fqx-kick fqx-kick-ink fqx-fx">What FQ Source is</span>
+      <h2 class="fqx-fx fqx-d1" style="margin:18px 0 22px">A joint initiative by AWS, The Female Quotient and SaaSNova.</h2>
+      <p class="fqx-lead fqx-fx fqx-d1">FQ Source gets women-owned technology companies ready to sell to enterprise and government buyers, and puts them in front of those buyers through AWS Marketplace. SaaSNova does the execution with you. You are not handed a playbook and left to run it.</p>
+    </div>
+    <div class="fqx-g fqx-g3">
+      <div class="fqx-card fqx-fx fqx-d1">
+        <div class="fqx-card-n">01 / Readiness</div>
+        <h4>Get listed and get found</h4>
+        <p class="fqx-sm">Your product goes live on AWS Marketplace, packaged and priced, with your own branded storefront page.</p>
+      </div>
+      <div class="fqx-card fqx-fx fqx-d2">
+        <div class="fqx-card-n">02 / Demand</div>
+        <h4>Turn presence into pipeline</h4>
+        <p class="fqx-sm">Campaigns, partner motions and co-selling with AWS sellers, so the listing produces deals instead of sitting there.</p>
+      </div>
+      <div class="fqx-card fqx-fx fqx-d3">
+        <div class="fqx-card-n">03 / Procurement</div>
+        <h4>Sell the way buyers buy</h4>
+        <p class="fqx-sm">Enterprise and government buyers purchase through AWS Marketplace using budget already committed to AWS. We set you up to sell into it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · WHO IT'S FOR -->
+<section class="fqx-sec fqx-paper-2" id="who" style="scroll-margin-top:72px">
+  <div class="fqx-wrap">
+    <div class="fqx-split">
+      <div>
+        <span class="fqx-kick fqx-kick-ink fqx-fx">Who it's for</span>
+        <h2 class="fqx-fx fqx-d1" style="margin:18px 0 22px">Women-owned and women-led technology companies.</h2>
+        <p class="fqx-lead fqx-fx fqx-d1" style="margin-bottom:34px">Wherever you are with AWS today is a valid place to start. Most companies join with no listing and no AWS Partner registration, and that is exactly what the program is built to fix.</p>
+
+        <div class="fqx-fx fqx-d2" style="margin-bottom:24px">
+          <span class="fqx-chip-label">Your AWS Partner status</span>
+          <div class="fqx-chips">
+            <span class="fqx-chip"><i></i>Not an AWS Partner yet</span>
+            <span class="fqx-chip"><i></i>Registered AWS Partner</span>
+            <span class="fqx-chip"><i></i>Validated or Differentiated tier</span>
+          </div>
+        </div>
+        <div class="fqx-fx fqx-d3">
+          <span class="fqx-chip-label">Your Marketplace listing status</span>
+          <div class="fqx-chips">
+            <span class="fqx-chip"><i></i>No listing</span>
+            <span class="fqx-chip"><i></i>In progress</span>
+            <span class="fqx-chip"><i></i>Listed</span>
+            <span class="fqx-chip"><i></i>Listed but not selling</span>
+          </div>
+        </div>
+      </div>
+      <div>
+        <ul class="fqx-list fqx-fx fqx-d2">
+          <li><b>01</b>Women-owned or women-led technology companies</li>
+          <li><b>02</b>Software, cloud, services and innovation suppliers</li>
+          <li><b>03</b>Companies that want enterprise and government buyers</li>
+          <li><b>04</b>Companies ready to scale through AWS Marketplace</li>
+        </ul>
+        <p class="fqx-xs fqx-fx fqx-d3" style="margin-top:22px;margin-bottom:22px">Eligibility criteria are confirmed with you during onboarding.</p>
+        <figure class="fqx-photo fqx-fx fqx-d3" style="aspect-ratio:4/3">
+          <img loading="lazy" src="images/AWS-FQ-JEN-WOSB.jpeg" alt="Founders and AWS leaders at the AWS and Female Quotient Partner Summit reception in New York">
+          <figcaption>AWS and The Female Quotient Partner Summit reception, Hudson Yards, New York.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · WHAT YOU GET -->
+<section class="fqx-sec fqx-dark" id="get" style="scroll-margin-top:72px">
+  <div class="fqx-mesh"></div>
+  <div class="fqx-wrap" style="position:relative;z-index:2">
+    <div class="fqx-narrow" style="margin-bottom:clamp(40px,5vw,64px)">
+      <span class="fqx-kick fqx-fx">What you get</span>
+      <h2 class="fqx-fx fqx-d1" style="margin:18px 0 22px;color:var(--ivory)">Four things you walk away owning.</h2>
+      <p class="fqx-lead fqx-fx fqx-d1">SaaSNova builds and deploys all four with you, as the execution partner between AWS and participating companies.</p>
+    </div>
+    <div class="fqx-g fqx-g4">
+      <div class="fqx-del fqx-fx fqx-d1">
+        <div class="fqx-del-n">01</div>
+        <h4>Your Marketplace listing</h4>
+        <p>We package your product, set your pricing, prepare the terms buyers have to agree to, and take the listing through AWS review until it is live and buyable.</p>
+        <div class="fqx-del-out"><span>You walk away with</span><strong>A live AWS Marketplace listing</strong></div>
+      </div>
+      <div class="fqx-del fqx-fx fqx-d2">
+        <div class="fqx-del-n">02</div>
+        <h4>Your own storefront</h4>
+        <p>A branded page on AWS Marketplace where buyers see everything you sell in one place. You are also placed in the Women-Owned Cloud Innovation Storefront alongside the companies already there.</p>
+        <div class="fqx-del-out"><span>You walk away with</span><strong>A deployed, branded storefront</strong></div>
+      </div>
+      <div class="fqx-del fqx-fx fqx-d3">
+        <div class="fqx-del-n">03</div>
+        <h4>Co-selling with AWS</h4>
+        <p>Co-selling means AWS sellers can bring your product into their own customer conversations. We register your deals in ACE, the system those sellers work from, and build the campaigns behind it.</p>
+        <div class="fqx-del-out"><span>You walk away with</span><strong>Deals registered with AWS sellers</strong></div>
+      </div>
+      <div class="fqx-del fqx-fx fqx-d4">
+        <div class="fqx-del-n">04</div>
+        <h4>A route into procurement</h4>
+        <p>A private offer lets you sell to one buyer at a price and terms you negotiate. Because it runs through AWS Marketplace, the buyer can pay using budget already committed to AWS.</p>
+        <div class="fqx-del-out"><span>You walk away with</span><strong>Private offers ready to send</strong></div>
+      </div>
+    </div>
+    <div class="fqx-quote fqx-fx fqx-d2" style="margin-top:clamp(48px,6vw,76px);max-width:840px">
+      <p class="fqx-quote-t">Women-owned technology companies are building some of the most innovative solutions in the market, but many are still navigating procurement systems that make it difficult to get discovered and scale. The goal is simple: help more women-owned technology companies scale, compete and win.</p>
+      <div class="fqx-quote-a">Jen Dawson<span>Founder and CEO, SaaSNova</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · HOW IT RUNS -->
+<section class="fqx-sec fqx-paper" id="how" style="scroll-margin-top:72px">
+  <div class="fqx-wrap">
+    <div class="fqx-narrow" style="margin-bottom:clamp(36px,4vw,52px)">
+      <span class="fqx-kick fqx-kick-ink fqx-fx">How it runs</span>
+      <h2 class="fqx-fx fqx-d1" style="margin:18px 0 22px">From registration to revenue.</h2>
+      <p class="fqx-lead fqx-fx fqx-d1">Five phases. Each one ends with something built, not something discussed.</p>
+    </div>
+
+    <div class="fqx-fx fqx-d1">
+      <div class="fqx-phase">
+        <div class="fqx-phase-n">01</div>
+        <div><h4>Register and onboard</h4><p>You register below. We confirm fit inside 48 hours and send your onboarding details, program materials and session dates.</p></div>
+        <div class="fqx-phase-when"><b>Open now</b>Reply in 48 hours</div>
+      </div>
+      <div class="fqx-phase">
+        <div class="fqx-phase-n">02</div>
+        <div><h4>We assess where you stand</h4><p>We look at your AWS Partner status, whether you already have a listing, and if you do, why it is not producing revenue. That assessment sets your scope of work.</p></div>
+        <div class="fqx-phase-when"><b>At onboarding</b>Per company</div>
+      </div>
+      <div class="fqx-phase">
+        <div class="fqx-phase-n">03</div>
+        <div><h4>Build and deploy</h4><p>Listing built and published, storefront deployed, co-sell registered and private offers configured. SaaSNova executes each step with your team.</p></div>
+        <div class="fqx-phase-when"><b>Ahead of launch</b>Hands on</div>
+      </div>
+      <div class="fqx-phase">
+        <div class="fqx-phase-n">04</div>
+        <div><h4>Launch</h4><p>FQ Source launches at the B20 USA Summit in Washington, D.C., alongside leaders from business, government and technology. <a href="https://events.thefemalequotient.com/b20usasummit26" target="_blank" rel="noopener" style="color:var(--rose);font-weight:700;border-bottom:1px solid rgba(192,138,125,.4)">Summit details</a></p></div>
+        <div class="fqx-phase-when"><b>Nov 9, 2026</b>Washington, D.C.</div>
+      </div>
+      <div class="fqx-phase">
+        <div class="fqx-phase-n">05</div>
+        <div><h4>Keep going</h4><p>FQ Source continues virtually and in person at AWS Partner Summits and selected conferences and events.</p></div>
+        <div class="fqx-phase-when"><b>Q4 2026 on</b>Virtual and in person</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7 · PARTNERS -->
+<section class="fqx-sec fqx-paper-2" id="partners" style="scroll-margin-top:72px">
+  <div class="fqx-wrap">
+    <div class="fqx-narrow" style="margin-bottom:clamp(36px,4vw,52px)">
+      <span class="fqx-kick fqx-kick-ink fqx-fx">Delivered by</span>
+      <h2 class="fqx-fx fqx-d1" style="margin:18px 0 14px">Three partners, one pathway.</h2>
+      <p class="fqx-fx fqx-d1">AWS opens the channel. The Female Quotient brings the community. SaaSNova does the build.</p>
+    </div>
+    <div class="fqx-g fqx-g3">
+      <div class="fqx-partner fqx-fx fqx-d1">
+        <div class="fqx-partner-mark"><img loading="lazy" src="images/aws-logo.png" alt="Amazon Web Services"></div>
+        <p class="fqx-partner-role">Global cloud reach, AWS Marketplace, and the co-sell and procurement channels enterprise buyers already use.</p>
+        <div class="fqx-quote fqx-quote-ink">
+          <p class="fqx-quote-t" style="font-size:16px">FQ Source is designed to remove barriers and create new pathways for these companies to scale.</p>
+          <div class="fqx-quote-a">Ruba Borno<span>VP, Specialists and Partners, AWS</span></div>
+        </div>
+      </div>
+      <div class="fqx-partner fqx-fx fqx-d2">
+        <div class="fqx-partner-mark"><img loading="lazy" src="images/FQ-logo.jpeg" alt="The Female Quotient"></div>
+        <p class="fqx-partner-role">A global media and experience company reaching more than 8.5 million professionals across 30 industries.</p>
+        <div class="fqx-quote fqx-quote-ink">
+          <p class="fqx-quote-t" style="font-size:16px">FQ Source is about turning opportunity into action, helping more women-owned technology companies become enterprise-ready and get discovered by buyers.</p>
+          <div class="fqx-quote-a">Shelley Zalis<span>Founder and CEO, The Female Quotient</span></div>
+        </div>
+      </div>
+      <div class="fqx-partner fqx-fx fqx-d3">
+        <div class="fqx-partner-mark"><img loading="lazy" src="images/logo-color.png" alt="SaaSNova"></div>
+        <p class="fqx-partner-role">A women-owned business and the operator-led go-to-market execution engine for technology partners scaling revenue through AWS.</p>
+        <div class="fqx-quote fqx-quote-ink">
+          <p class="fqx-quote-t" style="font-size:16px">FQ Source combines AWS's global reach, The Female Quotient's community and influence, and SaaSNova's cloud go-to-market execution.</p>
+          <div class="fqx-quote-a">Jen Dawson<span>Founder and CEO, SaaSNova</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 · YOUR FIRST TWO WEEKS -->
+<section class="fqx-sec fqx-paper" id="next" style="scroll-margin-top:72px">
+  <div class="fqx-wrap">
+    <div class="fqx-narrow">
+      <span class="fqx-kick fqx-kick-ink fqx-fx">Your first two weeks</span>
+      <h2 class="fqx-fx fqx-d1" style="margin:18px 0 18px">You are not waiting until November.</h2>
+      <p class="fqx-lead fqx-fx fqx-d1">Work starts as soon as you register. By the time FQ Source launches at the B20 Summit, your listing is already being built.</p>
+    </div>
+
+    <div class="fqx-weeks-shot fqx-fx fqx-d2">
+      <div class="fqx-shot"><img loading="lazy" src="images/fq-storefront.jpg" alt="The Women-Owned Cloud Innovation Storefront on AWS Marketplace, showing solutions from women-owned technology companies"></div>
+      <p class="fqx-figcap">Where your listing ends up</p>
+    </div>
+
+    <div class="fqx-weeks fqx-fx fqx-d2">
+      <div>
+        <div class="fqx-weeks-n">01</div>
+        <h4>Straight away</h4>
+        <p class="fqx-sm">A confirmation email lands with what to expect and who you will be working with.</p>
+      </div>
+      <div>
+        <div class="fqx-weeks-n">02</div>
+        <h4>Within 48 hours</h4>
+        <p class="fqx-sm">A working session with SaaSNova, who runs delivery for FQ Source. We go through your product, your AWS status and what is blocking you, then agree the scope of work.</p>
+      </div>
+      <div>
+        <div class="fqx-weeks-n">03</div>
+        <h4>Before November 9</h4>
+        <p class="fqx-sm">Your onboarding pack, your session dates, and the first build work under way on your listing.</p>
+      </div>
+    </div>
+
+    <div class="fqx-fx fqx-d3" style="margin-top:clamp(26px,3vw,36px)">
+      <a href="#register" class="fqx-btn fqx-btn-primary">Register for FQ Source</a>
+    </div>
+  </div>
+</section>
+
+<!-- 9 · CLOSING -->
+<section class="fqx-sec fqx-dark">
+  <div class="fqx-mesh"></div>
+  <div class="fqx-wrap fqx-close" style="position:relative;z-index:2">
+    <span class="fqx-kick fqx-fx">Registration is open</span>
+    <h2 class="fqx-fx fqx-d1" style="margin-top:20px">Every day you wait is a quarter you lose.</h2>
+    <p class="fqx-lead fqx-fx fqx-d1">Companies registering now are already in build. Launch day is a milestone, not a start line.</p>
+    <div class="fqx-cta-row fqx-fx fqx-d2">
+      <a href="#register" class="fqx-btn fqx-btn-primary">Register for FQ Source</a>
+      <a href="https://thefemalequotient.storefront.marketplace.aws.com/" target="_blank" rel="noopener" class="fqx-btn fqx-btn-ghost">See the Storefront</a>
+    </div>
+    <p class="fqx-contact fqx-fx fqx-d3">Questions about FQ Source? Email <a href="mailto:marketing@saasnova.ai?subject=FQ%20Source%20enquiry">marketing@saasnova.ai</a></p>
+  </div>
+</section>
+
+</main>
 
 <div id="footer-placeholder"></div>
 <script src="shared.js"></script>
 
 <script>
-/* ═══ FQ SOURCE — HubSpot registration submit ═══
-   Same client-side Forms API pattern as contact.html. */
 
-const FQS_PORTAL_ID = '245317385';
-const FQS_FORM_ID   = '23f93682-eb5a-4e14-a2bc-61813dae92ed';
-
-document.getElementById('fqSourceForm').addEventListener('submit', function(e){
-  e.preventDefault();
-  const form = e.target;
-  const btn = form.querySelector('[type="submit"]');
-  const originalText = btn.textContent;
-
-  if (FQS_FORM_ID.indexOf('REPLACE_WITH') === 0) {
-    alert('Form not connected yet: paste the FQ Source HubSpot form GUID into FQS_FORM_ID.');
+/* reveal on scroll · self-contained, no external dependency */
+(function(){
+  var els = document.querySelectorAll('.fqx-fx');
+  if (!('IntersectionObserver' in window) ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    for (var i=0;i<els.length;i++) els[i].classList.add('in');
     return;
   }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  for (var j=0;j<els.length;j++) io.observe(els[j]);
+})();
 
-  const d = new FormData(form);
-  const first = (d.get('first_name')||'').trim();
-  const last  = (d.get('last_name')||'').trim();
-  const company = (d.get('company')||'').trim();
-  const email = (d.get('email')||'').trim();
-  const partner = d.get('aws_partner_status')||'';
-  const marketplace = d.get('aws_marketplace_status')||'';
+/* FQ Source registration · HubSpot Forms API, same pattern as contact.html */
+(function(){
+  var FQS_PORTAL_ID = '245317385';
+  var FQS_FORM_ID   = '23f93682-eb5a-4e14-a2bc-61813dae92ed';
 
-  if (!first || !last || !company || !email || !partner || !marketplace) {
-    alert('Please complete every field, including both dropdowns.');
-    return;
-  }
+  var form = document.getElementById('fqSourceForm');
+  if (!form) return;
 
-  btn.textContent = 'Registering…';
-  btn.disabled = true;
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    var btn = form.querySelector('[type="submit"]');
+    var originalText = btn.textContent;
 
-  const fields = [
-    { name:'firstname', value:first },
-    { name:'lastname',  value:last },
-    { name:'email',     value:email },
-    { name:'company',   value:company },
-    { name:'aws_partner_status', value:partner },
-    { name:'aws_marketplace_status', value:marketplace }
-  ];
+    var d = new FormData(form);
+    var first = (d.get('first_name')||'').trim();
+    var last  = (d.get('last_name')||'').trim();
+    var company = (d.get('company')||'').trim();
+    var email = (d.get('email')||'').trim();
+    var partner = d.get('aws_partner_status')||'';
+    var marketplace = d.get('aws_marketplace_status')||'';
 
-  fetch(`https://api.hsforms.com/submissions/v3/integration/submit/${FQS_PORTAL_ID}/${FQS_FORM_ID}`, {
-    method:'POST',
-    headers:{ 'Content-Type':'application/json' },
-    body: JSON.stringify({
-      fields: fields,
-      context: { pageUri: window.location.href, pageName: document.title }
+    if (!first || !last || !company || !email || !partner || !marketplace) {
+      alert('Please complete every field, including both dropdowns.');
+      return;
+    }
+
+    btn.textContent = 'Registering...';
+    btn.disabled = true;
+
+    fetch('https://api.hsforms.com/submissions/v3/integration/submit/' + FQS_PORTAL_ID + '/' + FQS_FORM_ID, {
+      method:'POST',
+      headers:{ 'Content-Type':'application/json' },
+      body: JSON.stringify({
+        fields: [
+          { name:'firstname', value:first },
+          { name:'lastname',  value:last },
+          { name:'email',     value:email },
+          { name:'company',   value:company },
+          { name:'aws_partner_status', value:partner },
+          { name:'aws_marketplace_status', value:marketplace }
+        ],
+        context: { pageUri: window.location.href, pageName: document.title }
+      })
     })
-  })
-  .then(async (res) => {
-    if (!res.ok) throw new Error(await res.text());
-    if (typeof gtag === 'function') {
-      gtag('event', 'fq_source_registration', { event_category:'FQ Source', event_label:'Landing page form' });
-    }
-    form.innerHTML =
-      '<div style="padding:var(--sp-4);text-align:center">' +
-      '<div style="font-size:34px;color:var(--green);margin-bottom:10px">&#10003;</div>' +
-      '<div style="font-weight:800;font-size:20px;margin-bottom:10px">You\'re registered.</div>' +
-      '<p style="color:var(--text-muted);margin-bottom:22px">A confirmation email is on its way. SaaSNova reviews every registration and reaches out within two business days with onboarding details.</p>' +
-      '<a href="https://thefemalequotient.storefront.marketplace.aws.com/" target="_blank" rel="noopener" class="btn btn-secondary">See the Storefront</a>' +
-      '</div>';
-  })
-  .catch((err) => {
-    btn.textContent = originalText;
-    btn.disabled = false;
-    let details = err.message;
-    try {
-      const p = JSON.parse(err.message);
-      if (p.errors && p.errors.length) details = p.errors.map(x => x.message).join('\n');
-    } catch(_) {}
-    if (err.message.indexOf('Failed to fetch') > -1 || err.message.indexOf('NetworkError') > -1) {
-      alert('Could not reach HubSpot. If you use an ad blocker, disable it and try again.');
-    } else {
-      alert('Registration failed.\n\n' + details);
-    }
-    console.error('FQ Source / HubSpot:', err);
+    .then(function(res){
+      if (!res.ok) return res.text().then(function(t){ throw new Error(t); });
+      if (typeof gtag === 'function') {
+        gtag('event','fq_source_registration',{ event_category:'FQ Source', event_label:'Landing page form' });
+      }
+      form.innerHTML =
+        '<div style="padding:26px 6px;text-align:center">' +
+        '<div style="font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--rose);margin-bottom:14px">Registered</div>' +
+        '<div style="font-weight:800;font-size:22px;letter-spacing:-.02em;margin-bottom:12px">You are on the list.</div>' +
+        '<p style="font-size:15px;line-height:1.7;color:var(--ink-text-2);margin-bottom:26px">A confirmation email is on its way. SaaSNova reviews every registration and comes back to you within two business days with onboarding details.</p>' +
+        '<a href="https://thefemalequotient.storefront.marketplace.aws.com/" target="_blank" rel="noopener" class="fqx-btn fqx-btn-ink">See the Storefront</a>' +
+        '</div>';
+    })
+    .catch(function(err){
+      btn.textContent = originalText;
+      btn.disabled = false;
+      var details = err.message;
+      try {
+        var p = JSON.parse(err.message);
+        if (p.errors && p.errors.length) details = p.errors.map(function(x){ return x.message; }).join('\n');
+      } catch(_) {}
+      if (err.message.indexOf('Failed to fetch') > -1 || err.message.indexOf('NetworkError') > -1) {
+        alert('Could not reach HubSpot. If you use an ad blocker, disable it and try again.');
+      } else {
+        alert('Registration failed.\n\n' + details);
+      }
+      console.error('FQ Source / HubSpot:', err);
+    });
   });
-});
+})();
+
 </script>
 </body>
 </html>
