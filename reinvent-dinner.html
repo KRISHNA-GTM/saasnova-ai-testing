@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" type="image/png" sizes="32x32" href="images/logo-favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/logo-favicon-16x16.png">
+<link rel="apple-touch-icon" href="images/logo-favicon-apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+<title>SaaSNova Networking Dinner | AWS re:Invent 2026, Las Vegas</title>
+<meta name="description" content="Join SaaSNova for an intimate networking dinner during AWS re:Invent 2026. Tuesday, December 1, 7-9 PM at RPM Italian, The Forum Shops at Caesars Palace, Las Vegas. Space is limited."/>
+<meta property="og:title" content="SaaSNova Networking Dinner | AWS re:Invent 2026"/>
+<meta property="og:description" content="December 1 | 7-9 PM | RPM Italian, Caesars Palace, Las Vegas. Dinner, beer, and wine hosted by SaaSNova. Space is limited."/>
+<meta property="og:image" content="images/rpm-italian-las-vegas.jpg"/>
+<meta property="og:type" content="website"/>
+
+<style>
+/* Hero follows the site page-hero template used on Careers: dark navy gradient, centered eyebrow,
+   white headline with blue>pink highlight, wave divider into white. Inter only. */
+.dn-hero{margin-top:64px;padding:var(--sp-12) 0 var(--sp-10);background:linear-gradient(135deg,#0A1628 0%,#0D1F45 50%,#1A0A2E 100%);position:relative;overflow:hidden;color:#fff}
+.dn-hero::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 60% at 70% 20%,rgba(0,139,248,.18) 0%,transparent 55%),radial-gradient(ellipse 45% 55% at 5% 80%,rgba(250,15,156,.12) 0%,transparent 50%)}
+.dn-hero .container-sm{position:relative;text-align:center;max-width:980px}
+.dn-hero .eyebrow{color:#C9D3E0;text-transform:none;letter-spacing:.06em;font-size:13px}
+.dn-hero h1{margin-top:8px;color:#fff;font-size:clamp(32px,5vw,52px);line-height:1.15;letter-spacing:-.02em}
+.dn-hero h1 .dn-grad{display:block;background:linear-gradient(90deg,var(--blue),var(--pink));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.dn-sub{font-size:18px;color:#C9D3E0;max-width:620px;margin:20px auto 0;line-height:1.75}
+.dn-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin:30px 0 34px}
+.dn-chip{display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.22);color:#fff;font-size:16px;font-weight:700}
+.dn-chip svg{color:var(--blue);flex:0 0 auto}
+/* Luma checkout button: opens Luma's registration form in a pop-up on this page */
+a.dn-cta.luma-checkout--button{display:inline-flex!important;align-items:center;justify-content:center;background:var(--pink)!important;color:#fff!important;border:0!important;border-radius:999px!important;padding:16px 40px!important;font-family:'Inter',sans-serif!important;font-size:17px!important;font-weight:700!important;text-decoration:none!important;cursor:pointer;transition:all .18s}
+a.dn-cta.luma-checkout--button:hover{background:#D90085!important;transform:translateY(-1px);box-shadow:0 6px 20px rgba(250,15,156,.35)}
+.dn-note{margin-top:16px;font-size:14px;color:#C9D3E0}
+
+/* About */
+.dn-about{background:#fff;padding:var(--sp-10) 0 var(--sp-12)}
+.dn-about-grid{max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+.dn-photo{border-radius:var(--r-2xl);overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/3}
+.dn-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.dn-about h2{margin-bottom:18px}
+.dn-about p{font-size:17px;margin-bottom:14px}
+.dn-details{margin:24px 0 0;display:grid;gap:14px;padding:22px 24px;border-radius:var(--r-xl);background:var(--light-100);border:1px solid var(--border-light)}
+.dn-details div{display:flex;gap:16px;align-items:baseline}
+.dn-details dt{flex:0 0 78px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted)}
+.dn-details dd{margin:0;font-size:16px;font-weight:600;color:var(--text-primary);line-height:1.45}
+.dn-photo-note{margin-top:18px;font-size:13px;line-height:1.6;color:var(--text-muted)}
+
+/* Closing CTA */
+.dn-close{background:var(--light-100);border-top:1px solid var(--border-light);padding:var(--sp-10) 0;text-align:center}
+.dn-close h2{margin-bottom:10px}
+.dn-close p{font-size:17px;margin:0 auto 26px;max-width:480px}
+
+@media(max-width:900px){
+  .dn-about-grid{grid-template-columns:1fr;gap:28px}
+  .dn-photo{aspect-ratio:16/10}
+}
+@media(max-width:640px){
+  .dn-chip{font-size:15px;padding:10px 16px}
+  a.dn-cta.luma-checkout--button{width:100%;max-width:340px}
+  .dn-details div{flex-direction:column;gap:2px}
+  .dn-details dt{flex:none}
+}
+</style>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"Event",
+  "name":"SaaSNova Networking Dinner | AWS re:Invent 2026",
+  "startDate":"2026-12-01T19:00:00-08:00",
+  "endDate":"2026-12-01T21:00:00-08:00",
+  "eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode",
+  "location":{"@type":"Place","name":"RPM Italian, The Forum Shops at Caesars Palace","address":{"@type":"PostalAddress","addressLocality":"Las Vegas","addressRegion":"NV","addressCountry":"US"}},
+  "organizer":{"@type":"Organization","name":"SaaSNova","url":"https://www.saasnova.ai"}
+}
+</script>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<!-- HERO -->
+<section class="dn-hero">
+  <div class="container-sm">
+    <span class="eyebrow eyebrow-dark">Space is limited</span>
+    <h1>SaaSNova Networking Dinner<span class="dn-grad">AWS re:Invent 2026</span></h1>
+    <p class="dn-sub">Join SaaSNova for an intimate evening of dinner, drinks, and networking. Dinner, beer, and wine hosted by SaaSNova.</p>
+
+    <div class="dn-chips">
+      <span class="dn-chip">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+        December 1 | 7&ndash;9 PM
+      </span>
+      <span class="dn-chip">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 1 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        RPM Italian | Caesars Palace
+      </span>
+    </div>
+
+    <a href="https://luma.com/event/evt-zVRy5LH8LT0k7pJ" class="dn-cta luma-checkout--button" data-luma-action="checkout" data-luma-event-id="evt-zVRy5LH8LT0k7pJ">Request Your Spot</a>
+    <p class="dn-note">Registration is reviewed. We&rsquo;ll confirm your spot by email.</p>
+  </div>
+</section>
+<div class="wave-d2w"><svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:48px;display:block;width:100%"><path d="M0,0 C360,48 1080,48 1440,0 L1440,48 L0,48 Z" fill="#fff"/></svg></div>
+
+<!-- PHOTO + ABOUT -->
+<section class="dn-about">
+  <div class="dn-about-grid">
+    <div class="dn-photo">
+      <img src="images/rpm-italian-las-vegas.jpg" alt="RPM Italian at The Forum Shops at Caesars Palace, Las Vegas" width="1600" height="1139"/>
+    </div>
+    <div>
+      <span class="eyebrow">An evening away from the conference floor</span>
+      <h2>Dinner, drinks, and the right people.</h2>
+      <p>We&rsquo;re bringing together leaders from across SaaS, cloud, and the AWS ecosystem for a relaxed evening away from the conference floor, an opportunity to make new connections, exchange ideas, and enjoy great food and conversation.</p>
+      <dl class="dn-details">
+        <div><dt>Date</dt><dd>Tuesday, December 1, 2026</dd></div>
+        <div><dt>Time</dt><dd>7:00&ndash;9:00 PM</dd></div>
+        <div><dt>Location</dt><dd>RPM Italian, The Forum Shops at Caesars Palace, Las Vegas</dd></div>
+      </dl>
+      <p class="dn-photo-note">Photography and video may take place during the event and may be used by SaaSNova for social media, marketing, and promotional purposes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING CTA -->
+<section class="dn-close">
+  <div class="container-sm">
+    <h2>Space is limited.</h2>
+    <p>Request your spot and we&rsquo;ll confirm by email.</p>
+    <a href="https://luma.com/event/evt-zVRy5LH8LT0k7pJ" class="dn-cta luma-checkout--button" data-luma-action="checkout" data-luma-event-id="evt-zVRy5LH8LT0k7pJ">Request Your Spot</a>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script defer src="shared.js"></script>
+<script id="luma-checkout" src="https://embed.lu.ma/checkout-button.js"></script>
+</body>
+</html>

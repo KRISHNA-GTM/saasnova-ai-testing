@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="images/logo-favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="images/logo-favicon-16x16.png">
+<link rel="apple-touch-icon" href="images/logo-favicon-apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+<title>Events | SaaSNova</title>
+<meta name="description" content="Where SaaSNova is showing up. Upcoming and recent events, including the SaaSNova Networking Dinner at AWS re:Invent 2026."/>
+
+<style>
+/* Brand rules applied: solid fills only, palette Blue / Pink / Orange / White, 100% opacity text, Inter only. */
+.ev-hero{margin-top:64px;background:linear-gradient(135deg,#0A1628 0%,#0D1F45 50%,#1A0A2E 100%);padding:var(--sp-12) 0 var(--sp-10);text-align:center}
+.ev-hero h1 span{background:linear-gradient(90deg,var(--blue),var(--pink));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.ev-hero .container{max-width:980px}
+.ev-hero h1{color:#fff;margin-bottom:14px;font-size:clamp(32px,5vw,48px);line-height:1.2;letter-spacing:-.02em}
+.ev-hero p{color:#C9D3E0;font-size:18px;max-width:600px;margin:0 auto}
+.ev-section{padding:var(--sp-10) 0;background:#fff}
+.ev-section.alt{background:var(--light-100);border-top:1px solid var(--border-light)}
+.ev-wrap{max-width:1000px;margin:0 auto;padding:0 24px}
+.ev-wrap > h2{font-size:clamp(22px,3vw,30px);margin-bottom:24px}
+.ev-card{display:grid;grid-template-columns:1fr 1.1fr;background:#fff;border:1px solid var(--border);border-radius:var(--r-2xl);overflow:hidden;box-shadow:var(--shadow-md);text-decoration:none;color:inherit;transition:transform .18s,box-shadow .18s}
+.ev-card:hover{transform:translateY(-2px);box-shadow:var(--shadow-lg)}
+.ev-card-img{min-height:260px;background:var(--dark-800)}
+.ev-card-img img{width:100%;height:100%;object-fit:cover;display:block}
+.ev-card-body{padding:32px;display:flex;flex-direction:column;align-items:flex-start}
+.ev-pill{display:inline-block;font-size:12px;font-weight:700;padding:5px 12px;border-radius:999px;margin-bottom:14px}
+.ev-pill.pink{background:var(--pink);color:#fff}
+.ev-pill.outline{background:#fff;color:var(--text-primary);border:1.5px solid var(--border)}
+.ev-card h3{margin-bottom:12px}
+.ev-card-meta{list-style:none;margin:0 0 14px;padding:0;font-size:15px;font-weight:600;color:var(--text-primary);display:grid;gap:4px}
+.ev-card p{font-size:15px;margin-bottom:20px}
+.ev-card .btn{margin-top:auto}
+.ev-past{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.ev-past-card{background:#fff;border:1px solid var(--border-light);border-radius:var(--r-xl);padding:24px}
+.ev-past-card h3{font-size:18px;margin:6px 0 8px}
+.ev-past-card p{font-size:14px;margin:0 0 12px}
+.ev-past-card a{color:var(--blue);font-weight:600;font-size:14px}
+@media(max-width:760px){
+  .ev-card{grid-template-columns:1fr}
+  .ev-card-img{min-height:200px;aspect-ratio:16/10}
+  .ev-card-body{padding:24px}
+  .ev-card .btn{width:100%}
+  .ev-past{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<div id="nav-placeholder"></div>
+
+<header class="ev-hero">
+  <div class="container">
+    <span class="eyebrow" style="color:#C9D3E0">Events</span>
+    <h1>Where SaaSNova is <span>showing up.</span></h1>
+    <p>Cloud marketplace GTM happens at events as much as it does in portals. Field relationships start with presence.</p>
+  </div>
+</header>
+<div class="wave-d2w"><svg viewBox="0 0 1440 48" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="height:48px;display:block;width:100%"><path d="M0,0 C360,48 1080,48 1440,0 L1440,48 L0,48 Z" fill="#fff"/></svg></div>
+
+<section class="ev-section">
+  <div class="ev-wrap">
+    <h2>Upcoming</h2>
+    <a class="ev-card" href="reinvent-dinner.html" aria-label="SaaSNova Networking Dinner at AWS re:Invent 2026, view details and request your spot">
+      <div class="ev-card-img">
+        <img src="images/rpm-italian-las-vegas.jpg" alt="Private dining room at RPM Italian, Las Vegas" loading="lazy"/>
+      </div>
+      <div class="ev-card-body">
+        <span class="ev-pill pink">AWS re:Invent 2026</span>
+        <h3>SaaSNova Networking Dinner</h3>
+        <ul class="ev-card-meta">
+          <li>Tuesday, December 1 | 7&ndash;9 PM</li>
+          <li>RPM Italian | The Forum Shops at Caesars Palace, Las Vegas</li>
+        </ul>
+        <p>An intimate evening of dinner, drinks, and networking with leaders from across SaaS, cloud, and the AWS ecosystem. Hosted by SaaSNova. Space is limited.</p>
+        <span class="btn btn-primary">Request Your Spot</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<section class="ev-section alt">
+  <div class="ev-wrap">
+    <h2>Recent</h2>
+    <div class="ev-past">
+      <div class="ev-past-card">
+        <span class="ev-pill outline">March 2026</span>
+        <h3>RSA Conference 2026</h3>
+        <p>San Francisco. Jen Dawson meeting ISV security leaders and cloud field teams connecting on the co-sell motions that generate real deal flow in the security category.</p>
+        <a href="https://saasify.ai/accelerate-your-cloud-gtm-with-saasnova-saasify/" target="_blank" rel="noopener">See the SaaSNova &times; SaaSify story &rarr;</a>
+      </div>
+      <div class="ev-past-card">
+        <span class="ev-pill outline">Keynote</span>
+        <h3>GTM School of Thoughts</h3>
+        <p>Jen Dawson keynotes on cloud co-sell execution, the field team dynamics and execution gaps that determine whether co-sell submissions get answered.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+<script defer src="shared.js"></script>
+</body>
+</html>

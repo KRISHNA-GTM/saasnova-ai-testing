@@ -26,6 +26,7 @@ const SVG = {
   bars: `<svg width="22" height="16" viewBox="0 0 22 16" fill="none"><rect width="22" height="2" rx="1" fill="#0F1923"/><rect y="7" width="16" height="2" rx="1" fill="#0F1923"/><rect y="14" width="22" height="2" rx="1" fill="#0F1923"/></svg>`,
   resCase: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7V4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3"/><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M12 12v4"/></svg>`,
   resMic: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="22"/></svg>`,
+  resEvent: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>`,
   resVideo: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>`,
   resBlog: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>`,
   resNews: `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>`,
@@ -599,6 +600,14 @@ const NAV_STYLE_AND_DESKTOP = `
               <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Live execution breakdowns</div>
             </div>
           </a>
+
+          <a href="events.html" class="premium-dd-item">
+            <div class="dd-icon-wrap" style="background:rgba(250,15,156,0.1); color:var(--pink);">${SVG.resEvent}</div>
+            <div>
+              <div style="font-weight:700; color:var(--text-primary); margin-bottom:2px;">Events</div>
+              <div style="font-size:12px; color:var(--text-muted); font-weight:500;">Where we're showing up</div>
+            </div>
+          </a>
           
           <div style="margin: 8px 0; height: 1px; background: var(--border-light);"></div>
           
@@ -756,6 +765,7 @@ const NAV_MOBILE = `
       <a href="show.html" class="mob-sub-link">The Jen GTM Show</a>
       <a href="case-study.html" class="mob-sub-link">Case Studies</a>
       <a href="webinars.html" class="mob-sub-link">Webinars</a>
+      <a href="events.html" class="mob-sub-link">Events</a>
       <a href="newsletter.html" class="mob-sub-link" style="color:#FA0F9C !important;">The Nova Brief</a>
     </div>
   </div>
