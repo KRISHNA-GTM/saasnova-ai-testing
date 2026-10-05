@@ -23,8 +23,15 @@
 .dn-hero{margin-top:64px;padding:64px 0 var(--sp-10);background:linear-gradient(135deg,#0A1628 0%,#0D1F45 50%,#1A0A2E 100%);position:relative;overflow:hidden;color:#fff}
 .dn-hero::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 60% 60% at 70% 20%,rgba(0,139,248,.18) 0%,transparent 55%),radial-gradient(ellipse 45% 55% at 5% 80%,rgba(250,15,156,.12) 0%,transparent 50%)}
 .dn-wrap{position:relative;max-width:1040px;margin:0 auto;padding:0 24px;text-align:center}
-.dn-badge{display:inline-flex;align-items:center;gap:10px;padding:8px 18px;border-radius:999px;background:rgba(250,15,156,.14);border:1px solid rgba(250,15,156,.55);color:#fff;font-size:13px;font-weight:700;letter-spacing:.02em}
+
+/* Tag group aligning AWS partnership with status badge */
+.dn-hero-tags{display:inline-flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.dn-aws-partner-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#E2E8F0;font-size:12.5px;font-weight:600;letter-spacing:.02em}
+.dn-aws-partner-badge img{width:36px;height:auto;display:inline-block;object-fit:contain}
+
+.dn-badge{display:inline-flex;align-items:center;gap:8px;padding:7px 16px;border-radius:999px;background:rgba(250,15,156,.14);border:1px solid rgba(250,15,156,.55);color:#fff;font-size:13px;font-weight:700;letter-spacing:.02em}
 .dn-badge i{width:8px;height:8px;border-radius:50%;background:var(--pink);box-shadow:0 0 0 4px rgba(250,15,156,.25);display:inline-block}
+
 .dn-hero h1{margin-top:20px;color:#fff;font-size:clamp(32px,5vw,52px);line-height:1.12;letter-spacing:-.02em}
 .dn-hero h1 .dn-grad{display:block;background:linear-gradient(90deg,var(--blue),var(--pink));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
 .dn-sub{font-size:18px;color:#C9D3E0;max-width:640px;margin:18px auto 0;line-height:1.7}
@@ -32,9 +39,8 @@
 /* Hero split: copy left, food photo right (stacks on mobile) */
 .dn-hero-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;text-align:left}
 .dn-hero-copy .dn-sub{margin-left:0;margin-right:0}
-.dn-hero-copy h1{font-size:clamp(30px,3.6vw,44px)}
-.dn-eyebrow{display:block;margin-top:22px;font-size:16px;font-weight:700;color:#9FB3CC}
-.dn-eyebrow + h1{margin-top:8px}
+.dn-hero-copy h1{font-size:clamp(30px,3.6vw,44px);margin-top:10px}
+.dn-eyebrow{display:block;margin-top:16px;font-size:15px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:#9FB3CC}
 .dn-hero-photo{border-radius:var(--r-2xl);overflow:hidden;box-shadow:var(--shadow-lg);aspect-ratio:4/3}
 .dn-hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
 
@@ -90,6 +96,12 @@ a.dn-cta.luma-checkout--button:hover{background:#D90085!important;transform:tran
 .dn-stat .dn-stat-sm{font-size:20px;white-space:nowrap;line-height:1.4}
 .dn-stat span{display:block;margin-top:6px;font-size:13px;font-weight:500;color:#C9D3E0;line-height:1.35}
 .dn-host a.dn-more{color:#fff;font-weight:700;font-size:15px;text-decoration:none;border-bottom:2px solid var(--pink);padding-bottom:2px}
+.dn-host-side{display:grid;gap:24px}
+.dn-founder{margin:0;border-radius:var(--r-xl);overflow:hidden;border:1px solid rgba(255,255,255,.2)}
+.dn-founder img{width:100%;height:auto;display:block}
+.dn-founder figcaption{display:grid;gap:2px;padding:14px 20px;background:rgba(255,255,255,.07)}
+.dn-founder figcaption strong{color:#fff;font-size:17px;font-weight:700}
+.dn-founder figcaption span{color:#C9D3E0;font-size:14px}
 .dn-who{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.2);border-radius:var(--r-xl);padding:28px}
 .dn-who h3{color:#fff;font-size:20px;margin-bottom:6px}
 .dn-who > p{font-size:14px;margin-bottom:18px}
@@ -104,6 +116,7 @@ a.dn-cta.luma-checkout--button:hover{background:#D90085!important;transform:tran
 
 @media(max-width:900px){
   .dn-hero-grid{grid-template-columns:1fr;gap:28px;text-align:center}
+  .dn-hero-tags{justify-content:center}
   .dn-hero-copy .dn-sub{margin-left:auto;margin-right:auto}
   .dn-hero-photo{aspect-ratio:16/10}
   .dn-strip{grid-template-columns:1fr 1fr}
@@ -114,6 +127,7 @@ a.dn-cta.luma-checkout--button:hover{background:#D90085!important;transform:tran
 }
 @media(max-width:560px){
   .dn-hero{padding:44px 0 var(--sp-8)}
+  .dn-hero-tags{gap:8px}
   .dn-strip{gap:10px}
   .dn-cell{padding:14px 16px}
   .dn-cell strong{font-size:16px}
@@ -147,7 +161,12 @@ a.dn-cta.luma-checkout--button:hover{background:#D90085!important;transform:tran
   <div class="dn-wrap">
     <div class="dn-hero-grid">
       <div class="dn-hero-copy">
-        <span class="dn-badge"><i></i>Limited seating &middot; By approval</span>
+        <div class="dn-hero-tags">
+          <span class="dn-aws-partner-badge">
+            <img src="images/AWS_logo_RGB_1c_White.png" alt="AWS" width="1254" height="750"/>
+          </span>
+          <span class="dn-badge"><i></i>Limited seating &middot; By approval</span>
+        </div>
         <span class="dn-eyebrow">SaaSNova Networking Dinner</span>
         <h1>The best conversations don&rsquo;t happen on the conference floor.</h1>
         <p class="dn-sub">Join a curated group of SaaS, cloud, and AWS ecosystem leaders for dinner, drinks, and conversations worth continuing.</p>
@@ -244,6 +263,7 @@ a.dn-cta.luma-checkout--button:hover{background:#D90085!important;transform:tran
       </div>
       <a class="dn-more" href="about.html">Learn more about SaaSNova &rarr;</a>
     </div>
+    <div class="dn-host-side">
     <div class="dn-who">
       <h3>Who should join</h3>
       <p>A small group, by approval.</p>
@@ -254,6 +274,11 @@ a.dn-cta.luma-checkout--button:hover{background:#D90085!important;transform:tran
         <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Cloud and marketplace leaders</li>
         <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>Partner and alliance leaders</li>
       </ul>
+    </div>
+    <figure class="dn-founder">
+      <img src="images/Jen-videoframe_thumb.png" alt="Jen Dawson, founder and CEO of SaaSNova, seated at a table" width="1920" height="1080" loading="lazy"/>
+      <figcaption><strong>Jen Dawson</strong><span>Founder &amp; CEO, SaaSNova</span></figcaption>
+    </figure>
     </div>
   </div>
 </section>
@@ -270,7 +295,7 @@ a.dn-cta.luma-checkout--button:hover{background:#D90085!important;transform:tran
 <!-- FOOTER DISCLAIMER -->
 <section class="dn-disclaimer">
   <div class="container-sm">
-    <p>By attending, you acknowledge that photography and video may take place during the event and grant SaaSNova permission to use event imagery for marketing, social media, and promotional purposes. This is an independent SaaSNova-hosted networking dinner. It is not an AWS event and is not sponsored or endorsed by AWS.</p>
+    <p>By attending, you acknowledge that photography and video may take place during the event and grant SaaSNova permission to use event imagery for marketing, social media, and promotional purposes.</p>
   </div>
 </section>
 
