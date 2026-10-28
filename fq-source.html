@@ -148,8 +148,9 @@ gtag('config', 'G-185EJ40PT4');
 .fqx-lockup{display:inline-flex;align-items:center;gap:24px;padding:14px 24px;border-radius:2px;
   background:rgba(255,255,255,.72);border:1px solid rgba(74,42,18,.22)}
 .fqx-lockup img{height:34px;width:auto;max-width:158px;object-fit:contain;display:block}
+.fqx-lockup img.fqx-logo-fq{height:46px} /* slightly larger to visually balance the trio */
 .fqx-lockup i{width:1px;height:30px;background:rgba(23,18,26,.20);flex-shrink:0}
-@media(max-width:560px){.fqx-lockup{gap:13px;padding:10px 14px}.fqx-lockup img{height:24px;max-width:104px}}
+@media(max-width:560px){.fqx-lockup{gap:13px;padding:10px 14px}.fqx-lockup img{height:24px;max-width:104px}.fqx-lockup img.fqx-logo-fq{height:32px}}
 .fqx-badge{display:inline-flex;align-items:center;gap:12px;padding:8px 16px;
   border:1px solid rgba(74,42,18,.26);border-radius:2px;background:rgba(228,199,155,.08);
   font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.17em;
@@ -283,8 +284,8 @@ gtag('config', 'G-185EJ40PT4');
 .fqx-close{text-align:center}
 .fqx-close h2{color:var(--ivory);margin-bottom:14px}
 .fqx-close p{max-width:540px;margin:0 auto 26px}
-.fqx-close .fqx-cta-row{justify-content:center;margin-bottom:0}
-.fqx-contact{margin-top:42px;font-size:14.5px;color:var(--ivory-3)}
+.fqx-close .fqx-cta-row{justify-content:center;margin-bottom:32px}
+.fqx-contact{margin-top:20px;font-size:14.5px;color:var(--ivory-3)}
 .fqx-contact a{color:var(--rose-pale);font-weight:700;border-bottom:1px solid rgba(232,205,180,.45)}
 
 /* ── reveal ── */
@@ -353,12 +354,11 @@ gtag('config', 'G-185EJ40PT4');
   background:linear-gradient(transparent,rgba(20,16,12,.86));color:#F7F4F0;
   font-size:12.5px;line-height:1.45}
 
-.fqx-tier{display:inline-flex;align-items:center;gap:12px;margin-top:20px;
-  padding:9px 16px 9px 10px;border-radius:2px;
-  background:rgba(255,255,255,.58);border:1px solid rgba(74,42,18,.20)}
-.fqx-tier img{height:62x;width:auto;flex-shrink:0;display:block}
-.fqx-tier span{font-family:var(--mono);font-size:10px;font-weight:700;
-  letter-spacing:.13em;text-transform:uppercase;color:#4A2A12;line-height:1.55}
+.fqx-tier{display:inline-flex;align-items:center;gap:16px;margin-top:24px}
+.fqx-tier img{height:52px;width:auto;flex-shrink:0;display:block}
+.fqx-tier span{font-family:var(--sans);font-size:13.5px;font-weight:600;
+  color:#3E2A1A;line-height:1.5;max-width:240px}
+@media(max-width:560px){.fqx-tier{flex-direction:column;align-items:flex-start;gap:12px}}
 
 .fqx-weeks-shot{margin:clamp(24px,3vw,34px) 0 clamp(20px,2.4vw,28px)}
 .fqx-weeks{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--rule)}
@@ -373,10 +373,6 @@ gtag('config', 'G-185EJ40PT4');
   .fqx-weeks>div{border-right:0;border-bottom:1px solid var(--rule);padding-left:0;padding-bottom:20px}
   .fqx-weeks>div:last-child{border-bottom:0}
 }
-
-/* breathing room between the closing CTAs and the contact line */
-.fqx-close .fqx-cta-row{margin-bottom:0}
-
 
 /* hosted build · clears the fixed SaaSNova nav and stops the
    site-wide background grid showing through between sections */
@@ -401,7 +397,7 @@ body::before{display:none}
       <div>
       <div class="fqx-lockup fqx-fx">
         <img src="images/aws-logo.png" alt="Amazon Web Services"><i></i>
-        <img src="images/FQ-logo.jpeg" alt="The Female Quotient"><i></i>
+        <img src="images/FQ-logo.jpeg" alt="The Female Quotient" class="fqx-logo-fq"><i></i>
         <img src="images/logo-color.png" alt="SaaSNova">
       </div>
       <h1 class="fqx-fx fqx-d1">FQ <em>Source</em></h1>
@@ -413,7 +409,7 @@ body::before{display:none}
       </p>
       <div class="fqx-tier fqx-fx fqx-d2">
         <img src="images/SaaSNova-AWS-Advanced-Tier-badge.png" alt="AWS Advanced Tier Services Partner">
-        <span>Delivered by SaaSNova<br>Official AWS Advanced Tier Services Partner</span>
+        <span>SaaSNova is an AWS Advanced Tier Services Partner.</span>
       </div>
       </div>
 
@@ -469,7 +465,7 @@ body::before{display:none}
     <div class="fqx-bar">
       <div class="fqx-bar-item fqx-fx"><div class="fqx-bar-n">273+</div><div class="fqx-bar-l">women-owned businesses on the Women-Owned Cloud Innovation Storefront, and growing</div></div>
       <div class="fqx-bar-item fqx-fx fqx-d1"><div class="fqx-bar-n">NOV 9</div><div class="fqx-bar-l">launch at the B20 USA Summit, Washington, D.C.</div></div>
-      <div class="fqx-bar-item fqx-fx fqx-d2"><div class="fqx-bar-n">48 HRS</div><div class="fqx-bar-l">from registration to a working session with the SaaSNova build team</div></div>
+      <div class="fqx-bar-item fqx-fx fqx-d2"><div class="fqx-bar-n">2 DAYS</div><div class="fqx-bar-l">for SaaSNova to review your registration and follow up</div></div>
     </div>
   </div>
 </section>
@@ -617,8 +613,8 @@ body::before{display:none}
     <div class="fqx-fx fqx-d1">
       <div class="fqx-phase">
         <div class="fqx-phase-n">01</div>
-        <div><h4>Register and onboard</h4><p>You register below. We confirm fit inside 48 hours and send your onboarding details, program materials and session dates.</p></div>
-        <div class="fqx-phase-when"><b>Open now</b>Reply in 48 hours</div>
+        <div><h4>Register</h4><p>You register below. SaaSNova reviews your registration and follows up within two business days.</p></div>
+        <div class="fqx-phase-when"><b>Open now</b>Reply within 2 days</div>
       </div>
       <div class="fqx-phase">
         <div class="fqx-phase-n">02</div>
@@ -703,8 +699,8 @@ body::before{display:none}
       </div>
       <div>
         <div class="fqx-weeks-n">02</div>
-        <h4>Within 48 hours</h4>
-        <p class="fqx-sm">A working session with SaaSNova, who runs delivery for FQ Source. We go through your product, your AWS status and what is blocking you, then agree the scope of work.</p>
+        <h4>Within 2 business days</h4>
+        <p class="fqx-sm">SaaSNova reviews your registration and follows up. If there's a fit, we schedule a working session to go through your product, your AWS status and what is blocking you.</p>
       </div>
       <div>
         <div class="fqx-weeks-n">03</div>
@@ -808,10 +804,15 @@ body::before{display:none}
       }
       form.innerHTML =
         '<div style="padding:26px 6px;text-align:center">' +
-        '<div style="font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--rose);margin-bottom:14px">Registered</div>' +
-        '<div style="font-weight:800;font-size:22px;letter-spacing:-.02em;margin-bottom:12px">You are on the list.</div>' +
-        '<p style="font-size:15px;line-height:1.7;color:var(--ink-text-2);margin-bottom:26px">A confirmation email is on its way. SaaSNova reviews every registration and comes back to you within two business days with onboarding details.</p>' +
-        '<a href="https://thefemalequotient.storefront.marketplace.aws.com/" target="_blank" rel="noopener" class="fqx-btn fqx-btn-ink">See the Storefront</a>' +
+        '<div style="font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--rose);margin-bottom:14px">Registration Received</div>' +
+        '<div style="font-weight:800;font-size:22px;letter-spacing:-.02em;margin-bottom:12px">Thank you for registering for FQ Source.</div>' +
+        '<p style="font-size:15px;line-height:1.7;color:var(--ink-text-2);margin-bottom:32px">SaaSNova will review your details and follow up within two business days.</p>' +
+        '<div style="border-top:1px solid var(--rule);padding-top:32px;margin-top:32px">' +
+        '<h4 style="font-size:17px;margin-bottom:8px">Want to discuss your needs sooner?</h4>' +
+        '<p style="font-size:14.5px;line-height:1.65;color:var(--ink-text-2);margin-bottom:20px">You can book a discovery call with Jen now, or wait for our team to review your submission and contact you.</p>' +
+        '<a href="https://calendly.com/jen-saasnova/founder-strategy-session-scale-your-gtm-via-aws" target="_blank" rel="noopener noreferrer" class="fqx-btn fqx-btn-primary" style="margin-bottom:14px">Book a discovery call with Jen</a>' +
+        '<p style="font-size:12.5px;color:var(--ink-text-3)">Booking is optional. Your registration is already submitted.</p>' +
+        '</div>' +
         '</div>';
     })
     .catch(function(err){
